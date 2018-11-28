@@ -1,0 +1,125 @@
+<!--pages/mine/mine/addResource/addResource.wxml-->
+<view class="container">
+	<view class="addResource-page">
+		<view class="failuretipbox {{errorshow?'show-failuretipbox':'hidden-failuretipbox'}}">
+		    <icon type="warn" size="16" color="#fff"/>
+		    {{failuretip}}
+		 </view>
+		<view class="add-step1" wx:if="{{step1}}">
+			<view class="companydetails">
+				<view class="row" bindtap="{{isonlyCard?'':'choiseCompany'}}">
+		  			<text >联系人</text>
+		  			<view class="text">
+		  				<text class="{{contactName?'':'textcolor999'}}">{{contactName?contactName:'选择联系人'}}</text>
+		  				<image wx:if="{{!isonlyCard}}" src="../../../assets/images/icon/icon-arrow-right.png"></image>
+		  			</view>
+		  		</view>
+				<!-- <view class="row" bindtap="{{isonlyCard?'':'choiseCompany'}}"> -->
+				<view class="row" >
+		  			<text >公司</text>
+		  			<view class="text">
+		  				<text class="{{companyName?'':'textcolor999'}}">{{companyName?companyName:'请选择联系人'}}</text>
+		  				<!-- <image wx:if="{{!isonlyCard}}" src="../../../assets/images/icon/icon-arrow-right.png"></image> -->
+		  			</view>
+		  		</view>
+		  		<view class="row">
+		  			<text>资源名称</text>
+		  			<input type="text"  placeholder="必填" placeholder-class="placeholderstyle" bindinput="bindKeyInput" data-input="1" maxlength="20" value="{{demandClassValue}}"></input>
+		  		</view>
+		  		<picker class="row" bindchange="choisetype" range="{{supplySubjectList}}" range-key="name" value="{{index}}">
+				    <text >资源类型</text>
+		  			<view class="text">
+		  				<text class="{{checkedType?'':'textcolor999'}}">{{checkedType?checkedType:'选择类型'}}</text>
+						<image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+					</view>
+				 </picker>
+		  	</view>
+		  	<view class="footer">
+				<button type="primary" hover-class="button-hover" bindtap="nextstep">下一步</button>
+			</view>
+		</view>
+		<view class="add-step2" wx:if="{{step2}}">
+			<view class="step2-title font30">资源详情</view>
+			<view class="resourceList" wx:if="{{ImageTextItem&&ImageTextItem.length>0}}">
+				<view style="position: relative; z-index: 199;">
+					<view class="touchView" style="height:{{scrollPosition.scrollViewHeight}}px;"  catchtouchstart="draggleTouch"
+						  catchtouchmove="draggleTouch" catchtouchend="draggleTouch">
+					</view>
+					<movable-area class="moveable_row {{movableViewPosition.className}}"
+								  style="height: {{scrollPosition.scrollViewHeight}}px;">
+						<movable-view style="height: {{scrollPosition.everyOptionCell}}px; width: 100%; background-color: #fff;"
+									  direction="vertical" x="{{movableViewPosition.x}}" y="{{movableViewPosition.y}}"
+									  inertia="false" damping="9999"  friction="9999">
+							<view class="resourceBlock resourceBlock-image" wx:if="{{movableViewPosition.data.image}}" >
+								<image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="../../../assets/images/icon/icon-delete-gray.png"></image>
+								<image class="icon-move" src="../../../assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
+									<image class="addiamge" src="{{movableViewPosition.data.image}}"></image>
+							</view>
+							<view class="resourceBlock resourceBlock-text" wx:if="{{movableViewPosition.data.text}}" >
+								<image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="../../../assets/images/icon/icon-delete-gray.png"></image>
+								<image class="icon-move" src="../../../assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
+								<text>{{movableViewPosition.data.text}}</text>
+							</view>
+							<view class="resourceBlock resourceBlock-image" wx:if="{{movableViewPosition.data.video}}" >
+								<image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="../../../assets/images/icon/icon-delete-gray.png"></image>
+								<image class="icon-move" src="../../../assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
+								<video class="addiamge" src="{{movableViewPosition.data.video}}"></video>
+							</view>
+						</movable-view>
+					</movable-area>
+					<scroll-view class="edit_row_holder" scroll-y="{{scrollPosition.scrollY}}"
+								 style="height: {{scrollPosition.scrollViewHeight}}px;" bindscroll="bindscroll">
+						<block wx:for="{{ImageTextItem}}" wx:key="sDtSecCode">
+							<view class="edit_row  {{item.selectClass}}">
+								<view class="resourceBlock resourceBlock-image" wx:if="{{item.image}}" >
+									<image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="../../../assets/images/icon/icon-delete-gray.png"></image>
+									<image class="icon-move" src="../../../assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
+									<view class="imgWrap">
+										<image class="addiamge" mode="aspectFill" src="{{item.image}}"></image>
+									</view>
+								</view>
+								<view class="resourceBlock resourceBlock-text" wx:if="{{item.text}}" >
+									<image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="../../../assets/images/icon/icon-delete-gray.png"></image>
+									<image class="icon-move" src="../../../assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
+									<text>{{item.text}}</text>
+								</view>
+								<view class="resourceBlock resourceBlock-image" wx:if="{{item.video}}" >
+									<image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="../../../assets/images/icon/icon-delete-gray.png"></image>
+									<image class="icon-move" src="../../../assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
+									<view class="imgWrap">
+										<video class="addiamge" mode="aspectFill" src="{{item.video}}"></video>
+									</view>
+								</view>
+							</view>
+						</block>
+					</scroll-view>
+				</view>
+			</view>
+			<view class="noDescription"  style="height:{{scrollPosition.scrollViewHeight}}px;" wx:if="{{!ImageTextItem||ImageTextItem.length==0}}">
+				<image src="../../../assets/images/mine/imageText-placeholder.png"></image>
+				<!-- <image src="../../../assets/images/mine/bg-noDescription.png"></image>
+				<view class="textTitle">暂无资源描述</view> -->
+				<!-- <view class="text">点击创建，即可拥有自己的活动</view>
+				<view class="createBtn" bindtap="tapShow">立即创建</view> -->
+			</view>
+			<view class="step2-addbtn">
+				<view bindtap="toContent">
+					<image src="../../../assets/images/icon/icon-insert-text.png"></image>
+					插入文字
+				</view>
+				<view bindtap="addIamge">
+					<image src="../../../assets/images/icon/icon-insert-image.png"></image>
+					插入图片
+				</view>
+				<view bindtap="addVideo">
+					<image src="../../../assets/images/icon/icon-insert-image.png"></image>
+					插入视频
+				</view>
+			</view>
+			<view class="footer2 footer">
+				<button type="warn" class="fl" bindtap="prevstep">上一步</button>
+				<button type="primary" class="fr" style="background-color:#3073e3;" hover-class="button-hover" loading="{{loading}}" disabled="{{loading}}" bindtap="addResource">提交</button>
+			</view>
+		</view>
+	</view>
+</view>

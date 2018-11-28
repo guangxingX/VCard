@@ -1,0 +1,21 @@
+.wrap{background:#efeff4;height:100%;}
+.produceItem{border-bottom: 1rpx solid #e7e7e7;background:#fff;}
+.produceItemBox{/*margin-bottom:160rpx;*/padding-bottom:160rpx;}
+.line,.editBLock{display: inline-block;}
+.line{background: #3073e3;width: 8rpx;height: 36rpx;border-top-right-radius: 10rpx;border-bottom-right-radius: 10rpx;margin-right: 22rpx;padding-top: 10rpx;position: relative;top:10rpx;}
+.heder{padding: 30rpx 30rpx 30rpx 0;/*display:flex;align-items: center;*/}
+.title{font-size: 34rpx;box-sizing: border-box;}
+.editTitle{font-size: 26rpx;color: #3073e3;padding-right: 10rpx;}
+.editBLock{float: right;}
+/*内容部分*/
+.contentWrap{padding:0 30rpx;max-height: auto;position: relative;overflow:hidden;}
+.content-img{width: 100%;}
+.content-text-wrap{}
+.content-text{display:block;font-size: 28rpx;overflow: hidden;word-wrap:break-word;margin-bottom: 30rpx;}
+.autoStyle{max-height: auto !important;}
+.normalStyle{max-height: 530rpx !important;}
+
+.seeMore{width: 100%;height: 90rpx;color:#3073e3;font-size: 28rpx;text-align: center;line-height: 90rpx;
+}
+.footer{position:fixed;bottom:0;left:0;height:125rpx;background:#fff;width:100%;padding-top:30rpx;border-top: 1rpx solid #eeeeee;}
+.footer button{width:690rpx;height:89rpx;line-height:89rpx;margin:0 auto;font-size:36rpx;color:#fff;}

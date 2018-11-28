@@ -1,0 +1,89 @@
+<!--pages/supply/supplyDetails/supplyDetails.wxml-->
+<import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
+<import src="../../../templates/ccListBlock/ccListBlock.wxml" />
+<import src="../../../templates/messageListTemplate/messageListTemplate.wxml" />
+
+<view class="container">
+	<view class="supplyDetails-page">
+		<view class="infobox">
+			<view class="supplytitle font40 bold">
+				<text>{{supplydata.title}}</text>
+			</view>
+			<view class="append">
+				<view>{{supplydata.subjectName}}</view>
+				<view class="point"></view>
+				<view>{{supplydata.viewCount}}浏览</view>
+				<view class="point"></view>
+				<view>{{supplydata.createdTime}}</view>
+			</view>
+			<view class="content imageTextBlock font28">
+				<block wx:for="{{supplydata.content}}">
+					<view wx:if="{{isshowmore}}">
+						<view class="text" wx:if="{{item.text}}">{{item.text}}</view>
+						<image mode="widthFix" wx:if="{{item.image}}" src="{{item.image}}"></image>
+						<video mode="widthFix" wx:if="{{item.video}}" src="{{item.video}}"></video>
+					</view>
+					<view wx:else>
+						<view class="text" wx:if="{{item.text&&index<2}}">{{item.text}}</view>
+						<image mode="widthFix" wx:if="{{item.image&&index<2}}" src="{{item.image}}"></image>
+						<video mode="widthFix" wx:if="{{item.image&&index<2}}" src="{{item.video}}"></video>
+					</view>
+					<!-- <view wx:if="{{item.image}}" class="richImgWrap">
+						<image mode="widthFix" class="richImg" src="{{item.image}}"></image>
+					</view>
+					<view wx:if="{{item.text}}">
+						<text class="richText"> {{ item.text }} </text>
+					</view> -->
+				</block>
+			</view>
+			<view wx:if="{{showmore}}" class="showmore" bindtap="showmorefun">
+				{{isshowmore?'收起':'查看更多'}}
+			</view>
+		</view>
+		<view class="contactInfo font28" data-phone="{{supplydata.publisherMobile}}" bindtap="makeCall">
+			<view class="details-contactIcon-box">
+				<image class="details-contactIcon" src="../../../assets/images/icon/icon-ContactPeople.png"></image>{{supplydata.publisherName}}
+			</view>
+				<text class="phone" >{{supplydata.publisherMobile}}</text>
+				<image class="pnoneicon" src="../../../assets/images/icon/icon-phone-blueline.png" ></image>
+		</view>
+
+		<view class="contactcompany {{messageList.length ? '':'margin-b-200'}}" wx:if="{{supplydata.method==1}}">
+			<view class="title">发起公司</view>
+			<view class="companycard" >
+				<template is="enterpriseListcard" data="{{item:supplydata.launchCompany,iconList}}"></template>
+			</view>
+		</view>
+		<view class="contactcompany {{messageList.length ? '':'margin-b-200'}}" wx:if="{{supplydata.method==0}}">
+			<view class="title">发起商会</view>
+			<view class="companycard">
+				<template is="ccListBlock" data="{{item:supplydata.launchCompany,iconList}}"></template>
+			</view>
+		</view>
+		<view class="contactcompany {{messageList.length ? '':'margin-b-200'}}" wx:if="{{supplydata.method==2}}">
+			<view class="title">发起公司</view>
+			<view class="companycard" style="padding:30rpx;" >
+				{{supplydata.launchCompany}}
+			</view>
+		</view>
+
+		<!-- 新增的-只能查看我自己的留言 -->
+		<view class="messagebox contactcompany" wx:if="{{messageList.length}}">
+			<view class="header">
+				<view class="title">
+					留言  {{messageList.length}}
+				</view>
+			</view>
+			<view class="messagelist">
+				<block wx:for="{{messageList}}">
+					<template is="messageListTemplate" data="{{item,supply}}"></template>
+				</block>
+			</view>
+		</view>
+
+
+		<view class="detailsfooter font36 saveMessageBtnWrap">
+			<button type="primary" class="saveMessageBtn"  hover-class="button-hover" style="background-color:#3073e3;" loading="{{loading}}" disabled="{{loading}}" data-supplyId="supplyId" bindtap="toleaveMessage">留言</button>
+		</view>
+	</view>
+</view>

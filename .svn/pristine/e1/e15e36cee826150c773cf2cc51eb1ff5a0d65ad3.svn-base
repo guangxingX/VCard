@@ -1,0 +1,13 @@
+/* ccListBlock/ccListBlock.wxss */
+.ccListBlock{background:#fff;margin-bottom:20rpx;height:302rpx;}
+.ccListBlock-block1{padding:30rpx 0 20rpx 30rpx;border-bottom:1rpx solid #eeeeee;overflow:hidden;display:flex;
+align-items:center;}
+.ccListBlock-block1-image{width:84rpx;height:84rpx;border-radius:10rpx;margin-right:20rpx;float:left;}
+.ccListBlock-block1-image>image{width:84rpx;height:84rpx;border-radius:10rpx;}
+.ccListBlock-block1-text{width:580rpx;float:left;color:#888;}
+.ccListBlock-block1-title{margin-bottom:4rpx;white-space:nowrap; overflow:hidden;text-overflow:ellipsis;
+	max-width:100%;display:inline-block;color:#353535;}
+.ccListBlock-block2{padding:20rpx 30rpx;}
+.ccListBlock-block2-row>image{width:20rpx;height:20rpx;margin-right:10rpx;}
+.ccListBlock-block2-row{color:#888;line-height:40rpx;
+	white-space:nowrap; overflow:hidden;text-overflow:ellipsis;max-width:100%;}

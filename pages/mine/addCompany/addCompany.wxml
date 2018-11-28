@@ -1,0 +1,132 @@
+<view class="wrap">
+    <view class="header">
+      <view class="inputWrap">
+           <input class="input" type="text" bindfocus="onfocus" bindblur="onblur" auto-focus='true' bindinput="getInputContent" confirm-type="search" focus="{{focus}}" bindconfirm="beginSerch" placeholder="请输入公司名称" value="{{searchCompanykey}}"/>
+          <image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image>
+          <image wx:if="{{searchCompanykey}}" class="clearSearchIco" src="../../../assets/images/icon/icon-delete-gray.png" bindtap="clearSearch"></image>
+      </view>
+      <view class="cancelWrap">
+        <text class="cancel" bindtap="cancelSearch">取消</text>
+      </view>
+    </view>
+    <view  class="searchContent {{isFixed ?  '' : 'isPadding' }}" wx:if="{{searchstep1}}">
+      <block wx:for="{{addCompanyListHistory}}" wx:for-index="index">
+        <view class="item" bindtap="clickhistory" data-index="{{index}}">
+          <image class="itemIcon" src="../../../assets/images/icon/icon-search.png"></image>
+          <text> {{ item }} </text>
+        </view>
+      </block>
+      <!-- <view class="{{isFixed ? 'clearHistory' : 'clearHistoryfixed'}} {{hiddenSearchBtn ? 'hiddenBtn' :'nohiddenBtn'}}" bindtap="clearhistory"> -->
+         <view  class="{{isFocus ? 'clearHistoryfixed450' : 'clearHistoryfixed0'}} {{hiddenSearchBtn ? 'hiddenBtn' :'nohiddenBtn'}}" bindtap="clearhistory" style="bottom:{{bottom}}">
+        清空历史记录
+      </view>
+    </view>
+    <view class="renzhengWrap" wx:if="{{searchstep2}}">
+        <view class="searchMore">
+          <text class="moretext morenormal">没有找到想要的企业，试试</text>
+          <text class="moretext morecolor" bindtap="depthSearch"> 深度搜索 </text>
+        </view>
+        <view class="blockWrap" >
+          <block wx:for="{{rzCompanyList}}">
+            <view class="enterpriseListcard" data-index="{{index}}" bindtap="clickRzSelect">
+              <!-- <view class="enterprisecard-image-box">
+                <image class="enterprisecard-image" mode="widthFix" data-index="{{index}}" bindtap="clickRzSelect" src="{{item.companyTemplate}}"></image>
+              </view> -->
+              <image class="choiceIco" src="{{item.selectIco?'../../../assets/images/icon/icon-select.png':'../../../assets/images/icon/icon-no-select.png'}}" ></image>
+              <view class="enterprisecard-block1">
+                <view class="enterprisecard-image-box">
+                    <image mode="widthFix" class="enterprisecard-image" src="{{item.companyTemplate?item.companyTemplate:'http://oojjuzes7.bkt.clouddn.com/21.jpg'}}"></image>
+                </view>
+                <view class="enterprisecard-block1-content">
+                    <view class="enterprisecard-logo">
+                        <image wx:if="{{item.logo}}" src="{{item.logo}}"></image>
+                        <view wx:else class="company-logo-text">{{item.textlogo}}</view>
+                    </view>
+                    <view class="enterprisecard-block1-text">
+                        <view class="enterprisecard-block1-title ">
+                            <text class="bold {{item.fontsize}}">{{item.name}}</text>
+                            <!-- <view class="enterprisecard-authentication font22" wx:if="{{item.isAuthentication}}">
+                              <image src="{{iconList.authentication}}"></image>
+                              <text>商会认证</text>
+                            </view> -->
+                        </view>
+                        <view class="enterprisecard-tag font22">
+                            <block wx:for="{{item.coTag}}" wx:for-item="item2">
+                                <view class="enterprisecard-tag-text tag-yellow" wx:if="{{item2.coTagType==1}}">
+                                    <text>{{item2.coTagName}}</text>
+                                </view>
+                                <view class="enterprisecard-tag-text tag-green" wx:elif="{{item2.coTagType==2}}">
+                                   <text>{{item2.coTagName}}</text>
+                                </view>
+                                <view class="enterprisecard-tag-text" wx:else>
+                                   <text>{{item2.coTagName}}</text>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+              </view>
+              <view class="enterprisecard-block2 font26">
+                <view class="enterprisecard-block2-person">
+                    <view class="fl" wx:if="{{item.legalPerson}}"><text>法人代表：{{item.legalPerson}}</text></view>
+                    <view class="enterprisecard-authentication font22 fr" wx:if="{{item.isAuthentication}}">
+                      <image src="{{iconList.authentication}}"></image>
+                      <text>商会认证</text>
+                    </view>
+                </view>
+                <!-- <view><text>法人代表：{{item.legalPerson}}</text></view> -->
+                <view class="enterprisecard-block2-date">
+                  <view class="fl"><text>成立日期：{{item.setUpTime}}</text></view>
+                  <view class="fr addressWrap" >
+                    <image class="enterprisecard-block2-mapicon" src="{{iconList.position}}"></image>
+                    <text  class="enterprisecard-block2-address">{{item.address}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="footer" wx:if="{{isShowFooter}}">
+          <button type="primary" hover-class="button-hover" bindtap="affiliatedCompany" >确认关联公司</button>
+        </view>
+    </view>
+    <view class="qccWrap" wx:if="{{searchstep3}}">
+        <view class="qccblockWrap">
+          <block wx:for="{{depthCompanyList.result}}">
+            <view class="enterpriseListcard" data-index="{{index}}" bindtap="clickQccSelect">
+              <image class="choiceIco" src="{{item.selectIco?'../../../assets/images/icon/icon-qcc-selected.png':'../../../assets/images/icon/icon-qcc-noselect.png'}}" ></image>
+              <view class="enterprisecard-block1">
+                <view class="enterprisecard-logo">
+                      <image wx:if="{{item.logo}}" src="{{item.logo}}"></image>
+                      <view wx:else class="company-logo-text">{{item.textlogo}}</view>
+                  </view>
+                  <view class="enterprisecard-block1-text">
+                    <view class="enterprisecard-block1-title">
+                      <text>{{item.organization_name}}</text>
+                    </view>
+                  </view>
+              </view>
+              <view class="enterprisecard-block2 font26">
+                <view><text>法人代表：{{item.operator_name}}</text></view>
+                <view class="enterprisecard-block2-date">
+                  <!-- <view><text>成立日期：{{item.establish_date}}</text></view> -->
+                  <view><text>成立日期：{{item.simplifyTime}}</text></view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="footer" wx:if="{{isShowDeepFooter}}">
+          <button type="primary" hover-class="button-hover" bindtap="affiliatedCompanyQcc" >确认关联公司</button>
+        </view>
+    </view>
+</view>
+
+<view class="noContent" wx:if="{{!rzCompanyList.length && searchstep2}}">
+  <view>
+    <image class="noImage" src="../../../assets/images/mine/no-searchresult.png" ></image>
+  </view>
+  <view class="noTextWrap">
+    <text class="noText"> 未搜索到数据</text>
+  </view>
+</view>

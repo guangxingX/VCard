@@ -1,0 +1,39 @@
+page{background:#efeef3;}
+.commerceDetails-page{flex:1;width:100%;}
+.commerce-header{position:relative;}
+.commerce-header .commerce-headerbg{width:100%;height:184rpx;vertical-align: middle;}
+.commerce-header .commerce-headerlogo{width:126rpx;height:126rpx;border-radius:10rpx;border:1rpx solid #eee;
+	position:absolute;top:47rpx;left:312rpx;}
+.details-content{text-align:center;background:#fff;padding-bottom:18rpx;}
+.details-content .title{}
+.details-content .title>image{width:20rpx;height:20rpx;margin-right:10rpx;}
+.details-content .service{color:#888;border:2rpx solid #dbdbdb;display:inline-block;
+	margin-top:26rpx;border-radius:10rpx;padding:6rpx 20rpx;margin-bottom:40rpx;}
+.details-content .row image{width:24rpx;height:24rpx;margin-left:10rpx;}
+.details-content .row{line-height:60rpx;}
+.tabblock{height:86rpx;line-height:86rpx;text-align:center;display:flex;
+	background:#fff;border-top:2rpx solid #eee;box-shadow: 0rpx 6rpx 10rpx #ccc;}
+.tabblock view{flex:1;}
+.tabblock text{display:inline-block;height:74rpx;font-weight: 900;}
+/*.tabblock .active text{color:#3073e3;border-bottom:12rpx solid #3073e3;}*/
+.tabblock .active {color:#3073e3;border-bottom:4rpx solid #3073e3;}
+.introbox{border-bottom:240rpx solid #efeef3;background:#fff;}
+.introbox .introtext{padding:50rpx 30rpx;}
+.introbox .introtext text{text-indent:50rpx;}
+.introbox .showmore{height:94rpx;line-height:94rpx;color:#3073e3;border-top:1rpx solid #eeeeee;
+	text-align:center;margin-bottom:240rpx;}
+.serverbox{background:#fff;padding:37rpx 0;margin-bottom:150rpx;}
+
+.footer{position:fixed;bottom:0;left:0;height:120rpx;background:#fff;width:100%;padding-top:30rpx;border-top: 1rpx solid #eee;z-index: 99999;}
+
+.footer button{width:690rpx;height:89rpx;line-height:89rpx;margin:0 auto;color:#fff;}
+@import "../../../templates/enterpriseListcard/enterpriseListcard.wxss";
+.tempTextLogo {font-weight:bold;text-align:center;background:#3073e3;width:126rpx;height:126rpx;border-radius:10rpx;border:1rpx solid #eee;position:absolute;top:47rpx;left:312rpx;line-height:126rpx;font-size:28rpx;}
+
+.nopadding{padding:0 30rpx !important;}
+
+.noContent{text-align: center; position: absolute;left:50%;top:63%;margin-left: -128rpx;margin-top: -109rpx;}
+.noImage{width: 256rpx;height: 218rpx;}
+.noTextWrap{padding-top: 15rpx;}
+.noText{font-size: 34rpx;color:#888888;}
+

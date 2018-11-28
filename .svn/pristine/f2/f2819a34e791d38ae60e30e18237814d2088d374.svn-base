@@ -1,0 +1,38 @@
+<!--templates/activityListTemp.wxml-->
+<template name="activityListTemp" >
+	<view class="activityListTemp" hover-class="commonhoverclass">
+		<view class="activityListTemp-block1" >
+			<image class="activityListTemp-block1-logo " bindtap="getActivityDetails" data-status="{{item.activityState}}" data-index="{{index}}" data-activityid="{{item.activityId}}" data-currenttab="{{currenttab}}" src="{{item.image}}" mode="aspectFill"></image>
+			<view class="activityListTemp-block1-content">
+				<view class="activityListTemp-block1-content-title font34 bold" bindtap="getActivityDetails" data-index="{{index}}" data-activityid="{{item.activityId}}" data-currenttab="{{currenttab}}"  data-status="{{item.activityState}}">{{item.title}}</view>
+				<view class="activityListTemp-block1-content-footer-address" bindtap="goAddressDes" data-address="{{item.address}}">
+                  <text> {{ item.address }} </text>
+                  <image class="activityListTemp-block1-content-footer-address-smallMap" src="{{iconList.mapSmall}}"></image>
+                </view>
+	            <view class="activityListTemp-block1-content-footer font26">
+	              <view class="fl">
+	                <text>已报名：{{ item.applyPeople }}人 </text>
+	              </view>
+	              <view class="fr">
+	              	<view class="activityListTemp-block1-content-date font26" bindtap="getActivityDetails"  data-index="{{index}}" data-activityid="{{item.activityId}}" data-currenttab="{{currenttab}}" data-status="{{item.activityState}}">
+						<!-- <image class="activityListTemp-icon" src="{{iconList.timeicon}}"></image> -->
+		              <text> {{ item.startTime }} </text>
+		              <!-- <text> {{ item.endTime }} </text> -->
+		            </view>
+
+	              </view>
+	            </view>
+			</view>
+		</view>
+		<view class="activityListTemp-block2">
+			<view class="fl {{item.isAuthentication?'activityListTemp-block2-companyname1':'activityListTemp-block2-companyname2'}}" >
+				{{item.companyName}}
+			</view>
+			<view class="activityListTemp-block2-authentication font22 fl" wx:if="{{item.isAuthentication==1}}">
+	          <image src="{{iconList.authentication}}"></image>
+	          <text>商会认证</text>
+	        </view>
+	        <view class="activityListTemp-block2-status fr {{item.activityState=='进行中'?'greentext':''}} {{item.activityState=='即将开始'?'blue':''}}">{{item.activityState}}</view>
+		</view>
+	</view>
+</template>

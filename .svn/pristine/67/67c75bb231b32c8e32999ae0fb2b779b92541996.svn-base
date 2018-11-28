@@ -1,0 +1,31 @@
+<!--pages/mine/myActive/myActive.wxml-->
+<import src="../../../templates/activityListTemp/activityListTemp.wxml" />
+<view class="container" style="background:{{isShowNoActive?'#fff':'#efeef3'}};">
+	<view class="myActive-page">
+		<view class="myActive-header">
+			<view bindtap="changetab" data-tab="1" class="{{currenttab==1?'active':''}}"><text>我组织的活动</text></view>
+			<view bindtap="changetab" data-tab="2" class="{{currenttab==2?'active':''}}"><text>我参加的活动</text></view>
+		</view>
+		<view class="activebox1" wx:if="{{currenttab==1}}">
+			<block wx:for="{{activityList1}}" wx:for-index="index">
+				<template is="activityListTemp" data="{{item,iconList,index,currenttab}}"></template>
+			</block>
+		</view>
+		<view class="activebox2" wx:if="{{currenttab==2}}">
+			<block wx:for="{{activityList2}}">
+				<template is="activityListTemp" data="{{item,iconList,index}}"></template>
+			</block>
+		</view>
+		<view class="footer">
+			<button type="primary" hover-class="button-hover" bindtap="toAddActive">创建活动</button>
+		</view>
+	</view>
+</view>
+<view class="noContent" wx:if="{{isShowNoActive}}">
+	<view>
+		<image class="noImage" src="../../../assets/images/mine/bg-noDescription.png" ></image>
+	</view>
+	<view class="noTextWrap">
+		<text class="noText"> 暂无活动 </text>
+	</view>
+</view>

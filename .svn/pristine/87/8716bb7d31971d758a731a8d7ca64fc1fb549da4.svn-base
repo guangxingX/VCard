@@ -1,0 +1,52 @@
+<view class="wrap">
+  <view class="header font28">
+    <text class="companyName" wx:if="{{companyName}}" > {{companyName}}</text>
+    <view class="renzheng" wx:if="{{isuthentication==1}}">
+      <image class="shanghuiIco" src="../../../assets/images/icon/icon-authentication-yellow.png" ></image>
+     <text class="renzheng-t font22"> 商会认证 </text>
+    </view>
+  </view>
+
+  <view class="content">
+    <block wx:for="{{employeeList}}">
+    <!-- mycardid -->
+    <!-- <navigator url="../../mine/cardDetails/cardDetails?mycardid={{item.id}}"> -->
+    <!-- <navigator url="../../mine/cardDetails/cardDetails?mycardid={{item.id}}&from={{from}}"> -->
+      <!-- <view class="infoitem" hover-class="commonhoverclass"> -->
+      <!-- 不要点击效果了，点到电话哪里不会跳转，但是有点击态了 -->
+      <view class="infoitem">
+          <view class="headerIco" bindtap="goCardDetails" data-mycardid="{{item.id}}" data-from="{{from}}">
+            <image  src="{{item.avatar ? item.avatar : '../../../assets/images/icon/photobg.png'}}"></image>
+          </view>
+          <view class="info">
+            <view class="info-t" bindtap="goCardDetails" data-mycardid="{{item.id}}" data-from="{{from}}">
+             <text class="name font34">  {{item.name}} </text>
+              <!-- <image class="icon20 dunpaiIcon" src="../../../assets/images/icon/duipa.png" ></image> -->
+             <text class="subtitle font26">  {{item.position}} </text>
+            </view>
+            <view class="info-b font26 clear">
+              <view class="phoneWrap">
+                <image class="icon20 phoneIcon" src="../../../assets/images/icon/icon-phone-blue.png" ></image>
+                <text class="phone font26" data-phone="{{item.mobile}}" bindtap='callMobile'>  {{item.mobile}}</text>
+              </view>
+              <view class="emailWrap">
+                <image class="icon20 phoneIcon" src="../../../assets/images/icon/icon-email-durk.png" ></image>
+                <text class="emailText">{{item.email}} </text>
+              </view>
+            </view>
+          </view>
+      </view>
+    <!-- </navigator> -->
+    </block>
+
+    <view class="noContent" wx:if="{{!employeeList.length}}">
+      <view>
+        <image class="noImage" src="../../../assets/images/mine/imageText-placeholder-image.png" ></image>
+      </view>
+      <view class="noTextWrap">
+        <text class="noText"> 暂无员工 </text>
+      </view>
+    </view>
+  </view>
+
+</view>

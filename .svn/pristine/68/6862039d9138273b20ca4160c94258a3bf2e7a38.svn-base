@@ -1,0 +1,56 @@
+<!--pages/mine/myCard/myCard.wxml-->
+<import src="../../../templates/myBusinessCardTemp/myBusinessCardTemp.wxml" />
+<view class="container">
+	<view class="mycard-page">
+		<block wx:for="{{businessCard}}">
+			<template is="myBusinessCardTemp" data="{{item,iconList,pageFrom,index,userAvatar}}"></template>
+			<!-- <view class="tag-tag" bindtap="checkedfun" data-index="{{index}}">
+	            <image class="cardbg" src="{{item.bgUrl}}"></image>
+	            <view class="section-1">
+	              <view class="avatar">
+	                  <image src="{{item.avatar}}"></image>
+	              </view>
+	              <view class="detail">
+	                <view class="name flex1">
+	                    <text>{{item.name}}</text>
+	                    <image wx:if="{{item.isOriginal}}" src="../../../assets/images/index/AuthenticationIcon.png"></image>
+	                </view>
+	                <view class="comp flex1">
+	                    <text> {{item.position}}</text>
+	                </view>
+	              </view>
+	            </view>
+	            <view class="section-2">
+	               <view class="section-2-detail">
+	                  <view class="comp flex1 companyName">
+	                    <text class="text"> {{item.companyName}}</text>
+	                    <view class="authentication" wx:if="{{item.isAuthentication}}">
+	                      <image src="../../../assets/images/icon/icon-authentication-yellow.png"></image>
+	                      <text>商会认证</text>
+	                    </view>
+	                  </view>
+	                 <view class="comp flex1">
+	                      <image src="../../../assets/images/icon/icon-phone.png"></image>  <text> {{item.mobile}}</text>
+	                  </view>
+	                  <view class="comp flex1">
+	                      <image src="../../../assets/images/icon/icon-email.png"></image>  <text> {{item.email}}</text>
+	                  </view>
+	                  <view class="comp flex1">
+	                      <image class="card-icon-address" src="../../../assets/images/icon/icon-address.png"></image>  <text> {{item.address}}</text>
+	                  </view>
+	                </view>
+	            </view>
+          </view> -->
+		</block>
+	</view>
+</view>
+
+<view class="noContent" wx:if="{{!businessCard.length}}" bindtap="addBusinessCard">
+		<view>
+			<image class="noImage" src="../../../assets/images/index/add_card.png" ></image>
+		</view>
+		<view class="noTextWrap">
+			<view class="noText"> 你还没有名片 </view>
+			<view class="noText"> 赶快来创建一张自己的专属名片吧！ </view>
+		</view>
+	</view>

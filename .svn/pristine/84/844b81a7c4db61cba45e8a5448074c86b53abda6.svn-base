@@ -1,0 +1,83 @@
+<!--pages/activity/activityDetails/activityDetails.wxml-->
+<import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
+<import src="../../../templates/ccListBlock/ccListBlock.wxml" />
+
+<view class="container">
+	<view class="activityDetails-page">
+		<view class="logo">
+			<image mode="widthFix" src="{{activityInfo.image}}"></image>
+		</view>
+		<view class="infobox">
+			<view class="infocontent">
+				<view class="title font40 bold">{{activityInfo.title}}</view>
+				<view class="status">
+					<text class="activeState {{activityState=='进行中'?'greentext':''}} {{activityState=='即将开始'?'blue':''}}">{{activityState}}</text>
+					<text>已报名：{{activityInfo.applyPeople}}人</text>
+				</view>
+				<view class="imageTextBlock">
+					<block wx:for="{{activityInfo.content}}">
+						<view wx:if="{{isshowmore}}">
+							<view class="text" wx:if="{{item.text}}">{{item.text}}</view>
+							<image mode="widthFix" wx:if="{{item.image}}" src="{{item.image}}"></image>
+						</view>
+						<view wx:else>
+							<view class="text" wx:if="{{item.text&&index<2}}">{{item.text}}</view>
+							<image mode="widthFix" wx:if="{{item.image&&index<2}}" src="{{item.image}}"></image>
+						</view>
+					</block>
+				</view>
+				<view wx:if="{{showmore}}" class="showmore font28" bindtap="showmorefun">
+					{{isshowmore?'收起':'查看更多'}}
+				</view>
+			</view>
+		</view>
+		<view class="contactbox font28">
+			<view class="row">
+				<image class="icon-clock" src="../../../assets/images/icon/icon-new-clock.png"></image>
+				<view>{{activityInfo.startTime}} - {{activityInfo.endTime}}</view>
+			</view>
+			<view class="row">
+				<image class="icon-map" src="../../../assets/images/icon/icon-new-address.png"></image>
+				<view bindtap="toaddressMaps" data-address="{{activityInfo.address}}">{{activityInfo.address}}</view>
+			</view>
+			<view class="row">
+				<view class="details-contactIcon-box">
+					<image class="details-contactIcon" src="../../../assets/images/icon/icon-ContactPeople.png"></image>{{activityInfo.contactName}}
+				</view>
+				<view class="fr">
+						<image class="icon-phone" src="../../../assets/images/icon/icon-phone-blue.png"></image>
+						<text class="blue" data-phone="{{activityInfo.contactMobile}}" bindtap="makeCall">{{activityInfo.contactMobile}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="contactcompany" wx:if="{{activityInfo.method==1}}">
+			<view class="title">发起公司</view>
+			<view class="companycard" >
+				<template is="enterpriseListcard" data="{{item:activityCompanyInfo,iconList}}"></template>
+			</view>
+		</view>
+		<view class="contactcompany" wx:if="{{activityInfo.method==0}}">
+			<view class="title">发起商会</view>
+			<view class="companycard">
+				<template is="ccListBlock" data="{{item:activityCompanyInfo,iconList}}"></template>
+			</view>
+		</view>
+		<view class="contactcompany" wx:if="{{activityInfo.method==2}}">
+			<view class="title">发起公司</view>
+			<view class="companycard" wx:if="{{activityInfo.method==2}}">
+				{{activityCompanyInfo}}
+			</view>
+		</view>
+		<view class="footer font36">
+			<!-- <button class="{{isOver? 'disabledStyle':''}}" type="primary" hover-class="button-hover" style="background-color:#3073e3;" loading="{{loading}}" disabled="{{loading}}" bindtap="{{activitydetails.activitystate=='已结束'?'':'toEnter'}}" disabled="{{isOver}}">立即报名</button> -->
+
+
+			<!-- 原来 -->
+			<!-- <button class="{{activityInfo.activitystate=='已结束' ? 'disabledStyle':''}}" type="primary" style="background-color:#3073e3;"  hover-class="button-hover"  loading="{{loading}}" disabled="{{loading}}" bindtap="{{activityInfo.activitystate=='已结束'?'':'toEnter'}}" >{{activityInfo.activitystate=='已结束' ? '活动已结束':'立即报名'}} </button> -->
+
+
+
+			<button class="{{activityState=='已结束' ? 'disabledStyle':''}}" type="primary" style="background-color:activityState=='已结束'?'':'#3073e3';"  hover-class="{{activityState=='已结束' ? '':'button-hover'}}"  loading="{{loading}}" disabled="{{loading}}" bindtap="{{activityState =='已结束' ? '':'toEnter'}}" >{{activityState=='已结束' ? '活动已结束':'立即报名'}}</button>
+		</view>
+	</view>
+</view>

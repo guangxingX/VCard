@@ -1,0 +1,4 @@
+<!--component/image-text/imageTextComponet.wxml-->
+<text>component/image-text/imageTextComponet.wxml</text>
+<view>{{myProperty}}</view>
+<w-input-bar/>

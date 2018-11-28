@@ -1,0 +1,27 @@
+/* templates/myenterpriseListcard/myenterpriseListcard.wxss */
+.myenterpriseListcard-scroll-block{background:#5e5857;width:100%;display:inline-block;
+	position:relative;border-radius:10rpx;}
+.myenterpriseListcard-myCompanyBg{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:10rpx;}
+.myenterpriseListcard-companyLogo{width:84rpx;height:84rpx;margin-left: 20rpx;border:1rpx solid #eee;border-radius: 10rpx;overflow:hidden;}
+.myenterpriseListcard-companyLogo image{width:84rpx;height:84rpx;}
+.myenterpriseListcard-block-header image{height:20rpx;width:24rpx;position:relative;top:2rpx;}
+.myenterpriseListcard-block-header{display: flex;flex-wrap: nowrap;justify-content:space-between;font-size:22rpx;margin-bottom:28rpx;
+	padding:16rpx 10rpx 0 10rpx;position: relative;z-index: 10;padding-left: 30rpx;}
+.myenterpriseListcard-block-header view:nth-child(1) text{color:#f19942;margin-left:10rpx;}
+.myenterpriseListcard-block-header view:nth-child(2) text{color:#fff;margin-right:10rpx;}
+.myenterpriseListcard-companyShareWrap-edit{padding:0 20rpx;float:right;}
+.myenterpriseListcard-block-1{display:flex;align-content:space-between;padding:0 10rpx 26rpx;position:relative;z-index:10;
+	border-bottom:1rpx solid rgba(255, 255, 255, 0.3);flex-direction:row;align-items:center;}
+.myenterpriseListcard-block-1-detail{padding-left:14rpx;flex:3;width:480rpx;position:relative;top:-6rpx;}
+.myenterpriseListcard-block-1-detail-name{margin-bottom:4rpx;color:#fff;
+/*white-space:nowrap; overflow:hidden;	text-overflow:ellipsis;max-width: 520rpx;*/}
+.myenterpriseListcard-companytags{font-size:22rpx;color:#fff;height:40rpx;}
+.myenterpriseListcard-companytags>view{border:1rpx solid #cccccc;display:inline-block;margin-right:10rpx;
+	padding:2rpx 6rpx;border-radius:6rpx;}
+.myenterpriseListcard-block-2{display:flex;justify-content:space-around;text-align:center;color:#fff;font-size:22rpx;
+	position:relative;z-index:10;padding:14rpx 0;}
+.myenterpriseListcard-block-2-span{flex-grow: 1;width:33.33%;position:relative;}
+.myenterpriseListcard-block-2-text{/*font-size:26rpx;*/white-space:nowrap; overflow:hidden;line-height:50rpx;text-overflow:ellipsis;max-width:80%;margin:0 auto;}
+.myenterpriseListcard-block-2 .myenterpriseListcard-line-view{height:30rpx;width:1rpx;background-color:rgba(255,255,255,0.3);position:absolute;top:20rpx;right:0;}
+
+.myenterpriseListcard-company-logo-text{width:84rpx;height:84rpx;display:inline-block;border-radius:10rpx;background:#3073e3;color:#fff;font-weight:bold;text-align:center;line-height:84rpx;font-size:28rpx;}

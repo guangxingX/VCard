@@ -1,0 +1,24 @@
+.desWrap{padding:0 30rpx;}
+.bigTitle{font-size: 40rpx;padding-bottom: 35rpx;padding-top: 15rpx;}
+.desWrapText{padding-bottom: 30rpx;font-size: 28rpx;color:#666666;word-break: break-all;line-height: 40rpx;}
+.desWrapImg{padding-bottom: 30rpx;text-align: center;}
+.desWrapImg image{width: 100%;}
+
+/*产品预览*/
+.companyProduct .productBody{}
+
+.productTabItem{display:inline-block;width: 50%;height:72rpx;line-height: 72rpx;background:#eaf1fc;text-align: center;font-size: 28rpx;font-weight: border;}
+.productTabItem:first-child{border-top-left-radius:20rpx;border-bottom-left-radius:20rpx;}
+.productTabItem:last-child{border-top-right-radius:20rpx;border-bottom-right-radius:20rpx;}
+.productTabItem.active{background:#3073e3;color:#fff;}
+.productBody-tabItem{width: 100%;}
+.tab-culture{}
+.tab-product{}
+.linkimg{padding-left: 37rpx;}
+.link{color:#3073e3;font-size: 28rpx;padding-left: 10rpx;}
+.productItemWrap{border-bottom: 20rpx solid #efeef3;padding:0 30rpx;}
+.productContent{/*padding:0 30rpx;*/}
+.productText{font-size: 28rpx;color:#666666;padding-bottom: 30rpx;}
+.productImg{padding-bottom: 30rpx;}
+.productImg image{width: 100%;}
+.companyInfo{height:90rpx;line-height: 90rpx;}

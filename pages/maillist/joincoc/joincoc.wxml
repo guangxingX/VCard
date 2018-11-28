@@ -1,0 +1,23 @@
+<!--pages/maillist/joincoc/joincoc.wxml-->
+<view class="container">
+	<view class="joincoc-page">
+		<view class="joinheader">
+			<image src="../../../assets/images/maillist/joincoc-header.png"></image>
+		</view>
+		<view class="cocContent">
+			<view class="title font36">{{name}}</view>
+			<view class="text">加入商会，即可共享商会资源，享受发布需求、发布活动、寻求资源、查看企业详细联系方式等会员服务，还等什么呢？快来加入我们吧！</view>
+			<view class="title">联系方式</view>
+			<view class="row">
+			<!-- bindtap="{{mobile ? 'makeCall' :''}}" -->
+				<text class="phone" data-phone="{{mobile}}" bindtap="{{mobile ? 'makeCall' :''}}">{{mobile?mobile:'暂无'}}</text><image src="../../../assets/images/icon/icon-photo-blue.png" mode="widthFix"></image>
+			</view>
+			<view class="row">
+				<text>{{email?email:'暂无'}}</text>
+			</view>
+			<view class="row" bindtap="{{address ? 'toaddressMaps':''}}" data-address="{{address}}">
+				<text>{{address?address:'暂无'}}</text><image mode="widthFix" src="../../../assets/images/icon/icon-map.png"></image>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,26 @@
+<import src="../../../templates/whoSignupMyActiveTemp/whoSignupMyActiveTemp.wxml" />
+
+<view class="contactcompany">
+	<navigator class="title font28" url="../acitvitySignUpList/acitvitySignUpList?activityId={{activityId}}">
+		<view class="fl">报名企业{{joinCompany}}家，报名人数{{joinPeople}}人</view>
+	</navigator>
+	<view class="contactbox">
+		<block wx:for="{{companyList}}">
+			<!-- <view class="contactli">
+				<view class="companyname">
+					<view></view>
+					{{item.companyName}}
+				</view>
+				<view class="contacttext">
+					<view class="fl">联系人：</view>
+					<view class="fl contacttext-phone">
+						<view>{{item.contactPersonA}}<text>{{item.mobileA}}</text></view>
+						<view>{{item.contactPersonB}}<text>{{item.mobileB}}</text></view>
+					</view>
+				</view>
+			</view> -->
+			<template is="whoSignupMyActiveTemp" data="{{item,iconList,pageFrom,userAvatar}}"></template>
+
+		</block>
+	</view>
+</view>

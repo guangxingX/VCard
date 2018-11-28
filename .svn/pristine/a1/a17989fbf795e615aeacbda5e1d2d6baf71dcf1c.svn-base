@@ -1,0 +1,13 @@
+/* pages/activity/activity.wxss */
+.activity-page{flex:1;width:100%;}
+.header{height:86rpx;padding:0 16rpx;background:#3073e3;color:#fff;display:flex;align-items: center;justify-content:space-between;}
+.header input{width:85%;box-sizing:border-box;height:56rpx;border-radius:10rpx;background:#fff;
+	color:#353535;padding-left:54rpx;}
+.header text{position:relative;top:9rpx;}
+.searchIco{width: 25rpx;height: 25rpx;position: absolute;left:34rpx;top:31rpx;}
+.activityListTemp-icon{position:relative;top:3rpx;}
+@import "../../../templates/activityListTemp/activityListTemp.wxss";
+
+.messageTip{width:15%;text-align:center;position: relative;}
+.messageTip image{width:40rpx;height:44rpx;}
+.isRead{width:14rpx;height:14rpx;background:red;border-radius:50%;position:absolute;right:35rpx;top:0rpx;}

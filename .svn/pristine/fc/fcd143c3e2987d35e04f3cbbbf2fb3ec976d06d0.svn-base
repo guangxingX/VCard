@@ -1,0 +1,10 @@
+/* pages/mine/selectRangeTime/selectRangeTime.wxss */
+.details{background:#fff;padding-left:5%;margin-top:20rpx;}
+.details .row{border-bottom:2rpx solid #e5e5e5;padding:30rpx 0;padding-right:5%;font-size:28rpx;color:#353535;}
+.details .row .placeholder{color:#999;}
+.details .row input{float:right;width:500rpx;position:relative;top:-6rpx;text-align:right;}
+.details .row .text{float:right;}
+.details .row .text image{width:16rpx;height:23rpx;margin-left:10rpx;}
+.footer{padding:36rpx 30rpx 136rpx;}
+.footer button{background:#3073e3;color:#fff;}
+.footer .button-hover{background:#3073e3;}

@@ -1,0 +1,41 @@
+<template name="aboutEditCompanyInfo">
+  <view class="wrap">
+
+    <view class="content">
+
+       <block wx:for="{{editCompanyInfoLsit}}" wx:for-item="richItem" >
+
+          <view class="richImgWrap richWrap" wx:if="{{richItem.image}}">
+              <image class="delImg " src="../../../assets/images/icon/icon-delete.png"></image>
+              <image class="movieImg " src="../../../assets/images/icon/icon-movie.png"></image>
+
+               <image  class="content-img" src="{{richItem.image}}"></image>
+          </view>
+           <view class="richTxtWrap richWrap" wx:if="richItem.text">
+              <image class="delImg " src="../../../assets/images/icon/icon-delete.png"></image>
+              <image class="movieImg " src="../../../assets/images/icon/icon-movie.png"></image>
+
+              <text class="contentText"> {{ richItem.text }} </text>
+           </view>
+        </block>
+    </view>
+    <!-- footer -->
+    <view class="footer">
+      <view class="footer-top">
+        <view class="footer-block footer-block-1" bindtap="insertText">
+          <image class="block-img" src="../../../assets/images/icon/icon-insert-text.png"></image>
+          <text  class="block-text" > 插入文字</text>
+        </view>
+        <view class="footer-block footer-block-1" bindtap="insertImage">
+          <image class="block-img"  src="../../../assets/images/icon/icon-insert-image.png"></image>
+          <text class="block-text" > 插入图片</text>
+        </view >
+        <view class="line"></view>
+      </view>
+        <view class="footer-b">
+            <button class="delete" type="default" size="default" bindtap="deleEditCompanyInfo">删除</button>
+            <button  class="save" type="default" hover-class="button-hover" size="default">保存</button>
+        </view>
+    </view>
+  </view>
+</template>

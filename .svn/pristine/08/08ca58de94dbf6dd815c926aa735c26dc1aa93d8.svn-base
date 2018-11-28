@@ -1,0 +1,25 @@
+<!--pages/commenPage/searchPage/searchPage.wxml-->
+<view class="wrap">
+	<view class="header">
+        <view class="inputWrap">
+           <input class="input font26" placeholderClass="placeholderClass" type="text" bindfocus="onfocus" bindblur="onblur" bindinput="getInputContent" confirm-type="search" focus="{{focus}}" bindconfirm="beginSerch" placeholder="请输入关键字"  value="{{searchkey}}"/>
+          <image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image>
+          <image wx:if="{{searchkey}}" class="clearSearchIco" src="../../../assets/images/icon/icon-delete-gray.png" bindtap="clearSearch"></image>
+        </view>
+        <view class="cancelWrap">
+          <text class="cancel" bindtap="cancelSearch">取消</text>
+        </view>
+    </view>
+	<view  class="searchContent {{isFixed ?  '' : 'isPadding' }}">
+      <block wx:for="{{historyDataList}}" wx:for-index="index" >
+        <view class="item" bindtap="{{historyclick?'clickhistory':''}}" data-index="{{index}}">
+          <image class="itemIcon" src="../../../assets/images/icon/icon-search.png"></image>
+          <text> {{ item }} </text>
+        </view>
+      </block>
+      <!-- <view bindtap="clearhistory" class="{{isFixed ? 'clearHistory' : 'clearHistoryfixed'}} {{hiddenSearchBtn ? 'hidden' :'show'}}"> -->
+      <view bindtap="clearhistory" style="bottom:{{bottom}}" class="{{isFocus ? 'clearHistoryfixed450' : 'clearHistoryfixed0'}} {{hiddenSearchBtn ? 'hidden' :'show'}}">
+        清空历史记录
+      </view>
+    </view>
+</view>

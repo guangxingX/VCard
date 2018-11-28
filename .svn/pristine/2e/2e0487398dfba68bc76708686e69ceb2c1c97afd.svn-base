@@ -1,0 +1,18 @@
+/* pages/commenPage/searchPage/searchPage.wxss */
+.wrap{width: 100%;padding-top: 86rpx;}
+.header{width: 100%;height:86rpx;box-sizing: border-box;background:#3073e3;font-size:28rpx;color:#fff;position:fixed ;top:0;z-index: 9999;display:flex;align-items: center;}
+.header .cancel{/* position:relative;top:9rpx;left:-2rpx;*/}
+.inputWrap{width: 85%;position:relative;padding-left: 30rpx;box-sizing: border-box;}
+.cancelWrap{width: 15%;float: right;text-align: center;line-height: 56rpx;}
+.input{width:100%;height:56rpx;border-radius:10rpx;background:#fff;margin-right:30rpx;padding: 0 50rpx 0 50rpx;box-sizing: border-box;color:#000;padding-left:50rpx;}
+.searchIco{width: 25rpx;height: 25rpx;position: absolute;left:44rpx;top:17rpx;}
+.clearSearchIco{width: 25rpx;height: 25rpx;position: absolute;right:18rpx;top:18rpx;z-index:100;}
+.searchContent{/*padding-left: 30rpx;*/}
+.isPadding{padding-bottom: 180rpx;}
+.item{display: flex;align-items: center;height: 86rpx;font-size: 28rpx;padding-left: 30rpx;border-bottom: 1rpx solid #e5e5e5;}
+.itemIcon{width: 25rpx;height: 25rpx;margin-right: 20rpx;}
+.clearHistory{height: 130rpx;line-height: 130rpx;font-size: 28rpx;color:#3073e3;text-align: center;}
+.clearHistoryfixed{width: 100%;height: 130rpx;line-height: 130rpx;font-size: 28rpx;color:#3073e3;text-align: center;position: fixed;/*bottom:0rpx;*/bottom:450rpx;background:#fff;left:0;}
+.clearHistoryfixed0{width: 100%;height: 130rpx;line-height: 130rpx;font-size: 28rpx;color:#3073e3;text-align: center;position: fixed;/*bottom:0rpx;*/background:#fff;left:0;}
+.clearHistoryfixed450{width: 100%;height: 130rpx;line-height: 130rpx;font-size: 28rpx;color:#3073e3;text-align: center;position: fixed;/*安卓大屏*//*bottom:48%;*//*ios*//*bottom:43%;*//*写死*//*bottom:500rpx;*/background:#fff;left:0;}
+

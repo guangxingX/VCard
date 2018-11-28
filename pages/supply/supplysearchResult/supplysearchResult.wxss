@@ -1,0 +1,19 @@
+/* assets/images/supply/supplysearchResult/supplysearchResult.wxss */
+.AllCommerce-page{flex:1;width:100%;}
+.header{height:56rpx;padding:16rpx;background:#3073e3;}
+.header input{width:100%;height:56rpx;border-radius:10rpx;background:#fff;text-align:left;
+	float:left;padding-left:60rpx;box-sizing:border-box;}
+.header-MailList{display:inline-block;color:#fff;margin-left:46rpx;}
+.header-MailList image{width:56rpx;height:56rpx;margin-right:10rpx;}
+.header-MailList text{position:relative;top:-19rpx;}
+.headertab>navigator{flex:1;}
+@import "../../../templates/ccListBlock/ccListBlock.wxss";
+.ccListBlock:last-child{margin-bottom:0;}
+.searchIco{width: 25rpx;height: 25rpx;position: absolute;left:32rpx;top:32rpx;
+}
+@import "../../../templates/supplytemp/supplytemp.wxss";
+
+.noContent{text-align: center; position: absolute;left:50%;top:40%;margin-left: -134rpx;margin-top: -109rpx;}
+.noImage{width: 268rpx;height: 177rpx;}
+.noTextWrap{padding-top: 15rpx;}
+.noText{font-size: 34rpx;color:#888888;}

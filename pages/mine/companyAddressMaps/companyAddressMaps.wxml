@@ -1,0 +1,28 @@
+<view class="mapWrap" wx:if="{{!showNothing}}">
+  <map
+      id="map"
+      longitude="{{lng}}"
+      latitude="{{lat}}"
+      scale="14"
+      controls="{{controls}}"
+      bindcontroltap="controltap"
+      markers="{{markers}}"
+      bindmarkertap="markertap"
+      polyline="{{polyline}}"
+      bindregionchange="regionchange"
+      show-location>
+      <!-- style="width: 100%; height: 300px;"> -->
+      <cover-view class="desAddress"  wx:if="{{!showNothing}}">
+        <cover-view>{{address}}</cover-view>
+    </cover-view>
+    </map>
+
+</view>
+
+<view class="nothing" wx:if="{{showNothing}}">
+  未查到地图信息
+</view>
+
+<!-- <view class="desAddress"  wx:if="{{!showNothing}}">
+      {{address}}
+    </view> -->

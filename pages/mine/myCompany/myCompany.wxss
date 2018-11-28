@@ -1,0 +1,29 @@
+page{height:100%;}
+.wrap{height:100%;}
+.companyListWrap{background: #efeef3;padding-bottom: 170rpx;min-height: 100%;}
+.companyListItem{margin-top: 20rpx;padding-top: 25rpx;background:#fff;padding-left: 30rpx;}
+.companyListItem:first-child{border-top: 20rpx solid #efeef3;margin-top: 0;}
+.companyDesWrap{padding-bottom: 25rpx;border-bottom: 1rpx solid #e5e5e5;color:#888;font-size: 26rpx;}
+.companyLogo-l{display: inline-block;padding-right: 20rpx;width:84rpx;height:84rpx;}
+.companyLogoImg{width: 84rpx;height: 84rpx;}
+.compamyName{color:#000;font-size: 32rpx;font-weight: 700;padding-right: 20rpx;}
+.name-wrap{padding-bottom: 5rpx;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;max-width:420rpx;}
+
+.date{float:left;width:70%;}
+.city{float:right;box-sizing: border-box;width:30%;text-align: right;padding-right: 30rpx;max-width: 200rpx;white-space: nowrap;overflow:hidden;text-overflow:ellipsis;}
+.companyDes-r{float:right;width:615rpx;display:inline;height: 85rpx;}
+
+.inline-block{display:inline-block;}
+.paddT{padding-top: 10rpx;}
+
+.type-tag{margin-right: 15rpx;padding:4rpx;font-size: 22rpx;color: #888;border: 1rpx solid #b8b8b8;border-radius: 2rpx;line-height: 30rpx;}
+.type-tag-red{color:#d1a578;border: 1rpx solid #e3c9ae;}
+
+.companyOwerWrap{height:120rpx;padding-top: 10rpx;color:#888;line-height: 50rpx;font-size: 28rpx;}
+.shanghuiWrap{position:relative;top:-10rpx;}
+.shagnhuitext{padding-left: 10rpx;}
+.shanghuiIco{width: 24rpx;height: 20rpx;}
+.icon-square{width: 24rpx;height: 24rpx;}
+.name,.date{font-size: 26rpx;}
+.addCompany{width: 100%;position:fixed;bottom:50rpx;}
+.addCompany button{width: 80%;background:#3073e3;color:#fff;font-size: 36rpx;}

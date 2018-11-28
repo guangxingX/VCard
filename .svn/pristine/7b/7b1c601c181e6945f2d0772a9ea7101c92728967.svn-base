@@ -1,0 +1,33 @@
+<template name="leaveMessageForActiveTemp" >
+  <view class="message">
+    <view class="messageli">
+      <view class="messageListTemplate-logobox">
+        <image class="messageListTemplate-logo" src="{{item.linkManLogo? item.linkManLogo : '../../../assets/images/icon/photobg.png'}}" bindtap="goCardDetails" data-cardisdel="{{item.cardIsDel}}" data-cardid="{{item.cardId}}"></image>
+        <view class="messageListTemplate-titleWrap">
+          <view class="messageListTemplate-title inline font34">{{item.leaveContactName}}</view>
+          <view class="messageListTemplate-contact fr">
+            <image class="temp-phone-ico" src="../../../assets/images/icon/icon-phone-blueline.png"></image>
+            <text class="temp-mobile-text" bindtap="makeCall" data-phone="{{item.leaveContactMobile}}">{{item.leaveContactMobile}}</text>
+          </view>
+          <view class="messageListTemplate-leaveName font30">{{item.leaveName}}</view>
+        </view>
+      </view>
+      <view class="messageListTemplate-messagecontent" >
+        <view class="messageListTemplate-content font28">{{item.leaveContent}}</view>
+        <view class="messageListTemplate-createtime inline textb2b2b2">{{item.leaveTime}}</view>
+      </view>
+      <view class="supplybox" data-leaveResourcesId="{{item.leaveResourcesId}}" data-item="{{item}}" bindtap="todetails">
+        <view class="leaveMegForActive-title" bindtap="goActiveDetails" data-objectid="{{item.objectId}}">{{item.objectName}}</view>
+
+        <view class="leaveMegForActive-address content" bindtap="goAddressDes" data-address="{{item.address}}">
+        {{item.address}}
+           <image class="leaveMegForActive-mapIco" src="../../../assets/images/icon/map-small.png" ></image>
+        </view>
+        <view class="leaveMegForActive-contentWrap">
+           <view class="content">已报名：{{item.messageCount}}人</view>
+           <view class="content leaveMegForActive-endtime">{{item.startTime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

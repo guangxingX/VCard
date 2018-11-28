@@ -1,0 +1,487 @@
+// pages/mine/mine.js
+var app = getApp();
+
+Page({
+  data: {
+    userInfo:{
+      "userName":"",
+      "avatarUrl":""
+    },
+    cachAvatarUrl:'',
+    companyCard:[],
+    businessCard: [],
+    currentPage:1,
+    pageSize:10,
+    minelist:[
+        // {"name":"我的名片","iconUrl":"../../../assets/images/icon/icon-myCar.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myCard/myCard'},
+        // {"name":"我的公司","iconUrl":"../../../assets/images/icon/icon-myCompany.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myCompany/myCompany'},
+        {"name":"我的资源","iconUrl":"../../../assets/images/icon/icon-myResource.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myResource/myResource'},
+        {"name":"我的需求","iconUrl":"../../../assets/images/icon/icon-mySupply.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myDemand/myDemand'},
+        {"name":"我的活动","iconUrl":"../../../assets/images/icon/icon-myActive.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myActive/myActive'},
+        {"name":"关于我们","iconUrl":"../../../assets/images/icon/about.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../aboutUs/aboutUs'}
+      ],
+    swiperCurrent:0,
+    // 默认头像
+    userAvatar:'../../../assets/images/icon/photobg.png',
+    iconList:{
+      bluetag:'../../../assets/images/icon/icon-tag.png',
+      share:'../../../assets/images/icon/icon-share.png',
+      photoWhite:"../../../assets/images/icon/icon-phone.png",
+      emailWhite:"../../../assets/images/icon/icon-email.png",
+      addressWhite:"../../../assets/images/icon/icon-address.png",
+      authentication:"../../../assets/images/icon/icon-authentication-yellow.png",
+      mapSmall:'../../../assets/images/icon/map-small.png'
+    },
+    isshare:true,
+    isedit:true,
+    pageFrom:'mine',
+    clickIndex:0,
+    autoplay:false
+  },
+    onGotUserInfo: function(e) {
+        var that=this
+    var  res = e.detail
+        console.log('用户信息+++-----------')
+        console.log(e)
+        console.log('用户信息+++-----------')
+
+        if(res.userInfo.avatarUrl){
+            wx.setStorage({
+                key:'cachAvatarUrl',
+                data:res.userInfo.avatarUrl
+            })
+        }
+        // 可以将 res 发送给后台解码出 unionId
+        if(res.userInfo){
+            that.globalData.userInfo = res.userInfo
+        }
+        var pages = getCurrentPages();
+        if(pages.route=="pages/index/index"){
+            pages[0].setData({userAvatar:that.globalData.userInfo.avatarUrl});
+        }
+        // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+        // 所以此处加入 callback 以防止这种情况
+        if (that.userInfoReadyCallback) {
+            that.userInfoReadyCallback(res)
+
+            // 罗 加
+            that.globalData.userInfo = res.userInfo
+
+        }
+        that.setData({
+                    cachAvatarUrl:res.userInfo.avatarUrl,
+                    userInfo:res.userInfo
+                })
+
+    },
+  addBusinessCard:function () {
+      wx.navigateTo({
+        url:'../../homePage/addBusinessCard/addBusinessCard'
+      })
+  },
+  toedit(e){
+    wx.navigateTo({
+      url: '../../homePage/businessInfo/businessInfo?mycardid='+e.currentTarget.dataset.mycardid,
+      success: res => {
+      },
+      fail: res => {
+
+      },
+      complete: res => {
+
+      }
+    })
+  },
+  toMycardDetails(e){
+    wx.navigateTo({
+      url:'../cardDetails/cardDetails?mycardid='+e.currentTarget.dataset.mycardid+"&from="+true
+    })
+  },
+  // 去收藏名片页面
+  goCardPackage:function () {
+    wx.navigateTo({
+      url:'../collectionBusinessCards/collectionBusinessCards'
+    })
+    //   wx.navigateTo({
+    //       url:'../add-video/add-video'
+    //   })
+
+  },
+// 去编辑公司页面
+goEditCompany:function (event) {
+  var companyId = event.currentTarget.dataset.id;
+  var canChangeTemp = event.currentTarget.dataset.can;
+  var isuthentication = event.currentTarget.dataset.isuthentication;
+
+
+  console.log('点击的公司的id是')
+  console.log(companyId)
+  console.log(this.data.clickIndex)
+  console.log('点击的公司的id是')
+
+  wx.setStorage({
+      key:'companyDesInfoKey',
+      data:this.data.clickIndex
+    })
+
+
+
+  wx.navigateTo({
+    url: '../editMyCompany/editMyCompany?id='+companyId+'&can='+canChangeTemp+'&isuthentication='+isuthentication
+  })
+
+},
+// 名片分享
+shareCard:function (e) {
+  console.log(e)
+    var item = e.currentTarget.dataset.item;
+    console.log('名片item')
+    console.log(item)
+    console.log('名片item')
+    if(item.companyId){
+      wx.setStorage({
+        key:"shareCardCardKey",
+        data:item,
+        success: function(res) {
+          wx.navigateTo({
+            url:'../shareCard/shareCard'
+          })
+        },
+        fail: function(res) {
+
+        },
+        complete: function(res) {
+
+        }
+      })
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '请先完善名片公司信息',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+
+},
+  // 点击了公司名片分享
+  shareCompanyCard:function (e) {
+      console.log(e)
+      var item = e.currentTarget.dataset.item;
+      console.log(item)
+      wx.setStorage({
+        key:"shareCompanyCardKey",
+        data:item,
+        success: function(res) {
+          wx.navigateTo({
+            url:'../shareCompanyCard/shareCompanyCard'
+          })
+        },
+        fail: function(res) {
+
+        },
+        complete: function(res) {
+
+        }
+      })
+  },
+
+// 获取名片列表开始
+getMycarddata(){
+    wx.showLoading({
+      title: '加载中',
+      mask:true
+    })
+    var that=this;
+    var id = app.globalData.userId;
+    console.log(id);
+    wx.request({
+      url: app.data.apiurl+'applets/main',
+      // url: app.data.apiurl+'applets/myCardList',
+      data: {
+        userId:id},
+      header: {
+          'content-type': 'application/json' // 默认值
+      },
+      success: function(res) {
+        console.log("获取列表成功");
+        console.log(res);
+        if(res.statusCode==200){
+          console.log(res.data)
+          if(res.data.success==0){
+            that.setData({
+              businessCard:res.data.entity.cardInfo,
+              companyCard:res.data.entity.companyInfo
+            });
+            that.data.companyCard.forEach(function(item,index,arr){
+              if (item) {
+                  item.textlogo=item.name.substring(0,2);
+                  item.fontsize='font34';
+                  if(item.name&&item.name.length>30){
+                      item.fontsize='font'+Math.floor(544*2/(item.name.length+1));
+                  }
+              }
+            });
+            that.setData({
+              companyCard:that.data.companyCard
+            });
+            if(!that.data.swiperCurrent||(that.data.businessCard&&that.data.businessCard.length&&
+              that.data.swiperCurrent>that.data.businessCard.length-1)){
+              that.setData({swiperCurrent:0})
+            }
+
+            console.log(that.data.swiperCurrent);
+
+            that.setData({autoplay:true});
+
+            if(that.data.companyCard.length>0&&that.data.companyCard[0]&&that.data.businessCard.length>0){
+              for(var i=0;i<that.data.companyCard.length;i++){
+                if(that.data.businessCard[that.data.swiperCurrent]&&that.data.businessCard[that.data.swiperCurrent].companyId==that.data.companyCard[i].id){
+                  that.setData({companyCardInfo:that.data.companyCard[i],companyCardInfoshow:true,
+                    clickIndex:that.data.companyCard[i]});
+                  return false;
+                }else{
+                  that.setData({companyCardInfo:{},companyCardInfoshow:false});
+                }
+              }
+            }else{
+              that.setData({companyCardInfo:{},companyCardInfoshow:false});
+            }
+          }else{
+            wx.showToast({
+              title: res.data.message,
+              image:'../../../assets/images/icon/error-fff.png',
+              duration: 2000
+            })
+          }
+        }else{
+          wx.showToast({
+            title: '加载失败',
+            image:'../../../assets/images/icon/error-fff.png',
+            duration: 2000
+          })
+        }
+      },
+      fail(){
+        wx.showToast({
+          title: '加载失败',
+          image:'../../../assets/images/icon/error-fff.png',
+          duration: 2000
+        })
+      },
+      complete(){
+        wx.hideLoading({
+          title: '加载中',
+        });
+        wx.hideNavigationBarLoading();
+      }
+    })
+  },
+  // 点击了card上的分享
+  shareCard:function (e) {
+    console.log(e)
+    var item = e.currentTarget.dataset.item;
+    console.log('名片item')
+    console.log(item)
+    console.log('名片item')
+    console.log(item.companyId);
+    wx.setStorage({
+      key:"shareCardCardKey",
+      data:item,
+      success: function(res) {
+        wx.navigateTo({
+          url:'../shareCard/shareCard'
+        })
+      },
+      fail: function(res) {
+
+      },
+      complete: function(res) {
+
+      }
+    })
+  },
+  // 点击了公司名片分享
+  shareCompanyCard:function (e) {
+      console.log(e)
+      var item = e.currentTarget.dataset.item;
+      console.log(item)
+      wx.setStorage({
+        key:"shareCompanyCardKey",
+        data:item,
+        success: function(res) {
+          wx.navigateTo({
+            url:'../shareCompanyCard/shareCompanyCard'
+          })
+        },
+        fail: function(res) {
+
+        },
+        complete: function(res) {
+
+        }
+      })
+  },
+    globalData: {
+        userInfo: {},
+        historyList:[],
+        //小程序版本号
+        version:'1.0.0',
+        // userId:1426
+        userId:-1,
+        cocId:-1
+    },
+  swiperChange(e){
+    var that=this;
+    if(e.detail.current){
+      that.setData({swiperCurrent:e.detail.current});
+    }else{
+      that.setData({swiperCurrent:0});
+    }
+    if(that.data.companyCard.length>0&&that.data.companyCard[0]&&that.data.businessCard.length>0){
+      for(var i=0;i<that.data.companyCard.length;i++){
+        if(that.data.businessCard[that.data.swiperCurrent]&&that.data.businessCard[that.data.swiperCurrent].companyId==that.data.companyCard[i].id){
+          that.setData({companyCardInfo:that.data.companyCard[i],companyCardInfoshow:true,
+           clickIndex:that.data.companyCard[i]});
+          return false;
+        }else{
+          that.setData({companyCardInfo:{},companyCardInfoshow:false});
+        }
+      }
+    }
+  },
+  // 打电话
+  makeCall:function (e) {
+    app.makeCall(e)
+  },
+  // 去地图页面
+  goAddressDes:function (e) {
+    var address = e.currentTarget.dataset.address;
+    console.log(e)
+    console.log(address)
+    wx.navigateTo({
+      url:'../companyAddressMaps/companyAddressMaps?address='+address
+    })
+  },
+  // 去公司详情
+  goCompanyDes:function (e) {
+    var id=e.currentTarget.dataset.id;
+    var canChangeTemp = e.currentTarget.dataset.can;
+    var isuthentication = e.currentTarget.dataset.isuthentication;
+    wx.navigateTo({
+      url: '../myCompanyDes/myCompanyDes?id='+id+'&can='+canChangeTemp+'&isuthentication='+isuthentication
+    })
+  },
+
+  // 去公司信息详情页面
+// goCommpanyDes:function (event) {
+//   var compnayid = event.currentTarget.dataset.id;
+//   var isuthentication = event.currentTarget.dataset.isuthentication;
+//   var can = event.currentTarget.dataset.can;
+//   console.log('公司列表isuthentication')
+//   console.log(isuthentication)
+//   console.log(event)
+//   console.log('公司列表isuthentication')
+
+//   wx.navigateTo({
+//     url:'../myCompanyDes/myCompanyDes?id='+compnayid+'&isisuthentication='+isuthentication+'&can='+can
+//   })
+// },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var self = this;
+    self.setData({userInfo:app.globalData.userInfo});
+    console.log('我的0-0用户信息')
+    console.log(app.globalData.userInfo)
+    console.log(app.globalData.userId)
+    console.log('我的0-0用户信息')
+
+    wx.getStorage({
+      key:'cachAvatarUrl',
+      success:function (res) {
+        console.log('res.data')
+        console.log(res.data)
+        console.log('res.data')
+        self.setData({
+          cachAvatarUrl:res.data
+        })
+      },fail(){
+        self.setData({
+          cachAvatarUrl:'../../../assets/images/icon/mycard-avatar-default.png'
+        })
+      }
+    })
+
+
+    console.log('从缓存获取到头像')
+    console.log(self.data.cachAvatarUrl)
+    console.log('从缓存获取到头像')
+
+  },
+
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    console.log("进入我的onshow");
+    console.log(app.globalData);
+    console.log(app.globalData.userInfo);
+    if(app.globalData.userInfo&&app.globalData.userInfo.avatarUrl){
+      console.log("jinruif");
+      this.data.userInfo.avatarUrl=app.globalData.userInfo.avatarUrl
+      this.setData({userInfo:this.data.userInfo});
+    }else{
+      console.log("jinruelse");
+      console.log();
+      this.data.userInfo.avatarUrl='../../../assets/images/icon/mycard-avatar-default.png'
+      this.setData({userInfo:this.data.userInfo});
+    }
+    this.getMycarddata();
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+       this.setData({autoplay:false});
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    this.setData({autoplay:false});
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+
+
+})

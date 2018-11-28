@@ -1,0 +1,42 @@
+<!--pages/maillist/AllEnterprises/AllEnterprises.wxml-->
+<import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
+<view class="container">
+  <view class="AllEnterprises-page">
+    <!-- <view class="header">
+      <input type="text" confirm-type="search" placeholder="搜索您想找的公司名称" bindconfirm="getdata" bindinput="bindCompanyInput" bindfocus="toSearch" data-storagekey="allcompanysearch"/>
+      <image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image>
+      <view class="header-MailList" bindtap="tomaillist">
+        <image src="../../../assets/images/icon/icon-mailList.png"></image>
+        <text>通讯录</text>
+      </view>
+    </view> -->
+    <view class="headertab">
+      <navigator url="../switchcity/switchcity">
+        <text>{{city?city:'全国'}}</text>
+        <image src="../../../assets/images/icon/icon-triangle-down-gray.png"></image>
+      </navigator>
+      <navigator url="../companyAllIndustry/companyAllIndustry">
+        <view >
+          <text >{{industryName?industryName:'行业'}}</text>
+          <image src="../../../assets/images/icon/icon-triangle-down-gray.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="enterprisesList">
+      <block wx:for="{{qualityEnterprise}}">
+        <template is="enterpriseListcard" data="{{item,iconList}}"></template>
+      </block>
+    </view>
+  </view>
+
+  <view class="noContent" wx:if="{{!qualityEnterprise.length}}">
+    <view>
+      <image class="noImage" src="../../../assets/images/mine/no-supply.png" ></image>
+    </view>
+    <view class="noTextWrap">
+      <text class="noText"> 暂无搜索结果 </text>
+    </view>
+  </view>
+
+
+</view>

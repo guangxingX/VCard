@@ -1,0 +1,6 @@
+page{background:#eeeeee;}
+.myenterpriseListcard{margin:60rpx 30rpx 0;}
+@import "../../../templates/myenterpriseListcard/myenterpriseListcard.wxss";
+
+.shareBtnWrap{width: 100%;margin:300rpx 0;}
+.shareBtn{width: 80%;color:#fff;background:#3073e3;}

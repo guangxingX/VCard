@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-input-bar": "../input-bar/inputBarComponet"
+  }
+}

@@ -1,0 +1,21 @@
+/* pages/mine/acitvitySignUpList/acitvitySignUpList.wxss */
+.contactbox{margin-bottom:20rpx;background:#fff;}
+.contactbox .row{height:89rpx;line-height:89rpx;font-size:28rpx;color:#a9a9a9;padding-left:30rpx;}
+.contactbox .row image{height:32rpx;width:32rpx;margin-right:30rpx;position:relative;top:26rpx;float: left;}
+.contactbox .row>view{border-bottom:2rpx solid #e5e5e5;white-space:nowrap;
+	overflow:hidden; text-overflow:ellipsis;max-width:626rpx;}
+.contactcompany{background:#fff;margin-bottom:200rpx;}
+.contactcompany .title{height:89rpx;line-height:89rpx;color:#a9a9a9;
+	padding:0 30rpx;border-bottom:2rpx solid #e5e5e5;}
+.contactcompany .title image{width:26rpx;height:26rpx;margin-right:10rpx;position: relative;top: 2rpx;}
+.contactli{padding:30rpx;border-bottom: 2rpx solid #e5e5e5;}
+.contactli .companyname{font-size:32rpx;margin-bottom: 40rpx;}
+.contactli .companyname>view{height:16rpx;width:16rpx;border-radius: 50%;background:#f76260;float: left;
+	top:12rpx;margin-right:20rpx;position:relative;}
+.contactli .contacttext{overflow:hidden;font-size:28rpx;}
+.contactli .contacttext text{color:3073e3;margin-left:20rpx;}
+.contactli .contacttext-phone view:nth-child(1){margin-bottom: 20rpx;}
+
+@import "../../../templates/whoSignupMyActiveTemp/whoSignupMyActiveTemp.wxss";
+
+.messageListTemplate-createtime{font-size: 28rpx;}

@@ -1,0 +1,36 @@
+/* pages/mine/myActiveDetails/myActiveDetails.wxss */
+.activityDetails-page{flex:1;width:100%;}
+.logo{width:100%;}
+.logo image{width:100%;}
+.infocontent{padding:40rpx 0;background:#fff;}
+.infocontent .title{font-size:40rpx;}
+.infocontent .status{color:#a9a9a9;margin-top:30rpx;margin-bottom:40rpx;}
+.activityStatus{margin-right:30rpx;}
+.infobox{margin-bottom:20rpx;background:#fff;padding:30rpx;position: relative;top:-10rpx;}
+.infobox .text-img{width:100%}
+.contactbox{margin-bottom:20rpx;background:#fff;padding:0 30rpx;}
+.contactbox .row{height:89rpx;line-height:89rpx;color:#888;font-size: 26rpx; border-bottom:2rpx solid #eee;}
+.contactbox .row image{height:32rpx;width:32rpx;margin-right:30rpx;position:relative;top:26rpx;float: left;}
+.contactbox .row>view{display:inline-block;white-space:nowrap;
+	overflow:hidden; text-overflow:ellipsis;max-width:626rpx;height:100%;}
+.contactcompany{background:#fff;margin-bottom:200rpx;}
+.contactcompany .title{height:89rpx;line-height:89rpx;color:#a9a9a9;
+	padding:0 30rpx;border-bottom:2rpx solid #e5e5e5;}
+.contactcompany .title image{width:26rpx;height:26rpx;margin-right:10rpx;position: relative;top: 2rpx;}
+.contactli{padding:30rpx;border-bottom: 2rpx solid #e5e5e5;}
+.contactli .companyname{font-size:32rpx;margin-bottom: 40rpx;}
+.contactli .companyname>view{height:16rpx;width:16rpx;border-radius: 50%;background:#f76260;float: left;
+	top:12rpx;margin-right:20rpx;position:relative;}
+.contactli .contacttext{overflow:hidden;font-size:28rpx;}
+.contactli .contacttext text{color:3073e3;margin-left:20rpx;}
+.contactli .contacttext-phone view:nth-child(1){margin-bottom: 20rpx}
+.footer{position:fixed;bottom:0;left:0;height:125rpx;background:#fff;width:100%;padding-top:30rpx;}
+.footer button{width:690rpx;height:89rpx;line-height:89rpx;margin:0 auto;font-size:36rpx;color:#fff;background-color:#E64340;}
+.contactbox .row .icon-clock{width: 33rpx !important;height: 33rpx !important;}
+.contactbox .row .icon-map{width: 29rpx !important;height: 35rpx !important;}
+.contactbox .row .icon-phone{width: 34rpx !important;height: 34rpx !important;float:left;margin-right:0;margin-left:10rpx;}
+.cheakSee{color:#3073e3;}
+
+.footer button.button-hover{background-color:#E64340;}
+
+.nomarginbottom{margin-bottom: 30rpx !important;}

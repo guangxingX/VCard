@@ -1,0 +1,14 @@
+.row{height:88rpx;padding-left: 30rpx;color:#000;font-size: 34rpx;line-height: 88rpx;border-bottom: 1rpx solid #e5e5e4;position: relative;}
+.reasonTitle{background:#efeef3;font-size: 28rpx;color:#888888;}
+.richText{height:200rpx;font-size: 28rpx;padding:30rpx;color:#000000;}
+.selectImg{width: 46rpx;height: 46rpx;position: absolute;right:30rpx;top:20rpx;}
+.imgWrap{padding:30rpx;}
+.itemImgWrap{display:inline-block;position:relative;}
+.addimg{width: 116rpx;height: 116rpx;margin-right: 30rpx;}
+.deltIcon{width: 32rpx;height: 32rpx;position: absolute;right:17rpx;top:-10rpx;}
+.footer{padding:30rpx;background:#efeef3;}
+.star{color:red;margin-right: 10rpx;padding-top: 10rpx;}
+
+.firstReasonTitle{display:flex;align-items: center;}
+/*层叠掉，要不然宽是300px*/
+textarea{width:auto !important;}

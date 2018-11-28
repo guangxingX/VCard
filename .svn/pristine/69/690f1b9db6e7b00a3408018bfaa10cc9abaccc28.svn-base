@@ -1,0 +1,19 @@
+<!--pages/maillist/AllCommerce/AllCommerce.wxml-->
+<import src="../../../templates/ccListBlock/ccListBlock.wxml" />
+<view class="container">
+	<view class="AllCommerce-page">
+		<view class="header">
+			<input type="text" confirm-type="search" bindconfirm="getdata" bindinput="bindCocInput" placeholder="搜索您想找的商会名称" bindfocus="toSearch" data-storagekey="allcocsearch"/>
+			<image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image>
+			<view class="header-MailList" bindtap="tomaillist">
+				<image src="../../../assets/images/icon/icon-mailList.png"></image>
+				<text>通讯录</text>
+			</view>
+		</view>
+		<view class="commerceList">
+			<block wx:for="{{qualityCC}}">
+				<template is="ccListBlock" data="{{item,iconList}}"></template>
+			</block>
+		</view>
+	</view>
+</view>

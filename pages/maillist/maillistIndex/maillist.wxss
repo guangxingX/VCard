@@ -1,0 +1,45 @@
+/* pages/maillist/maillist.wxss */
+.container{height:100%;}
+.mail-page{flex:1;width:100%;}
+.header{height:275rpx;background:#3073e3;padding-top:20rpx;}
+.tagbox{width:690rpx;margin:0 auto;background:#fff;border-radius:10rpx;overflow:hidden;
+  position:relative;z-index:10;}
+/*.tagbox2{height:428rpx;box-shadow:0px 2px 3px #ddd;}*/
+.tagbox2{padding-bottom:20rpx;box-shadow:0px 0px 10px #e6e6e6;height:410rpx;}
+.tagbox1{height:221rpx;box-shadow:0px 0px 10px #e6e6e6;}
+.itemTag{height:100rpx;line-height:100rpx;display:flex;}
+.itemTag .tag-tag{text-align:center;/*background:#fafafa;*/flex:1;border-bottom: 1rpx solid #dadada;position: relative;}
+.itemTag .tag-tag.active{/*background:#e5ecf8;*/color:#3073e3;}
+.tag-line{width: 182rpx;height: 4rpx;background:#3073e3;position: absolute;bottom:0;left:50%;margin-left: -91rpx;}
+.header-input{width:632rpx;height:56rpx;line-height:56rpx;border:2rpx solid #b2b2b2;margin:32rpx auto;border-radius:10rpx;
+  position:relative;padding-left:48rpx;box-sizing: border-box;}
+.header-input input{width:100%;height:100%;line-height:56rpx;border-radius:10rpx;}
+.search-block{width:650rpx;margin:0 auto;padding-left: 30rpx;}
+.search-block {display:flex;align-content:space-between;flex-wrap: wrap}
+.search-block .text{padding:4rpx 10rpx;background:#eee;color:#888;height:48rpx;line-height:48rpx;
+	text-align:center;width:120rpx;display:inline-block;font-size: 26rpx;border-radius: 10rpx;}
+.search-block>view{width:25%;text-align:left;margin-bottom:20rpx;}
+.lookmore image{width:16rpx;height:25rpx;position:relative;top:3rpx;margin-left:10rpx;}
+.lookmore{text-align:right;color:#3073e3;padding-right:30rpx;}
+.content2{margin:0 auto;background:#fff;padding:185rpx 30rpx 0;padding-bottom: 10rpx;}
+.content .title{overflow:hidden;height:85rpx;line-height: 85rpx;}
+.content .title .addnavigator{color:#3073e3;}
+.content .title .addnavigator image{width:16rpx;height:25rpx;position:relative;top:3rpx;margin-left:10rpx;}
+.content1{width:100%;background:#efeff4;}
+.content1 .title{padding:0 30rpx;margin-bottom:0;background:#fff;border-bottom: 1rpx solid #eeeeee;}
+.searchIco{width: 25rpx;height: 25rpx;position: absolute;left:12rpx;top:15rpx;}
+.contetn2Title{border-bottom: 1rpx solid #eeeeee;}
+.ccListBlock{border-bottom: 1rpx solid #eeeeee;}
+.excellentTitle{font-size: 32rpx;}
+@import "../../../templates/enterpriseListcard/enterpriseListcard.wxss";
+@import "../../../templates/ccListBlock/ccListBlock.wxss";
+
+.noContent{text-align: center; position: absolute;left:50%;top:60%;margin-left: -128rpx;margin-top: -109rpx;}
+.noImage{width: 256rpx;height: 218rpx;}
+.noTextWrap{padding-top: 15rpx;}
+.noText{font-size: 34rpx;color:#888888;}
+.noContent-1{top:65%;}
+.background-fff{background:#fff;}
+.selectStyle .text{background:#888 !important;color:#fff;}
+/*UI不要边框*/
+.enterprisecard-logo{border: none;}

@@ -1,0 +1,16 @@
+.cardbg-page{flex:1;width:100%;background:#fff;}
+.changetitle{font-size:28rpx;text-align:center;margin-top:50rpx;margin-bottom:40rpx;}
+.bgbox{padding:0 30rpx;display:flex;justify-content: space-between;flex-wrap: wrap;}
+.bgbox .bgli{width:100%;height:130rpx;margin-bottom:10rpx;position: relative;
+  -webkit-line-clamp:2;margin-right:10rpx;}
+.bgbox .bgli .bgimage{width:100%;height:130rpx;}
+.bgbox .bgli .iconimage{width:46rpx;height:46rpx;position:absolute;top:49rpx;left:50%;margin-left:-23rpx;
+	background:#fff;border-radius:50%;}
+.bgbox .bgli:nth-child(3n){margin-right:0;}
+scroll-view{white-space:nowrap;width:100%;/*height:410rpx;*/}
+.bgbox-block{width:28%;height:100%;margin-right:10rpx;display:inline-block;vertical-align:top;}
+
+.footer{position:fixed;bottom:0;left:0;height:125rpx;background:#fff;width:100%;padding-top:30rpx;}
+.footer button{width:690rpx;height:89rpx;line-height:89rpx;margin:0 auto;font-size:36rpx;color:#fff;}
+.enterpriseListcard-box{margin-top:30rpx;}
+@import "../../../templates/enterpriseListcard/enterpriseListcard.wxss";

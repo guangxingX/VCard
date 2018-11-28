@@ -1,0 +1,22 @@
+page{height: 100%;}
+.loginWrap{padding:0 60rpx;}
+.phoneWrap{height: 100%;}
+.wel{color: #000;padding-top: 115rpx;padding-bottom: 50rpx;}
+.mobile{position: relative;padding-bottom: 70rpx;}
+.clear{position:absolute;width: 32rpx;height: 32rpx;right: 30rpx;top:15rpx;}
+.codeWrap{height: 100%;}
+.agreement{font-size: 26rpx;color:#9c9c9c;text-align: center;padding-top: 30rpx;}
+.xieyi{font-size: 26rpx;color:#ffd93e;}
+.normalBtn{width: 80%;border-radius:45rpx;height: 90rpx; line-height: 90rpx; margin:0 auto;text-align: center;}
+.nextBtn{background: #3073e3;color:#fff;}
+.no-nextBtn{background:#cfcfcf;color:#8f8f8f;}
+.mobileBox{margin-bottom:38rpx;}
+.codeBox{overflow:hidden;margin-bottom: 75rpx;}
+.mobileBox .mobileInput{height:88rpx;line-height:88rpx;background:#fafafa;padding:0 20rpx;}
+.codeBox .codeInput{height:88rpx;line-height:88rpx;background:#fafafa;width:338rpx;padding:0 20rpx;}
+.numbercode{width:200rpx;height:68rpx;line-height:68rpx;background:#ebebec;color: #fff;float: right;margin-top: 10rpx;border-radius: 10rpx;}
+.loginBtn{height: 88rpx;line-height: 88rpx;color:#fff;}
+.secondText{height: 100%;line-height:68rpx;font-size: 32rpx;padding:0;}
+.secondText.backgray{background:#ebebec;color:#aaa;}
+.secondText.backblue{background:#3073e3;}
+button[disabled][type="primary"] {background:#3073e3 !important;}

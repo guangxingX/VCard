@@ -1,0 +1,46 @@
+page{background:#efeef3;}
+.activityDetails-page{flex:1;width:100%;}
+.logo{width:100%;}
+.logo image{width:100%;height:450rpx;}
+.infocontent{padding:40rpx 30rpx 20rpx;background:#fff;}
+.infocontent .status{color:#a9a9a9;margin-top:30rpx;margin-bottom:40rpx;}
+.infocontent .status .activeState{margin-right:30rpx;}
+
+.showmore{height:94rpx;line-height:94rpx;color:#3073e3;text-align:center;
+	background:#fff;}
+.infobox{margin-bottom:20rpx;position:relative;top:-10rpx;}
+.infobox .imageText image{width:100%;margin-bottom: 10rpx;}
+.infobox .imageText .text{line-height:55rpx;margin-bottom:10rpx;text-indent:50rpx}
+.contactbox{margin-bottom:20rpx;background:#fff;padding:0 30rpx;}
+.contactbox .row{height:89rpx;line-height:89rpx;color:#888;font-size: 26rpx; border-bottom:2rpx solid #eee;}
+.contactbox .row image{height:32rpx;width:32rpx;margin-right:30rpx;position:relative;top:26rpx;float: left;}
+.contactbox .row>view{display:inline-block;white-space:nowrap;
+	overflow:hidden; text-overflow:ellipsis;max-width:626rpx;}
+.contactcompany{background:#fff;margin-bottom:200rpx;}
+.contactcompany .title{height:89rpx;line-height:89rpx;color:#a9a9a9;
+	padding:0 30rpx;border-bottom:2rpx solid #eee;}
+.companycard{padding:38rpx 30rpx;}
+
+.footer{width: 100%; padding:30rpx 0; height: 88rpx;width: 100%;position:fixed;bottom:0;background:#fff;border-top: 1rpx solid #eeeeee;z-index: 9999999;}
+
+.footer button{width: 92%; background:#3073e3;}
+.normalStyle{max-height: 1472rpx;overflow:hidden;}
+.autoStyle{max-height: auto;}
+.contactbox .row .icon-clock{width: 33rpx !important;height: 33rpx !important;}
+.contactbox .row .icon-map{width: 29rpx !important;height: 35rpx !important;}
+.contactbox .row .icon-phone{width: 34rpx !important;height: 34rpx !important;float:left;margin-right:10rpx;}
+
+
+@import "../../../templates/enterpriseListcard/enterpriseListcard.wxss";
+@import "../../../templates/ccListBlock/ccListBlock.wxss";
+
+.disabledStyle{background:#e5e5e5 !important;color:#aaa !important;border:none !important;font-size: 32rpx;}
+/*.disabledStyle{background:rgba(0, 0, 0, 0.5) !important;}*/
+
+/*导致不对齐*/
+/*.activeState{margin-right:20rpx;}*/
+
+button[disabled][type="primary"] {background-color:#9ED99D;color:#888888 !important;border:none !important;}
+
+.footer .button-hover{background:rgba(48,115,227,0.9) !important;}
+

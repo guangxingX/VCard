@@ -1,0 +1,20 @@
+<view class="failuretipbox {{errorshow?'show-failuretipbox':'hidden-failuretipbox'}}">
+  <icon type="warn" size="16" color="#fff"/>
+  {{failuretip}}
+</view>
+<view class="loginWrap">
+  <view class="phoneWrap">
+      <view class="wel font40">登录</view>
+      <view class="mobileBox">
+        <input class="mobileInput font32" placeholder="请输入手机号" value="{{phoneNumber}}" type="number" maxlength="11"  bindinput="mobileInputChange"/>
+      </view>
+      <view class="codeBox">
+        <input class="codeInput fl font32" placeholder="请输入短信验证码" value="" type="number" maxlength="6"  bindinput="codeChange"/>
+        <view class="numbercode">
+          <button type="primary" disabled="{{seconds<=0}}" bindtap="getPhoneCodeFun" class="secondText {{secondsStart?'backblue':'backgray'}}">{{secondstext}}</button>
+        </view>
+      </view>
+      <button type="primary" class="loginBtn" style="background-color:#3073e3;" loading="{{loading}}" disabled="{{loading}}" hover-class="button-hover" bindtap="login">快捷登录</button>
+  </view>
+
+</view>

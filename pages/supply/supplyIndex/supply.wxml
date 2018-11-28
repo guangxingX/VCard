@@ -1,0 +1,123 @@
+<!--pages/supply/supply.wxml-->
+<import src="../../../templates/supplytemp/supplytemp.wxml" />
+<view class="container">
+	<view class="supply-page">
+		<view class="header">
+		    <view class="tagbox">
+		    	<view class="itemTag font34">
+		        <view class="tag-tag bold {{currenttab===0?'active':''}}" data-currenttab="0" bindtap="clickTab">	资源
+							<view wx:if="{{currenttab===0}}" class="tag-line"></view>
+		        </view>
+		        <view class="tag-tag bold {{currenttab==1?'active':''}}" data-currenttab="1" bindtap="clickTab"> 		需求
+							<view wx:if="{{currenttab==1}}" class="tag-line"></view>
+		        </view>
+		      </view>
+
+		      <!-- ../../../assets/images/icon/icon-triangle-down-gray.png -->
+		        <view class="header-box">
+		        	<view class="header-box-input font26 {{currenttab==0?'show':'hidden'}}"><input type="text" disabled="true" placeholderClass="placeholderClass" confirm-type="search" placeholder="搜索您想找的资源名称" bindtap="toSearch" data-storagekey="resourcesSearch"/>
+		        	<image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image></view>
+		        	<view class="header-box-input font26 {{currenttab==1?'show':'hidden'}}"><input type="text" disabled="true" confirm-type="search" placeholder-class="placeholderClass" placeholder="搜索您想找的需求名称" bindtap="toSearch" data-storagekey="demandSearch"/><image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image></view>
+		        	<view class="pickerbox">
+		        		<picker wx:if="{{currenttab==0}}" bindchange="bindPickerChange"  value="{{index}}" range="{{supplySubjectList}}" range-key="name">
+						    <view class="picker"  bindtap="clickAllWithResource">
+						    <!--  class="{{resourceImgShow ? 'arrowRotate':''}}" -->
+						      {{checkedType}}<image src="../../../assets/images/icon/icon-triangle-down-gray.png"></image>
+						    </view>
+						</picker>
+
+						<picker wx:if="{{currenttab==1}}" bindchange="bindPickerChange" value="{{index}}" range="{{needSubjectList}}" range-key="name">
+						    <view class="picker">
+						    <!-- 全部 -->
+						      {{checkedType}}
+						      <image src="../../../assets/images/icon/icon-triangle-down-gray.png"></image>
+						    </view>
+						</picker>
+		        	</view>
+		        	<navigator url="../messageList/messageList?currenttab={{currenttab}}" class="message">
+		        		<image src="../../../assets/images/icon/icon-supply-message-tip.png"></image>
+		        		<view wx:if="{{unread==1}}"></view>
+		        	</navigator>
+		        </view>
+		    </view>
+		</view>
+		<view class="content">
+			<block wx:for="{{resourceList}}"  wx:for-index="index" wx:if="{{currenttab==0}}">
+				<template is="supplytemp" data="{{item,iconList,index}}" ></template>
+					<!-- <view class="supplytemp" bindtap="toDetails" data-id="{{item.activityId ? item.activityId : item}}" data-index="{{index}}">
+					<view class="supplytemp-header">
+						<image class="supplytemp-header-logo" src="{{item.companyLogo ? item.companyLogo:'../../../assets/images/mine/logo.jpg'}}"></image>
+						<text class="supplytemp-header-name font32">{{item.companyName}}</text>
+						<view class="supplytemp-header-authentication font22" wx:if="{{item.isAuthentication}}">
+							<image src="{{iconList.authentication}}"></image>
+							<text>商会认证</text>
+						</view>
+						<text class='fr subjectName'> {{ item.subjectName }}</text>
+					</view>
+					<view class="supplytemp-title font34 bold">
+						<text>{{item.title}}</text>
+					</view>
+					<view class="supplytemp-content font28">
+						<block wx:for="{{item.content}}" wx:for-index="index2" wx:for-item="item2">
+							<view wx:if="{{item2.text&&index2==0}}" class="subtitle">{{item2.text}}</view>
+						</block>
+					</view>
+					<view class="supplytemp-footer font26">
+						<view>{{item.viewCount}}浏览</view>
+						<view class="supplytemp-footer-point"></view>
+						<view>{{item.differTime}}前</view>
+					</view>
+				</view> -->
+			</block>
+			<block wx:for="{{demandList}}" wx:if="{{currenttab==1}}">
+				<template is="supplytemp" data="{{item,iconList,index}}" ></template>
+				<!-- <view class="supplytemp" bindtap="toDetails" data-id="{{item.activityId ? item.activityId : item}}" data-index="{{index}}">
+					<view class="supplytemp-header">
+						<image class="supplytemp-header-logo" src="{{item.companyLogo ? item.companyLogo : '../../../assets/images/mine/logo.jpg'}}"></image>
+						<text class="supplytemp-header-name">{{item.companyName}}</text>
+						<view class="supplytemp-header-authentication font22"  wx:if="{{item.isAuthentication}}">
+							<image src="{{iconList.authentication}}"></image>
+							<text>商会认证</text>
+						</view>
+						<text class='fr subjectName'> {{ item.subjectName }}</text>
+
+					</view>
+					<view class="supplytemp-title font34 bold">
+						<text>{{item.title}}</text>
+					</view>
+					<view class="supplytemp-content font28">
+						<block wx:for="{{item.content}}" wx:for-index="index2" wx:for-item="item2">
+							<view wx:if="{{item2.text&&index2==0}}" class="subtitle">{{item2.text}}</view>
+						</block>
+					</view>
+					<view class="supplytemp-footer font26">
+						<view>{{item.viewCount}}浏览</view>
+						<view class="supplytemp-footer-point"></view>
+						<view>{{item.differTime}}前</view>
+					</view>
+				</view> -->
+			</block>
+		</view>
+
+	</view>
+		<view class="noContent" wx:if="{{!resourceList.length && currenttab==0}}">
+			<view>
+				<image class="noImage" src="../../../assets/images/mine/no-resource.png" ></image>
+			</view>
+			<view class="noTextWrap">
+				<text class="noText"> 暂无资源 </text>
+			</view>
+		</view>
+		<view class="noContent" wx:if="{{!demandList.length && currenttab==1}}">
+			<view>
+				<image class="noImage" src="../../../assets/images/mine/no-resource.png" ></image>
+			</view>
+			<view class="noTextWrap">
+				<text class="noText"> 暂无需求</text>
+			</view>
+		</view>
+</view>
+
+<view class="addIconBox" bindtap="addNew">
+	<image class="addIconImage" src="../../../assets/images/icon/icon-add.png"/>
+</view>

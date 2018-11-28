@@ -1,0 +1,69 @@
+<template name="myenterpriseListcard">
+    	<view class="myenterpriseListcard">
+    		<view class="myenterpriseListcard-scroll-block" >
+            <image class="myenterpriseListcard-myCompanyBg" src="{{companyCardInfo.companyTemplate}}"></image>
+            <view class="myenterpriseListcard-block-header">
+              <view >
+                <image wx:if="{{companyCardInfo.isAuthentication==1}}" src="{{iconList.authentication}}"></image>
+                <text wx:if="{{companyCardInfo.isAuthentication==1}}">商会认证</text>
+              </view>
+
+              <view class="myenterpriseListcard-companyShareWrap">
+              	<view wx:if="{{isshare}}" class="fr" bindtap="shareCompanyCard" data-item="{{companyCardInfo}}">
+              		<text>分享</text>
+                	<image wx:if="{{isshare&&!isedit}}" src="{{iconList.share}}"></image>
+              	</view>
+              	<text class="myenterpriseListcard-companyShareWrap-edit" wx:if="{{isedit}}" data-id="{{companyCardInfo.id}}" bindtap="goEditCompany" data-can="can" data-isuthentication="{{companyCardInfo.isAuthentication}}">编辑</text>
+              </view>
+            </view>
+              <view  >
+                <view class="myenterpriseListcard-block-1" bindtap='goCompanyDes' data-can="can" data-isuthentication="{{companyCardInfo.isAuthentication}}" data-id="{{companyCardInfo.id}}">
+                  <view class="myenterpriseListcard-companyLogo">
+                      <image wx:if="{{companyCardInfo.logo}}" src="{{companyCardInfo.logo}}"></image>
+                      <view wx:else class="myenterpriseListcard-company-logo-text">{{companyCardInfo.textlogo}}</view>
+                  </view>
+                  <view class="myenterpriseListcard-block-1-detail">
+                    <view class="myenterpriseListcard-block-1-detail-name {{companyCardInfo.fontsize}}">
+                        <text>{{companyCardInfo.name}}</text>
+                    </view>
+                    <view class="myenterpriseListcard-companytags">
+                      <block wx:for="{{companyCardInfo.coTag}}" wx:for-item="item2">
+                        <view class="myenterpriseListcard-companytags-tag {{item2.coTagType==2?'tag-green':''}} {{item2.coTagType==1?'tag-yellow':''}}">
+                          <text> {{item2.coTagName}}</text>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+                <view class="myenterpriseListcard-block-2">
+                  <view class="myenterpriseListcard-block-2-span">
+                    <view>
+                      法人代表
+                    </view>
+                    <view class="myenterpriseListcard-block-2-text">
+                      {{companyCardInfo.legalPerson}}
+                    </view>
+                    <view class="myenterpriseListcard-line-view"></view>
+                  </view>
+                  <view class="myenterpriseListcard-block-2-span">
+                    <view>
+                      成立日期
+                    </view>
+                    <view class="myenterpriseListcard-block-2-text">
+                      {{companyCardInfo.setUpTime}}
+                    </view>
+                    <view class="myenterpriseListcard-line-view"></view>
+                  </view>
+                  <view class="myenterpriseListcard-block-2-span" bindtap="goAddressDes" data-address="{{companyCardInfo.address}}">
+                    <view>
+                      地址
+                    </view>
+                    <view class="myenterpriseListcard-block-2-text">
+                      {{companyCardInfo.address}}
+                    </view>
+                  </view>
+                </view>
+              </view>
+          </view>
+    	</view>
+</template>

@@ -1,0 +1,37 @@
+<!--templates/supplytemp/supplytemp.wxml-->
+<template name="supplytemp" >
+	<!-- <view class="supplytemp" bindtap="toDetails" data-id="{{item.id}}"> -->
+	<view class="supplytemp" bindtap="toDetails" data-id="{{item.activityId ? item.activityId : item}}" data-index="{{index}}" data-hasownmess="{{item.hasOwnMess}}" data-companyName="{{item.companyName}}" hover-class="commonhoverclass">
+		<image class="alreadySaveMessage" wx:if="{{item.hasOwnMess}}" src="../../../assets/images/icon/ico-alreadySaveMessage.png" ></image>
+
+		<view class="supplytemp-header">
+			<view class="supplytemp-header-logo-box">
+				<image class="supplytemp-header-logo" src="{{item.companyLogo ? item.companyLogo:'../../../assets/images/mine/logo.jpg'}}"></image>
+			</view>
+			<!-- <image class="supplytemp-header-logo" src="{{item.launchCompany.logo}}"></image> -->
+			<text class="supplytemp-header-name">{{item.companyName}}</text>
+			<!-- <text class="supplytemp-header-name">{{item.launchCompany.name}}</text> -->
+		</view>
+		<view class="supplytemp-title bold font34">
+			<text>{{item.title}}</text>
+		</view>
+		<view class="supplytemp-content font28">
+			<!-- <text>{{item.content}}</text> -->
+			<block wx:for="{{item.content}}" wx:for-index="index2" wx:for-item="item2">
+				<view wx:if="{{item2.text&&index2==0}}" class="subtitle">{{item2.text}}</view>
+				<!-- <image mode="widthFix" wx:if="{{item.image}}" src="{{item.image}}"></image> -->
+			</block>
+		</view>
+		<view class="supplytemp-footer font26">
+			<view>{{item.viewCount}}浏览</view>
+			<view class="supplytemp-footer-point"></view>
+			<view>{{item.differTime}}前</view>
+			<view class="supplytemp-footer-point"></view>
+			<view>{{item.subjectName}}</view>
+			<view wx:if="{{item.isAuthentication==1}}" class="supplytemp-header-authentication font22 fr">
+				<image src="{{iconList.authentication}}"></image>
+				<text>商会认证</text>
+			</view>
+		</view>
+	</view>
+</template>

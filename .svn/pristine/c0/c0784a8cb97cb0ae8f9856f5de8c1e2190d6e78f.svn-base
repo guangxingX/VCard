@@ -1,0 +1,38 @@
+<import src="../../../templates/messageListTemplate/messageListTemplate.wxml" />
+<view class="container">
+	<view class="message-page">
+		<view class="message-header">
+			<view bindtap="changetab" data-tab="0" class="{{currenttab=='0'?'active':''}}"><text>别人给我留言</text></view>
+			<view bindtap="changetab" data-tab="1" class="{{currenttab=='1'?'active':''}}"><text>我给别人留言</text></view>
+		</view>
+		<view wx:if="{{currenttab=='0'}}">
+		<!-- 别人给我留的言 -->
+			<block wx:for="{{youToMeMessageList}}">
+				<template is="messageListTemplate" data="{{item,fromCurrenttab}}"></template>
+			</block>
+		</view>
+		<view wx:if="{{currenttab=='1'}}">
+		<!-- 我给别人留的言 -->
+			<block wx:for="{{meToYouMessageList}}">
+				<template is="messageListTemplate" data="{{item,fromCurrenttab}}"></template>
+			</block>
+		</view>
+	</view>
+	<view class="noContent" wx:if="{{!youToMeMessageList.length && currenttab=='0'}}">
+		<view>
+			<image class="noImage" src="../../../assets/images/mine/no-supply.png" ></image>
+		</view>
+		<view class="noTextWrap">
+			<text class="noText"> 暂无消息</text>
+		</view>
+	</view>
+
+	<view class="noContent" wx:if="{{!meToYouMessageList.length && currenttab=='1'}}">
+		<view>
+			<image class="noImage" src="../../../assets/images/mine/no-supply.png" ></image>
+		</view>
+		<view class="noTextWrap">
+			<text class="noText"> 暂无消息</text>
+		</view>
+	</view>
+</view>

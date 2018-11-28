@@ -1,0 +1,7 @@
+/* pages/homePage/choisemarriage/choisemarriage.wxss */
+.radio-group{background:#fff;padding-left:5%;margin-top:20rpx;}
+.radio{border-bottom:2rpx solid #e5e5e5;padding:30rpx 0;padding-right:5%;font-size:28rpx;color:#353535;display: block;}
+.radio radio{float:right;}
+.footer{padding:36rpx 30rpx 136rpx;}
+.footer button{background:#3073e3;color:#fff;}
+.footer .button-hover{background:#3073e3;}

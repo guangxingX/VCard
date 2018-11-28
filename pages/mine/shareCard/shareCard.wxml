@@ -1,0 +1,46 @@
+<import src="../../../templates/myBusinessCardTemp/myBusinessCardTemp.wxml" />
+<view class="wrap">
+  <template is="myBusinessCardTemp" data="{{item:cardInfo,iconList,pageFrom,userAvatar}}"></template>
+  <!-- <view class="tag-tag" >
+            <image class="cardbg" src="{{cardInfo.bgUrl}}"></image>
+            <view class="section-1">
+              <view class="avatar" bindtap="toMycardDetails" data-mycardid="{{cardInfo.id}}">
+                  <image src="{{logo}}"></image>
+              </view>
+              <view class="detail" bindtap="toMycardDetails" data-mycardid="{{cardInfo.id}}">
+                <view class="name flex1">
+                    <text>{{cardInfo.name}}</text>
+                    <image wx:if="{{cardInfo.isOriginal}}" src="../../../assets/images/index/AuthenticationIcon.png"></image>
+                </view>
+                <view class="comp flex1">
+                    <text> {{cardInfo.position}}</text>
+                </view>
+              </view>
+
+            </view>
+            <view class="section-2" bindtap="toMycardDetails" data-mycardid="{{cardInfo.id}}">
+               <view class="section-2-detail">
+                  <view class="comp flex1 companyName">
+                    <text class="text"> {{cardInfo.companyName}}</text>
+                    <view class="authentication" wx:if="{{cardInfo.isAuthentication}}">
+                      <image src="../../../assets/images/icon/icon-authentication-yellow.png"></image>
+                      <text>商会认证</text>
+                    </view>
+                  </view>
+                 <view class="comp flex1">
+                      <image src="../../../assets/images/icon/icon-phone.png"></image>  <text bindtap="makeCall" data-phone="{{cardInfo.mobile}}"> {{cardInfo.mobile}}</text>
+                  </view>
+                  <view class="comp flex1">
+                      <image src="../../../assets/images/icon/icon-email.png"></image>  <text> {{cardInfo.email}}</text>
+                  </view>
+                  <view class="comp flex1">
+                      <image src="../../../assets/images/icon/icon-address.png"></image>  <text> {{cardInfo.address}}</text>
+                  </view>
+                </view>
+            </view>
+   </view>
+ -->
+   <view class="shareBtnWrap">
+     <button class="shareBtn" size="default" bindtap="shareBtnClick" open-type="share">分享给好友</button>
+   </view>
+</view>

@@ -1,0 +1,16 @@
+<view class="loginWrap">
+  <view class="login-image">
+    <image mode="widthFix" src="../../../assets/images/index/login-img.png"></image>
+  </view>
+  <view class="loginBox">
+    <view class="login-title font36">
+      欢迎使用WISSO超级名片
+    </view>
+    <view class="login-content font26">
+      WISSO超级名片是北京中和黄埔教育科技有限公司开发的一款商业沟通平台。拥有<text>OCR名片扫描，分享个人/企业/商会名片，企业/商会资源、需求、活动</text>大数据聚合等强大功能，以此来实现各行各业交流合作。
+    </view>
+    <button type="primary" class="loginBtn" style="background-color:#3073e3;" loading="{{loading}}" disabled="{{loading}}" hover-class="button-hover" bindtap="nextStep">快捷登录</button>
+  </view>
+
+
+</view>

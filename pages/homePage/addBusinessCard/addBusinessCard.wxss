@@ -1,0 +1,12 @@
+/* pages/homePage/addBusinessCard/addBusinessCard.wxss */
+@import "../../../welCropper/welCropper.wxss";
+.container{background:#fff;}
+.addchoise-page{flex:1;width:100%;}
+.add-title{text-align:center;margin-bottom:53rpx;margin-top:80rpx;}
+.add-title .title{color:#353535;font-size:38rpx;padding-bottom: 20rpx;}
+.add-title .tip{font-size:26rpx;color:#999;}
+.Scanning,.Manual{width:95%;margin:0 auto;height:360rpx;border-radius:16rpx;position:relative;overflow:hidden;margin-bottom:48rpx;}
+.Scanning image,.Manual image{height:360rpx;width:100%;border-radius:16rpx;position:relative;top:0;left:0;}
+.scantext,.manualtext{position:absolute;z-index:10;color:#fff;font-size:26rpx;bottom:58rpx;width:100%;text-align:center;}
+.scantext .title,.manualtext .title{font-size:34rpx;margin-bottom:10rpx;}
+.manualtext{color:#3073e3;}

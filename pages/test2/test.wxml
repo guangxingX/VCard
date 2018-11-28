@@ -1,0 +1,3 @@
+<!--pages/test/test.wxml-->
+<text bind:tap="onTapTest">pages/test/test.wxml</text>
+<w-image-text myProperty="hello wolrd" />

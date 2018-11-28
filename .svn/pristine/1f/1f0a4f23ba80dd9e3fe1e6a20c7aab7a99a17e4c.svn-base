@@ -1,0 +1,40 @@
+/* pages/supply/supplyDetails/supplyDetails.wxss */
+page{background:#efeef3;}
+.supplyDetails-page{flex:1;width:100%;}
+.infobox{padding:40rpx 30rpx 20rpx;background:#fff;margin-bottom:20rpx;}
+.infobox .append{margin:30rpx 0;color:#888;}
+.infobox .append .tag{float:right;border:2rpx solid #888;font-size:22rpx;
+	padding:2rpx 6rpx;border-radius:6rpx;}
+.infobox .append>view{display:inline-block;}
+.infobox .point{width:8rpx;height:8rpx;background:#b2b2b2;border-radius:4rpx;margin:0 26rpx;
+	position:relative;top:-5rpx;}
+.infobox .content{font-size:28rpx;}
+.infobox .content .showmore{color:#3073e3;text-align:center;}
+.contactInfo image.pnoneicon{width:34rpx;height:34rpx;margin-top:30rpx;float:right;margin-right:16rpx;}
+.contactInfo{font-size:28rpx;color:#a9a9a9;height:95rpx;line-height:95rpx;margin-bottom:20rpx;
+	background:#fff;padding:0 30rpx;max-width:100%;white-space:nowrap; overflow:hidden;
+	text-overflow:ellipsis;}
+.contactInfo .phone{margin-right:10rpx;float:right;color:#3073e3;}
+
+.contactcompany{background:#fff;margin-bottom: 18rpx;}
+/*.margin-b-200{margin-bottom: 200rpx;}*/
+.contactcompany .title{height:89rpx;line-height:89rpx;color:#888888;
+  padding:0 30rpx;border-bottom:2rpx solid #eee;}
+  .details-contactIcon{margin-right: 20rpx;}
+
+.messagebox{font-size:28rpx;background:#fff;
+	color:#888;}
+.messagebox .header{border-bottom:2rpx solid #e5e5e5;height:86rpx;line-height:86rpx;padding:0 30rpx;}
+.messagebox{margin-bottom:144rpx;}
+
+@import "../../../templates/messageListTemplate/messageListTemplate.wxss";
+@import "../../../templates/enterpriseListcard/enterpriseListcard.wxss";
+@import "../../../templates/ccListBlock/ccListBlock.wxss";
+
+
+.detailsfooter{height:144rpx;position:fixed;bottom:0;left:0;width:100%;background:#efeff4;z-index: 999999;}
+.detailsfooter button{width:329rpx;height:86rpx;line-height:86rpx;border-radius:10rpx;margin-top:28rpx;}
+.detailsfooter button:nth-child(1){margin-left:30rpx;}
+.detailsfooter button:nth-child(2){margin-right:30rpx;}
+
+.companycard{padding:30rpx 0;}

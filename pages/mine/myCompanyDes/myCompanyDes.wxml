@@ -1,0 +1,413 @@
+
+<view class="wrap">
+  <view class="header">
+      <view class="top">
+        <!-- <image class="titleImg" style="" mode="aspectFit" src="../../../assets/images/mine/companyBg.jpg" binderror="" bindload=""></image> -->
+        <image class="titleImg"  src="{{companyInfo.companyTemplate}}" ></image>
+
+        <view wx:if="{{isMine=='1'}}" class="btnWrap" bindtap="changeCompanyTemplate">
+          <!-- <text class="headerBtn edit" bindtap="goEditCompany">编辑</text> -->
+
+          <!-- 挪到编辑公司里面去了 -->
+          <!-- <text class="headerBtn changeBg">更换背景</text> -->
+        </view>
+
+        <view class="companyWrap">
+          <text class="companyTitle"> {{ companyInfo.name }} </text>
+        </view>
+      </view>
+      <view class="bottom">
+        <view class="companyType">
+          <block wx:for="{{companyInfo.coTag}}" wx:for-item="typeItem">
+              <!-- <text class="companyName {{typeItem.coTagType ? 'type-tag-red':''}}">{{ typeItem.coTagName }}</text> -->
+            <text class="tag-yellow companyName" wx:if="{{typeItem.coTagType==1}}">{{typeItem.coTagName}}</text>
+            <text class="tag-green companyName" wx:elif="{{typeItem.coTagType==2}}">{{typeItem.coTagName}}</text>
+            <text class="companyName"  wx:else>{{typeItem.coTagName}}</text>
+
+          </block>
+        </view>
+      </view>
+      <view class="logo">
+        <image class="logoImg" wx:if="{{companyInfo.logo}}" style="" mode="scaleToFill" src="{{companyInfo.logo}}" binderror="" bindload=""></image>
+        <view wx:else class="company-logo-text">{{companyInfo.textlogo}}</view>
+      </view>
+  </view>
+  <view class="companyAddressWrap">
+    <view class="peopleNumber">
+      <!-- <view class="item item1" bindtap="{{isuthentication=='1' ? 'goShanghuiDetails':''}}" data-cocid="{{companyInfo.cocId}}"> -->
+
+       <!-- 根据有无商会名来判断是否可以点击 -->
+      <view class="item item1" bindtap="{{companyInfo.cocName ? 'goShanghuiDetails':''}}" data-cocid="{{companyInfo.cocId}}">
+        <view class="itemTitle">
+          <!-- <text wx:if="{{isuthentication=='1'}}">{{companyInfo.cocName}}</text>
+          <text wx:else>暂无商会</text> -->
+
+          <!-- 根据有无商会名来判断 -->
+          <text wx:if="{{companyInfo.cocName}}">{{companyInfo.cocName}}</text>
+          <text wx:else>暂无商会</text>
+
+        </view>
+        <view class="itemTag">
+          <view class="item-bottom-bg" data-cocid="{{companyInfo.cocId}}">
+          <!-- <view class="item-bottom-bg"> -->
+              <image class="companyIcon" style="display: inline-block;" mode="aspectFit" src="../../../assets/images/icon/icon-authentication-white.png" binderror="" bindload=""></image>
+              <text> 商会</text>
+              <!-- <image wx:if="{{isuthentication=='1'}}" class="companyIcon" style="display: inline-block;" mode="aspectFit" src="../../../assets/images/icon/arrow-right.png" binderror="" bindload=""></image> -->
+              <image wx:if="{{companyInfo.cocName}}" class="companyIcon" style="display: inline-block;" mode="aspectFit" src="../../../assets/images/icon/arrow-right.png" binderror="" bindload=""></image>
+          </view>
+        </view>
+
+      </view>
+      <view class="item item2" bindtap="goAllStaff">
+        <view class="itemTitle">
+          <text>{{companyInfo.employee}}人</text>
+        </view>
+        <view class="itemTag">
+          <view class="item-bottom-bg colorblue">
+              <image class="companyIcon" style="display: inline-block;" mode="aspectFit" src="../../../assets/images/icon/icon-person.png" binderror="" bindload=""></image>
+              <text> 员工 </text>
+              <image class="companyIcon" style="display: inline-block;" mode="aspectFit" src="../../../assets/images/icon/arrow-right.png" binderror="" bindload=""></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="companyAddress" bindtap="goAddressDes" data-address="{{companyInfo.address}}">
+        <text class="addressText">地址： {{ companyInfo.address }} </text>
+       <image class="mapIcon" bindtap="seeAddressOnMap" mode="aspectFit" src="../../../assets/images/icon/icon-map.png" binderror="" bindload=""></image>
+
+    </view>
+  </view>
+  <view class="space"></view>
+
+  <!-- 概览 文化/产品 供需/活动 -->
+  <view class="companySwitch">
+    <view class="switchHeader">
+      <view class="top-tab flex-wrp flex-tab " >
+        <view class="toptab switchItem flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+          {{itemName}}
+        </view>
+      </view>
+
+    </view>
+    <view class="swithBody">
+        <scroll-view scroll-y="true" class="tabcontainer discovery withtab" bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+          <!-- 概览 -->
+          <!-- <view class="companyInfoWrap" hidden="{{currentNavtab==0 ? '' : true}}"> -->
+          <view class="companyProduct" hidden="{{currentNavtab==0 ? '' : true}}">
+            <view class="companyInfo">
+              <text class="companyInfoTag"></text>
+              <text>工商信息</text>
+            </view>
+             <view class="companyDesWrap">
+                <view class="infoContent ">
+                  <view class="firstTitle rowItem">
+                    <view class="companyInfoItem w100p">
+                      <view class="companyInfoItem-title w50p inline importantTitle">法定代表人: </view>
+                     <view class="companyInfoItem-title w50p inline importantTitle" > 成立日期: </view>
+                    </view>
+                    <view class="companyInfoItem w100p">
+                      <view class="companyInfoItem-content w50p inline importantTitle"> {{companyInfo.businessInfo.legalPerson}} </view>
+                      <view class="companyInfoItem-content w50p inline importantTitle"> {{companyInfo.businessInfo.setUpTime}} </view>
+                    </view>
+                  </view>
+
+                  <view class="rowItem">
+                    <view class="companyInfoItem  w100p">
+                      <view class="companyInfoItem-title w50p inline"> 注册资本: </view>
+                      <view class="companyInfoItem-title w50p inline">公司名称: </view>
+                    </view>
+                     <view class="companyInfoItem  w100p">
+                      <view class="companyInfoItem-content  w50p inline"> {{companyInfo.businessInfo.registerNum}} </view>
+                      <view class="companyInfoItem-content  w50p inline"> {{companyInfo.businessInfo.companyName}} </view>
+                    </view>
+                  </view>
+
+                  <view class="rowItem">
+                    <view class="companyInfoItem w100p">
+                      <view class="companyInfoItem-title  w50p inline"> 公司类型: </view>
+                      <view class="companyInfoItem-title  w50p inline"> 统一信用代码: </view>
+                    </view>
+                    <view class="companyInfoItem w100p">
+                      <view class="companyInfoItem-content  w50p inline"> {{companyInfo.businessInfo.companyType}} </view>
+                      <view class="companyInfoItem-content  w50p inline"> {{companyInfo.businessInfo.uniformCode}} </view>
+                    </view>
+                  </view>
+                  <view wx:if="{{showMore}}">
+                    <view class="rowItem">
+                      <view class="companyInfoItem w100p">
+                        <view class="companyInfoItem-title w50p inline"> 工商注册号: </view>
+                        <view class="companyInfoItem-title w50p inline"> 组织机构代码: </view>
+                      </view>
+                      <view class="companyInfoItem w100p">
+                        <view class="companyInfoItem-content w50p inline"> {{companyInfo.businessInfo.businessNum}} </view>
+                        <view class="companyInfoItem-content w50p inline"> {{companyInfo.businessInfo.organizationCode}} </view>
+                      </view>
+                    </view>
+
+                    <view class="rowItem">
+                      <view class="companyInfoItem w100p">
+                        <view class="companyInfoItem-title w50p inline"> 纳税人识别号: </view>
+                        <view class="companyInfoItem-title w50p inline"> 登记状态: </view>
+                      </view>
+                      <view class="companyInfoItem w100p">
+                        <view class="companyInfoItem-content w50p inline"> {{companyInfo.businessInfo.taxpayerNum}} </view>
+                        <view class="companyInfoItem-content w50p inline"> {{companyInfo.businessInfo.registerStatus}} </view>
+                      </view>
+                    </view>
+
+                    <view class="rowItem">
+                      <view class="companyInfoItem w100p">
+                        <view class="companyInfoItem-title w50p inline"> 所属行业: </view>
+                        <view class="companyInfoItem-title w50p inline"> 注册地址: </view>
+                      </view>
+                      <view class="companyInfoItem w100p">
+                        <view class="companyInfoItem-content w50p inline"> {{companyInfo.businessInfo.industry}} </view>
+                        <view class="companyInfoItem-content w50p inline"> {{companyInfo.businessInfo.registerAdress}} </view>
+                      </view>
+                    </view>
+
+                    <view class="rowItem">
+                      <view class="companyInfoItem w100p">
+                        <view class="companyInfoItem-title  w50p inline"> 营业期限: </view>
+                        <view class="companyInfoItem-title  w50p inline"> 经营范围: </view>
+                      </view>
+                      <view class="companyInfoItem w100p">
+                        <view class="companyInfoItem-content  w50p inline"> {{companyInfo.businessInfo.operatingPeriod}} </view>
+                        <view class="companyInfoItem-content  w50p inline"> {{companyInfo.businessInfo.businessScope}} </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+                <view class="moreInfo" bindtap="seemore">{{showText}}</view>
+
+                <!-- 公司简介 -->
+                <view class="companyDes" wx:if="{{companyInfo.companyIntro.length}}">
+                  <view class="companyInfo">
+                    <text class="companyInfoTag"></text>
+                    <text>公司介绍</text>
+                  </view>
+                  <view class="desWrap">
+                    <block wx:for="{{companyInfo.companyIntro}}">
+                      <view class="desWrapText" wx:if="{{item.content}}">{{item.content}}</view>
+                      <view class="desWrapImg" wx:if="{{item.image_url}}">
+                        <image mode="widthFix" src="{{item.image_url}}"></image>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+             </view>
+          </view>
+          <!-- 文化/产品 -->
+          <view class="companyProduct" hidden="{{currentNavtab==1 ? '' : true}}">
+              <view class="productHeder">
+                  <view class="productHederWrap">
+                    <view class="productTabItem {{productCurrentNavtab==1 ? 'active' : ''}}" bindtap="swicthPoductTab" data-select="{{1}}">企业文化</view>
+
+                    <view class="productTabItem {{productCurrentNavtab==0 ? 'active' : ''}}"  bindtap="swicthPoductTab" data-select="{{0}}">公司产品</view>
+                  </view>
+              </view>
+              <view class="productBody">
+                <view class="productBody-tabItem tab-culture" hidden="{{productCurrentNavtab==1 ? '' : true}}">
+                      <!-- 企业文化 -->
+                    <block wx:for="{{cultureList}}" wx:if="{{cultureList.length}}">
+                      <view class="productItemWrap">
+                        <view class="companyInfo">
+                          <text class="companyInfoTag"></text>
+                          <text>{{item.title}}</text>
+                        </view>
+                         <block wx:for="{{item.cultureIntro}}" wx:for-index="idx" wx:for-item="richItem">
+                            <view class="productContent">
+                                <view wx:if="{{richItem.text}}" class="productText">{{richItem.text}}</view>
+                                <view wx:if="{{richItem.image}}" class="productImg">
+                                  <image src="{{richItem.image}}" mode="widthFix"></image>
+                                </view>
+                            </view>
+                         </block>
+                      </view>
+                    </block>
+                     <!-- 占位图开始 -->
+                      <view class="noContent" wx:if="{{!cultureList.length}}">
+                        <view>
+                          <image class="noImage" src="../../../assets/images/mine/imageText-placeholder-image.png" ></image>
+                        </view>
+                        <view class="noTextWrap">
+                          <text class="noText"> 暂无文化 </text>
+                        </view>
+                      </view>
+                    <!-- 占位图结束 -->
+
+                </view>
+                <view class="productBody-tabItem tab-product" hidden="{{productCurrentNavtab==0 ? '' : true}}">
+                    <!-- 公司产品 -->
+                    <block wx:for="{{productList}}"  wx:if="{{productList.length}}">
+                      <view class="productItemWrap">
+                        <view class="companyInfo">
+                          <text class="companyInfoTag"></text>
+                          <text>{{item.name}}</text>
+                          <!-- 小程序无法跳转到外部链接，这里不要了 -->
+                          <!-- <view class="productLink" data-link="{{item.url}}" bindtap="goProductLink">
+                            <image wx:if="{{item.url}}" class="icon24 linkimg" src="../../../assets/images/icon/icon-link-blue.png"> </image>
+                            <text wx:if="{{item.url}}" class="link">链接</text>
+                          </view> -->
+                        </view>
+                         <block wx:for="{{item.productInfo}}" wx:for-index="idx" wx:for-item="richItem">
+                            <view class="productContent">
+                                <view wx:if="{{richItem.text}}" class="productText">{{richItem.text}}</view>
+                                <view wx:if="{{richItem.image}}" class="productImg">
+                                  <image mode="widthFix" src="{{richItem.image}}" ></image>
+                                </view>
+                            </view>
+                         </block>
+                      </view>
+                    </block>
+                    <!-- 占位图开始 -->
+                      <view class="noContent" wx:if="{{!productList.length}}">
+                        <view>
+                          <image class="noImage" src="../../../assets/images/mine/imageText-placeholder-image.png" ></image>
+                        </view>
+                        <view class="noTextWrap">
+                          <text class="noText"> 暂无产品 </text>
+                        </view>
+                      </view>
+                    <!-- 占位图结束 -->
+                </view>
+              </view>
+          </view>
+          <!-- 供需/活动 -->
+          <view class="companyProduct" hidden="{{currentNavtab==2 ? '' : true}}">
+            <view class="supplyHeder">
+              <view class="supplyHederWrap productHederWrap">
+                <view class="supplyTabItem {{supplyCurrentNavtab==0 ? 'active' : ''}}" bindtap="swicthsupplyTab" data-supplyselect="{{0}}">资源</view>
+
+                <view class="supplyTabItem {{supplyCurrentNavtab==1 ? 'active' : ''}}"  bindtap="swicthsupplyTab" data-supplyselect="{{1}}">需求</view>
+
+                <view class="supplyTabItem {{supplyCurrentNavtab==2 ? 'active' : ''}}"  bindtap="swicthsupplyTab" data-supplyselect="{{2}}">活动</view>
+              </view>
+            </view>
+
+            <view class="supplyCurrentNavtabBody">
+                <view class="supplyBody-tabItem tab-culture" hidden="{{supplyCurrentNavtab==0 ? '' : true}}">
+                    <!-- 这里是资源模块 -->
+                  <block wx:for="{{demandList}}">
+                        <view class="resourceWrap" hover-class="commonhoverclass" bindtap="goResourceDetails" data-id="{{item.activityId}}" data-index="{{index}}" data-hasOwnMess="{{item.hasOwnMess}}">
+                            <view class="resourceTitle font34 bold">{{item.title}}</view>
+                            <view class="resourceContent">
+                              <block wx:for="{{item.content}}" wx:for-item="textItem">
+                                <text> {{textItem.text}} </text>
+                              </block>
+                            </view>
+                            <view class="resourcebrowse">
+                                <text class="resourceBrowseTimes"> {{item.viewCount}} 浏览</text>
+                                <view class="point"></view>
+                                <text class="resourceBrowseDate"> {{item.laseTime}}前</text>
+                            </view>
+                        </view>
+                  </block>
+                   <!-- 占位图开始 -->
+                    <view class="noContent" wx:if="{{!demandList.length}}">
+                      <view>
+                        <image class="noImage" src="../../../assets/images/mine/no-supply.png" ></image>
+                      </view>
+                      <view class="noTextWrap">
+                        <text class="noText"> 暂无资源 </text>
+                      </view>
+                    </view>
+                    <!-- 占位图结束 -->
+                </view>
+                <view class="supplyBody-tabItem tab-supply" hidden="{{supplyCurrentNavtab==1 ? '' : true}}">
+                    <!-- 这里是需求模块-->
+                    <block wx:for="{{supplyList}}">
+                        <view class="resourceWrap" hover-class="commonhoverclass" bindtap="goSupplyDetails" data-id="{{item.activityId}}" data-index="{{index}}" data-hasOwnMess="{{item.hasOwnMess}}">
+                            <view class="resourceTitle font34 bold">{{item.title}}</view>
+                            <view class="resourceContent">
+                              <block wx:for="{{item.content}}" wx:for-item="textItem">
+                                <text> {{textItem.text}} </text>
+                              </block>
+                            </view>
+                            <view class="resourcebrowse">
+                                <text class="resourceBrowseTimes"> {{item.viewCount}} 浏览</text>
+                                <view class="point"></view>
+                                <text class="resourceBrowseDate"> {{item.laseTime}}前</text>
+                            </view>
+                        </view>
+                    </block>
+                     <!-- 占位图开始 -->
+                      <view class="noContent" wx:if="{{!supplyList.length}}">
+                        <view>
+                          <image class="noImage" src="../../../assets/images/mine/no-supply.png" ></image>
+                        </view>
+                        <view class="noTextWrap">
+                          <text class="noText"> 暂无需求 </text>
+                        </view>
+                      </view>
+                      <!-- 占位图结束 -->
+                </view>
+
+                <!-- 活动模块 -->
+                <view class="supplyBody-tabItem tab-supply" hidden="{{supplyCurrentNavtab==2 ? '' : true}}">
+                <!-- activeList -->
+                <scroll-view scroll-y  bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" >
+                   <block wx:for="{{activityList}}">
+                    <view class="activeWrap resourceWrap" hover-class="commonhoverclass">
+                         <view class="activeTop">
+                            <view class="activeImg" bindtap="goMyCompanyAvtiveDes" data-activityid="{{item.activityId}}" data-activityitem="{{item}}">
+                                <image mode="aspectFill" src="{{item.image}}"></image>
+                            </view>
+                            <view class="activeContent">
+                              <view bindtap="goMyCompanyAvtiveDes" data-activityid="{{item.activityId}}" data-activityitem="{{item}}">
+                                  <text class="activeContentTitle font34 bold"> {{ item.title }} </text>
+                                  <view class="activeDate">
+                                    <text> {{ item.createTime }} </text>
+                                  </view>
+                              </view>
+                              <view class="actvieBaoming">
+                                <view class="baomingNumber fl">
+                                  <text>已报名：{{ item.applyPeople }}人 </text>
+                                </view>
+                                <view class="activeAddress fr">
+                                  <navigator url="../companyAddressMaps/companyAddressMaps" hover-class="">
+                                    <image class="icon24 addressIco" src="../../../assets/images/icon/icon-map.png" ></image>
+                                    <text class="activeAddressText"> {{ item.address }} </text>
+                                  </navigator>
+                                </view>
+                              </view>
+                            </view>
+                         </view>
+                      <view class="activeBottom">
+                            <view class="activeCompanyName"> {{ item.companyName}} </view>
+                            <view class="rz-wrap">
+                              <image class="shanghuiIco" src="../../../assets/images/icon/icon-authentication-yellow.png" ></image>
+                               商会认证
+                            </view>
+                          <view class="willStart  {{item.activityState=='进行中'?'greentext':''}} {{item.activityState=='即将开始'?'blue':''}}">
+                            {{item.activityState}}
+                          </view>
+                      </view>
+                    </view>
+                  </block>
+                  <!-- 占位图开始 -->
+                  <view class="noContent" wx:if="{{!activityList.length}}">
+                    <view>
+                      <image class="noImage" src="../../../assets/images/mine/imageText-placeholder-image.png" ></image>
+                    </view>
+                    <view class="noTextWrap">
+                      <text class="noText"> 暂无活动 </text>
+                    </view>
+                  </view>
+                  <!-- 占位图结束 -->
+                  </scroll-view>
+                </view>
+            </view>
+          </view>
+        </scroll-view>
+
+    </view>
+  </view>
+
+
+   <view class="shareCompanyInfo footer">
+    <button class="shareCompanyInfoBtn {{isMine=='1' ? 'w98':''}}" type="primary"  open-type="share" >分享企业信息</button>
+     <button wx:if="{{isMine == '0'}}" class='reportBtn' type="warn" bindtap="collectionInPackage">{{colStatus == '0' ? '收藏企业名片':'取消收藏'}}</button>
+  </view>
+
+</view>

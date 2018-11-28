@@ -1,0 +1,36 @@
+page {
+  height: 100%;
+}
+
+.loginWrap {
+}
+
+.loginBox {
+  padding: 0 60rpx;
+  text-align: center;
+}
+
+.login-image image {
+  width: 100%;
+}
+
+.login-title {
+  color: #3073e3;
+  margin: 60rpx 0;
+}
+
+.login-content {
+  color: #999ca0;
+  line-height: 45rpx;
+  margin-bottom: 140rpx;
+}
+
+.login-content text {
+  color: #6c6f74;
+}
+
+.loginBtn {
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+}

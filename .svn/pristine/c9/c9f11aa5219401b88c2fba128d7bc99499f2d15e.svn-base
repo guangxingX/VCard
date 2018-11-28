@@ -1,0 +1,28 @@
+/* templates/activityListTemp.wxss */
+.activityListTemp{background:#fff;/*margin-bottom:20rpx;*/}
+.activityListTemp-block1{padding:26rpx 30rpx;border-bottom:1rpx solid #eee;border-top: 20rpx solid #efeef3;
+	overflow:hidden;display:flex;align-items:center;}
+.activityListTemp-block1-logo{width:270rpx;height:160rpx;margin-right:20rpx;vertical-align: middle;}
+.activityListTemp-block1-content{width:400rpx;float:right;}
+.activityListTemp-block1-content-title{height:78rpx;display:table-cell;vertical-align:middle;}
+.activityListTemp-block1-content-date{color:#888;font-size: 26rpx;}
+.activityListTemp-block1-content-footer{color:#888;line-height:25rpx;}
+.activityListTemp-block1-content-footer-address{margin:3rpx 0;}
+.activityListTemp-block1-content-footer-address text{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;color:#888;max-width:300rpx;display:inline-block;line-height:54rpx;float:left;}
+.activityListTemp-block1-content-footer-address-smallMap{width:54rpx;height:54rpx;margin-left:30rpx;
+vertical-align:middle;}
+.activityListTemp-icon{width:24rpx;height:24rpx;margin-right:6rpx;}
+.activityListTemp-block2{height:65rpx;line-height:65rpx;padding:0 30rpx;color:#888;}
+.activityListTemp-block2-authentication{color:#f19942;display:inline-block;
+	margin-left:10rpx;position:relative;top:3rpx;}
+.activityListTemp-block2-authentication>image{width:22rpx;height:18rpx;margin-right:5rpx;}
+.activityListTemp-block2-status{width:129rpx;text-align:right;border-left:1rpx solid #eeeeee;
+	position:relative;top:18rpx;height:29rpx;line-height:27rpx;}
+.activityListTemp-block2-companyname1{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+max-width:412rpx;}
+.activityListTemp-block2-companyname2{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+max-width:545rpx;}
+.activityListTemp:last-child{margin-bottom:0;border-bottom: 1rpx solid #eeeeee;}
+
+.commonhoverclass{background: #ededed;}
+

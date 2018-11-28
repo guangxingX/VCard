@@ -1,0 +1,15 @@
+/* pages/maillist/switchcity/switchcity.wxss */
+.searchLetter{position: fixed;right: 0;width: 50rpx;height: 100%;text-align: center;justify-content: center;display: flex;flex-direction: column;color: #666;z-index: 1;}
+.searchLetter view{height: 70rpx;}
+.touchClass{color: #3073e3;}
+.showSlectedLetter{background-color: rgba(48, 115, 227,0.5);color: #fff;display: flex;justify-content: center;align-items: center;position: fixed;top:50%;left: 50%;margin: -50px;width: 100px;height: 100px;border-radius:10px;z-index: 1;}
+.selection{display: flex;width: 100%;flex-direction: column;}
+.selection-block{padding-left:30rpx;}
+.item_letter{display: flex;background-color: #efeff4;height: 90rpx;padding-left: 30rpx;align-items: center;}
+.item_city{display: flex;background-color: #fff;height: 90rpx;color:#888;align-items: center;border-bottom: 2rpx solid #e5e5e5;}
+.currentCityBlock{heigth:89rpx;line-height:89rpx;padding:0 30rpx;}
+.hotCity{padding:30rpx;padding-right:50rpx;background:#efeff4;border-bottom: 2rpx solid #cccccc;}
+.hotCityBox{display:flex;flex-wrap: wrap;justify-content:space-between;margin-top:30rpx;}
+.hotCityBox .listBlock{width:210rpx;border:2rpx solid #ccc;height:69rpx;line-height:69rpx;
+    text-align:center;border-radius:10rpx;margin-bottom:20rpx;background:#fff;color:#888;}
+.selectStyle{color:#fff !important;background:#888 !important;}

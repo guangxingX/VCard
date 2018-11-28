@@ -1,0 +1,37 @@
+
+<view class="wrap">
+  <view class="produceItemBox">
+    <block wx:for="{{productList}}">
+      <view class="produceItem">
+        <view class="heder">
+          <view class="line"></view>
+          <text class="title">{{item.name}}</text>
+          <view class="editBLock" data-productindex="{{item.id}}" bindtap="goEditEveryProduct">
+            <text class="editTitle">编辑</text>
+            <image class="icon24" src="../../../assets/images/icon/icon-edit-blue.png" ></image>
+          </view>
+        </view>
+        <view class="contentWrap  {{item.isShow ?'autoStyle':'normalStyle'}}">
+            <block wx:for="{{item.productInfo}}" wx:for-item="richItem" >
+              <image wx:if="{{richItem.image}}" mode="widthFix" class="content-img" src="{{richItem.image}}"></image>
+              <!-- <view class="content-text-wrap"> -->
+                <text wx:if="richItem.text" class="content-text"> {{ richItem.text }} </text>
+              <!-- </view> -->
+            </block>
+        </view>
+         <view class="seeMore" data-index="{{index}}"  bindtap="seeMore">
+              <text> {{ productList[index].isShow?'收起更多':'查看更多' }} </text>
+              <!-- <text wx:if="{{item.isShow}}"> 收起更多 </text>
+              <text wx:else> </text> -->
+          </view>
+      </view>
+    </block>
+  </view>
+  <view class="footer">
+      <button type="primary" hover-class="button-hover" style="background-color:#3073e3;" loading="{{loading}}" disabled="{{loading}}"  bindtap="addProduce">添加</button>
+    </view>
+</view>
+<view class="noDescription" wx:if="{{!productList||productList.length==0}}">
+  <image src="../../../assets/images/mine/imageText-placeholder-image.png"></image>
+  <view class="textTitle">暂无产品</view>
+</view>

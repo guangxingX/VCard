@@ -1,0 +1,50 @@
+/* pages/homePage/businessInfo/businessInfo.wxss */
+.business-page{flex:1;width:100%;}
+.card{background:#fff;padding-top:39rpx;padding-bottom:48rpx;}
+.tag-tag{width: 90%;height: 397rpx;margin:0 auto;background-color: #21242b;background-size:100% 100%;
+  border-radius: 16rpx;box-shadow: 0px 2px 3px #ccc;position: relative;}
+.tag-tag .cardbg{position:absolute;top:0;left:0;width:100%;height:100%;}
+.tag-tag .section-1{display: flex;height: 136rpx;line-height: 136rpx;flex-direction: row;padding: 20rpx;
+  position:relative;z-index:10;}
+.section-2{position:relative;z-index:10;}
+.tag-tag .section-1 .avatar{width:136rpx;height: 136rpx;float: left;}
+.avatar image{width: 127rpx;height: 127rpx;border-radius: 50%;}
+.flex1{height: 55rpx;line-height: 55rpx; white-space:nowrap;width:21em;overflow:hidden;text-overflow:ellipsis;}
+.flex2{height: 40rpx;line-height: 40rpx;}
+.flex1 image{width:20rpx;height: 20rpx;}
+.tag-tag .section-1 .detail{flex: 3;float: right;display:flex;flex-direction:column;
+  padding-top:16rpx;margin-left:10rpx;}
+.detail .name{color:#fff;font-size:40rpx;}
+.detail .name image{width:24rpx;height:28rpx;margin-left:20rpx;}
+.detail .comp{font-size: 26rpx;color:#fff;}
+.section-2-detail .comp{line-height: 20rpx;font-size: 26rpx;color:#fff;line-height:45rpx;height:45rpx;}
+.section-2-detail .comp.companyName{font-size:32rpx;margin-top:10rpx;margin-bottom:20rpx;}
+.section-2-detail .comp.companyName .text{display: inline-block;white-space:nowrap; overflow:hidden;
+  text-overflow:ellipsis;max-width: 520rpx;}
+.section-2-detail .comp.companyName .authentication{display:inline-block;font-size:17rpx;color:#f19942;
+  margin-left:20rpx;position:relative;top:-4rpx;}
+.section-2-detail .comp.companyName .authentication text{position:relative;top:-4rpx;left:2rpx;}
+.tag-tag .section-2{height: 204rpx;}
+.section-2-detail{padding-left: 20rpx;color:#aaa;}
+.uploadphoto{display:flex;align-content:space-between;background:#fff;border-top:2rpx solid #ccc;padding:22rpx 5%;color:#999;font-size:28rpx;}
+
+.uploadphoto .photo{width:96rpx;height:96rpx;border-radius:10rpx;flex:1;text-align: right;}
+.uploadphoto .photo image{width:96rpx;height:96rpx;border-radius:10rpx;flex:1;vertical-align:middle;padding-bottom: 0;}
+
+.uploadphoto .photo .imgRow {position:relative;left:18rpx;flex:1;vertical-align: middle;}
+.uploadphoto .text{line-height:96rpx;color:#000;}
+.uploadphoto .text image{width:16rpx;height:25rpx;margin-left:10rpx;}
+.details{background:#fff;padding-left:5%;margin-top:20rpx;}
+.details .row{height:85rpx;border-bottom:1rpx solid #e5e5e5;padding-right:5%;font-size:28rpx;color:#353535;display:flex;align-items: center;justify-content:  space-between;position:relative}
+.details .row .placeholder{color:#999;}
+.details .row input{float:right;width:450rpx;position:relative;text-align:right;
+padding-right: 20rpx;}
+.details .row .text{float:right;}
+.details .row .text image{width:16rpx;height:25rpx;margin-left:10rpx;}
+.footer{padding:36rpx 5% ;width: 90%;position:absolute;bottom:30rpx;}
+.footer view{color:#3073e3;font-size:28rpx;text-align:center;margin-bottom:50rpx;}
+.footer button{background:#3073e3;color:#fff;}
+.footer .button-hover{background:#3073e3;}
+.imgRow{width:16rpx !important;height:23rpx !important;padding-bottom: 26rpx;}
+.industryLine{position: relative;padding-right: 20rpx;}
+.industryRow{position: absolute;right:20rpx;top:31rpx;}

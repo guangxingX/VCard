@@ -1,0 +1,35 @@
+<!--ccListBlock/ccListBlock.wxml-->
+<template name="ccListBlock">
+	<view class="ccListBlock">
+		<view class="ccListBlock-block1" bindtap="toCommerceDetails" data-cocid="{{item.id}}">
+			<view class="ccListBlock-block1-image">
+		        <image wx:if="{{item.logo}}" src="{{item.logo}}"></image>
+		        <view wx:else class="company-logo-text">{{item.textlogo}}</view>
+			</view>
+			<view class="ccListBlock-block1-text">
+        	<view class="ccListBlock-block1-title bold font34">
+        		<text>{{item.name}}</text>
+        	</view>
+        	<view>
+        		<text>服务企业：{{item.serviceNum}}家</text>
+        	</view>
+        </view>
+		</view>
+		<view class="ccListBlock-block2 font26">
+			<view class="ccListBlock-block2-row">
+        <!-- <image src="{{iconList.photo}}"></image> -->
+				<image src="../../../assets/images/icon/icon-phone-blueline.png"></image>
+				<text bindtap="{{item.mobile?'makeCall':''}}" data-phone="{{item.mobile}}">{{item.mobile?item.mobile:'暂无'}}</text>
+			</view>
+			<view class="ccListBlock-block2-row">
+				<image src="{{iconList.email}}"></image>
+				<text>{{item.email?item.email:'暂无'}}</text>
+			</view>
+			<view class="ccListBlock-block2-row" bindtap="{{item.address?'toaddressMaps':''}}" data-address="{{item.address}}">
+        <!-- <image src="{{iconList.position}}"></image> -->
+				<image src="../../../assets/images/icon/icon-map.png"></image>
+				<text>{{item.address?item.address:'暂无'}}</text>
+			</view>
+		</view>
+	</view>
+</template>

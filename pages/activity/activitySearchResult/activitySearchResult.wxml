@@ -1,0 +1,26 @@
+<!--pages/activity/activitySearchResult/activitySearchResult.wxml-->
+<import src="../../../templates/activityListTemp/activityListTemp.wxml" />
+<view class="container">
+	<view class="AllCommerce-page">
+		<view class="header">
+			<input type="text" value="{{searchName}}" confirm-type="search" bindconfirm="getdata" bindinput="bindCocInput" placeholder="搜索关键字" bindfocus="onfocus"/>
+			<image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image>
+		</view>
+		<view class="enterprisesList">
+			<block wx:for="{{activityList}}" wx:for-index="index">
+				<template is="activityListTemp" data="{{item,iconList,index}}"></template>
+			</block>
+		</view>
+	</view>
+	<view class="noContent" wx:if="{{isShowNoSearchResult}}">
+		<view>
+			<image class="noImage" src="../../../assets/images/mine/no-searchresult.png" ></image>
+		</view>
+		<view class="noTextWrap">
+			<text class="noText"> 暂无搜索结果 </text>
+		</view>
+	</view>
+</view>
+
+
+

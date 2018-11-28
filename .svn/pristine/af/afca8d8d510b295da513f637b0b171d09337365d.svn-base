@@ -1,0 +1,25 @@
+<!--pages/activity/activity.wxml-->
+<import src="../../../templates/activityListTemp/activityListTemp.wxml" />
+<view class="container">
+	<view class="activity-page">
+		<view class="header font26">
+			<input type="text" disabled="true" placeholderClass="placeholderClass" confirm-type="search" bindconfirm="getdata" bindinput="bindKeyInput" placeholder="请输入关键字" bindtap="toSearch" data-storagekey="activitySearch"/>
+			<!-- <text bindtap="clearSearch">取消</text> -->
+			<image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image>
+
+			<view class="messageTip" bindtap="toLeaveMessage">
+				<image  src="../../../assets/images/icon/ico-message-tip.png" ></image>
+				<view class="isRead" wx:if="{{isRead == 1}}"></view>
+			</view >
+		<!--  -->
+		</view>
+		<view>
+			<block wx:for="{{activityList}}" wx:for-index="index" >
+				<template is="activityListTemp" data="{{item,iconList,index}}" ></template>
+			</block>
+		</view>
+	</view>
+</view>
+<view class="addIconBox" bindtap="addNew">
+	<image class="addIconImage" src="../../../assets/images/icon/icon-add.png"/>
+</view>

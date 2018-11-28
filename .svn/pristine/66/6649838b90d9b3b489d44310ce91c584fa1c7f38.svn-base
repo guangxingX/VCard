@@ -1,0 +1,20 @@
+<!-- 这个是资源、需求详情里面的留言 -->
+<template name="supplyMessageListTemplate">
+  <view class="messageli">
+    <image class="logo" src="{{item.linkManLogo? item.linkManLogo : '../../../assets/images/icon/photobg.png'}}"></image>
+    <view class="messagecontent">
+      <view class="title">
+        <view class="name">
+          {{item.leaveContactName}}
+        </view>
+        <view class="phoneWrap" bindtap="makeCall" data-phone="{{item.leaveContactMobile}}">
+          <image class="phoneIcon" src="../../../assets/images/icon/icon-phone-blueline.png"></image>
+          {{item.leaveContactMobile}}
+        </view>
+      </view>
+      <view class="text">{{item.leaveName}}</view>
+      <view class="text leaveContent">{{item.leaveContent}}</view>
+      <view class="createtime">{{item.leaveTime}}</view>
+    </view>
+  </view>
+</template>

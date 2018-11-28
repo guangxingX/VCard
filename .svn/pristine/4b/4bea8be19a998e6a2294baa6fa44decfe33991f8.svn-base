@@ -1,0 +1,69 @@
+<!--pages/maillist/maillist.wxml-->
+<import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
+<import src="../../../templates/ccListBlock/ccListBlock.wxml" />
+
+<view class="container">
+	<view class="mail-page {{!qualityEnterprise.length||!qualityCC.length?'background-fff':''}}">
+		<view class="header">
+		    <view class="tagbox font34 {{currenttab==2?'tagbox1':'tagbox2'}}">
+		    	<view class="itemTag">
+		          <view class="tag-tag bold {{currenttab==1?'active':''}}" data-currenttab="1" bindtap="clickTab">公司
+		         	 <view wx:if="{{currenttab==1}}" class="tag-line"></view>
+		          </view>
+		          <view class="tag-tag bold {{currenttab==2?'active':''}}" data-currenttab="2" bindtap="clickTab">商会<view wx:if="{{currenttab==2}}" class="tag-line"></view>
+		          </view>
+		        </view>
+		        <view class="header-input font26 {{currenttab==2?'show':'hidden'}}">
+		        	<input type="text" disabled="true" confirm-type="search" value="{{searchname}}" bindconfirm="getcoc" bindtap="toSearch" placeholder="请输入商会名称" placeholder-class="placeholderClass" data-storagekey="allcocsearch"/>
+		        	<image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image>
+		        </view>
+		        <view class="header-input font26 {{currenttab==1?'show':'hidden'}}" >
+		        	<input type="text" disabled="true" confirm-type="search" bindconfirm="getCompany" bindtap="toSearch" placeholder="请输入公司名称" placeholder-class="placeholderClass" data-storagekey="allcompanysearch"/>
+		        	<image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image>
+		        </view>
+		        <view class="search-block font26" wx:if="{{currenttab==1}}">
+	        		<block wx:for="{{hotIndustryList}}" wx:for-index="idx">
+		        		<view bindtap="searchIndustry" data-id="{{item.id}}" data-name="{{item.name}}"   hover-class="selectStyle">
+		        			<view class="text">{{item.name}}</view>
+		        		</view>
+		        	</block>
+		        </view>
+		        <navigator  hover-class="none" url="../companyAllIndustry/companyAllIndustry" wx:if="{{currenttab==1}}" class="lookmore font26"><text>查看全部行业</text><image src="../../../assets/images/icon/icon-arrow-right-blue.png"></image></navigator>
+		    </view>
+		 </view>
+		 <view class="content {{currenttab==2?'content1':'content2'}}">
+		 	<view class="title contetn2Title">
+		 		<text class="fl excellentTitle">{{currenttab==2?'优质商会':'优质企业'}}</text>
+        		<navigator class="addnavigator fr" url="{{currenttab==2?'../../maillist/AllCommerce/AllCommerce':'../../maillist/AllEnterprises/AllEnterprises'}}">查看全部<image src="../../../assets/images/icon/icon-arrow-right-blue.png"></image></navigator>
+		 	</view>
+	 		<block wx:for="{{qualityCC}}" wx:if="{{currenttab==2}}">
+		 		<template is="ccListBlock" data="{{item,iconList}}"></template>
+		 	</block>
+		 	<block wx:for="{{qualityEnterprise}}" wx:if="{{currenttab==1}}">
+		 		<template is="enterpriseListcard" data="{{item,iconList}}"></template>
+		 	</block>
+		 </view>
+	</view>
+
+		<view class="noContent noContent-1" wx:if="{{!qualityEnterprise.length && currenttab==1}}">
+			<view>
+				<image class="noImage" src="../../../assets/images/mine/no-resource.png" ></image>
+			</view>
+			<view class="noTextWrap">
+				<text class="noText"> 暂无公司</text>
+			</view>
+		</view>
+		<view class="noContent" wx:if="{{!qualityCC.length && currenttab==2}}">
+			<view>
+				<image class="noImage" src="../../../assets/images/mine/no-resource.png" ></image>
+			</view>
+			<view class="noTextWrap">
+				<text class="noText"> 暂无商会</text>
+			</view>
+		</view>
+
+
+</view>
+
+
+

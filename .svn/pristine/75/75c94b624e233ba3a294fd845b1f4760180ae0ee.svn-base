@@ -1,0 +1,85 @@
+<import src="../../../templates/messageListTemplate/messageListTemplate.wxml" />
+<import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
+<import src="../../../templates/ccListBlock/ccListBlock.wxml" />
+
+<view class="container">
+	<view class="supplyDetails-page">
+		<view class="infobox">
+			<view class="supplytitle font40 bold">
+				<text>{{demandInfo.demandTitle}}</text>
+			</view>
+			<view class="append">
+				<view>{{demandInfo.demandType}}</view>
+				<view class="point"></view>
+				<view>{{demandInfo.viewCount}}浏览</view>
+				<view class="point"></view>
+				<view>{{demandInfo.createTime}}</view>
+				<view class="tag {{demandInfo.demandStatus==0?'tag-green':''}}">{{demandInfo.demandStatus==0?'已上架':'已下架'}}</view>
+			</view>
+			<view class="content imageTextBlock text">
+				<block wx:for="{{demandInfo.demandContent}}">
+					<view wx:if="{{isshowmore}}">
+						<view class="text" wx:if="{{item.text}}">{{item.text}}</view>
+						<image mode="widthFix" wx:if="{{item.image}}" src="{{item.image}}"></image>
+					</view>
+					<view wx:else>
+						<view class="text" wx:if="{{item.text&&index<2}}">{{item.text}}</view>
+						<image mode="widthFix" wx:if="{{item.image&&index<2}}" src="{{item.image}}"></image>
+					</view>
+				</block>
+			</view>
+			<view wx:if="{{showmore}}" class="showmore" bindtap="showmorefun">
+				{{isshowmore?'收起':'查看更多'}}
+			</view>
+		</view>
+		<view class="contactInfo">
+			<view class="details-contactIcon-box">
+				<image class="details-contactIcon" src="../../../assets/images/icon/icon-ContactPeople.png"></image>{{demandInfo.contactPerson}}
+			</view>
+			<text class="phone" bindtap="makeCall" data-phone="{{demandInfo.contactMobile}}">{{demandInfo.contactMobile}}</text>
+			<image class="pnoneicon" src="../../../assets/images/icon/icon-phone-blueline.png"></image>
+		</view>
+
+		<!-- 新增发起公司开始 -->
+		<!-- <view class="contactcompany {{messageList.length ? '':'margin-b-200'}}" wx:if="{{demandInfo.method==1}}"> -->
+		<view class="contactcompany" wx:if="{{demandInfo.method==1}}">
+			<view class="title">发起公司</view>
+			<view class="companycard" >
+				<template is="enterpriseListcard" data="{{item:demandInfo.launchCompany,iconList}}"></template>
+			</view>
+		</view>
+		<!-- <view class="contactcompany {{messageList.length ? '':'margin-b-200'}}" wx:if="{{demandInfo.method==0}}"> -->
+		<view class="contactcompany" wx:if="{{demandInfo.method==0}}">
+			<view class="title">发起商会</view>
+			<view class="companycard">
+				<template is="ccListBlock" data="{{item:demandInfo.launchCompany,iconList}}"></template>
+			</view>
+		</view>
+		<!-- <view class="contactcompany {{messageList.length ? '':'margin-b-200'}}" wx:if="{{demandInfo.method==2}}"> -->
+		<view class="contactcompany " wx:if="{{demandInfo.method==2}}">
+			<view class="title">发起公司</view>
+			<view class="companycard" style="padding:30rpx;" >
+				{{demandInfo.launchCompany}}
+			</view>
+		</view>
+	<!-- 新增发起公司结束 -->
+
+		<view class="messagebox">
+			<view class="header">
+				<view class="fl">
+					留言  {{messageCount}}
+				</view>
+			</view>
+			<view class="messagelist">
+				<block wx:for="{{messageList}}">
+					<template is="messageListTemplate" data="{{item,supply}}"></template>
+				</block>
+			</view>
+		</view>
+		<view class="detailsfooter">
+			<button type="warn" class="fl" bindtap="delDemand" data-type="0">删除</button>
+			<button type="primary" class="fr" bindtap="delDemand" data-type="1">{{demandInfo.demandStatus==0?'下架':'上架'}}</button>
+		</view>
+	</view>
+</view>
+

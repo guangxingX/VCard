@@ -1,0 +1,31 @@
+<!--pages/maillist/switchcity/switchcity.wxml-->
+<view class="searchLetter touchClass">
+    <view wx:for="{{searchLetter}}" style="height:{{itemH}}px" wx:key="index" data-letter="{{item.name}}" catchtouchstart="searchStart" catchtouchmove="searchMove" catchtouchend="searchEnd">{{item.name}}</view>
+</view>
+
+<block wx:if="{{isShowLetter}}">
+<view class="showSlectedLetter font28">
+    {{showLetter}}
+</view>
+</block>
+<!-- <view class="currentCityBlock font28">当前定位城市：{{city}}</view> -->
+<scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="bindScroll" scroll-top="{{scrollTop}}">
+	<view class="hotCity font28">
+		<view>热门城市</view>
+		<view class="hotCityBox">
+			<block wx:for="{{hotCityList}}">
+				<view class="listBlock" bindtap="bindCity" hover-class="selectStyle" data-city="{{item.city}}">
+					{{item.city}}
+				</view>
+			</block>
+		</view>
+	</view>
+    <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}">
+        <view class="item_letter font28" wx:if="{{item.initial!='#'}}">{{item.initial}}</view>
+        <view class="selection-block">
+        	<view class="item_city font28"  hover-class="selectStyle" wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.id}}" data-city="{{ct.city}}" bindtap="bindCity">
+              {{ct.city}}
+        	</view>
+        </view>
+    </view>
+</scroll-view>

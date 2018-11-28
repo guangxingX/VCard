@@ -1,0 +1,32 @@
+<import src="../../../welCropper/welCropper.wxml" />
+<template is="welCropper" data="{{data:cropperData, cropperMovableItems:cropperMovableItems, cropperChangableData:cropperChangableData}}"></template> 
+<view class="container">
+  <view class="addchoise-page">
+  	<view class="add-title">
+  		<view class="title">请创建一张自己的名片</view>
+  		<view class="tip">可扫描或者手动输入</view>
+  	</view>
+  	<view class="Scanning" bindtap="selectTap" data-mode='rectangle'>
+  		<image src="../../../assets/images/index/scaningbg.png"></image>
+  		<view class="scantext">
+  			<view class="title">
+  				<text>启动扫描生成</text>
+  			</view>
+  			<view>
+  				<text>将你的纸质名片进行扫描生成电子名片</text>
+  			</view>
+  		</view>
+  	</view>
+  	<view class="Manual" bindtap="tobusinessInfo">
+  		<image src="../../../assets/images/index/manualbg.png"></image>
+  		<view class="manualtext">
+  			<view class="title">
+  				<text>手动填写生成</text>
+  			</view>
+  			<view>
+  				<text>快速生成电子名片</text>
+  			</view>
+  		</view>
+  	</view>
+  </view>
+ </view>

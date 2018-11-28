@@ -1,0 +1,101 @@
+<import src="../../../templates/myenterpriseListcard/myenterpriseListcard.wxml" />
+<view class="editWrap">
+  <view class="editHeader">
+    <view class="header-t">
+        <text class="percent"> 公司主页信息已完成{{ infoPercent }}%，完善信息提高关注度 </text>
+    </view>
+
+    <view class="header-b">
+    </view>
+    <view class="info">
+      <view class="changeWrap">
+        <view class="changeWrapContent">
+          <view bindtap="changeCompanyTemplate">更换模板</view>
+          <view bindtap="toEditCompanyInfo" class="toEditCompanyInfo">编辑</view>
+        </view>
+      </view>
+
+      <template is="myenterpriseListcard" data="{{companyCardInfo:companyInfo,iconList,isshare,isedit}}"></template>
+      <!-- <image class="info-bg" src="{{companyInfo.companyTemplate}}"></image>
+      <view class="info-content">
+        <view class="info-t">
+          <view class="fl">
+            <image class="shanghuiIco" src="../../../assets/images/icon/icon-authentication.png"></image>
+            <text class="shanghui-text">商会认证 </text>
+          </view>
+          <view class="fr" bindtap="toEditCompanyInfo">
+            <text class="edit-text">编辑</text>
+            <image class="icon20" src="../../../assets/images/icon/icon-edit.png"></image>
+          </view>
+        </view>
+        <view class="info-c clear">
+          <view class="imgWrap in-lineBlock">
+              <image wx:if="{{companyInfo.logo}}" class="radius5 icon84" src="{{companyInfo.logo}}"></image>
+              <view wx:else class="company-logo-text">{{companyInfo.textlogo}}</view>
+          </view>
+          <view class="in-lineBlock info-r">
+            <view class="titleWrap">
+              <text>{{companyInfo.name}}</text>
+            </view>
+            <view class="in-lineBlock typeWrap">
+              <block wx:for="{{companyInfo.coTag}}">
+                  <text class="radius5 {{item.coTagType==2?'tag-green':''}} {{item.coTagType==1?'tag-yellow':''}}">{{item.coTagName}}</text>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="info-b ">
+           <view class="block-2">
+              <view class="span">
+                <view>
+                  <text>法人代表</text>
+                </view>
+                <view class="text">
+                  <text>{{companyInfo.legalPerson}}</text>
+                </view>
+              </view>
+              <view class="span">
+                <view>
+                  <text>成立日期</text>
+                </view>
+                <view class="text">
+                  <text>{{companyInfo.setUpTime}}</text>
+                </view>
+              </view>
+              <view class="span">
+                <view>
+                  <text>地址</text>
+                </view>
+                <view class="text">
+                  <text>{{companyInfo.address}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="line line1"></view>
+            <view class="line line2"></view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+  <view class="editBody">
+      <block wx:for="{{dataList}}">
+          <view class="editItem">
+            <view class="icoWrap">
+              <image class="editIco" src="{{item.icon}}" ></image>
+            </view>
+            <view class="itemTitle">
+              <text > {{ item.title }} </text>
+            </view>
+            <view class="progressView">
+                <progress class="progress"  percent="{{item.persent}}" color="#09bb07" backgroundColor="#b5b6b5" stroke-width="6"/>
+               <view class="percentText">{{ item.persent }}%</view>
+            </view>
+            <view>
+              <view class="btn-b previewBtn" data-index="{{index}}" bindtap="editCompanyPreview">预览</view>
+              <view class="btn-b editBtn" data-index="{{index}}" bindtap="editCompanyBlockModel">编辑</view>
+            </view>
+          </view>
+      </block>
+  </view>
+
+</view>

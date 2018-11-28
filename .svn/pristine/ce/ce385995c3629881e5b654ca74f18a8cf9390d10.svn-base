@@ -1,0 +1,154 @@
+<!--pages/mine/cardDetails/cardDetails.wxml-->
+<import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
+<import src="../../../templates/myBusinessCardTemp/myBusinessCardTemp.wxml" />
+<view class="container">
+	<view class="mycard-page">
+    <template is="myBusinessCardTemp" data="{{item:cardInfo,iconList,pageFrom,from,userAvatar,isMine}}"></template>
+		    <!-- <view class="tag-tag" >
+            <image class="cardbg" src="{{cardInfo.bgUrl}}"></image>
+            <view class="section-1">
+              <view class="avatar">
+                  <image src="{{cardInfo.avatar ? cardInfo.avatar:'../../../assets/images/icon/mycard-avatar-default.png'}}"></image>
+              </view>
+              <view class="detail">
+                <view class="name flex1">
+                    <text>{{cardInfo.name}}</text>
+                    <image wx:if="{{cardInfo.isOriginal}}" src="../../../assets/images/index/AuthenticationIcon.png"></image>
+                </view>
+                <view class="comp flex1">
+                    <text> {{cardInfo.position}}</text>
+                </view>
+              </view>
+              <view wx:if="{{from=='true'}}" class="sharetag tag-blue" bindtap="toeditCard" ><image src="../../../assets/images/icon/mycard-tagbg.png"></image><text>编辑名片</text></view>
+            </view>
+            <view class="section-2">
+               <view class="section-2-detail">
+                  <view class="comp flex1 companyName">
+                    <text class="text"> {{cardInfo.companyName}}</text>
+                    <view class="authentication" wx:if="{{cardInfo.isAuthentication}}">
+                      <image src="../../../assets/images/icon/icon-authentication-yellow.png"></image>
+                      <text>商会认证</text>
+                    </view>
+                  </view>
+                 <view class="comp flex1">
+                      <image class="icon" src="../../../assets/images/icon/icon-phone.png"></image>
+                      <text class="flex3" bindtap="makeCall" data-phone="{{cardInfo.mobile}}"> {{cardInfo.mobile}}</text>
+                  </view>
+                  <view class="comp flex1">
+                      <image class="icon" src="../../../assets/images/icon/icon-email.png"></image>  <text class="flex3"> {{cardInfo.email}}</text>
+                  </view>
+                  <view class="comp flex1 companyAddress"  bindtap="goAddressDes" data-address="{{cardInfo.address}}">
+                      <image class="icon card-icon-address" src="../../../assets/images/icon/icon-address.png"></image>
+                      <text class="flex3"> {{cardInfo.address}}</text>
+                      <image class="mapSmall" src="../../../assets/images/icon/map-small.png"></image>
+                  </view>
+                </view>
+            </view>
+      	</view> -->
+      	<view class="mycompany" wx:if="{{!(isMine=='0'&&!showcompanyInfo)}}">
+      		<view class="title">
+      			<view class="fl">{{isMine=='1'?'我的公司':'公司信息'}}</view>
+      			<view class="fr" wx:if="{{isMine=='1'}}">
+      				<text class="blue" wx:if="{{showcompanyInfo}}" bindtap="unbindCompany">解绑公司</text>
+      			</view>
+      		</view>
+      		<view class="mycompanycontent">
+            <view wx:if="{{showcompanyInfo}}">
+              <template  is="enterpriseListcard" data="{{item:companyInfo,iconList}}"></template>
+            </view>
+            <view wx:else class="no-company-ploceholder">
+              <image  src="../../../assets/images/mine/affiliated-company-bg.png" ></image>
+            </view>
+
+      			<!-- <button>关联公司</button> -->
+      		</view>
+      	</view>
+      	<view class="moredata-title" wx:if="{{cardDetail}}">更多资料</view>
+        <view class="moredata" wx:if="{{cardDetail.telephone}}">
+          <view class="row">
+            <text class="fl">固话</text>
+            <text class="fr">{{cardDetail.telephone}}</text>
+          </view>
+        </view>
+      	<view class="moredata" wx:if="{{cardDetail.hometown}}">
+      		<view class="row">
+  	  			<text class="fl">家乡</text>
+  	  			<text class="fr">{{cardDetail.hometown}}</text>
+  	  		</view>
+        </view>
+        <view class="moredata" wx:if="{{cardDetail.birthday}}">
+  	  		<view class="row">
+  	  			<text class="fl">生日</text>
+  	  			<text class="fr">{{cardDetail.birthday}}</text>
+  	  		</view>
+        </view>
+        <view class="moredata" wx:if="{{cardDetail.constellation}}">
+          <view class="row" >
+            <text class="fl">星座</text>
+            <text class="fr">{{cardDetail.constellation}}</text>
+          </view>
+        </view>
+	  		<view class="moredata" wx:if="{{cardDetail.hobby}}">
+          <view class="row" >
+            <text class="fl">爱好</text>
+            <text class="fr">{{cardDetail.hobby}}</text>
+          </view>
+        </view>
+	  		<view class="moredata" wx:if="{{cardDetail.isMarried}}">
+          <view class="row" >
+            <text class="fl">婚否</text>
+            <text wx:if="{{cardDetail.isMarried==2}}" class="fr">已婚</text>
+            <text wx:elif="{{cardDetail.isMarried==1}}" class="fr">未婚</text>
+          </view>
+        </view>
+        <view class="moredata" wx:if="{{cardDetail.school}}">
+          <view class="row" >
+            <text class="fl">学校</text>
+            <text class="fr">{{cardDetail.school}}</text>
+          </view>
+        </view>
+	  		<view class="moredata" wx:if="{{cardDetail.major}}">
+          <view class="row" >
+            <text class="fl">专业</text>
+            <text class="fr">{{cardDetail.major}}</text>
+          </view>
+        </view>
+	  		<view class="moredata" wx:if="{{cardDetail.permanentPlace}}">
+          <view class="row">
+            <text class="fl">常住地</text>
+            <text class="fr">{{cardDetail.permanentPlace}}</text>
+          </view>
+        </view>
+
+		</view>
+
+	<!-- </view> -->
+  <!-- 不用from判断了，因为公司员工那里还会有我的名片 -->
+<!--   <view class="footer">
+    <view wx:if="{{from=='true'}}">
+      <button type="warn" class="fl" bindtap="deletecard">删除</button>
+      <button type="primary" open-type="share" class="fr">分享</button>
+    </view>
+    <view wx:if="{{from =='false'}}" class="reportWrap">
+      <button class='' type="primary" bindtap="addPhoneContact">保存到通讯录</button>
+       <button class='reportBtn' type="warn" bindtap="collectionInPackage">{{colStatus == '0' ? '收藏到收藏夹':'取消收藏'}}</button>
+    </view>
+  </view>	 -->
+
+<!-- 用isMine判断 -->
+  <view class="footer">
+    <view wx:if="{{isMine=='1'}}">
+  		<button type="warn" class="fl" bindtap="deletecard">删除</button>
+  		<button type="primary" open-type="share" class="fr">分享</button>
+    </view>
+    <view wx:if="{{isMine =='0'}}" class="reportWrap">
+      <button class='' type="primary" bindtap="addPhoneContact" hover-class="button-hover">保存到通讯录</button>
+       <button class='reportBtn' type="warn" bindtap="collectionInPackage">{{colStatus == '0' ? '收藏到名片夹':'取消收藏'}}</button>
+    </view>
+	</view>
+
+
+
+
+</view>
+

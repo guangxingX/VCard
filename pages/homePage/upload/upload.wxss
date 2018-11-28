@@ -1,0 +1,7 @@
+@import "../../../welCropper/common.wxss";
+page{-webkit-user-select: none;user-select: none;width: 100%;height: 100%;background-color: #f8f8f8;font-family: Arial, Helvetica, sans-serif;overflow-x: hidden;}
+.cropper-wrapper {background-color:#000;}
+.flex{display: flex;justify-content: center;align-items: center;}
+.cropper{position: absolute;top: 0;left: 0;overflow:hidden;}
+
+.cropper-buttons{background-color: rgba(0, 0, 0, 0.95);color: #04b00f;z-index:1000;}

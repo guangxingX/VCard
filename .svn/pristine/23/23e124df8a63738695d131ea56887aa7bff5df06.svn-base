@@ -1,0 +1,39 @@
+page{background:#eeeeee;}
+.wrap{padding: 50rpx 0;}
+@import "../../../templates/myBusinessCardTemp/myBusinessCardTemp.wxss";
+/*.tag-tag{width: 690rpx;height: 397rpx;margin: 0 auto;background-color: #21242b;background-size:100% 100%;
+  border-radius: 10rpx;box-shadow: 0px 2px 3px #ccc;position: relative;padding-left:20rpx;box-sizing:border-box;}
+.tag-tag .cardbg{position:absolute;top:0;left:0;width:100%;height:100%;border-radius: 10rpx;}
+.tag-tag .section-1{display: flex;height: 136rpx;line-height: 136rpx;flex-direction: row;padding: 20rpx;
+  position:relative;z-index:10;}
+.section-2{position:relative;z-index:10;}
+.tag-tag .section-1 .avatar{width:136rpx;height: 136rpx;float: left;}
+.avatar image{width: 127rpx;height: 127rpx;border-radius: 50%;}
+.flex1{height: 54rpx;line-height: 54rpx;}
+.flex2{height: 40rpx;line-height: 40rpx;}
+.flex1 image{width:22rpx;height: 18rpx;}
+.tag-tag .section-1 .detail{flex: 3;float: right;display:flex;flex-direction:column;
+  padding-top:16rpx;margin-left:10rpx;max-width:400rpx;}
+.tag-tag .section-1 .tag-blue{width:97rpx;height:53rpx;position:absolute;right:-10rpx;top:26rpx;}
+.tag-tag .section-1 .tag-blue image{width:97rpx;height:53rpx;position:absolute;right:0rpx;top:0rpx;}
+.tag-tag .section-1 .tag-blue text{position:absolute;right:20rpx;top:-48rpx;color:#fff;font-size:26rpx;}
+.tag-tag .section-1 .tag-blue.addtag{top:90rpx;}
+.tag-tag .section-1 .tag-blue .addCard{height:45rpx;position:absolute;top:0rpx;width:80rpx;line-height:45rpx;text-align: right;}
+.detail .name{color:#fff;font-size:40rpx;white-space:nowrap; overflow:hidden;
+	text-overflow:ellipsis;max-width: 100%;}
+.detail .name image{width:24rpx;height:28rpx;margin-left:20rpx;}
+.detail .comp{font-size: 26rpx;color:#fff;}
+.section-2-detail .comp{line-height: 20rpx;font-size: 26rpx;color:#fff;line-height:45rpx;height:45rpx;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.section-2-detail .companyName{display:flex;align-items: center;}
+.section-2-detail .comp.companyName{font-size:32rpx;margin-top:10rpx;margin-bottom:20rpx;}
+.section-2-detail .comp.companyName .text{display: inline-block;white-space:nowrap; overflow:hidden;
+  text-overflow:ellipsis;max-width: 520rpx;}
+.section-2-detail .comp.companyName .authentication{display:flex;align-items: center; font-size:17rpx;color:#f19942;
+  margin-left:20rpx;}
+.section-2-detail .comp.companyName .authentication image{width:20rpx;height:16rpx;}
+.section-2-detail .comp.companyName .authentication text{position:relative;left:6rpx;}
+.tag-tag .section-2{height: 204rpx;}
+.section-2-detail{padding-left: 20rpx;color:#aaa;}*/
+.shareBtnWrap{width: 100%;margin:170rpx 0;}
+.shareBtn{width: 80%;color:#fff;background:#3073e3;}

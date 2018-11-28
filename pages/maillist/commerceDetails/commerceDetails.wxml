@@ -1,0 +1,80 @@
+<!--pages/maillist/commerceDetails/commerceDetails.wxml-->
+<import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
+<view class="container">
+	<view class="commerceDetails-page">
+		<view class="commerce-header">
+			<image class="commerce-headerbg" src="../../../assets/images/maillist/commerce-headerbg.png"></image>
+			<!-- <image class="commerce-headerlogo" src="{{logo ? 'https://static.upedu.cc/'+logo : '../../../assets/images/mine/logo.jpg' }}"></image> -->
+			<image wx:if="{{logo}}" class="commerce-headerlogo" src="{{logo }}"></image>
+		   <view wx:else class="company-logo-text tempTextLogo">{{textlogo}}</view>
+
+
+			<view class="details-content">
+				<view class="title font32">
+					<text> {{ name }} </text>
+					<!-- <image src="../../../assets/images/icon/icon-link-blue.png"></image> -->
+				</view>
+				<view class="service">
+					服务企业：{{serviceNum}}家
+				</view>
+				<view class="row" bindtap="{{mobile ? 'makeCall' :''}}" data-phone="{{mobile}}">
+					<text wx:if="{{mobile}}">{{mobile}}</text>
+					<text wx:else>暂无</text>
+
+					<image src="../../../assets/images/icon/icon-photo-blue.png"></image>
+				</view>
+				<view class="row">
+					<text>{{email}}</text>
+				</view>
+				<view class="row" bindtap="{{address?'goCompanyDes':''}}" data-address="{{address}}">
+					<text wx:if="{{address}}">{{address}}</text>
+					<text wx:else>暂无</text>
+					<image src="../../../assets/images/icon/icon-map.png"></image>
+				</view>
+			</view>
+			<view class="tabblock font28">
+				<view class="{{currenttab==1?'active':''}}" bindtap="tabchange" data-curr="1"><text>简介</text></view>
+				<view class="{{currenttab==1?'':'active'}}" bindtap="tabchange" data-curr="2"><text>服务企业</text></view>
+			</view>
+		</view>
+		<view class="introbox" wx:if="{{currenttab==1}}">
+			<view class="introtext {{cocIntro ? '':'nopadding'}}">
+				<text>{{cocIntro}}</text>
+			</view>
+			<!-- 占位图 -->
+			<view class="noContent" wx:if="{{!cocIntro && currenttab==1}}">
+				<view>
+					<image class="noImage" src="../../../assets/images/mine/no-supply.png" ></image>
+				</view>
+				<view class="noTextWrap">
+					<text class="noText"> 暂无简介</text>
+				</view>
+			</view>
+
+
+
+			<!-- 看接口数据这里就是一段文字，不需要查看更多 -->
+			<!-- <view class="showmore" bindtap="showmorefun">
+				{{isshowmore?'收起':'查看更多'}}
+			</view> -->
+		</view>
+		<view class="serverbox {{serviceCoList.length ? '':'nopadding'}}" wx:if="{{currenttab==2}}">
+			<block wx:for="{{serviceCoList}}">
+				<template is="enterpriseListcard" data="{{item,iconList}}"></template>
+			</block>
+
+			<!-- 占位图 -->
+			<view class="noContent" wx:if="{{!serviceCoList.length && currenttab==2}}">
+				<view>
+					<image class="noImage" src="../../../assets/images/mine/no-supply.png" ></image>
+				</view>
+				<view class="noTextWrap">
+					<text class="noText"> 暂无服务企业</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="footer font36">
+		<button type="primary" hover-class="button-hover" data-cocid="{{cocid}}" bindtap="joincoc">加入商会</button>
+	</view>
+</view>

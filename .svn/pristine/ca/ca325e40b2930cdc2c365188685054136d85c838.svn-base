@@ -1,0 +1,40 @@
+<view>
+  <view class="companyDes" wx:if='{{!previewProduct}}'>
+    <view class="desWrap">
+      <view class="bigTitle">{{bigtitle}} </view>
+
+      <block wx:for="{{companyInfo}}">
+        <view class="desWrapText" wx:if="{{item.text}}">{{item.text}}</view>
+        <view class="desWrapImg" wx:if="{{item.image}}">
+          <image mode="widthFix" src="{{item.image}}"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+
+
+    <view class="productBody" wx:if="{{previewProduct}}">
+      <view class="productBody-tabItem tab-product">
+          <!-- 公司产品 -->
+          <block wx:for="{{productList}}">
+            <view class="productItemWrap">
+              <view class="companyInfo">
+                <text class="companyInfoTag"></text>
+                <text>{{item.name}}</text>
+
+              </view>
+               <block wx:for="{{item.productInfo}}" wx:for-index="idx" wx:for-item="richItem">
+                  <view class="productContent">
+                      <view wx:if="{{richItem.text}}" class="productText">{{richItem.text}}</view>
+                      <view wx:if="{{richItem.image}}" class="productImg">
+                        <image mode="widthFix" src="{{richItem.image}}" ></image>
+                      </view>
+                  </view>
+               </block>
+            </view>
+          </block>
+      </view>
+    </view>
+
+
+</view>

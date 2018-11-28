@@ -1,0 +1,42 @@
+<import src="../../../templates/myBusinessCardTemp/myBusinessCardTemp" />
+<import src="../../../templates/myenterpriseListcard/myenterpriseListcard" />
+
+<view class="container" style="background:{{isShowNoActive?'#fff':'#efeef3'}};">
+  <view class="myActive-page">
+    <view class="myActive-header">
+    <!-- ({{collectionList1.length}}) -->
+      <view bindtap="changetab" data-tab="0" class="{{currenttab==0?'active':''}}"><text>个人名片</text></view>
+  <!-- ({{collectionList2.length}}) -->
+      <view bindtap="changetab" data-tab="1" class="{{currenttab==1?'active':''}}"><text>公司名片</text></view>
+    </view>
+    <view class="cardbox1" wx:if="{{currenttab==0}}">
+      <block wx:for="{{collectionList1}}" wx:for-index="index">
+        <template is="myBusinessCardTemp" data="{{item,iconList,index,currenttab,pageFrom,userAvatar}}"></template>
+      </block>
+      <view class="noContent" wx:if="{{!collectionList1.length}}">
+        <view>
+          <image class="noImage" src="../../../assets/images/mine/bg-noDescription.png" ></image>
+        </view>
+        <view class="noTextWrap">
+          <text class="noText"> 暂无收藏名片 </text>
+        </view>
+      </view>
+
+    </view>
+    <view class="companybox2" wx:if="{{currenttab==1}}">
+      <block wx:for="{{collectionList2}}">
+        <template is="myenterpriseListcard" data="{{companyCardInfo:item,iconList,index}}"></template>
+      </block>
+      <view class="noContent" wx:if="{{!collectionList2.length}}">
+        <view>
+          <image class="noImage" src="../../../assets/images/mine/bg-noDescription.png" ></image>
+        </view>
+        <view class="noTextWrap">
+          <text class="noText"> 暂无收藏名片 </text>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+</view>

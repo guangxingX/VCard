@@ -1,0 +1,29 @@
+<template name="messageListTemplate" >
+  <view class="message messageListTemplateWrap">
+    <view class="messageli">
+      <view class="messageListTemplate-logobox">
+        <image class="messageListTemplate-logo" src="{{item.linkManLogo? item.linkManLogo : '../../../assets/images/icon/photobg.png'}}" bindtap="goCardDetails" data-cardisdel="{{item.cardIsDel}}" data-cardid="{{item.cardId}}"></image>
+        <view class="messageListTemplate-titleWrap">
+          <view class="messageListTemplate-title inline font34">{{item.leaveContactName}}</view>
+          <view class="messageListTemplate-contact fr">
+            <image class="temp-phone-ico" src="../../../assets/images/icon/icon-phone-blueline.png"></image>
+            <text class="temp-mobile-text" bindtap="makeCall" data-phone="{{item.leaveContactMobile}}">{{item.leaveContactMobile}}</text>
+          </view>
+          <view class="messageListTemplate-leaveName font30">{{item.leaveName}}</view>
+        </view>
+      </view>
+      <view class="messageListTemplate-messagecontent" >
+        <!-- <view class="leavemessage">给我留言：</view> -->
+        <view class="messageListTemplate-content">{{item.leaveContent}}</view>
+        <view class="messageListTemplate-createtime inline textb2b2b2">{{item.leaveTime}}</view>
+      </view>
+      <!-- fromSupplyDetails 是从供需详情页面过来的，也是用这个模板，但是不显示下面的内容 -->
+      <view wx:if="{{supply != 'fromSupplyDetails'}}" class="supplybox"  data-item="{{item}}" data-fromCurrenttab="{{fromCurrenttab}}" bindtap="todetails">
+
+        <view class="title font28">{{item.objectName}}</view>
+        <view class="content">{{item.oneContentStr}}</view>
+        <!-- <view class="messageType">{{item.subjectName}}</view> -->
+      </view>
+    </view>
+  </view>
+</template>

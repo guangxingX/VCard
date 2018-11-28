@@ -1,0 +1,68 @@
+<!--pages/mine/reviseCardBg/reviseCardBg.wxml-->
+<import src="../../../templates/myBusinessCardTemp/myBusinessCardTemp.wxml" />
+<view class="container">
+	<view class="cardbg-page">
+    <template is="myBusinessCardTemp" data="{{item:businessCard,iconList,pageFrom,userAvatar}}"></template>
+		<!-- <view class="tag-tag" bindtap="tocardDetails">
+            <image class="cardbg" src="{{businessCard.cardbg}}"></image>
+            <view class="section-1">
+              <view class="avatar">
+                  <image src="{{businessCard.avatar}}"></image>
+              </view>
+              <view class="detail">
+                <view class="name flex1">
+                    <text>{{businessCard.name}}</text>
+                    <image wx:if="{{businessCard.isOriginal}}" src="../../../assets/images/index/AuthenticationIcon.png"></image>
+                </view>
+                <view class="comp flex1">
+                    <text> {{businessCard.position}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="section-2">
+               <view class="section-2-detail">
+                  <view class="comp flex1 companyName">
+                    <text class="text"> {{businessCard.company}}</text>
+                    <view class="authentication" wx:if="{{businessCard.isAuthentication}}">
+                      <image src="../../../assets/images/icon/icon-authentication-yellow.png"></image>
+                      <text>商会认证</text>
+                    </view>
+                  </view>
+                 <view class="comp flex1">
+                      <image src="../../../assets/images/icon/icon-phone.png"></image>  <text> {{businessCard.mobile}}</text>
+                  </view>
+                  <view class="comp flex1">
+                      <image src="../../../assets/images/icon/icon-email.png"></image>  <text> {{businessCard.email}}</text>
+                  </view>
+                  <view class="comp flex1">
+                      <image class="card-icon-address" src="../../../assets/images/icon/icon-address.png"></image>  <text> {{businessCard.address}}</text>
+                  </view>
+                </view>
+            </view>
+      	</view> -->
+      	<view class="changetitle">选择背景模板</view>
+      	<view class="bgbox">
+          <scroll-view scroll-x >
+            <block wx:for="{{bgarr}}" wx:if="{{index<bgarrCol}}">
+            <view class="bgbox-block">
+              <view class="bgli" bindtap="choisebg" data-id="{{bgarr[index*3].id}}">
+                <image class="bgimage" src="{{bgarr[index*3].url}}"></image>
+                <image wx:if="{{bgarr[index*3].checked}}" class="iconimage" src="../../../assets/images/icon/icon-radio.png"></image>
+              </view>
+              <view class="bgli" bindtap="choisebg" data-id="{{bgarr[index*3+1].id}}" wx:if="{{bgarrRemainder==2}}">
+                <image class="bgimage" src="{{bgarr[index*3+1].url}}"></image>
+                <image wx:if="{{bgarr[index*3+1].checked}}" class="iconimage" src="../../../assets/images/icon/icon-radio.png"></image>
+              </view>
+              <view class="bgli" bindtap="choisebg" data-id="{{bgarr[index*3+2].id}}" wx:if="{{bgarr[index*3+2].id}}">
+                <image class="bgimage" src="{{bgarr[index*3+2].url}}"></image>
+                <image wx:if="{{bgarr[index*3+2].checked}}" class="iconimage" src="../../../assets/images/icon/icon-radio.png"></image>
+              </view>
+            </view>
+            </block>
+          </scroll-view>
+      	</view>
+      	<view class="footer">
+			<button type="primary" hover-class="button-hover" bindtap="saveSet">保存设置</button>
+		</view>
+	</view>
+</view>

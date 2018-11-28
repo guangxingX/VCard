@@ -1,0 +1,181 @@
+<!--pages/homePage/businessInfo/businessInfo.wxml-->
+<view class="container">
+  <view class="failuretipbox {{errorshow?'show-failuretipbox':'hidden-failuretipbox'}}">
+    <icon type="warn" size="16" color="#fff"/>
+    {{failuretip}}
+  </view>
+  <view class="business-page">
+  	<view class="card">
+  		<view class="tag-tag">
+            <image class="cardbg" src="{{cardbg}}"></image>
+            <!-- 挪出去了 -->
+           <!--  <view class="changebgimage tag-blue" bindtap="tochangebg">
+              <image src="../../../assets/images/icon/mycard-tagbg.png"></image>
+              <text>更换背景</text>
+            </view> -->
+            <view class="section-1">
+              <view class="avatar">
+                  <image wx:if="{{avatar}}" src="{{avatar}}"></image>
+                  <image wx:else src="../../../assets/images/icon/photobg.png"></image>
+              </view>
+              <view class="detail">
+                <view class="name flex1">
+                    <text>{{name?name:'姓名'}}</text>
+                    <image wx:if="{{isOriginal}}" src="../../../assets/images/index/AuthenticationIcon.png"></image>
+                </view>
+                <view class="comp flex1">
+                    <text> {{position?position:'职位'}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="section-2">
+               <view class="section-2-detail">
+                  <view class="comp flex1 companyName">
+                    <text class="text"> {{company?company:'公司'}}</text>
+                    <view class="authentication" wx:if="{{isAuthentication}}">
+                      <image class="authenticationIco" src="../../../assets/images/icon/icon-authentication-yellow.png"></image>
+                      <text>商会认证</text>
+                    </view>
+                  </view>
+                 <view class="comp flex1">
+                      <image src="../../../assets/images/icon/icon-phone.png"></image>  <text> {{mobile?mobile:'手机号'}}</text>
+                  </view>
+                  <view class="comp flex1">
+                      <image src="../../../assets/images/icon/icon-email.png"></image>  <text> {{email?email:'邮箱'}}</text>
+                  </view>
+                  <view class="comp flex1">
+                      <image class="card-icon-address" src="../../../assets/images/icon/icon-address.png"></image>  <text> {{address?address:'地址'}}</text>
+                  </view>
+                </view>
+            </view>
+          </view>
+  	</view>
+    <form bindsubmit="formSubmit">
+    	<view class="uploadphoto" bindtap="upload">
+    		<view class="photo">
+          <!-- 头像闪一下变默认 -->
+          <!-- <image src="{{avatar?avatar:'../../../assets/images/icon/photobg.png'}}"></image> -->
+          <!-- 改成这样写 -->
+          <image wx:if="{{avatar}}" src="{{avatar}}"></image>
+          <image wx:else src="../../../assets/images/icon/photobg.png"></image>
+
+          <input type="text" hidden value="{{avatar}}" name="avatar"></input>
+          <input type="text" hidden value="{{cardbgId}}" name="bgId"></input>
+          <input type="text" hidden value="{{mycardid}}" name="id"></input>
+
+    		</view>
+    		<view class="text">
+    			<text>上传头像</text>
+    			<image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+    		</view>
+    	</view>
+    	<view class="details">
+    		<view class="row">
+    			<text>姓名</text>
+    			<input type="text" placeholder="必填" placeholder-class="placeholder" value="{{name}}" name="name" bindinput="changename"></input>
+    		</view>
+    		<view class="row">
+    			<text>职位</text>
+    			<input type="text" placeholder="必填" placeholder-class="placeholder" value="{{position}}" name="position" bindinput="changeposition"></input>
+    		</view>
+    		<navigator class="row" wx:if="{{companyCheck}}" url="../cardChoiseCompany/cardChoiseCompany">
+    			<text>公司</text>
+          <view class="text {{!company?'textcolor999':''}}" >{{company?company:'必填'}}</view>
+          <input type="text" hidden name="companyId" value="{{companyId}}"></input>
+          <input type="text" hidden name="companyName" value="{{company}}"></input>
+    		</navigator>
+        <view class="row" wx:else>
+          <text>公司</text>
+          <input type="text" placeholder="必填" placeholder-class="placeholder" value="{{company}}"  bindinput="changecompany"></input>
+          <input type="text" hidden name="companyId" value="{{companyId}}"></input>
+          <input type="text" hidden name="companyName" value="{{company}}"></input>
+        </view>
+    		<view class="row">
+    			<text>手机</text>
+    			<input type="number" placeholder="必填" maxlength="11" placeholder-class="placeholder" value="{{mobile}}" name="mobile" bindinput="changemobile"></input>
+    		</view>
+    		<view class="row">
+    			<text>固话</text>
+    			<input type="text" placeholder="输入固定电话号码" placeholder-class="placeholder" name="telephone" value="{{cardDetail.telephone}}" bindinput="guhuachange"></input>
+    		</view>
+    		<view class="row">
+    			<text>邮箱</text>
+    			<input type="text" placeholder="必填" placeholder-class="placeholder" value="{{email}}" name="email" bindinput="changeemail"></input>
+    		</view>
+        <view class="row">
+          <text>地址</text>
+          <input type="text" placeholder="必填" placeholder-class="placeholder" value="{{address}}" name="address" bindinput="changeaddress"></input>
+        </view>
+    		<!-- <view class="row" bindtap="choiseAdress">
+    			<text>地址</text>
+    			<view class="text">
+    				<text>{{address?address:'选择地址'}}</text>
+    				<image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+    			</view>
+          <input type="text" hidden name="address" value="{{address}}"></input>
+          <input type="text" hidden name="address1" value="{{address1}}"></input>
+          <input type="text" hidden name="address2" value="{{address2}}"></input>
+    		</view> -->
+        <!-- <block wx:if="{{showmore}}"> -->
+        <!-- <block hidden="{{!showmore}}"> -->
+          <view class="hiddenlBlock" hidden="{{!showmore}}">
+              <view class="row">
+                <text>家乡</text>
+                <input type="text" placeholder="输入家乡" placeholder-class="placeholder" name="hometown" value="{{cardDetail.hometown}}"></input>
+              </view>
+              <picker class="row" mode = "date"  name="birthday" value="{{birthday}}" bindchange="bindBirthdayChange">
+                <text>出生日期</text>
+                <view class="text {{!birthday?'textcolor999':''}}" >
+                  <text class="{{!birthday?'textcolor999':''}}">{{birthday?birthday:'选择出生日期'}}</text>
+                  <image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+                </view>
+              </picker>
+              <view class="row">
+                <text>星座</text>
+                <text class="text {{!constellation?'textcolor999':''}}">{{constellation?constellation:'请先选择生日'}}</text>
+                <input type="text" hidden value="{{constellation}}" name="constellation"></input>
+              </view>
+              <view class="row">
+                <text>爱好</text>
+                <input type="text" placeholder="输入爱好" placeholder-class="placeholder" name="hobby" value="{{cardDetail.hobby}}"></input>
+              </view>
+              <picker class="row" name="isMarried" value="{{isMarried}}" range="{{MarriageList}}" bindchange="bindMarriageChange">
+                <text>婚否</text>
+                <view class="text {{!isMarried?'textcolor999':''}}" >
+                  <text wx:if="{{isMarried==2}}" class="{{!isMarried?'textcolor999':''}}">已婚</text>
+                  <text wx:elif="{{isMarried==1}}" class="{{!isMarried?'textcolor999':''}}">未婚</text>
+                  <text wx:else class="{{!isMarried?'textcolor999':''}}">保密</text>
+                  <image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+                </view>
+              </picker>
+              <view class="row">
+                <text>学校</text>
+                <input type="text" placeholder="输入学校" placeholder-class="placeholder" name="school" value="{{cardDetail.school}}"></input>
+              </view>
+              <view class="row">
+                <text>专业</text>
+                <input type="text" placeholder="输入专业" placeholder-class="placeholder" name="major" value="{{cardDetail.major}}"></input>
+              </view>
+              <picker mode="region" bindchange="bindRegionChange" name="permanentPlace" value="{{region}}" custom-item="{{customItem}}" class="row">
+                <text >常住地</text>
+                  <view class="picker text {{!permanentPlace?'textcolor999':''}}">
+                    {{permanentPlace?permanentPlace:'选择常住地'}}
+                    <image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+                  </view>
+              </picker>
+              <input type="text" hidden value="{{permanentPlace}}" name="permanentPlace"></input>
+
+          </view>
+    		<!-- </block> -->
+    	</view>
+      <input hidden value="{{userId}}" name="userId"></input>
+      <view class="footer">
+        <view bindtap="showmoreclick">
+          <text wx:if="{{showmore}}">收起</text>
+          <text wx:else>展开更多项</text>
+        </view>
+        <button formType="submit" style="background-color:#3073e3;" hover-class="button-hover" loading="{{loading}}" disabled="{{loading}}"> 提交 </button>
+      </view>
+    </form>
+  </view>
+ </view>

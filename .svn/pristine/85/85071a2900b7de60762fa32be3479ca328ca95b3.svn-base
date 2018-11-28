@@ -1,0 +1,24 @@
+<!--pages/homePage/choiseAdress/choiseAdress.wxml-->
+<view class="choise-page">
+	<view class="failuretipbox {{errorshow ? 'show-failuretipbox':'hidden-failuretipbox'}}">
+		<icon type="warn" size="16" color="#fff"/>
+		{{failuretip}}
+	</view>
+	<view class="details">
+		<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class="row">
+			<text>选择城市</text>
+		    <view class="picker text {{regionstr?'':'textcolor999'}}">
+		      {{regionstr?regionstr:'选择城市'}}
+		      <image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+		    </view>
+
+		</picker>
+		<view class="row">
+			<text>详细地址</text>
+			<input type="text" placeholder="输入详细地址" placeholder-class="placeholder" bindinput="getInputContent"></input>
+		</view>
+	</view>
+	<view class="footer">
+  		<button type="primary" hover-class="button-hover" hover-class="button-hover" bindtap="saveaddress"> 保存 </button>
+  	</view>
+</view>

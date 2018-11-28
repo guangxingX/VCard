@@ -1,0 +1,47 @@
+<!--pages/supply/leaveMessage/leaveMessage.wxml-->
+<import src="../../../templates/supplytemp/supplytemp.wxml" />
+<view class="container">
+	 <view v-if="{{errorshow}}" class="failuretipbox {{errorshow?'show-failuretipbox':'hidden-failuretipbox'}}">
+	    <icon type="warn" size="16" color="#fff"/>
+	    {{failuretip}}
+	  </view>
+
+	<view class="leaveMessage-page">
+		<view class="leaveCompany">
+			<template is="supplytemp" data="{{item:sadList,iconList,differTime}}"></template>
+		</view>
+		<view class="textareabox">
+			<textarea bindblur="bindTextAreaBlur" maxlength="500" bindinput="inputChange" placeholder="请输入留言内容" />
+
+			<view class="charNumber font28">
+	      {{charNumber}}/500
+	    </view>
+		</view>
+		<view class="companydetails font28">
+		  <!-- 	<picker mode="selector" class="row" range="{{companyList}}" range-key="name" bindchange="choiseAdress">
+				    <text>选择公司</text>
+		  			<view class="text">
+							<text>{{seleValue}}</text>
+							<image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+						</view>
+				</picker> -->
+			<view class="row" bindtap="choiseAdress">
+	  			<text>联系人</text>
+	  			<view class="text">
+	  				<text class="{{contactName?'':'textcolor999'}}">{{contactName?contactName:'选择联系人'}}</text>
+					<image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+				</view>
+	  		</view>
+			<view class="row" >
+			    <text>公司</text>
+	  			<view class="text">
+	  				<text class="{{companyName?'':'textcolor999'}}">{{companyName?companyName:'请选择联系人'}}</text>
+					<!-- <image src="../../../assets/images/icon/icon-arrow-right.png"></image> -->
+				</view>
+			</view>
+	  	</view>
+	  	<view class="footer font36">
+			<button type="primary" style="background-color:#3073e3;" hover-class="button-hover" loading="{{loading}}" disabled="{{loading}}" bindtap="toAddActive">提交</button>
+		</view>
+	</view>
+</view>

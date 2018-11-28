@@ -1,0 +1,73 @@
+<!--pages/homePage/cardChoiseCompany/cardChoiseCompany.wxml-->
+<import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
+<view class="cardChoiseCompany-page">
+	<view class="header">
+		<view class="fl title">选择公司</view>
+		<view class="fr add" bindtap="addCompany">添加</view>
+	</view>
+	<block wx:for="{{myCompanyList}}">
+		<template is="enterpriseListcard" data="{{item,iconList,changeTemp,index}}"></template>
+		<!-- <view class="enterpriseListcard" bindtap="choiseCompany" data-index="{{index}}">
+		  <image class="enterprisecard-image" src="{{item.companyTemplate}}"></image>
+			<view class="enterprisecard-block1">
+				<view class="enterprisecard-logo">
+	                <image wx:if="{{item.logo}}" src="{{item.logo}}"></image>
+	                <view wx:else class="company-logo-text">{{item.textlogo}}</view>
+	            </view>
+	            <view class="enterprisecard-block1-text">
+	            	<view class="enterprisecard-block1-title">
+	            		<text>{{item.name}}</text>
+	            		<view class="enterprisecard-authentication" wx:if="{{item.isAuthentication}}">
+	                      <image src="{{iconList.authentication}}"></image>
+	                      <text>商会认证</text>
+	                    </view>
+	            	</view>
+	            	<view class="enterprisecard-tag">
+	            		<block wx:for="{{item.coTag}}" wx:for-item="item2">
+	            			<view class="enterprisecard-tag-text tag-yellow" wx:if="{{item2.coTagType==2}}">
+	                            <text>{{item2.coTagName}}</text>
+	                        </view>
+	                        <view class="enterprisecard-tag-text tag-green" wx:elif="{{item2.coTagType==3}}">
+	                           <text>{{item2.coTagName}}</text>
+	                        </view>
+	                        <view class="enterprisecard-tag-text" wx:else>
+	                           <text>{{item2.coTagName}}</text>
+	                        </view>
+	            		</block>
+	            	</view>
+	            </view>
+			</view>
+			<view class="enterprisecard-block2">
+				<view><text>法人代表：{{item.legalPerson}}</text></view>
+				<view class="enterprisecard-block2-date">
+					<view class="fl"><text>成立日期：{{item.setUpTime}}</text></view>
+					<view class="fr" bindtap="toaddressMaps" data-address="{{item.address}}"><image class="enterprisecard-block2-mapicon" src="{{iconList.position}}"></image>
+	                    <text class="enterprisecard-block2-address">{{item.address}}</text></view>
+				</view>
+			</view>
+		</view> -->
+	</block>
+</view>
+<view wx:if="{{showMask}}">
+    <view class="wxapp-modal"  style="{{modal_style}}">
+    	<view class="failuretipbox {{errorshow?'show-failuretipbox':'hidden-failuretipbox'}}">
+		    <icon type="warn" size="16" color="#fff"/>
+		    {{failuretip}}
+		  </view>
+
+     <view class="mask" bindtap="closeModal">
+
+       <view class="content {{overflowHiden ? 'overflowHidenStyle' : ''}}">
+            <view class="wxaa-title">输入公司名称</view>
+            <view class="inputWrap">
+              <input class="wxaa-input" focus='true' value="{{companyName}}" bindinput="industryInputChange" type="text" maxlength='10' />
+            </view>
+            <view class="btnWrap">
+              <view bindtap="cancleClick" class="clickBtn cancleBtn">取消</view>
+              <view bindtap="saveClick" class="clickBtn saveBtn">确定</view>
+            </view>
+        </view>
+
+     </view>
+    </view>
+</view>

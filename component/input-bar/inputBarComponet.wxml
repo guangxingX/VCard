@@ -1,0 +1,8 @@
+<!--component/input-bar/inputBarComponet.wxml-->
+<text>component/input-bar/inputBarComponet.wxml</text>
+<view bind:tap = "onTapEditText">
+  <image src="../../assets/images/icon/icon-insert-text.png"/>
+</view>
+<view bind:tap = "onTapUpLoadFile">
+  <image src="../../assets/images/icon/icon-insert-text.png"/>
+</view>

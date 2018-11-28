@@ -1,0 +1,32 @@
+<!--pages/maillist/cocsearchResult/cocsearchResult.wxml-->
+<import src="../../../templates/ccListBlock/ccListBlock.wxml" />
+<import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
+<view class="container">
+	<view class="AllCommerce-page">
+		<view class="header">
+			<input type="text" value="{{searchcoc}}" confirm-type="search" bindconfirm="getdata" bindinput="bindCocInput" placeholder="搜索关键字" bindfocus="onfocus"/>
+			<image class="searchIco" src="../../../assets/images/icon/icon-search.png" ></image>
+		</view>
+		<view class="commerceList">
+			<block wx:for="{{qualityCC}}">
+				<template is="ccListBlock" data="{{item,iconList}}"></template>
+			</block>
+		</view>
+		<view class="enterprisesList">
+			<block wx:for="{{qualityEnterprise}}">
+				<template is="enterpriseListcard" data="{{item,iconList}}"></template>
+			</block>
+		</view>
+	</view>
+
+	<view class="noContent" wx:if="{{isShowNoSearchResult}}">
+			<view>
+				<image class="noImage" src="../../../assets/images/mine/no-searchresult.png" ></image>
+			</view>
+			<view class="noTextWrap">
+				<text class="noText"> 未搜索到数据 </text>
+			</view>
+		</view>
+
+</view>
+

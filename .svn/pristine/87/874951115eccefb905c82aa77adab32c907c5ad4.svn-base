@@ -1,0 +1,61 @@
+<!--pages/mine/myDemand/myDemand.wxml-->
+<!-- <view class="container" style="background:{{isNoShowDemand?'#fff':'#efeef3'}};"> -->
+<view class="container" >
+	<view class="myResource-page">
+		<view class="myResource-header">
+			<view>
+				<picker mode="selector" bindchange="choiseType" value="{{index}}" range="{{typeList}}" range-key="name">
+					<text>{{typeSelect?typeSelect:'类型'}}</text>
+					<image src="../../../assets/images/icon/icon-triangle-down-gray.png"></image>
+				 </picker>
+				<!-- <text>类型</text><image src="../../../assets/images/icon/icon-triangle-down-gray.png"></image> -->
+				</view>
+			<view>
+				<picker mode="selector" bindchange="choiseStatus" value="{{index}}" range="{{statusList}}" range-key="name">
+					<text>{{statusSelect}}</text>
+					<image src="../../../assets/images/icon/icon-triangle-down-gray.png"></image>
+				</picker>
+			</view>
+		</view>
+		<view class="resourseList" >
+			<block wx:for="{{demandList}}">
+				<view class="resourseBlock" bindtap="toDetails" data-index="{{index}}" data-demandid="{{item.activityId}}" hover-class="commonhoverclass">
+					<view class="title ">
+						<text class="font34 bold">{{item.title}}</text>
+						<text class="subjectName fr"> {{item.subjectName  }}</text>
+					</view>
+					<view class="content font28">
+						<block wx:for="{{item.content}}" wx:for-index="index2" wx:for-item="item2">
+							<view wx:if="{{item2.text&&index2==0}}">{{item2.text}}</view>
+							<!-- <image mode="widthFix" wx:if="{{item.image}}" src="{{item.image}}"></image> -->
+						</block>
+					</view>
+					<view class="blockfooter font26">
+						<view>{{item.viewCount}}浏览</view>
+						<view class="point"></view>
+						<view>{{item.differTime}}前</view>
+						<view class="point"></view>
+						<view>{{item.messageCount?item.messageCount:0}}条留言</view>
+						<view class="onshelves {{item.state==0?'tag-green':''}}">{{item.state==0?'已上架':'已下架'}}</view>
+					</view>
+				</view>
+			</block>
+		</view>
+		<view class="footer">
+			<button type="primary" style="background-color:#3073e3;" loading="{{loading}}" disabled="{{loading}}" bindtap="addResource"  hover-class="button-hover">添加</button>
+		</view>
+	</view>
+
+	<view class="noContent" wx:if="{{isNoShowDemand}}">
+		<view>
+			<image class="noImage" src="../../../assets/images/mine/no-supply.png" ></image>
+		</view>
+		<view class="noTextWrap">
+			<text class="noText"> 暂无需求 </text>
+		</view>
+	</view>
+</view>
+
+
+
+

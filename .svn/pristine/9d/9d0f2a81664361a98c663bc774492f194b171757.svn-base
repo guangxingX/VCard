@@ -1,0 +1,65 @@
+<import src="../../../templates/myenterpriseListcard/myenterpriseListcard.wxml" />
+<view class="wrap">
+  <template is="myenterpriseListcard" data="{{companyCardInfo:companyInfo,iconList,ismine}}"></template>
+  <!--  <view class="scroll-block">
+            <image class="myCompanyBg" src="{{companyInfo.companyTemplate}}"></image>
+            <view class="block-header">
+              <view class="isAuthenticationWrap">
+                <image src="../../../assets/images/icon/icon-authentication-yellow.png"></image>
+                <text>商会认证</text>
+              </view>
+            </view>
+              <view bindtap='goCompanyDes' data-id="{{companyInfo.id}}" data-can="can">
+                <view class="block-1">
+                  <view class="companyLogo">
+                      <image wx:if="{{companyInfo.logo}}" src="{{companyInfo.logo}}"></image>
+                      <view wx:else class="company-logo-text">{{companyInfo.textlogo}}</view>
+                  </view>
+                  <view class="detail">
+                    <view class="name flex1">
+                        <text>{{companyInfo.name}}</text>
+                    </view>
+                    <view class="companytags">
+                      <block wx:for="{{companyInfo.coTag}}" wx:for-item="item2">
+                        <view class="tag {{item2.coTagType==2?'tag-yellow':''}} {{item2.coTagType==1?'tag-green':''}}">
+                          <text> {{item2.coTagName}}</text>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+                <view class="block-2">
+                  <view class="span">
+                    <view>
+                      法人代表
+                    </view>
+                    <view class="text">
+                      {{companyInfo.legalPerson}}
+                    </view>
+                    <view class="line-view"></view>
+                  </view>
+                  <view class="span">
+                    <view>
+                      成立日期
+                    </view>
+                    <view class="text">
+                      {{companyInfo.setUpTime}}
+                    </view>
+                    <view class="line-view"></view>
+                  </view>
+                  <view class="span">
+                    <view>
+                      地址
+                    </view>
+                    <view class="text">
+                      {{companyInfo.address}}
+                    </view>
+                  </view>
+                </view>
+              </view>
+   </view> -->
+
+   <view class="shareBtnWrap">
+     <button class="shareBtn" size="default" bindtap="shareBtnClick" open-type="share">分享给好友</button>
+   </view>
+</view>

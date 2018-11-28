@@ -1,0 +1,82 @@
+<!--templates/myBusinessCardTemp/myBusinessCardTemp.wxml-->
+<template name="myBusinessCardTemp">
+  <view class="myBusinessCard " bindtap="{{pageFrom=='myCard'?'checkedfun':''}}" data-index="{{index}}">
+    	<view class="myBusinessCard-block" >
+            <image class="myBusinessCard-block-cardbg" src="{{item.bgUrl}}"></image>
+            <view class="myBusinessCard-block-section-1">
+              <view class="report" wx:if="{{from == 'false' && isMine !=='1'}}" bindtap="reportCardClick">
+                  <image  src="{{iconList.warning}}" ></image>
+                  举报
+              </view>
+             <!--  <view class="report" wx:if="{{isMine !=='1'}}" bindtap="reportCardClick">
+                  <image  src="{{iconList.warning}}" ></image>
+                  举报
+              </view> -->
+              <view class="myBusinessCard-block-avatar" bindtap="{{pageFrom=='index'||pageFrom=='mine'||pageFrom=='collection'?'toMycardDetails':''}}" data-mycardid="{{item.id}}">
+                  <!-- 这里在公司员工头像为空 原来的 回导致头像闪一下就变成默认值了-->
+                  <!-- <image class="meiyong" src="{{item.avatar?item.avatar:userAvatar}}"></image> -->
+
+                  <!-- 换成这种写法ok -->
+                  <image wx:if="{{item.avatar}}" src="{{item.avatar}}"></image>
+                  <image wx:else src="{{userAvatar}}"></image>
+              </view>
+              <view class="myBusinessCard-block-detail" bindtap="{{pageFrom=='index'||pageFrom=='mine'||pageFrom=='collection'?'toMycardDetails':''}}" data-mycardid="{{item.id}}">
+                <view class="myBusinessCard-block-detail-name myBusinessCard-block-flex1 font38">
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="myBusinessCard-block-detail-comp myBusinessCard-block-flex1">
+                    <text> {{item.position}}</text>
+                </view>
+              </view>
+              <view wx:if="{{pageFrom=='index'||pageFrom=='mine'}}" class="myBusinessCard-block-sharetag myBusinessCard-block-tag-blue"  data-item="{{item}}" bindtap="shareCard">
+                  <image src="{{iconList.bluetag}}"></image>
+                  <text>分享</text>
+              </view>
+              <view wx:if="{{pageFrom=='index'}}" class="myBusinessCard-block-addtag myBusinessCard-block-tag-blue" bindtap="addBusinessCard">
+                <image src="{{iconList.bluetag}}"></image>
+                <text class="myBusinessCard-block-tag-blue-addCard">增添</text>
+              </view>
+
+	            <view wx:if="{{pageFrom=='cardDetails'&&from=='true'}}" class="myBusinessCard-block-tag-blue-cardDetails" bindtap="toeditCard" >
+                <image src="{{iconList.editbluetag}}"></image><text>编辑名片</text>
+              </view>
+
+              <view wx:if="{{pageFrom=='cardDetails'&&from=='ttranslaterue'}}" class="myBusinessCard-block-tag-blue-cardDetails changeBg" bindtap="tochangebg" >
+                <image src="{{iconList.editbluetag}}"></image><text>更换背景</text>
+              </view>
+
+              </view>
+
+
+
+
+
+            <!-- bindtap="toMycardDetails" data-mycardid="{{item.id}}" -->
+            <view class="myBusinessCard-block-section-2" >
+               <view class="myBusinessCard-block-section-2-detail">
+                  <view class="myBusinessCard-section-2-comp myBusinessCard-block-flex1 myBusinessCard-section-2-companyName">
+                    <text class="myBusinessCard-section-2-text font32" > {{item.companyName}}</text>
+                    <view class="myBusinessCard-block-authentication" wx:if="{{item.isAuthentication==1}}">
+                      <image src="{{iconList.authentication}}"></image>
+                      <text>商会认证</text>
+                    </view>
+                  </view>
+                 <view class="myBusinessCard-section-2-comp">
+                      <image class="myBusinessCard-section-2-icon" src="{{iconList.photoWhite}}"></image>
+                      <text class="myBusinessCard-section-2-flex3" bindtap="makeCall" data-phone="{{item.mobile}}"> {{item.mobile}}</text>
+                  </view>
+                  <view class="myBusinessCard-section-2-comp">
+                      <image class="myBusinessCard-section-2-icon emailIco" src="{{iconList.emailWhite}}"></image>
+                      <text class="myBusinessCard-section-2-flex3"> {{item.email}}</text>
+                  </view>
+                  <view class="myBusinessCard-section-2-comp myBusinessCard-section-2-companyAddress" bindtap="goAddressDes" data-address="{{item.address}}">
+                      <image class="myBusinessCard-section-2-icon card-icon-address" src="{{iconList.addressWhite}}"></image>
+                      <text class="myBusinessCard-section-2-flex3"> {{item.address}}</text>
+                      <image class="myBusinessCard-section-2-mapSmall" src="{{iconList.mapSmall}}"></image>
+                  </view>
+                </view>
+            </view>
+        </view>
+	</view>
+</template>
+

@@ -1,0 +1,32 @@
+
+page{background:#efeef3;}
+.myActive-page{flex:1;width:100%;}
+.myActive-header{height:100rpx;line-height:100rpx;font-size:28rpx;display:flex;justify-content: center;
+  border-bottom:2rpx solid #e5e5e5;background: #fff;}
+.myActive-header>view{flex:1;text-align:center;}
+.myActive-header>view.active{background: #eaf1fc;color:#3073e3;}
+.myActive-header>view:nth-child(1){border-right:2rpx solid #e5e5e5;}
+
+
+@import "../../../templates/myBusinessCardTemp/myBusinessCardTemp.wxss";
+@import "../../../templates/myenterpriseListcard/myenterpriseListcard.wxss";
+
+
+
+/*.cardbox1{margin-top:40rpx;}*/
+.myBusinessCard:first-child{margin-top:40rpx;}
+.myBusinessCard{margin-bottom: 20rpx;}
+
+.companybox2{padding:0rpx 30rpx;}
+.myenterpriseListcard:first-child{margin-top: 40rpx;}
+.companybox2 .myenterpriseListcard{margin-bottom: 20rpx;}
+
+
+
+.noContent{text-align: center; position: absolute;left:50%;top:40%;margin-left: -120rpx;margin-top: -125rpx;}
+.noImage{width: 240rpx;height: 250rpx;}
+.noTextWrap{padding-top: 15rpx;}
+.noText{font-size: 34rpx;color:#888888;}
+
+
+

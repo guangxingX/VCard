@@ -1,0 +1,46 @@
+/* pages/mine/reviseCardBg/reviseCardBg.wxss */
+.cardbg-page{flex:1;width:100%;background:#fff;padding-top:25rpx;}
+@import "../../../templates/myBusinessCardTemp/myBusinessCardTemp.wxss";
+/*.tag-tag{width: 690rpx;height: 397rpx;margin: 0 auto;background-color: #21242b;background-size:100% 100%;
+  border-radius: 10rpx;box-shadow: 0px 2px 3px #ccc;position: relative;margin-top:40rpx;padding-left: 20rpx;box-sizing: border-box;}
+.tag-tag .cardbg{position:absolute;top:0;left:0;width:100%;height:100%; border-radius: 10rpx;}
+.tag-tag .section-1{display: flex;height: 136rpx;line-height: 136rpx;flex-direction: row;padding: 20rpx;
+  position:relative;z-index:10;}
+.section-2{position:relative;z-index:10;}
+.tag-tag .section-1 .avatar{width:136rpx;height: 136rpx;float: left;}
+.avatar image{width: 127rpx;height: 127rpx;border-radius: 50%;}
+.flex1{height: 54rpx;line-height: 54rpx;}
+.flex2{height: 40rpx;line-height: 40rpx;}
+.flex1 image{width:22rpx;height: 18rpx;}
+.tag-tag .section-1 .detail{flex: 3;float: right;display:flex;flex-direction:column;
+  padding-top:16rpx;margin-left:10rpx;max-width:400rpx;}
+.detail .name{color:#fff;font-size:40rpx;white-space:nowrap; overflow:hidden;
+	text-overflow:ellipsis;max-width: 100%;}
+.detail .name image{width:24rpx;height:28rpx;margin-left:20rpx;}
+.detail .comp{font-size: 26rpx;color:#fff;}
+.section-2-detail .comp{line-height: 20rpx;font-size: 26rpx;color:#fff;line-height:45rpx;height:45rpx;}
+.section-2-detail .comp.companyName{font-size:32rpx;margin-top:10rpx;margin-bottom:20rpx;}
+.section-2-detail .comp.companyName .text{display: inline-block;white-space:nowrap; overflow:hidden;
+	text-overflow:ellipsis;max-width: 520rpx;}
+.section-2-detail .comp.companyName .authentication{display:inline-block;font-size:17rpx;color:#f19942;
+	margin-left:20rpx;position:relative;top:-4rpx;}
+.section-2-detail .comp.companyName .authentication image{width:20rpx;height:16rpx;}
+.section-2-detail .comp.companyName .authentication text{position:relative;top:-2rpx;left:6rpx;}
+.tag-tag .section-2{height: 204rpx;}
+.section-2-detail{padding-left: 20rpx;color:#aaa;}*/
+.changetitle{font-size:28rpx;text-align:center;margin-top:50rpx;margin-bottom:40rpx;}
+.bgbox{padding:0 30rpx;display:flex;justify-content: space-between;flex-wrap: wrap;}
+.bgbox .bgli{width:100%;height:130rpx;margin-bottom:10rpx;position: relative;
+	-webkit-line-clamp:2;margin-right:10rpx;}
+.bgbox .bgli .bgimage{width:100%;height:130rpx;}
+.bgbox .bgli .iconimage{width:46rpx;height:46rpx;position:absolute;top:49rpx;left:50%;margin-left:-23rpx;
+	background:#fff;border-radius:50%;}
+.bgbox .bgli:nth-child(3n){margin-right:0;}
+.footer{position:fixed;bottom:0;left:0;height:125rpx;background:#fff;width:100%;padding-top:30rpx;}
+.footer button{width:690rpx;height:89rpx;line-height:89rpx;margin:0 auto;font-size:36rpx;color:#fff;}
+scroll-view{
+	white-space:nowrap;
+	width:100%;
+	/*height:410rpx;*/
+}
+.bgbox-block{width:28%;height:100%;margin-right:10rpx;display:inline-block;vertical-align:top}

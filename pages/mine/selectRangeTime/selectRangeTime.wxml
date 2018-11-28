@@ -1,0 +1,40 @@
+<!--pages/mine/selectRangeTime/selectRangeTime.wxml-->
+<view class="choise-page">
+	<view class="failuretipbox {{errorshow?'show-failuretipbox':'hidden-failuretipbox'}}">
+		<icon type="warn" size="16" color="#fff"/>
+		{{failuretip}}
+	</view>
+	<view class="details">
+		<picker class="row" mode = 'date' bindchange="changeStartDate" start="{{dataStart1}}">
+		    <text>活动开始日期</text>
+				<view class="text">
+				<text>{{startDate}}</text>
+				<image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+			</view>
+		 </picker>
+			<picker class="row" mode = 'time' value="hh:mm" bindchange="changeStartTime" start="{{timeStart1}}">
+		    <text>活动开始时间</text>
+				<view class="text">
+				<text>{{startTime}}</text>
+				<image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+			</view>
+		 </picker>
+		 <picker class="row" mode = 'date' bindchange="changeEndDate" start="{{dataStart2}}">
+		    <text>活动结束日期</text>
+				<view class="text">
+				<text>{{endDate}}</text>
+				<image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+			</view>
+		 </picker>
+			<picker class="row" mode = 'time' value="hh:mm" bindchange="changeEndTime" start="{{timeStart2}}">
+		    <text>活动结束时间</text>
+				<view class="text">
+				<text>{{endTime}}</text>
+				<image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+			</view>
+		 </picker>
+	</view>
+	<view class="footer">
+  		<button type="primary" hover-class="button-hover" bindtap="saveaddress"> 保存 </button>
+  	</view>
+</view>

@@ -1,0 +1,44 @@
+<!--pages/maillist/switchcity/switchcity.wxml-->
+<view class="searchLetter touchClass">
+    <!-- <view wx:for="{{searchLetter}}" style="height:{{itemH}}px" wx:key="index" data-letter="{{item.name}}" catchtouchstart="searchStart" catchtouchmove="searchMove" catchtouchend="searchEnd">{{item.name}}</view> -->
+     <!-- 去掉了高度 -->
+    <view wx:for="{{searchLetter}}" wx:key="index" data-letter="{{item.name}}" catchtouchstart="searchStart" catchtouchmove="searchMove" catchtouchend="searchEnd">{{item.name}}</view>
+</view>
+
+<block wx:if="{{isShowLetter}}">
+<view class="showSlectedLetter font28">
+    {{showLetter}}
+</view>
+</block>
+<!-- <view class="currentCityBlock font28">当前定位城市：{{city}}</view> -->
+<scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="bindScroll" scroll-top="{{scrollTop}}">
+  <view class="hotCity font28">
+    <view class="item_letter font28">热门行业</view>
+    <view class="hotCityBox">
+      <block wx:for="{{hotCityList}}">
+        <!-- <view class="listBlock" data-hotindustry="{{item}}" bindtap="hotindustry"> -->
+        <view class="listBlock font28 {{item.selected ?'selectStyle':'noselectStyle'}}" hover-class="selectStyle"  data-industry="{{item}}" data-itemindex="{{index}}" bindtap='bindIndustryHost'>
+          {{item.name}}
+        </view>
+      </block>
+    </view>
+  </view>
+
+    <view class="selection" wx:for="{{industryList}}" wx:key="{{item.initial}}">
+
+        <view  wx:if="{{item.length}}">
+            <view class="item_letter" wx:if="{{item.pinyin!='#'}}">{{item[0].pinyin}}</view>
+            <view class="selection-block">
+
+              <view  wx:for="{{item}}" wx:for-item="ct" wx:key="{{ct.id}}"  class="item_city font28 {{ct.selected ?'selectStyle':'noselectStyle'}}" hover-class="selectStyle" data-industry="{{ct}}" data-itemindex="{{index}}" bindtap='bindIndustry' >
+                  {{ct.name}}
+              </view>
+
+            </view>
+        </view>
+
+    </view>
+</scroll-view>
+              <!-- <view class="item_city"  data-industry="{{item}}" bindtap="bindIndustry">
+                  {{item.name}}
+              </view> -->

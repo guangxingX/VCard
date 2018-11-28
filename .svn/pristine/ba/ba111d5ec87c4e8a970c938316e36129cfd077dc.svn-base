@@ -1,0 +1,89 @@
+/**index.wxss**/
+swiper{height:455rpx;background:#fff;padding-top:25rpx;}
+.about-page{flex: 1;width:100%;}
+.myCompany{margin-top:20rpx;background:#fff;padding:0 30rpx;padding-bottom:16rpx;}
+.mytitle{padding:20rpx 0 20rpx 0;overflow:hidden;}
+.addnavigator{display:inline-block;}
+.noCardWrap{width:690rpx;height:397rpx;margin:0 auto;border-radius:10rpx;box-shadow:0px 2px 3px #ccc;position:relative;box-sizing:border-box;}
+.noCard{width: 100%;height: 100%;}
+/*.tag-tag{width: 690rpx;height: 397rpx;margin: 0 auto;background-color: #21242b;background-size:100% 100%;
+  border-radius: 10rpx;box-shadow: 0px 2px 3px #ccc;position: relative;padding-left:20rpx;box-sizing:border-box;}
+.tag-tag .cardbg{position:absolute;top:0;left:0;width:100%;height:100%;border-radius: 10rpx;}
+.tag-tag .section-1{display: flex;height: 136rpx;line-height: 136rpx;flex-direction: row;padding: 20rpx;
+  position:relative;z-index:10;}
+.section-2{position:relative;z-index:10;}
+.tag-tag .section-1 .avatar{width:136rpx;height: 136rpx;float: left;}
+.avatar image{width: 127rpx;height: 127rpx;border-radius: 50%;}
+.flex1{height: 54rpx;line-height: 54rpx;}
+.flex2{height: 40rpx;line-height: 40rpx;}
+.flex1 image{width:20rpx;height: 20rpx;}
+.flex1 image.icon {position:relative;top:16rpx;}
+.tag-tag .section-1 .detail{flex: 3;float: right;display:flex;flex-direction:column;
+  padding-top:16rpx;margin-left:10rpx;max-width:400rpx;}
+.tag-tag .section-1 .tag-blue{width:97rpx;height:53rpx;position:absolute;right:-10rpx;top:26rpx;}
+.tag-tag .section-1 .tag-blue image{width:97rpx;height:53rpx;position:absolute;right:0rpx;top:0rpx;}
+.tag-tag .section-1 .tag-blue text{position:absolute;right:20rpx;top:-48rpx;color:#fff;font-size:26rpx;}
+.tag-tag .section-1 .tag-blue.addtag{top:90rpx;}
+.tag-tag .section-1 .tag-blue .addCard{height:45rpx;position:absolute;top:0rpx;width:80rpx;line-height:45rpx;text-align: right;}
+.detail .name{color:#fff;}
+.detail .name image{width:24rpx;height:28rpx;margin-left:20rpx;}
+.detail .comp{font-size: 26rpx;color:#fff;}
+.section-2-detail .comp{font-size: 26rpx;color:#fff;height:45rpx;display:flex;}
+.section-2-detail .comp text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.section-2-detail .comp .flex3{padding-left: 10rpx;line-height: 45rpx;height: 45rpx;}
+.section-2-detail .comp.companyName{margin-top:10rpx;margin-bottom:10rpx; display:flex;align-items: center;}
+
+.section-2-detail .comp.companyName .authentication{display:inline-block;font-size:17rpx;color:#f19942;
+	margin-left:20rpx;display:flex;align-items: center;}
+.section-2-detail .comp.companyName .authentication image{width:20rpx;height:16rpx;}
+.section-2-detail .comp.companyName .authentication text{position:relative;left:6rpx;}
+.section-2-detail .comp.companyAddress text{max-width:80%;}
+.section-2-detail .comp .mapSmall{width:54rpx;height:54rpx;margin-left:30rpx;vertical-align: middle;}
+.tag-tag .section-2{height: 204rpx;}
+.section-2-detail{
+  padding-left: 20rpx;
+  color:#aaa;
+}*/
+.otherbtn{display:flex;flex-wrap: wrap;background:#fff;margin-top:20rpx;}
+.btnview{width:49%;text-align:center;justify-content:center;height:91rpx;line-height:91rpx;font-size:28rpx;}
+.btnview image{width:50rpx;height:40rpx;position:relative;top:10rpx;margin-right:10rpx;}
+/*.btnview:nth-child(1),.btnview:nth-child(2){border-bottom:2rpx solid #e5e5e5;}*/
+.btnview:nth-child(1),.btnview:nth-child(2){border-bottom:1rpx solid #f6f6f6;}
+.btnview:nth-child(1),.btnview:nth-child(3){border-right:1rpx solid #f6f6f6;}
+
+/*scroll-view{ white-space: nowrap;width:100%;height:296rpx;}
+.scroll-block{height:296rpx;background:#5e5857;width:100%;display:inline-block;margin-right:20rpx;
+	position:relative;border-radius:10rpx;}
+.myCompanyBg{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:10rpx;}
+.scroll-block:last-child{margin-right:0;}
+
+.companyLogo{width:84rpx;height:84rpx;margin-left: 20rpx;border:1rpx solid #eee;border-radius: 10rpx;overflow:hidden;}
+.companyLogo image{width:84rpx;height:84rpx;}
+.block-header image{height:20rpx;width:24rpx;position:relative;top:2rpx;}
+.block-header{display: flex;flex-wrap: nowrap;justify-content:space-between;font-size:22rpx;margin-bottom:28rpx;
+	padding:16rpx 10rpx 0 10rpx;position: relative;z-index: 10;padding-left: 30rpx;}
+.block-header view:nth-child(1) text{color:#f19942;margin-left:10rpx;}
+.block-header view:nth-child(2) text{color:#fff;margin-right:10rpx;}
+.block-1{display:flex;align-content:space-between;padding:0 10rpx 26rpx;position:relative;z-index:10;
+	border-bottom:1rpx solid rgba(255, 255, 255, 0.3);flex-direction:row;align-items:center;}
+.block-1 .detail{padding-left:14rpx;flex:3;width:480rpx;position:relative;top:-6rpx;}
+.block-1 .detail .name{margin-bottom:4rpx;}
+.block-1 .detail .companytags{font-size:22rpx;color:#fff;height:40rpx;}
+.block-1 .detail .companytags>view{border:1rpx solid #cccccc;display:inline-block;margin-right:10rpx;
+	padding:2rpx 6rpx;border-radius:6rpx;}
+.block-2{display:flex;justify-content:space-around;text-align:center;color:#fff;font-size:22rpx;
+	position:relative;z-index:10;padding:14rpx 0;}
+.block-2 .span{flex-grow: 1;width:33.33%;position:relative;}
+.block-2 .span .text{white-space:nowrap; overflow:hidden;line-height:50rpx;text-overflow:ellipsis;max-width:80%;margin:0 auto;}
+.block-2 .line-view{height:30rpx;width:1rpx;background-color:rgba(255,255,255,0.3);position:absolute;top:20rpx;right:0;}*/
+@import "../../templates/myenterpriseListcard/myenterpriseListcard.wxss";
+@import "../../templates/myBusinessCardTemp/myBusinessCardTemp.wxss";
+.home-card-share{top:-2rpx !important;border:none !important;}
+.companyShareWrap{position: relative;}
+.home-company-share{width: 80rpx;height: 30rpx;position: absolute;left:0;top:0;border:none !important;}
+.addCompany{color:#3073e3;}
+.addRow{width:16rpx;height:25rpx;position:relative;top:1rpx;margin-left:-2rpx;}
+.card-icon-address{height:24rpx !important;width:20rpx !important;}
+.flex1 .emailIco{width: 22rpx;height: 18rpx !important;}
+
+.myBusinessCard-section-2-comp text{max-width: 500rpx;}

@@ -1,0 +1,13 @@
+<!--pages/homePage/choisemarriage/choisemarriage.wxml-->
+<view class="page">
+	<view class="page-marriage">
+		<radio-group class="radio-group" bindchange="radioChange" value="{{radiovalue}}">
+		  <label class="radio" wx:for="{{items}}">
+		    {{item.name}}<radio value="{{item.value}}" checked="{{item.value==radiovalue}}"/>
+		  </label>
+		</radio-group>
+		<view class="footer">
+	  		<button type="primary" hover-class="button-hover" bindtap="savechoise"> 保存 </button>
+	  	</view>
+	</view>
+</view>

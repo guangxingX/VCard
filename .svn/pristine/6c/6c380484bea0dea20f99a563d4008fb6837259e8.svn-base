@@ -1,0 +1,67 @@
+<!--pages/homePage/businessInfo/businessInfo.wxml-->
+<view class="container">
+ <view v-if="{{errorshow}}" class="failuretipbox {{errorshow?'show-failuretipbox':'hidden-failuretipbox'}}">
+    <icon type="warn" size="16" color="#fff"/>
+    {{failuretip}}
+  </view>
+  <view class="business-page">
+  <form bindsubmit="submitCompanyInfoform">
+      <view class="uploadphoto">
+        <view class="text">
+          <text>更换头像</text>
+        </view>
+        <view class="photo" bindtap="changeHeaderImg">
+          <!-- <image src="{{logo ? logo : '../../../assets/images/icon/photobg.png'}}"></image> -->
+          <image src="{{logo ? logo : companyInfo.logo}}"></image>
+          <input type="text" hidden value="{{logo}}" name="logo"></input>
+          <input type="text" hidden value="{{companyId}}" name="id"></input>
+          <!-- 箭头 -->
+          <image class="imgRow" src="../../../assets/images/icon/icon-arrow-right.png"></image>
+        </view>
+      </view>
+      <view class="details">
+
+        <view class="row">
+          <text>公司名称</text>
+          <!-- <input type="text" placeholder="请输入公司全称" value="{{companyInfo.companyName}}" name="name" placeholder-class="placeholder" bindinput="companyNameChange"></input> -->
+          <input type="text" placeholder="请输入公司全称" value="{{companyName}}" name="name" placeholder-class="placeholder" bindinput="companyNameChange"></input>
+        </view>
+        <view class="row">
+          <text>公司网址</text>
+          <input type="text" placeholder="请输入公司网址" value="{{url}}" name="url" placeholder-class="placeholder" bindinput="companyUrlChange"></input>
+        </view>
+
+        <!-- <picker mode="region" class="row" bindchange="selectIndustry">
+          <text>行业</text>
+          <view class="text">
+            <text>请选择行业</text>
+            <image src="../../../assets/images/icon/icon-arrow-right.png"></image>
+          </view>
+       </picker>  -->
+
+        <!-- 跳转新页面 -->
+       <view class="row industryLine" bindtap="selectIndustry">
+          <text>行业</text>
+          <input type="text" placeholder="请选择行业" disabled="true" value='{{industryCharStr}}' placeholder-class="placeholder"></input>
+           <input type="text" hidden value="{{industryIdStr}}" name="label_id"></input>
+
+          <image class="imgRow industryRow" src="../../../assets/images/icon/icon-arrow-right.png"></image>
+        </view>
+
+        <view class="row">
+          <text>公司地址</text>
+          <!-- <input type="text" placeholder="请输入公司地址" value="{{companyInfo.address}}" name="address" placeholder-class="placeholder"></input> -->
+          <input type="text" placeholder="请输入公司地址" value="{{address}}" name="address" placeholder-class="placeholder" bindinput="companyAddressChange"></input>
+        </view>
+
+        <view class="row">
+          <text>商会</text>
+          <input type="text" placeholder="请输入商会名称" value="{{companyInfo.cocName}}" name="cocName" placeholder-class="placeholder" disabled="true"></input>
+        </view>
+      </view>
+      <view class="footer">
+        <button type="primary" formType="submit" hover-class="button-hover"> 提交 </button>
+      </view>
+    </form>
+  </view>
+ </view>

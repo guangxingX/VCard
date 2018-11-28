@@ -1,0 +1,40 @@
+@import "../../../templates/messageListTemplate/messageListTemplate.wxss";
+
+
+page{height:100%;background:#efeef3;}
+.supplyDetails-page{flex:1;width:100%;}
+.infobox{padding:40rpx 30rpx 20rpx;background:#fff;margin-bottom:20rpx;}
+.infobox .append{margin:30rpx 0;color:#888;font-size: 26rpx;}
+.infobox .append .tag{float:right;border:2rpx solid #09bb07;
+	color:#09bb07;padding:2rpx 6rpx;border-radius:6rpx;}
+.infobox .append>view{display:inline-block;}
+.infobox .point{width:8rpx;height:8rpx;background:#b2b2b2;border-radius:4rpx;margin:0 26rpx;
+	position:relative;top:-5rpx;}
+.infobox .content .showmore{color:#3073e3;text-align:center;height:89rpx;line-height: 89rpx;}
+.showmore{border-top: none;}
+.contactInfo image.pnoneicon{width:34rpx;height:34rpx;margin-top:30rpx;float:right;margin-left:20rpx;}
+.contactInfo{color:#888;height:95rpx;line-height:95rpx;margin-bottom:20rpx;
+	background:#fff;padding:0 30rpx;font-size: 26rpx;}
+.contactInfo .phone{margin-left:10rpx;float:right;color:#3073e3;}
+.companycard{padding:30rpx 0;}
+.contactcompany{background:#fff;margin-bottom: 18rpx;}
+.margin-b-200{margin-bottom: 200rpx;}
+.contactcompany .title{height:89rpx;line-height:89rpx;color:#888888;
+	padding:0 30rpx;border-bottom:2rpx solid #eee;}
+  .details-contactIcon{margin-right: 20rpx;}
+
+  /*.shareCompanyInfo{width: 100%; padding:30rpx 0; height: 88rpx;width: 100%;position:fixed;bottom:0;background:#fff;border-top: 1rpx solid #eeeeee;}
+.shareCompanyInfo .shareCompanyInfoBtn{width: 92%; background:#3073e3;font-size: 36rpx;}
+*/
+.detailsfooter{width: 100%; padding:30rpx 0; height: 88rpx;width: 100%;position:fixed;bottom:0;background:#fff;border-top: 1rpx solid #eeeeee;z-index: 999999;}
+.detailsfooter button{width: 92%; background:#3073e3;}
+.richImgWrap{text-align: center;padding:15rpx 0;}
+.richImg{margin:0 auto;width: 100%;}
+.richText{line-height: 1.5;}
+@import "../../../templates/enterpriseListcard/enterpriseListcard.wxss";
+@import "../../../templates/ccListBlock/ccListBlock.wxss";
+
+.messagebox{margin-bottom: 200rpx;background:#fff;}
+
+.saveMessageBtnWrap{display:flex;align-items: center;}
+.saveMessageBtn{margin-top:0 !important;}

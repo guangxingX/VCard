@@ -1,0 +1,56 @@
+<view class="wrap">
+
+  <view class="content">
+      <image class="logo" src="../../../assets/images/icon/aboutLogo.png"></image>
+      <view class="title1">WISSO超级名片</view>
+      <view class="title2">
+          <text class="version"> V{{version}} </text>
+          <text class="versionTitle"> 当前版本号 </text>
+      </view>
+
+      <view class="des">
+        <view class="desTitle color888 font24 linehight">
+          WISSO超级名片，是北京中和黄埔教育科技有限公司开发的一款商业沟通平台。帮助管理个人名片、企业名片、商会名片，资源共享实现各行各业交流合作。
+        </view>
+        <view class="desContent">
+           <view class="block block1">
+              <view class="subTitle">
+                若名片数量较多，不便管理
+              </view>
+              <view class="subDes color888">
+                在<text class="link">我的名片</text>里，您可以高效处理，手机扫描纸质名片，省时省力；
+              </view>
+           </view>
+           <view class="block block2">
+              <view class="subTitle">
+                若寻找潜在客户较困难
+              </view>
+              <view class="subDes color888">
+                在<text class="link">企业广场</text>里，您可以一键查询优质企业，了解企业实力和背景；
+              </view>
+           </view>
+            <view class="block block3">
+              <view class="subTitle">
+                若拥有的资源需求，没有专业的平台可以共享
+              </view>
+              <view class="subDes color888">
+                在<text class="link">资源需求</text>页面，您可以实时更新自己的资源需求，资源共享，
+                把握商机，创造合作机会；
+              </view>
+           </view>
+            <view class="block block4">
+            <view class="subTitle">
+              若组织的活动达不到预期效果，传播效率低
+            </view>
+            <view class="subDes color888">
+              在<text class="link">活动</text>页面，您只要实时更新自己的线下活动，其他用户在平台里就可实时了解，组织或参与有价值的活动，共建新商业模式。
+            </view>
+           </view>
+
+        </view>
+
+      </view>
+
+
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<view class="wrap">
+  <view class="row reasonTitle firstReasonTitle">
+    <text class="star">*</text>
+    <text> 请选择举报原因 </text>
+  </view>
+  <block wx:for="{{reasonList}}">
+    <view class="row reason" bindtap="choseReason" data-index="{{index}}">
+      {{item.name}}
+      <image wx:if="{{item.cheacked}}" class="selectImg select-0" src="../../../assets/images/icon/cheacked.png"></image>
+      <image wx:else class="selectImg select-1" src="../../../assets/images/icon/no-cheacked.png"></image>
+    </view>
+  </block>
+  <view class="row reasonTitle">举报补充说明</view>
+  <textarea class="richText" placeholder="请输入文字" value="{{textareaValue}}" maxlength='500' bindinput="textChange"></textarea>
+  <view class="row reasonTitle">上传图片(提供举报图片)</view>
+  <view class="imgWrap">
+      <block wx:for="{{addimgList}}">
+        <view class="itemImgWrap">
+          <image class="addimg"  src="{{item}}" ></image>
+          <image class="deltIcon" src="../../../assets/images/icon/icon-delete-red.png" bindtap="deleteImg" data-delIndex="{{index}}"></image>
+        </view>
+      </block>
+      <image class="addimg" wx:if="{{addshow}}" bindtap="choiceImg" src="../../../assets/images/icon/addImg.png" ></image>
+  </view>
+
+  <view class="footer">
+    <button type="primary" hover-class="button-hover" size="default" bindtap="saveReport" >提交</button>
+  </view>
+</view>
