@@ -1,17 +1,20 @@
-var Data = require('../../data.js')
+import {HTTP} from '../../utils/http.js'
+var http = new HTTP
+import {DATAMODULE} from '../../module/data.js'
+// var dataModule = new DATAMODULE;
 var Store = require('../../store')
 // pages/test/test.js
 Page({
 
   /**
    * Page initial data
-   * 
+   *
    */
   data: {
     ImageTextItem: []
   },
   /***
-   * 
+   *
    * _do
    * ***/
   _init(){
@@ -22,6 +25,7 @@ Page({
    */
   onLoad: function(options) {
       this._init()
+
   },
 
   /**
@@ -35,7 +39,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function() {
-
+      // dataModule.getIndustryList().then(res=>{
+      //     console.log(res);
+      // })
     console.log(Store.ImageTextItem)
   },
 

@@ -1,7 +1,8 @@
 // component/image-text/imageTextComponet.js
-var Data = require('../../data.js')
 var Store = require('../../store.js')
 var myBehavior = require('../behavior')
+import { DATAMODULE } from '../../module/data.js'
+var dataModule = new DATAMODULE
 Component({
   behaviors: [myBehavior],
   /**
@@ -34,6 +35,9 @@ Component({
   methods: {
     onPostmsg(){
       console.log('msg')
+      dataModule.getIndustryList().then(res=>{
+        console.log(res)
+      })
     }
   },
   /**
@@ -42,6 +46,7 @@ Component({
   onLoad:function(option){
     console.log(1)
     console.log(option)
+    
   },
   //版本过低
   lifetimes:{
@@ -50,6 +55,9 @@ Component({
       console.log(option)
     },
     created: function (option){
+      // getData.postCreateProject().then(res=>{
+      //   console.log(res)
+      // })
       console.log(option)
       // Data.postCreateProject().then((res)=>{console.log(res)})
       console.log('1')

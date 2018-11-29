@@ -7,3 +7,4 @@
   <button class="weui-btn primary font32" size = "">页面主操作 Normal</button>
   <button class="weui-btn primary font32" > 页面主操作 Normal</button>
 </view>
+<button bind:tap="onPostmsg">test</button>
