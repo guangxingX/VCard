@@ -84,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module/data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            <state relative-caret-position="483">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -178,66 +178,6 @@
               <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
               <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="edit-text" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="image-text" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="insert-bar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
-              <item name="welCropper" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -298,12 +238,12 @@
       <option name="presentableId" value="Default" />
       <updated>1543213440054</updated>
       <workItem from="1543213442891" duration="32586000" />
-      <workItem from="1543458771935" duration="2878000" />
+      <workItem from="1543458771935" duration="3148000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35464000" />
+    <option name="totallyTimeSpent" value="35734000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -578,8 +518,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="483">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
