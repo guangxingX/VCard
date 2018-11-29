@@ -1,0 +1,15 @@
+<view class="wrap">
+	<view class="failuretipbox {{errorshow?'show-failuretipbox':'hidden-failuretipbox'}}">
+	    <icon type="warn" size="16" color="#fff"/>
+	    {{failuretip}}
+	</view>
+    <view class="insertWrap">
+      <textarea class="textarea" bindinput="textChange" value="{{textareaValue}}" placeholder="{{holder}}"  placeholder-class="placeholder" maxlength="500"/>
+    </view>
+    <view class="charNumber">
+      {{charNumber}}/500
+    </view>
+
+    <button class="saveBtn" hover-class="button-hover" size="default" formType="submit" bindtap="Preservation">保存</button>
+    <button bindtap="onTest">保存2</button>
+</view>

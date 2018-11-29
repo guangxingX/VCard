@@ -1,6 +1,9 @@
 // component/image-text/imageTextComponet.js
-var Data = require('../../data.js');
+var Data = require('../../data.js')
+var Store = require('../../store.js')
+var myBehavior = require('../behavior')
 Component({
+  behaviors: [myBehavior],
   /**
    * Component properties
    */
@@ -11,6 +14,9 @@ Component({
       observer: function (newVal, oldVal, changedPath) {
         // 属性被改变时执行的函数（可选），也可以写成在methods段中定义的方法名字符串, 如：'_propertyChange'
         // 通常 newVal 就是新设置的数据， oldVal 是旧数据
+      },
+      name:{
+        type:String
       }
     }
   },
@@ -19,31 +25,40 @@ Component({
    * Component initial data
    */
   data: {
-
+    ImageTextItem:[]
   },
 
   /**
    * Component methods
    */
   methods: {
-
+    onPostmsg(){
+      console.log('msg')
+    }
   },
   /**
    * Component lifetmies
    */
+  onLoad:function(option){
+    console.log(1)
+    console.log(option)
+  },
   //版本过低
   lifetimes:{
-    created:function(){
-      Data.postCreateProject().then((res)=>{console.log(res)})
+    onLoad: function (option) {
+      console.log(1)
+      console.log(option)
+    },
+    created: function (option){
+      console.log(option)
+      // Data.postCreateProject().then((res)=>{console.log(res)})
       console.log('1')
+      console.log(this.name)
+      console.log(Store.ImageTextItem)
     },
     attached: function () {
       console.log('2')
       // 在组件实例进入页面节点树时执行
     },
-  },
-  attached: function () {
-    console.log('2')
-    // 在组件实例进入页面节点树时执行
   }
 })

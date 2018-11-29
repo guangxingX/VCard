@@ -1,0 +1,9 @@
+<!--component/image-text/imageTextComponet.wxml-->
+<text>component/image-text/imageTextComponet.wxml</text>
+<view>{{myProperty}}</view>
+<view wx:for="{{ImageTextItem}}" wx:key="key">{{item.text}}</view>
+<w-insert-bar/>
+<view class="page__bd_spacing d-btn">
+  <button class="weui-btn primary font32" size = "">页面主操作 Normal</button>
+  <button class="weui-btn primary font32" > 页面主操作 Normal</button>
+</view>

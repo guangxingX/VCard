@@ -1,0 +1,5 @@
+/* component/image-text/imageTextComponet.wxss */
+@import "/style/weui.wxss";
+page{
+  background: #EFEFF4;
+}

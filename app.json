@@ -78,7 +78,9 @@
     "templates/leaveMessageForActiveTemp/leaveMessageForActiveTemp",
     "templates/whoSignupMyActiveTemp/whoSignupMyActiveTemp",
     "pages/test/test",
-    "pages/test2/test"
+    "pages/test2/test",
+    "component/image-text/index",
+    "component/edit-text/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

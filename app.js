@@ -19,7 +19,10 @@ App({
         version: '1.0.0',
         // userId:1426
         userId: -1,
-        cocId: -1
+        cocId: -1,
+        //用于组件交互
+        ImageTextItem:[]
+
     },
     /**
      * 申请权限
@@ -67,7 +70,7 @@ App({
                     // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
                     // TODO 注意升级
                     //https://developers.weixin.qq.com/community/develop/doc/0000a26e1aca6012e896a517556c01
-        
+
                     wx.getUserInfo({
                         success: res => {
                             // console.log('用户信息+++-----------')

@@ -1,32 +1,42 @@
+var Data = require('../../data.js')
+var Store = require('../../store')
 // pages/test/test.js
 Page({
 
   /**
    * Page initial data
+   * 
    */
   data: {
     ImageTextItem: []
   },
-
+  /***
+   * 
+   * _do
+   * ***/
+  _init(){
+    Store.ImageTextItem=[]
+  },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function(options) {
-
+      this._init()
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function() {
-
+    console.log(this.ImageTextItem)
   },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function() {
-    console.log(this.ImageTextItem)
+
+    console.log(Store.ImageTextItem)
   },
 
   /**
@@ -40,7 +50,7 @@ Page({
    * Lifecycle function--Called when page unload
    */
   onUnload: function() {
-
+    this._init()
   },
 
   /**
@@ -63,23 +73,17 @@ Page({
   onShareAppMessage: function() {
 
   },
+  onPostcommit:function(){
+    console.log()
+  },
   onTapTest: function() {
     console.log(this.ImageTextItem)
   },
   onToTest:function(){
     wx.navigateTo({
-      url: '../test2/test',
+      url: '/component/image-text/index',
       success: res => {
-      },
-      fail: res => {
-      },
-      complete: res => {
-      }
-    })
-
-    wx.navigateTo({
-      url: '../productInsertText/productInsertText?page=addResource',
-      success: res => {
+        Store.ImageTextItem.push({name:'1'})
       },
       fail: res => {
       },

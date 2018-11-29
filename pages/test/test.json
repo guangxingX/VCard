@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "w-image-text": "/component/image-text/imageTextComponet"
+    "w-image-text": "/component/image-text/index"
   }
 }
