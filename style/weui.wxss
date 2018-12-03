@@ -26,10 +26,20 @@ weui
 .d-btn {
   display: flex;
   flex-direction: row;
-  justify-content: space-around
+  justify-content: space-between;
 
 }
 .d-btn .weui-btn:first-child{
     margin-top: 15px!important;
     border:1px solid rgba(204,204,204,1);
+}
+.d-btn .weui-btn{
+  width: 335rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-left:0;
+  margin-right: 0;
+}
+.font32{
+  font-size: 32 rpx;
 }

@@ -11,7 +11,7 @@ Page({
    *
    */
   data: {
-    ImageTextItem: []
+    ImageTextItem: []//必须有
   },
   /***
    *
@@ -25,6 +25,17 @@ Page({
    */
   onLoad: function(options) {
       this._init()
+      wx.setNavigationBarTitle({
+          title: '自我介绍'
+      })
+      wx.setNavigationBarColor({
+          frontColor: '#000000',
+          backgroundColor: '#ffffff',
+          animation: {
+              duration: 400,
+              timingFunc: 'easeIn'
+          }
+      })
 
   },
 
@@ -42,6 +53,7 @@ Page({
       // dataModule.getIndustryList().then(res=>{
       //     console.log(res);
       // })
+    ee
     console.log(Store.ImageTextItem)
   },
 
@@ -76,25 +88,28 @@ Page({
   /**
    * Called when user click on the top right corner to share
    */
+  
   onShareAppMessage: function() {
 
   },
   onPostcommit:function(){
     console.log()
   },
-  onTapTest: function() {
-    console.log(this.ImageTextItem)
+
+  /**
+   * 
+   * on
+   */
+  onTapView: function(e) {
+    console.log(e.detail)
+  },
+  onTapSave:function(e){
+    console.log(e.detail)
+  },
+  onT(){
+    
   },
   onToTest:function(){
-    wx.navigateTo({
-      url: '/component/image-text/index',
-      success: res => {
-        Store.ImageTextItem.push({name:'1'})
-      },
-      fail: res => {
-      },
-      complete: res => {
-      }
-    })
+   
   }
 })

@@ -4,50 +4,6 @@ var app = getApp()
  * params.data
  * params.method 默认是json
  */
-// class HTTP {
-//   request(params) {
-    // url, data, method,
-    // if (!params.method) {
-    //   params.method = "GET"
-    // }
-    // wx.request({
-    //   url: app.data.apiurl + params.url,
-    //   method: params.method,
-    //   data: params.data,
-    //   header: {
-    //     'content-type': 'application/json',
-    //   },
-    //   success: (res) => {
-    //     let code = res.statusCode.toString()
-    //     if (code.startsWith('2')) {
-    //       params.success && params.success(res.data)
-    //     }
-    //     else {
-    //       let error_code = res.data.error_code
-    //       // this._show_error(error_code)
-    //     }
-    //   },
-    //   fail: (err) => {
-    //     // this._show_error(1)
-    //   }
-    // })
-
-  // }
-
-  // _show_error(error_code) {
-  //   if (!error_code) {
-  //     error_code = 1
-  //   }
-  //   const tip = tips[error_code]
-  //   wx.showToast({
-  //     title: tip ? tip : tips[1],
-  //     icon: 'none',
-  //     duration: 2000
-  //   })
-  // }
-// }
-
-
 class HTTP{
   request(params){
     if (params.data) {
@@ -76,8 +32,8 @@ class HTTP{
         success: function (res) {
             let code = res.statusCode.toString()
             if (code.startsWith('2')) {
-              // resolve(res.data.entity)
-              resolve(res.data)
+              //TODO 自我判断
+              resolve(res.data.entity)
             }else{
                 this._show_error(res.data.success,res.data.message)
             }
@@ -91,6 +47,8 @@ class HTTP{
     _show_error(error_code,msg) {
         if (!error_code) {
             error_code = -1
+        }
+        if(!msg){
             msg = '错误'
         }
         wx.showToast({

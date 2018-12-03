@@ -17,7 +17,12 @@ export class DATAMODULE extends HTTP {
       url:'applets/industryList'
     })
   }
-
+  //上传服务器需要的token
+    getUptoken(){
+        return this.request({
+            url:'applets/uptoken'
+        })
+    }
 }
 
 // module.exports = {

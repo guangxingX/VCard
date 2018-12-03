@@ -263,7 +263,6 @@ Page({
   },
   addIamge(e) {
     console.log('addIamge')
-
     let that = this;
     let mode = e.currentTarget.dataset.mode
     wx.chooseImage({
@@ -345,15 +344,15 @@ Page({
             }
         })
     },
-  bindscroll:function (event) {
+    bindscroll:function (event) {
         var scrollTop = event.detail.scrollTop;
         this.setData({
             'scrollPosition.scrollTop':scrollTop,
             scrollTopPostion:scrollTop
         })
   },
-    //****拖拽实例*****/
-  getOptionInfo:function (code) {
+    //****/
+    getOptionInfo:function (code) {
       for(var i=0,j=this.data.ImageTextItem.length;i<j;i++){
           var optionData= this.data.ImageTextItem[i];
           if(optionData.sDtSecCode == code){
@@ -363,7 +362,7 @@ Page({
       }
       return {};
   },
-  getPositionDomByXY:function (potions) {
+    getPositionDomByXY:function (potions) {
       var y = potions.y-this.data.scrollPosition.top+this.data.scrollPosition.scrollTop;
       var ImageTextItem = this.data.ImageTextItem;
       var everyOptionCell = this.data.scrollPosition.everyOptionCell;

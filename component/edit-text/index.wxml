@@ -9,7 +9,5 @@
     <view class="charNumber">
       {{charNumber}}/500
     </view>
-
     <button class="saveBtn" hover-class="button-hover" size="default" formType="submit" bindtap="Preservation">保存</button>
-    <button bindtap="onTest">保存2</button>
 </view>

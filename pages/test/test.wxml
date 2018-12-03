@@ -1,6 +1,4 @@
-<!--pages/test/test.wxml-->
-<text bind:tap="onTapTest">pages/test/test.wxml</text>
-<view bind:tap="onToTest">next</view>
+<w-image-text style="height: 100%" ImageTextItem="{{ImageTextItem}}" bind:onTapView="onTapView" bind:onTapSave="onTapSave"/>
 
 
 

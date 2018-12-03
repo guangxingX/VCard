@@ -9,6 +9,9 @@ Component({
     textareaValue: '',
     holder: '请输入内容'
   },
+
+  // behaviors:[myBehavior],
+
   methods: {
     // 输入文字改变
     textChange(event) {
@@ -37,47 +40,42 @@ Component({
         })
       }
     },
-    Preservation() {
-      var that = this;
-      setTimeout(function() {
-        that.setData({
-          errorshow: false
-        })
-      }, 1000)
-      if (this.data.charNumber == 0 || this.data.content.trim() == '') {
-        this.setData({
-          errorshow: true,
-          failuretip: '文字内容不能为空'
-        });
-      } else {
-        var pages = getCurrentPages();
-        console.log(pages)
-        var prevPage = pages[pages.length - 2];
-        var prevPageImageTextItem = prevPage.data.ImageTextItem;
-        var max = 0;
-        if (prevPageImageTextItem.length > 0) {
-          max = prevPageImageTextItem[0].sDtSecCode;
-          prevPageImageTextItem.forEach(function(item, index, arr) {
-            if (item.sDtSecCode > max) {
-              max = item.sDtSecCode;
-            }
-          });
-        }
-        //把信息存入共同对象里
-        prevPage.data.ImageTextItem.push({
-          text: that.data.content,
-          sDtSecCode: max + 1
-        });
-        prevPage.setData({
-          ImageTextItem: prevPage.data.ImageTextItem
-        })
-        wx.navigateBack({
-          changed: true
-        });
-        // this.selectComponent()
-      }
-    },
-    
+      Preservation: function () {
+          var that = this;
+          setTimeout(function(){
+              that.setData({
+                  errorshow:false
+              })
+          },1000)
+          // console.log(this.data.content.trim());
+          if(this.data.charNumber==0||this.data.content.trim()==''){
+              this.setData({errorshow:true,failuretip:'文字内容不能为空'});
+          }else{
+              var pages = getCurrentPages();
+              console.log(pages)
+              var prevPage = pages[pages.length-2];
+              var prevPageImageTextItem=prevPage.data.ImageTextItem;//TODO 优化 
+              console.log(prevPageImageTextItem);
+              var max=0;
+              if(prevPageImageTextItem.length>0){
+                  max = prevPageImageTextItem[0].sDtSecCode;
+                  prevPageImageTextItem.forEach(function(item,index,arr){
+                      if(item.sDtSecCode>max){
+                          max=item.sDtSecCode;
+                      }
+                  });
+              }
+              //把信息存入共同对象里
+              prevPage.data.ImageTextItem.push({text:that.data.content,sDtSecCode:max+1});
+              prevPage.setData({
+                  ImageTextItem:prevPage.data.ImageTextItem
+              })
+              wx.navigateBack({
+                  changed: true
+              });
+          }
+      },
+
   },
   lifetimes: {
     created: function () {
