@@ -217,7 +217,7 @@ App({
                     } else {
                         wx.showToast({
                             title: res.data.errcode + ":" + res.data.errmsg,
-                            image: './assets/images/icon/error-fff.png',
+                            image: '/assets/images/icon/error-fff.png',
                             duration: 2000
                         })
                     }
@@ -386,7 +386,7 @@ App({
             return str;
         }
     },
-
+ 
     // 获取缓存数据
     // getHistory:function () {
     //   wx.getStorage({

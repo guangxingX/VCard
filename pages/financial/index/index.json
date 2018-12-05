@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "w-item-programme": "/component/programe/item/index",
+    
+  },
+  "enablePullDownRefresh":true
+}

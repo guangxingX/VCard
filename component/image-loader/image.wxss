@@ -1,0 +1,19 @@
+/* component/image-loader/image.wxss */
+
+.before-load {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.image-class {
+  display: inline-block;
+  border-radius: 10rpx;
+  background: #3073e3;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+

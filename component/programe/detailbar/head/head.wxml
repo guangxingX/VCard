@@ -1,0 +1,8 @@
+<!--component/programe/detailbar/head/head.wxml-->
+<view class="container">
+ <view class="blue-colm"></view> 
+ <view class="name">{{name}}</view>
+ <view class="doing" wx:if="{{doing}}">
+  融资中
+ </view>
+</view>

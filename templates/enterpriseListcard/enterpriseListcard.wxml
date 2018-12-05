@@ -56,7 +56,7 @@
                                 </view> -->
                             </view>
                             <view class="enterprisecard-tag font22">
-                                <block wx:for="{{item.coTag}}" wx:for-item="item2">
+                                <block wx:for="{{item.coTag}}" wx:for-item="item2" wx:key="*this">
                                     <view class="enterprisecard-tag-text tag-yellow" wx:if="{{item2.coTagType==1}}">
                                         <text>{{item2.coTagName}}</text>
                                     </view>

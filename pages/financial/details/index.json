@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "项目详情",
+  "usingComponents": {
+    "w-head-programe": "/component/programe/detailbar/head/head"
+  }
+}

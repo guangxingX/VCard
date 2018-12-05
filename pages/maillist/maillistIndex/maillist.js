@@ -109,6 +109,7 @@ Page({
               that.setData({
                 qualityEnterprise:that.data.qualityEnterprise
               });
+              console.log(that.data.qualityEnterprise)
 
             }
           }else{

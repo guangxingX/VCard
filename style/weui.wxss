@@ -43,3 +43,14 @@ weui
 .font32{
   font-size: 32 rpx;
 }
+.weui-navbar__slider {
+  background-color: #3073e3 !important;
+}
+.weui-navbar__item .weui-navbar__title {
+  color: #888;
+}
+
+.weui-bar__item_on .weui-navbar__title {
+  color: #3073e3 !important;
+  font-weight: bold;
+}

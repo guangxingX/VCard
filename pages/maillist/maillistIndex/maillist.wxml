@@ -47,7 +47,7 @@
 
 		<view class="noContent noContent-1" wx:if="{{!qualityEnterprise.length && currenttab==1}}">
 			<view>
-				<image class="noImage" src="../../../assets/images/mine/no-resource.png" ></image>
+				<image class="noImage" src="../../../assets/images/mine/no-resource.png"></image>
 			</view>
 			<view class="noTextWrap">
 				<text class="noText"> 暂无公司</text>
