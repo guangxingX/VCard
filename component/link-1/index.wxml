@@ -1,0 +1,14 @@
+<!--component/link-1/index.wxml-->
+<!-- <text>component/link-1/index.wxml</text>
+ -->
+ <view class="container">
+   <w-image class='avatar' defaultText="{{name}}" originalImage="{{src}}" width="96rpx" height="96rpx" plugStyle="font-size: 48rpx;border-radius: 50%" size="1"/>
+   <view class="info">
+    <view>{{name}}</view>
+    <view>{{subintr}}</view>
+   </view>
+   <view class="call">
+    <image src='image/call.png'/>
+    <text>{{call}}</text>
+   </view>
+ </view>

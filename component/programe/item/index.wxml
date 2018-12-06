@@ -4,10 +4,16 @@
     <view class="weui-panel__bd">
       <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-          <image class="weui-media-box__thumb" src="{{info.logo}}" />
+        <w-image defaultText="{{text}}" originalImage="{{info.logo}}" width="100%" height="100%"/>
+          <!-- <image class="weui-media-box__thumb" src="{{info.logo}}" /> -->
         </view>
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-          <view class="weui-media-box__title re">{{info.name}}
+          <view class="weui-media-box__title re ">
+          <!-- {{info.name}} -->
+          <view class="es">
+           {{info.name}}
+          </view>
+          
             <view class="status title font24" bindtap="onAddList">
               {{status}}
             </view>

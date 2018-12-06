@@ -7,13 +7,14 @@
 }
 
 .image-class {
-  display: inline-block;
-  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   background: #3073e3;
   color: #fff;
   font-weight: bold;
-  text-align: center;
-  font-size: 28rpx;
+ 
 }
 
 

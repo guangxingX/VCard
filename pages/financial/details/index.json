@@ -3,6 +3,9 @@
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "项目详情",
   "usingComponents": {
-    "w-head-programe": "/component/programe/detailbar/head/head"
+    "w-head-programe": "/component/programe/detailbar/head/head",
+    "w-image": "/component/image-loader/image",
+    "w-link-1": "/component/link-1/index",
+    "w-link-d": "/component/link-d/index"
   }
 }

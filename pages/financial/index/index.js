@@ -12,7 +12,7 @@ Page({
    */
   data: {
     currentPage: 1,
-    tabs: ["找投资", "找项目"],
+    tabs: ["找投资", "找项目"],//写死
     activeIndex: 1,
     sliderOffset: 0,
     sliderLeft: 0,
@@ -20,11 +20,11 @@ Page({
     totalPage:10,
   },
   onAdd(){
-    console.log("onAdd")
+    // console.log("onAdd")
   },
   onAddList(e) {
     var currentPage = this.data.currentPage
-    //当总页数够便不再发起请求
+    //当总页数时，不再发起请求
     if (this.data.currentPage >=this.data.totalPage) {
       return
     }
@@ -58,7 +58,7 @@ Page({
 
   _randerData(page){
     program.getProjectList(page).then(res => {
-      console.log(res)
+      // console.log(res)
       var list = this.data.projectList.concat(res.projectList)
       this.setData({
         projectList: list,

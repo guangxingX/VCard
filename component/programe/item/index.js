@@ -17,8 +17,8 @@ Component({
   data: {
     status: '融资中',//TODO 接口未给出
     tag: ['赛道布局', '教育培训', '智能', '直播业', '布局'],//标签
-    info:{}
-
+    info:{},
+    text:''
   },
 
   /**
@@ -35,10 +35,12 @@ Component({
         if(typeof info.label != 'undefined'){
             var tag = programe.splitbycomma(info.label)
         }
+     var text = info.name.substring(0, 2)
       this.setData({
         tag: tag,
         info:info,
-        icon60: base64.icon60
+        icon60: base64.icon60,
+        text: text
       });
     }
   },

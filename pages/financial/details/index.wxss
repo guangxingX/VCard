@@ -73,3 +73,18 @@ page,
 .v-c{
   padding-bottom: 30rpx;
 }
+.border{
+  position:relative;
+}
+
+.border:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #e5e5e5;
+  /* left: 15px; */
+}

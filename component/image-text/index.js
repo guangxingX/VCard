@@ -18,6 +18,7 @@ Component({
      * Component properties
      */
     properties: {
+        //存储所有编写事项
         ImageTextItem: {
             type: Array,
             observer: function (newVal, oldVal, changedPath) {
