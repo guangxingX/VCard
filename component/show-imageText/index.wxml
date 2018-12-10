@@ -1,0 +1,23 @@
+<!--component/show-imageText/index.wxml-->
+<!-- 图 -->
+<view  class="s-img">
+  <image mode="aspectFill" wx:if="{{imgData.image}}" src="{{imgData.image}}"/>
+</view>
+
+<!-- 文字 -->
+<view wx:if="{{imgData.text}}" class="s-text">
+  {{imgData.text}}
+</view>
+
+<!-- 视频 -->
+<view>
+  <video class="s-video" wx:if="{{imgData.video}}"  src="{{imgData.video}}" />
+</view>
+<!-- 链接 -->
+<view wx:if="{{imgData.file}}" bind:tap="onOpenFile" class="file">
+  <image src="../images/file@show.png" />
+  <view class="container">
+    <view class="file-name">文件</view>
+    <view class="name">{{fileName}}</view>
+  </view>
+</view>

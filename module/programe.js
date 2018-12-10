@@ -48,31 +48,36 @@ export class programemodule extends HTTP {
      })
    }
   }
-  splitbycomma(string){
+  splitbycomma(string,isFive=true){
     // console.log(typeof string)
     if(typeof string != 'string'){
       throw Error('需要字符串')
     }else{
       var arr = string.split(',')
       //规定至多显示5个。随机给出5个。
-      if (arr.length<5){
-        return arr
+      if (isFive){
+        if (arr.length < 5) {
+          return arr
+        } else {
+          var result = [];
+
+          var ranNum = 5;
+
+          for (var i = 0; i < ranNum; i++) {
+
+            var ran = Math.floor(Math.random() * (arr.length - i));
+
+            result.push(arr[ran]);
+
+            arr[ran] = arr[arr.length - i - 1];
+
+          };
+          return result
+        }
       }else{
-        var result = [];
-
-        var ranNum = 5;
-
-        for (var i = 0; i < ranNum; i++) {
-
-          var ran = Math.floor(Math.random() * (arr.length - i));
-
-          result.push(arr[ran]);
-
-          arr[ran] = arr[arr.length - i - 1];
-
-        };
-        return result
+        return arr
       }
+      
       
     }
   }

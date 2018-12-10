@@ -1,7 +1,7 @@
 <import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
 <view class="page">
   <view class="page__bd">
-    <view class="weui-tab">
+    <view class="weui-tab ">
       <view class="weui-navbar weui-fff">
         <block wx:for="{{tabs}}" wx:key="*this">
           <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
@@ -11,14 +11,14 @@
         <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
       </view>
       <view class="weui-tab__panel">
-        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+        <view class="weui-tab__content b-f" hidden="{{activeIndex != 0}}">
           <!-- 项目简介 -->
           <view class="part1 weui-fff">
             <!-- TODO 融资中 缺少字段-->
             <w-head-programe name="项目简介" doing="{{true}}" />
 
             <view class="weui-panel__bd">
-              <navigator url="" class="weui-media-box weui-media-box_appmsg" >
+              <navigator url="" class="weui-media-box weui-media-box_appmsg">
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                   <!-- 占位图片组件 -->
                   <w-image defaultText="{{projectIntro.name}}" originalImage="{{projectIntro.logo}}" width="100%" height="100%" />
@@ -37,7 +37,7 @@
               <view class="info-1 item">
                 <image src="image/block.png" />
 
-                  <text>{{label}}</text>
+                <text>{{label}}</text>
 
 
               </view>
@@ -51,29 +51,71 @@
           <view class="part1 weui-fff">
             <w-head-programe name="项目路演视频" />
             <view class="v-c">
-              <video class="myVideo" id="myVideo" src="{{projectIntro.projectIntro}}"
-                 enable-danmu danmu-btn controls></video>
+              <video class="myVideo" id="myVideo" src="{{projectIntro.videoUrl}}" enable-danmu danmu-btn controls></video>
             </view>
           </view>
           <!-- 联系人 -->
 
           <view class="part1 weui-fff">
             <w-head-programe name="联系人" />
-            <view class="border"/>
-            <w-link-1 name="王清文" src="" subintr="cto/融资经理" call="123456789" size="1" />
-            <w-link-1 name="王清文" src="" subintr="cto/融资经理" call="123456789" size="1" />
+            <view class="border" />
+            <bolck wx:for="{{contact}}" wx:key="id">
+              <w-link-1 name="{{item.name}}" src="{{item.logo}}" subintr="{{item.position}}" call="{{item.mobile}}" mycardid="{{item.id}}" size="1" />
+            </bolck>
           </view>
           <!-- 核心团队 -->
           <view class="part1 weui-fff">
-            <w-head-programe name="核心团队（20人)" />
-            <view class="border"/>
-            <w-link-d name="王清文2" src="" sub="{{sub}}"/>
-             <w-link-d name="王清文2" src="" sub="{{sub}}"/>
+            <w-head-programe name="核心团队（{{coreTeam.length}}人)" />
+            <view class="border" />
+            <bolck wx:for="{{coreTeam}}" wx:key="id">
+              <w-link-d name="{{item.name}}" src="{{item.logo}}" sub="{{item}}" />
+            </bolck>
           </view>
+          <!-- 适用客户 产品价值 客户案例 -->
+          <block wx:for="{{gallery}}" wx:for-item="item" wx:key="">
+            <view class="part1 weui-fff">
+              <w-head-programe name="{{item.name}}" />
+              <bolck wx:for="{{item.gdata}}" wx:for-item="_i" wx:key="">
+                <w-show-imageText imgData="{{_i}}" />
+              </bolck>
+            </view>
+          </block>
+
+
         </view>
-        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
-        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
-        <view class="weui-tab__content" hidden="{{activeIndex != 3}}">选项四的内容</view>
+        <view class="weui-tab__content b-f" hidden="{{activeIndex != 1}}">
+        <view class="part1 weui-fff">
+
+          <w-head-programe name="融资计划" />
+          <!-- ·投资模式  ·融资阶段 ·本轮融资⾦额 ·本轮融资估值 -->
+          <block wx:for="{{tagsData}}" wx:for-item="item" wx:key="">
+            <view class="container-2">
+              <view class="text-head">
+                {{item.name}}
+              </view>
+
+              <view class="tag-bd">
+                <block wx:for="{{item.tData}}" wx:key="" wx:for-item="_i">
+                  <w-tag-programe name="{{_i}}" color="{{item.color}}"/>
+                </block>
+              </view>
+            </view>
+          </block>
+
+          <!--  -->
+        </view>
+
+        </view>
+        <view class="weui-tab__content b-f" hidden="{{activeIndex != 2}}">选项三的内容</view>
+        <view class="weui-tab__content b-f" hidden="{{activeIndex != 3}}">选项四的内容</view>
+      </view>
+    </view>
+    <view class="bottom-btn weui-fff">
+      <button class="btn-1" open-type="share">
+        <image src="image/share.png" /> 分享
+      </button>
+      <view class="btn-2" bind:tap="onGoNextPage">
+        联系项目方
       </view>
     </view>
   </view>

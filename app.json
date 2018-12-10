@@ -82,7 +82,8 @@
     "component/image-text/index",
     "component/edit-text/index",
     "pages/financial/index/index",
-    "pages/financial/details/index"
+    "pages/financial/details/index",
+    "pages/financial/contactme/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

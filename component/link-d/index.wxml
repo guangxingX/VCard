@@ -4,16 +4,16 @@
     <w-image class='avatar' defaultText="{{name}}" originalImage="{{src}}" width="96rpx" height="96rpx" plugStyle="font-size: 48rpx;border-radius: 50%" size="1" />
     <view class="link">
       <view class="bd-link">{{name}}
-        <text>{{sub.sex}}</text>
+        <text>{{sub.gender}}</text>
       </view>
-      <view class="tip">{{sub.tip}}</view>
+      <view class="tip">{{sub.position}}</view>
     </view>
-    <view class="icon">
-      详情
-      <image src="image/arrow.png"></image>
-    </view>
+    <!--<view class="icon">-->
+      <!--详情-->
+      <!--<image src="image/arrow.png"></image>-->
+    <!--</view>-->
   </view>
   <view class="under">
-    {{sub.intr}}
+    {{sub.intro}}
   </view>
 </view>
