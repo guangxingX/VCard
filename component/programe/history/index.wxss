@@ -1,0 +1,36 @@
+/* component/programe/history/index.wxss */
+.container{
+    border: 1rpx solid #CCCCCC;
+    margin-bottom: 32rpx;
+
+}
+.inner{
+    padding: 43rpx 44rpx 42rpx 40rpx;
+    display: flex;
+}
+.bf{
+    font-size:40rpx;
+    color:rgba(51,51,51,1);
+    line-height: 40rpx;
+}
+.sf{
+    font-size:24rpx;
+    color:rgba(153,156,160,1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+.sf text{
+    line-height: 24rpx;
+}
+.investors{
+
+}
+.left{
+   width: 177rpx;
+}
+.right{
+    flex:1;
+}

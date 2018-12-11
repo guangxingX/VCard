@@ -35,7 +35,7 @@ Page({
         name: "·本轮融资估值",
         color: "#09BB07",
       }],
-    activeIndex: 1,
+    activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
     //写死
@@ -78,6 +78,23 @@ Page({
     financingAmount:[],//融资金额
 
     phase:[],//融资阶段
+      his:[{
+          time: '0000.00.00',
+          investmentAmount:'--亿人民币',
+          phase:'--轮',
+          investors:['-----','-----','-----','-----',]
+      }],//·历史融资
+      plans:[{name:'·资⾦使⽤规划'},{name:'·业务规划'}],//·资⾦使⽤规划·业务规划
+      resources:[{name:'产品研发'},{name:' 知识产权'},{name:' 渠道布局'},{name:' 运营资质'},{name:' 战略合作'},],//资源储备
+      businessModel:[
+          {name:'产品定位'},
+          {name:'空间趋势'},
+          {name:'目标客户'},
+          {name:'价值主张'},
+          {name:'渠道通路'},
+          {name:'收入模式'},
+          {name:'成本构成'},
+      ],//商业模式
   },
   onGoNextPage() {
     wx.navigateTo({
@@ -97,9 +114,13 @@ Page({
       case '1':
         this._randerTwoData()
         break
+      case '2':
+        this._randerTreData()
+      case '3':
+        this._randerFouData()
 
     }
-    console.log(this.data.activeIndex)
+    // console.log(this.data.activeIndex)
 
   },
   _setNav() {
@@ -113,12 +134,55 @@ Page({
       }
     });
   },
+    _randerFouData(){
+        programe.getProjectDetail({
+            projectId: this.data.pid,
+            type:4,
+        }).then(res=>{
+            // console.log(res);
+             let businessModel =this.data.businessModel
+            let businessModelres = res.businessModel
+            businessModel[0].bData= businessModelres.positioning
+            businessModel[1].bData= businessModelres.trend
+            businessModel[2].bData= businessModelres.targetCustomer
+            businessModel[3].bData= businessModelres.valueProposition
+            businessModel[4].bData= businessModelres.channel
+            businessModel[5].bData= businessModelres.revenueModel
+            businessModel[6].bData= businessModelres.costStructure
+            this.setData({
+                businessModel,//商业模式
+            })
+        })
+    },
+    _randerTreData(){
+        programe.getProjectDetail({
+            projectId: this.data.pid,
+            type:3,
+        }).then(res=>{
+            // console.log(res)
+            let resources = this.data.resources
+            let resourcesReserves = res.resourcesReserves
+            let develop = resourcesReserves.develop
+            let propertyRights = resourcesReserves.propertyRights
+            let channelLayout = resourcesReserves.channelLayout
+            let qualification = resourcesReserves.qualification
+            let cooperation = resourcesReserves.cooperation
+            resources[0].rData = develop
+            resources[1].rData = propertyRights
+            resources[2].rData = channelLayout
+            resources[3].rData = qualification
+            resources[4].rData = cooperation
+            this.setData({
+                resources,//
+            })
+        })
+    },
   _randerTwoData(){
     programe.getProjectDetail({
       projectId: this.data.pid,
       type:2,
     }).then(res=>{
-      console.log(res)
+      // console.log(res)
       let financingInfo = res.financingInfo
       let model = financingInfo.model
       let phase = financingInfo.phase
@@ -133,9 +197,19 @@ Page({
         tagsData[1].tData = phase //融资阶
         tagsData[2].tData = financingAmount //本轮融资
         tagsData[3].tData = financingValuation //本轮融资估值
-
+      let investment = financingInfo.investment
+        let his =[]
+        investment.forEach(item=>{
+           item.investors = programe.splitbycomma(item.investors, false)
+            his.push(item)
+        })
+        let plans = this.data.plans
+        plans[0].pData = financingInfo.usePlan
+        plans[1].pData = financingInfo.businessplanning
       this.setData({
           tagsData,//
+          his,//历史投资
+          plans,//投资规划 计划
       })
     })
   },
@@ -189,7 +263,9 @@ Page({
     this.setData({pid:id});
     //渲染数据
     this._randerOneData(id)
-    this._randerTwoData() // TODO删除
+    // this._randerTwoData() //
+    //   this._randerTreData()
+      this._randerFouData()
   },
 
   /**

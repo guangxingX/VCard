@@ -224,7 +224,7 @@ App({
                 } else {
                     wx.showToast({
                         title: '加载失败',
-                        image: './assets/images/icon/error-fff.png',
+                        image: '/assets/images/icon/error-fff.png',
                         duration: 2000
                     })
                 }
@@ -232,7 +232,7 @@ App({
             fail() {
                 wx.showToast({
                     title: '加载失败',
-                    image: './assets/images/icon/error-fff.png',
+                    image: '/assets/images/icon/error-fff.png',
                     duration: 2000
                 })
             }

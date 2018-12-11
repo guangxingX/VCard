@@ -84,30 +84,70 @@
 
         </view>
         <view class="weui-tab__content b-f" hidden="{{activeIndex != 1}}">
-        <view class="part1 weui-fff">
+          <view class="part1 weui-fff">
 
-          <w-head-programe name="融资计划" />
-          <!-- ·投资模式  ·融资阶段 ·本轮融资⾦额 ·本轮融资估值 -->
-          <block wx:for="{{tagsData}}" wx:for-item="item" wx:key="">
-            <view class="container-2">
-              <view class="text-head">
-                {{item.name}}
+            <w-head-programe name="融资计划" />
+            <!-- ·投资模式  ·融资阶段 ·本轮融资⾦额 ·本轮融资估值 标签 -->
+            <block wx:for="{{tagsData}}" wx:for-item="item" wx:key="">
+              <view class="container-2">
+                <view class="text-head">
+                  {{item.name}}
+                </view>
+
+                <view class="tag-bd">
+                  <block wx:for="{{item.tData}}" wx:key="" wx:for-item="_i">
+                    <w-tag-programe name="{{_i}}" color="{{item.color}}" />
+                  </block>
+                </view>
               </view>
+            </block>
 
-              <view class="tag-bd">
-                <block wx:for="{{item.tData}}" wx:key="" wx:for-item="_i">
-                  <w-tag-programe name="{{_i}}" color="{{item.color}}"/>
+            <!-- 历史融资 -->
+            <view class="container-2 ">
+              <view class="text-head his-head">
+                ·历史融资
+              </view>
+              <block wx:for="{{his}}" wx:key="">
+                <w-his-programe his="{{item}}"/>
+              </block>
+            </view>
+
+            <!--·资⾦使⽤规划-->
+            <view class="">
+              <block wx:for="{{plans}}" wx:key="" wx:for-item="item">
+                <view class="text-head p-head">
+                  {{item.name}}
+                </view>
+                <block wx:for="{{item.pData}}" wx:key="" wx:for-item="_i">
+                  <w-show-imageText imgData="{{_i}}" />
                 </block>
-              </view>
+              </block>
+            </view>
+          </view>
+
+
+        </view>
+        <view class="weui-tab__content b-f" hidden="{{activeIndex != 2}}">
+          <!-- 产品研发 知识产权 渠道布局 运营资质 战略合作 -->
+          <block wx:for="{{resources}}" wx:for-item="item" wx:key="">
+            <view class="part1 weui-fff">
+              <w-head-programe name="{{item.name}}" />
+              <bolck wx:for="{{item.rData}}" wx:for-item="_i" wx:key="">
+                <w-show-imageText imgData="{{_i}}" />
+              </bolck>
             </view>
           </block>
-
-          <!--  -->
         </view>
-
+        <view class="weui-tab__content b-f" hidden="{{activeIndex != 3}}">
+          <block wx:for="{{businessModel}}" wx:for-item="item" wx:key="">
+            <view class="part1 weui-fff">
+              <w-head-programe name="{{item.name}}" />
+              <bolck wx:for="{{item.bData}}" wx:for-item="_i" wx:key="">
+                <w-show-imageText imgData="{{_i}}" />
+              </bolck>
+            </view>
+          </block>
         </view>
-        <view class="weui-tab__content b-f" hidden="{{activeIndex != 2}}">选项三的内容</view>
-        <view class="weui-tab__content b-f" hidden="{{activeIndex != 3}}">选项四的内容</view>
       </view>
     </view>
     <view class="bottom-btn weui-fff">

@@ -14,7 +14,7 @@ export class programemodule extends HTTP {
       })
   }
   /**
-   * 当前页数，默认条数 
+   * 当前页数，默认条数
    * 并加入缓存
    */
   getProjectList(currentPage,pageSize,id){
@@ -48,6 +48,13 @@ export class programemodule extends HTTP {
      })
    }
   }
+
+    /**
+     * 逗号变成字符串
+     * @param string 以逗号分割的字符串
+     * @param isFive 是否是最多5个
+     * @returns {*} 数组
+     */
   splitbycomma(string,isFive=true){
     // console.log(typeof string)
     if(typeof string != 'string'){
@@ -77,15 +84,15 @@ export class programemodule extends HTTP {
       }else{
         return arr
       }
-      
-      
+
+
     }
   }
   /***
    * 当前页
    * 搜索的id
    * 缓存的数据
-   * 
+   *
    */
   setStoragePage(current,data,id){
     if(!id){

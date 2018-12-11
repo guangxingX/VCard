@@ -5,6 +5,7 @@
   "usingComponents": {
     "w-head-programe": "/component/programe/detailbar/head/head",
     "w-tag-programe": "/component/programe/tag/index",
+    "w-his-programe": "/component/programe/history/index",
     "w-image": "/component/image-loader/image",
     "w-link-1": "/component/link-1/index",
     "w-link-d": "/component/link-d/index",
