@@ -97,8 +97,16 @@ Page({
       ],//商业模式
   },
   onGoNextPage() {
+    let info = {}
+    info.companyname = this.data.item.name
+    info.projectname = this.data.projectIntro.name
+    info.projectintro = this.data.projectIntro.intro
+    info.logo=this.data.item.logo
+    info.legalPerson=this.data.item.legalPerson
+    info.amount = this.data.amount
+    info = JSON.stringify(info);
     wx.navigateTo({
-      url: '../contactme/index',
+      url: `../contactme/index?info=${info}`,
     })
     // wx.redirectTo({
             //     url: '../../mine/cardDetails/cardDetails?mycardid=' + mycardid + '&from=' + from

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "w-edit-programme": "/component/programe/edit-m/index"
+  }
+}

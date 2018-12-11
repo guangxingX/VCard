@@ -65,7 +65,10 @@ Page({
         totalPage: res.totalPageSize
       })
     })
-
+      //TODO 未给图纸和逻辑
+      program.getIndustryList().then(res=>{
+        console.log(res);
+      })
   },
 
   _clearData(){
@@ -81,6 +84,7 @@ Page({
    */
   onLoad: function(options) {
     this._setItemDom()
+
   },
 
   /**
@@ -120,7 +124,7 @@ Page({
   onPullDownRefresh: function() {
     wx.clearStorage()
     this._clearData()
-    
+
   },
 
   /**

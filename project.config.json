@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 15,
 			"list": [
 				{
 					"id": -1,
@@ -122,6 +122,18 @@
 					"name": "details",
 					"pathName": "pages/financial/details/index",
 					"query": "id=35"
+				},
+				{
+					"id": 14,
+					"name": "contactme",
+					"pathName": "pages/financial/contactme/index",
+					"query": "info={\"companyname\":\"木艺有限公司\",\"projectname\":\"测试项目\",\"projectintro\":\"项目基本介绍\",\"logo\":\"https://oe75tqwfd.qnssl.com/QQ%E5%9B%BE%E7%89%8720171201205223.png\",\"legalPerson\":\"陈华量\",\"amount\":\"100W-200W·A伦·上海\"}"
+				},
+				{
+					"id": 15,
+					"name": "edit",
+					"pathName": "pages/financial/edit/index",
+					"query": ""
 				}
 			]
 		}

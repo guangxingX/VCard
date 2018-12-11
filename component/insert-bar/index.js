@@ -170,7 +170,7 @@ Component({
       console.log('File')
     },
     _init() {
-      dataModule.getuptoken().then(res => {
+      dataModule.getUptoken().then(res => {
         this.setData({
           uptoken: res.uptoken,
           domain: res.domain

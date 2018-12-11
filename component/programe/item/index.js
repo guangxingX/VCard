@@ -26,8 +26,7 @@ Component({
    */
   methods: {
     onAddList() {
-      console.log(1)
-      console.log(this.properties.projectinfo)
+
     },
     setAlldata(){
       var tag;

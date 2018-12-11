@@ -1,0 +1,24 @@
+/* pages/financial/edit/index.wxss */
+@import "/style/weui.wxss";
+.n-b{
+background:rgba(48,115,227,1);
+border:1rpx solid rgba(0,71,157,1);
+border-radius:8rpx;
+color:#fff;
+}
+page{
+  background: #EEEEEE;
+}
+.edit{
+  font-size:28rpx;
+
+  color:rgba(48,115,227,1);
+
+}
+.edit text:nth-child(1){
+  padding-right: 31rpx;
+}
+.edit text:nth-child(2){}
+.edit text:nth-child(3){
+  padding-left: 25rpx;
+}

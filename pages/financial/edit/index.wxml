@@ -1,0 +1,12 @@
+<!--pages/financial/edit/index.wxml-->
+<!-- <text>pages/financial/edit/index.wxml</text> -->
+<w-edit-programme name="公司介绍" rate="80" info="请详细的介绍您的公司?" must="{{true}}" >
+  <view slot="after" class="edit">
+    <text>预览</text>
+    <text>|</text>
+    <text>编辑</text>
+  </view>
+</w-edit-programme>
+<view class="weui-btn-area">
+            <button class="weui-btn n-b"  bindtap="showTopTips">确定</button>
+        </view>

@@ -88,3 +88,6 @@ page, .page, .page__bd {
   font-size: 34rpx;
   color: #888;
 }
+.weui-loadmore__tips_in-line {
+  background: none!important;
+}

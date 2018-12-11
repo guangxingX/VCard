@@ -42,7 +42,7 @@
 
               </view>
               <view class="info-2 item">
-                <image src="image/info.png" />
+                <image src="../image/info.png" />
                 <text>{{amount}}</text>
               </view>
             </view>
