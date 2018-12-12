@@ -66,10 +66,32 @@ weui
 .sublab .item image {
   width: 20rpx;
   height: 20rpx;
-  
+
 }
 
 .sublab .item text {
   margin-left: 26rpx;
 }
 
+.edit{
+  font-size:28rpx;
+
+  color:rgba(48,115,227,1);
+
+}
+.edit text:nth-child(1){
+  padding-right: 31rpx;
+}
+.edit text:nth-child(2){}
+.edit text:nth-child(3){
+  padding-left: 25rpx;
+}
+.must-tag{
+  width:69rpx;
+  height:28rpx;
+  border:1px solid rgba(226,143,25,1);
+  font-size:18rpx;
+  color:rgba(226,143,25,1);
+  text-align: center;
+  margin-left:27rpx ;
+}

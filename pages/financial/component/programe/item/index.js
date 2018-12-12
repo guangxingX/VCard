@@ -1,4 +1,4 @@
-import { programemodule } from '../../../module/programe.js'
+import { programemodule } from '../../../../../module/programe.js'
 var programe = new programemodule
 
 // component/programe/item/intex.js

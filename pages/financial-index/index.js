@@ -1,6 +1,6 @@
 import {
   programemodule
-} from '../../../module/programe.js'
+} from '../../module/programe.js'
 
 var program = new programemodule
 var sliderWidth = 175 // 需要设置slider的宽度，用于计算中间位置

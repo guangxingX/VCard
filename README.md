@@ -20,3 +20,12 @@
               </bolck>
             </view>
           </block>
+
+
+<w-edit-programme name="{{item.name}}" rate="{{item.rate}}" info="{{item.tip}}" must="{{item.must}}">
+  <!-- <view slot="after" class="edit">
+    <text>预览</text>
+    <text>|</text>
+    <text>编辑</text>
+  </view> -->
+</w-edit-programme>

@@ -1,12 +1,63 @@
 <!--pages/financial/edit/index.wxml-->
 <!-- <text>pages/financial/edit/index.wxml</text> -->
-<w-edit-programme name="公司介绍" rate="80" info="请详细的介绍您的公司?" must="{{true}}" >
-  <view slot="after" class="edit">
+
+<view>
+  <view class="head-info">
+    <view class="head-inner">
+      <view class="all-rate">项目信息完成30%</view>
+      <view class="pre-show" bind:tap="onTapPreShow">项目预览</view>
+    </view>
+  </view>
+  <view class="bg-f re" bind:tap="onTapLogo">
+    <view class="must-tag ab-tag">
+      必填
+    </view>
+    <view class=" p-20">
+      <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+        <image src="{{logo?logo:'image/logo.png'}}" style="width: 50px; height: 50px; display: block" />
+        <!-- <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">8</view> -->
+      </view>
+      <view class="weui-cell__bd ">
+        <view>项目名称</view>
+
+        <view style="font-size: 13px;color: #888888;">一句话形容您的项目特色</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
+  <view>
+    <view class='sub-t'> 至少添加一个联系人</view>
+    <block>
+      <view class="bg-f re">
+        <view class="must-tag ab-tag">
+          必填
+        </view>
+        <view class="weui-cell p-20">
+          <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+            <image src="{{avatar?avatar:'image/avatar.png'}}" class="br-50" style="width: 50px; height: 50px; display: block;" />
+            <!-- <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">8</view> -->
+          </view>
+          <view class="weui-cell__bd ">
+            <view>联系人2</view>
+
+            <view style="font-size: 13px;color: #888888;">联系人电话</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <block wx:for="{{items}}" wx:key="">
+    <w-edit-programme name="{{item.name}}" rate="{{item.rate}}" info="{{item.tip}}" must="{{item.must}}" bind:tap="{{item.fn}}">
+      <!-- <view slot="after" class="edit">
     <text>预览</text>
     <text>|</text>
     <text>编辑</text>
+  </view> -->
+    </w-edit-programme>
+  </block>
+
+  <view class="weui-btn-area">
+    <button class="weui-btn n-b" bindtap="showTopTips">确定</button>
   </view>
-</w-edit-programme>
-<view class="weui-btn-area">
-            <button class="weui-btn n-b"  bindtap="showTopTips">确定</button>
-        </view>
+</view>

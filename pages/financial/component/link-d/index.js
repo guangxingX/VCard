@@ -9,6 +9,10 @@ Component({
     sub:Object,
     intr:String,
     url:String,
+    edit:{
+      type:Boolean,
+      value:false
+    }
   },
 
   /**

@@ -8,10 +8,10 @@
       </view>
       <view class="tip">{{sub.position}}</view>
     </view>
-    <!--<view class="icon">-->
-      <!--详情-->
-      <!--<image src="image/arrow.png"></image>-->
-    <!--</view>-->
+    <view class="icon" wx:if="{{edit}}">
+      详情
+      <image src="image/arrow.png"></image>
+    </view>
   </view>
   <view class="under">
     {{sub.intro}}

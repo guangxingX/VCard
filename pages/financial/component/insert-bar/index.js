@@ -1,8 +1,8 @@
 // component/insert-bar/index.js
 import {
   DATAMODULE
-} from "../../module/data.js"
-const qiniuUploader = require("../../utils/qiniuUploader");
+} from "../../../../module/data.js"
+const qiniuUploader = require("../../../../utils/qiniuUploader");
 var dataModule = new DATAMODULE
 Component({
   relations: {

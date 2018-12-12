@@ -7,7 +7,9 @@ Component({
     name:String,
     rate:String,
     info:String,
-    must:Boolean,
+    must:{type:Boolean,
+    value:false
+    }
   },
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持

@@ -1,0 +1,5 @@
+/* pages/financial/itemIntr/index.wxss */
+@import "/style/weui.wxss";
+page{
+    background: #EEEEEE;
+}

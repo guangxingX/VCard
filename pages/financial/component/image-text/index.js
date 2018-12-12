@@ -1,7 +1,7 @@
 // component/image-text/imageTextComponet.js
-var Store = require('../../store.js')
+// var Store = require('../../../../store.js')
 var myBehavior = require('../behavior')
-import {DATAMODULE} from '../../module/data.js'
+import {DATAMODULE} from '../../../../module/data.js'
 
 var dataModule = new DATAMODULE
 Component({

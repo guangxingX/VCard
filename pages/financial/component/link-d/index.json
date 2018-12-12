@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-image": "/pages/financial/component/image-loader/image"
+  }
+}

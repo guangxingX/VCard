@@ -79,12 +79,25 @@
     "templates/whoSignupMyActiveTemp/whoSignupMyActiveTemp",
     "pages/test/test",
     "pages/test2/test",
-    "component/image-text/index",
-    "component/edit-text/index",
-    "pages/financial/index/index",
-    "pages/financial/details/index",
-    "pages/financial/contactme/index",
-    "pages/financial/edit/index"
+    
+    "pages/financial-index/index"
+    
+  ],
+  "subPackages": [
+    {
+      "name":"financial",
+      "root": "pages/financial",
+      "pages": [
+        "details/index",
+        "contactme/index",
+        "edit/index",
+        "itemIntr/index",
+        "addmen/index",
+        "component/image-text/index",
+        "component/edit-text/index"
+      ]
+    }
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -114,7 +127,7 @@
         "selectedIconPath": "images/tabBar/addressbook@highlight.png"
       },
       {
-        "pagePath": "pages/financial/index/index",
+        "pagePath": "pages/financial-index/index",
         "text": "投融资",
         "iconPath": "images/tabBar/finance.png",
         "selectedIconPath": "images/tabBar/finance@highlight.png"

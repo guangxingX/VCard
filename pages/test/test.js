@@ -53,7 +53,7 @@ Page({
       // dataModule.getIndustryList().then(res=>{
       //     console.log(res);
       // })
-    ee
+    
     console.log(Store.ImageTextItem)
   },
 
