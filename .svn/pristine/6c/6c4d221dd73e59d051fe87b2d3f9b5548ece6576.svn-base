@@ -1,0 +1,4 @@
+<w-image-text style="height: 100%" ImageTextItem="{{ImageTextItem}}" bind:onTapView="onTapView" bind:onTapSave="onTapSave"/>
+
+
+

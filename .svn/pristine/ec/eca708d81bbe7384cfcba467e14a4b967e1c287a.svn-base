@@ -1,0 +1,97 @@
+/* component/link-d/index.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rpx solid #eee;
+}
+
+.top {
+  display: flex;
+  height: 160rpx;
+}
+
+.link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bd-link {
+  
+  line-height: 34rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.bd-link text {
+  font-weight: 400;
+  margin-left: 38rpx;
+  font-size: 28rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.tip {
+  margin-top: 20rpx;
+  line-height: 28rpx;
+  font-size: 28rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.avatar {
+  margin-left: 29rpx;
+  margin-right: 26rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.myinfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.myinfo .name {
+  font-size: 34rpx;
+  line-height: 34rpx;
+  font-weight: bold;
+}
+
+.icon {
+  display: flex;
+  margin-right: 34rpx;
+  align-items: center;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  color: #3073e3;
+}
+
+.icon image {
+  margin-left: 13rpx;
+  width: 16rpx;
+  height: 26rpx;
+}
+
+.under{
+  margin-left: 31rpx;
+  margin-right: 49rpx;
+  margin-bottom: 31rpx;
+  /* height: 92rpx; */
+  line-height: 60rpx;
+  font-size:34rxp;
+  color : #333;
+  
+
+text-overflow: ellipsis;
+
+display: -webkit-box;
+
+-webkit-line-clamp: 2;
+
+overflow:hidden;
+/*! autoprefixer: off */
+-webkit-box-orient: vertical;
+}

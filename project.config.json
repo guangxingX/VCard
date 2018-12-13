@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 19,
 			"list": [
 				{
 					"id": -1,
@@ -145,6 +145,18 @@
 					"id": -1,
 					"name": "addmen",
 					"pathName": "pages/financial/addmen/index",
+					"query": ""
+				},
+				{
+					"id": 18,
+					"name": "selectmen",
+					"pathName": "pages/financial/selectmen/index",
+					"query": ""
+				},
+				{
+					"id": 19,
+					"name": "projectinfo",
+					"pathName": "pages/financial/projectinfo/index",
 					"query": ""
 				}
 			]

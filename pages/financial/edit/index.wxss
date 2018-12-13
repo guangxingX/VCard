@@ -72,3 +72,6 @@ page{
 .br-50{
   border-radius: 50%;
 }
+.save{
+  margin-bottom:89rpx;
+}

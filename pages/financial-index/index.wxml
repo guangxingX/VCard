@@ -22,30 +22,29 @@
         <!--TODO 缺少热门 与热门搜索接口-->
         <view hidden="{{activeIndex != 1}}">
           <scroll-view scroll-x style="height:88rpx"></scroll-view>
-          <scroll-view class="weui-tab__content" style="height:920rpx" scroll-y bindscrolltolower="onAddList" lower-threshold="100">
+          <scroll-view class="weui-tab__content" style="height:100vh" scroll-y bindscrolltolower="onAddList" lower-threshold="100">
             <block wx:for="{{projectList}}" wx:key="item">
               <w-item-programme class="pro-item" projectinfo="{{item}}" />
             </block>
             <view class="noContent" wx:if="{{projectList.length==0}}">
               <view>
-                <image class="noImage" src="../../../assets/images/mine/no-resource.png"></image>
+                <image class="noImage" src="/assets/images/mine/no-resource.png"></image>
               </view>
               <view class="noTextWrap">
                 <text class="noText"> 暂无项目</text>
               </view>
             </view>
 
-            <view  wx:if="{{currentPage==totalPage}}" class="weui-loadmore weui-loadmore_line">
+            <view wx:if="{{currentPage==totalPage}}" class="weui-loadmore weui-loadmore_line">
               <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
             </view>
           </scroll-view>
-
+          <view bind:tap="onTapAddBtn" class="add-btn">
+            <image src="image/plus@index.png" />
+          </view>
         </view>
 
       </view>
     </view>
   </view>
-</view>
-<view bind:tap="onAdd" class="add-btn">
-  <image src="image/plus@index.png" />
 </view>

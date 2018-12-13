@@ -1,0 +1,19 @@
+<!--component/link-d/index.wxml-->
+<view class="container">
+  <view class = "top">
+    <w-image class='avatar' defaultText="{{name}}" originalImage="{{src}}" width="96rpx" height="96rpx" plugStyle="font-size: 48rpx;border-radius: 50%" size="1" />
+    <view class="link">
+      <view class="bd-link">{{name}}
+        <text>{{sub.gender}}</text>
+      </view>
+      <view class="tip">{{sub.position}}</view>
+    </view>
+    <view class="icon" wx:if="{{edit}}">
+      详情
+      <image src="image/arrow.png"></image>
+    </view>
+  </view>
+  <view class="under">
+    {{sub.intro}}
+  </view>
+</view>

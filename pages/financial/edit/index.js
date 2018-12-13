@@ -61,9 +61,14 @@ Page({
     console.log('onTapPreShow')
   },
   onTapLogo(){
+    wx.navigateTo({
+      url: '/pages/financial/projectinfo/index',
+    })
     console.log('onTapLogo')
   },
-  
+  showTopTips(){
+
+  },
 
   /**
    * 生命周期函数--监听页面加载

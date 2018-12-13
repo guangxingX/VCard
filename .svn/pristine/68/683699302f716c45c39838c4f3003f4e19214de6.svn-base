@@ -1,0 +1,45 @@
+/* component/programe/edit-m/index.wxss */
+.item{
+  margin: 30rpx;
+  background: #fff;
+}
+.inner{
+  padding: 35rpx;
+}
+.top{
+  display: flex;
+  align-items: center;
+}
+.top progress{
+  width: 112rpx;
+}
+.top .name{
+  color:#333333;
+  font-size:34rpx;
+  font-weight:bold;
+}
+.top .tag{
+  width:69rpx;
+  height:28rpx;
+  border:1px solid rgba(226,143,25,1);
+  font-size:18rpx;
+  color:rgba(226,143,25,1);
+  text-align: center;
+  margin-left:27rpx ;
+}
+.top .rate{
+  font-size:26rpx;
+  color:rgba(153,156,160,1);
+  margin-right: 26rpx;
+}
+.under{
+  margin-top: 32rpx;
+  display: flex;
+}
+.info{
+  flex: 1;
+  font-size:32rpx;
+
+  color:rgba(108,108,108,1);
+}
+

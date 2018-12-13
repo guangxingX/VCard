@@ -1,0 +1,25 @@
+<!--component/programe/history/index.wxml-->
+<view class="container">
+    <view class="inner">
+        <view class="left">
+            <view class="phase bf">
+                {{his.phase}}
+            </view>
+            <view class="time sf">
+                <text>
+                    {{his.time}}
+                </text>
+            </view>
+        </view>
+        <view class="right">
+            <view class="valuation bf">
+                {{his.investmentAmount}}
+            </view>
+            <view class="investors sf">
+                <text wx:for = "{{his.investors}}" wx:key="*this">
+                    {{item}}
+                </text>
+            </view>
+        </view>
+    </view>
+</view>

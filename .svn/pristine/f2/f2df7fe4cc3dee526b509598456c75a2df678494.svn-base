@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-insert-bar": "../insert-bar/index"
+  }
+}

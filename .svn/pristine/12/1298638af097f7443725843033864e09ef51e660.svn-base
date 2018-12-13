@@ -1,0 +1,9 @@
+
+  {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "增加新成员",
+    "usingComponents": {
+      "w-link-d": "/pages/financial/component/link-d/index"
+    }
+  }

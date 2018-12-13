@@ -1,0 +1,7 @@
+<!--component/insert-bar/index.wxml-->
+<view class="weui-flex">
+  <view class="weui-flex__item insert-bar" wx:for="{{insertbar}}" wx:key="name" bind:tap="{{item.fn}}">
+    <image src="{{item.src}}"></image>
+    <text>{{item.name}}</text>
+  </view>
+</view>

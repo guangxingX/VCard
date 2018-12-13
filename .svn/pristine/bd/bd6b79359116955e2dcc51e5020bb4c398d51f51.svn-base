@@ -1,0 +1,3 @@
+<!--pages/financial/selectmen/index.wxml-->
+<!-- <text>pages/financial/selectmen/index.wxml</text> -->
+<w-link-c item="{{mock}}"/>

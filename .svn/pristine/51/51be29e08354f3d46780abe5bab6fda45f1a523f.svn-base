@@ -1,0 +1,50 @@
+/* component/show-imageText/index.wxss */
+.file{
+  margin: 50rpx 30rpx;
+  height:130rpx;
+  background:rgba(248,248,248,1);
+  position:  relative;
+}
+.file image{
+  position: absolute;
+  width:47rpx;
+  height:44rpx;
+  top:43rpx;
+  left:44rpx;
+}
+.container{
+  margin-left: 125rpx;
+}
+.container .file-name{
+  padding-top: 30rpx;
+  font-size:28rpx;
+  font-weight:bold;
+  color:rgba(241,155,5,1);
+  line-height:28rpx;
+}
+.container .name{
+  margin-top: 16rpx;
+  font-size:24rpx;
+  color:rgba(51,51,51,1);
+  line-height:36rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  width: 525rpx;
+}
+.s-img{
+  margin: 58rpx 33rpx 0rpx 37rpx;
+}
+.s-img image{
+  width: 680rpx;
+}
+.s-text{
+  font-size:34rpx;
+  color:rgba(51,51,51,1);
+  line-height:60rpx;
+  margin: 53rpx 42rpx 0rpx 42rpx;
+}
+.s-video{
+  margin: 43rpx 30rpx 0rpx 30rpx;
+  width: 690rpx;
+}

@@ -1,0 +1,13 @@
+/* pages/financial/addmen/index.wxss */
+.b-b{
+  position: fixed;
+  bottom : 0;
+  height:88rpx;
+  line-height: 88rpx;
+  background:rgba(48,115,227,1);
+  width: 100%;
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+}

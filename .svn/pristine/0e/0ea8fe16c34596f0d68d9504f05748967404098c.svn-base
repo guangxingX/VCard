@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "选择成员(共25人)",
+  "usingComponents": {
+    "w-link-c": "/pages/financial/component/link-c/index"
+  }
+}

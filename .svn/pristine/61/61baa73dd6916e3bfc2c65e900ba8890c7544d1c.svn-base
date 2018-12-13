@@ -1,0 +1,65 @@
+/* component/programe/item/intex.wxss */
+@import '/style/weui.wxss';
+
+.re {
+  position: relative;
+}
+.es{
+  max-width:407rpx; 
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.status {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 104rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  background: #f19942;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.weui-media-box_appmsg {
+  align-items: flex-start !important;
+}
+
+.subtitle {
+  height: 31rpx;
+  line-height: 31rpx;
+  margin-top: 23rpx;
+  font-size: 32rpx;
+}
+
+.tag-bar {
+  display: flex;
+  margin-top: 7rpx;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.tag-bar .tag {
+  background: #eaf3fc;
+  height: 44rpx;
+  line-height: 44rpx;
+  padding-left: 18rpx;
+  padding-right: 18rpx;
+  color: #3073e3;
+  font-size: 26rpx;
+  margin-right: 16rpx;
+  margin-top: 16rpx;
+  border-radius: 4rpx;
+  max-width: 160rpx;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.bottom{
+  margin-top: 18rpx;
+  margin-bottom: 18rpx;
+}

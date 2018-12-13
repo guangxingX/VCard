@@ -1,0 +1,32 @@
+/* component/programe/detailbar/head/head.wxss */
+.container{
+  display: flex;
+  height: 112rpx;
+  align-items: center;
+  
+}
+.blue-colm{
+  width:6rpx;
+height:30rpx;
+background:rgba(48,115,227,1);
+margin-left: 30rpx;
+}
+.name{
+  flex:1;
+  text-align: left;
+  margin-left: 21rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333333;
+}
+.doing{
+  width: 105rpx;
+  height: 37rpx;
+  line-height: 37rpx;
+  font-size:22rpx;
+  border: 1px dashed #93B6F0;
+  background: #ECF2FC;
+  color:#3073E3;
+  margin-right: 33rpx;
+  text-align: center
+}

@@ -1,0 +1,12 @@
+/* component/programe/tag/index.wxss */
+.tag{
+  display: flex;
+  font-size:24rpx;
+  align-items: center;
+  justify-content: center;
+  min-width:120rpx;
+  padding: 0 10rpx;
+  height:48rpx;
+  margin-right: 24rpx;
+  margin-top: 10rpx;
+}

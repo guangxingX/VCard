@@ -1,0 +1,12 @@
+<view wx:if='{{!finishLoadFlag}}'
+ mode='{{mode}}' src='{{defaultImage}}'
+  style='{{width ? "width:" + width : ""}};{{height ? "height:" + height : ""}};{{plugStyle}}' 
+  class='image-class' >
+    {{_defaultText}}
+  </view>
+<image mode='{{mode}}' 
+class='{{finishLoadFlag ? "" : "before-load"}}' 
+src='{{originalImage}}' 
+binderror='errorshow'
+bindload='finishLoad' 
+style='{{finishLoadFlag && width ? "width:" + width : ""}};{{finishLoadFlag && height ? "height:" + height : ""}};{{plugStyle}}' />

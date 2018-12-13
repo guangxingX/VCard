@@ -78,14 +78,12 @@
     "templates/leaveMessageForActiveTemp/leaveMessageForActiveTemp",
     "templates/whoSignupMyActiveTemp/whoSignupMyActiveTemp",
     "pages/test/test",
-    "pages/test2/test",
-    
     "pages/financial-index/index"
     
   ],
   "subPackages": [
     {
-      "name":"financial",
+      "name": "financial",
       "root": "pages/financial",
       "pages": [
         "details/index",
@@ -94,10 +92,12 @@
         "itemIntr/index",
         "addmen/index",
         "component/image-text/index",
-        "component/edit-text/index"
+        "component/edit-text/index",
+        "selectmen/index",
+        "projectinfo/index",
+        "product-tag/index"
       ]
     }
-
   ],
   "window": {
     "backgroundTextStyle": "light",

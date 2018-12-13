@@ -1,0 +1,54 @@
+/* pages/financial/contactme/index.wxss */
+@import "/style/weui.wxss";
+page{
+  background: #E6E6E6
+}
+.inner{
+ 
+  margin: 30rpx ;
+  margin-top: 0;
+}
+.top{
+  
+  background: #fff;
+  margin-bottom: 30rpx;
+  border-radius: 4rpx;
+}
+.title-text{
+  font-size:26rpx!important;
+  line-height: 26rpx!important;
+}
+.head-top{
+  height: 72rpx!important;
+  box-sizing: border-box;
+}
+.sublab{
+  margin-top: 24rpx;
+}
+.sublab .item{
+  color:#6C6C6C!important;
+}
+.weui-media-box{
+  padding-top: 0!important;
+}
+.under{
+  border-radius: 4rpx;
+}
+.page__bd{
+  padding-bottom:30rpx;
+}
+.fix{
+  position:  fixed;
+  bottom: 40rpx;
+  width: 690rpx;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background:rgba(48,115,227,1);
+  border:1rpx solid rgba(0,71,157,1);
+  border-radius:8rpx;
+  color : #fff;
+  }
+  .fc{
+   color: #333333
+  }

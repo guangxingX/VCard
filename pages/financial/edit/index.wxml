@@ -57,7 +57,7 @@
     </w-edit-programme>
   </block>
 
-  <view class="weui-btn-area">
-    <button class="weui-btn n-b" bindtap="showTopTips">确定</button>
+  <view class="weui-btn-area save" bindtap="showTopTips">
+    <button class="weui-btn n-b" >保存</button>
   </view>
 </view>

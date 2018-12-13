@@ -19,6 +19,11 @@ Page({
     projectList: [],
     totalPage:10,
   },
+  onTapAddBtn(){
+    wx.navigateTo({
+      url: '/pages/financial/edit/index',
+    })
+  },
   onAdd(){
     // console.log("onAdd")
   },
@@ -131,7 +136,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+   console.log(1)
+   this.onAddList();
   },
 
   /**

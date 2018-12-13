@@ -1,0 +1,93 @@
+<!--enterpriseListcard/enterpriseListcard.wxml-->
+<template name="enterpriseListcard">
+    	<view class="enterpriseListcard" bindtap="choiseCompany" data-index="{{index}}">
+        <!-- 从公司更换背景过来的，就不让在跳转详情了 -->
+            <view wx:if="{{changeTemp=='nojump'}}">
+                <view class="enterprisecard-block1">
+                    <view class="enterprisecard-image-box">
+                        <image mode="widthFix" class="enterprisecard-image" src="{{item.companyTemplate?item.companyTemplate:'http://oojjuzes7.bkt.clouddn.com/21.jpg'}}"></image>
+                    </view>
+                    <view class="enterprisecard-block1-content">
+                        <view class="enterprisecard-logo">
+                            <image wx:if="{{item.logo}}" src="{{item.logo}}"></image>
+                            <view wx:else class="company-logo-text">{{item.textlogo}}</view>
+                        </view>
+                        <view class="enterprisecard-block1-text">
+                            <view class="enterprisecard-block1-title ">
+                                <text class="bold {{item.fontsize}}">{{item.name}}</text>
+                                <!-- <view class="enterprisecard-authentication font22" wx:if="{{item.isAuthentication}}">
+                                  <image src="{{iconList.authentication}}"></image>
+                                  <text>商会认证</text>
+                                </view> -->
+                            </view>
+                            <view class="enterprisecard-tag font22">
+                                <block wx:for="{{item.coTag}}" wx:for-item="item2">
+                                    <view class="enterprisecard-tag-text tag-yellow" wx:if="{{item2.coTagType==1}}">
+                                        <text>{{item2.coTagName}}</text>
+                                    </view>
+                                    <view class="enterprisecard-tag-text tag-green" wx:elif="{{item2.coTagType==2}}">
+                                       <text>{{item2.coTagName}}</text>
+                                    </view>
+                                    <view class="enterprisecard-tag-text" wx:else>
+                                       <text>{{item2.coTagName}}</text>
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <navigator wx:else url="../../mine/myCompanyDes/myCompanyDes?id={{item.id}}&isuthentication={{item.isAuthentication}}">
+        		<view class="enterprisecard-block1">
+                    <view class="enterprisecard-image-box">
+                        <image mode="widthFix" class="enterprisecard-image" src="{{item.companyTemplate?item.companyTemplate:'http://oojjuzes7.bkt.clouddn.com/21.jpg'}}"></image>
+                    </view>
+                    <view class="enterprisecard-block1-content">
+                        <view class="enterprisecard-logo">
+                            <image wx:if="{{item.logo}}" src="{{item.logo}}"></image>
+                            <view wx:else class="company-logo-text">{{item.textlogo}}</view>
+                        </view>
+                        <view class="enterprisecard-block1-text">
+                            <view class="enterprisecard-block1-title ">
+                                <text class="bold {{item.fontsize}}">{{item.name}}</text>
+                                <!-- <view class="enterprisecard-authentication font22" wx:if="{{item.isAuthentication}}">
+                                  <image src="{{iconList.authentication}}"></image>
+                                  <text>商会认证</text>
+                                </view> -->
+                            </view>
+                            <view class="enterprisecard-tag font22">
+                                <block wx:for="{{item.coTag}}" wx:for-item="item2" wx:key="*this">
+                                    <view class="enterprisecard-tag-text tag-yellow" wx:if="{{item2.coTagType==1}}">
+                                        <text>{{item2.coTagName}}</text>
+                                    </view>
+                                    <view class="enterprisecard-tag-text tag-green" wx:elif="{{item2.coTagType==2}}">
+                                       <text>{{item2.coTagName}}</text>
+                                    </view>
+                                    <view class="enterprisecard-tag-text" wx:else>
+                                       <text>{{item2.coTagName}}</text>
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+
+        		</view>
+            </navigator>
+    		<view class="enterprisecard-block2 font26" wx:if="{{item.legalPerson||item.setUpTime||item.address}}">
+                <view class="enterprisecard-block2-person">
+                    <view class="fl"><text>法人代表：{{item.legalPerson?item.legalPerson:'暂无'}}</text></view>
+                    <view class="enterprisecard-authentication font22 fr" wx:if="{{item.isAuthentication}}">
+                      <image src="{{iconList.authentication}}"></image>
+                      <text>商会认证</text>
+                    </view>
+                </view>
+    			<view class="enterprisecard-block2-date">
+    				<view class="fl" wx:if="{{item.setUpTime}}"><text>成立日期：{{item.setUpTime?item.setUpTime:'暂无'}}</text></view>
+    				<view wx:if="{{item.address}}" class="fr addressWrap" bindtap="toaddressMaps" data-address="{{item.address}}">
+                        <image class="enterprisecard-block2-mapicon" src="{{iconList.position}}"></image>
+                        <text  class="enterprisecard-block2-address">{{item.address}}</text>
+                    </view>
+    			</view>
+    		</view>
+    	</view>
+</template>

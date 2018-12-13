@@ -1,0 +1,4 @@
+<!--component/programe/tag/index.wxml-->
+<view style='color:{{color}};border: 1rpx solid {{color}}' class="tag">
+{{name}}
+</view>

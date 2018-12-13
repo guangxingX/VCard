@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "项目编辑",
+  "usingComponents": {
+    "w-edit-programme": "/pages/financial/component/programe/edit-m/index"
+  }
+}
