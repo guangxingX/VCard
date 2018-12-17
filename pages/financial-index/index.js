@@ -1,9 +1,12 @@
 import {
   programemodule
 } from '../../module/programe.js'
-
+import{
+  lookforsbmodule
+} from '../../module/lookforsb.js'
 var program = new programemodule
-var sliderWidth = 175 // 需要设置slider的宽度，用于计算中间位置
+var lookforsb = new lookforsbmodule
+var sliderWidth = 0 // 需要设置slider的宽度，用于计算中间位置，//废除
 // pages/financial/index/index.js
 Page({
 
@@ -13,11 +16,17 @@ Page({
   data: {
     currentPage: 1,
     tabs: ["找投资", "找项目"],//写死
-    activeIndex: 1,
+    activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
     projectList: [],
     totalPage:10,
+      /****找投资***/
+      //pop//
+    hidlookType:true,//显示选择投资人/机构
+      typename:'投资机构/投资人',//显示选项名字
+
+
   },
   onTapAddBtn(){
     wx.navigateTo({
@@ -45,15 +54,17 @@ Page({
       activeIndex: e.currentTarget.id
     });
   },
+    // 优化下滑线
   _setItemDom() {
-    var that = this;
+      var that = this;
     wx.getSystemInfo({
       success: function(res) {
         //获取选中item里左面的距离
         var query = wx.createSelectorQuery()
         query.select('.weui-bar__item_on').boundingClientRect(function(rect) {
-          that.setData({
-            sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+            // console.log(rect);
+            that.setData({
+            sliderLeft: (rect.width-30)/2, //偏移到中部
             sliderOffset: rect.left // 节点的左边界坐标
           });
         }).exec()
@@ -71,9 +82,9 @@ Page({
       })
     })
       //TODO 未给图纸和逻辑
-      program.getIndustryList().then(res=>{
-        console.log(res);
-      })
+      // program.getIndustryList().then(res=>{
+      //   console.log(res);
+      // })
   },
 
   _clearData(){
@@ -89,7 +100,13 @@ Page({
    */
   onLoad: function(options) {
     this._setItemDom()
-
+    lookforsb.getinvestmentCardList({
+      fieldId:'0',
+      type:'0',
+      currentPage:'1'
+    }).then(res=>{
+      console.log(res)
+    })
   },
 
   /**

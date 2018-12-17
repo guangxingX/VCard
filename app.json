@@ -79,7 +79,6 @@
     "templates/whoSignupMyActiveTemp/whoSignupMyActiveTemp",
     "pages/test/test",
     "pages/financial-index/index"
-    
   ],
   "subPackages": [
     {
@@ -95,7 +94,9 @@
         "component/edit-text/index",
         "selectmen/index",
         "projectinfo/index",
-        "product-tag/index"
+        "product-tag/index",
+        "select-tag/index",
+        "upvideo/index"
       ]
     }
   ],

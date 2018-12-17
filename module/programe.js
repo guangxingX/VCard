@@ -3,6 +3,47 @@ import {
 } from '../utils/http.js'
 
 export class programemodule extends HTTP {
+    //根据对象属性中字母 来分类
+    /**
+     *
+     * @param industryData 需要排序的数组
+     * @param industryDataName 对象中的排序字母属性名字
+     * @returns {Object}
+     */
+    resortbyalphabet(industryData,industryDataName){
+        var charStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var allDataArr = [];
+        var tempTagList=[];
+        for(var j=0;j<charStr.length;j++){
+            var newArr = new Array();
+            allDataArr.push(newArr)
+        }
+        for(var i=0;i<industryData.length;i++){
+            var item = industryData[i];
+            for(var m=0;m<charStr.length;m++){
+                // console.log(item[industryDataName])
+                if(item[industryDataName]==charStr[m]){
+                    tempTagList.push(charStr[m])
+                    allDataArr[m].push(item)
+                }
+            }
+        }
+        var searchLetter = this._arrayDuplicateRemoval(tempTagList).sort()
+
+        let obj ={}
+        obj = {
+            searchLetter, //字母表
+            allDataArr,// 以字母分好的数据
+        }
+        return obj
+    }
+    
+
+    getOldIndustryList(){
+      return this.request({
+        url:'applets/industryList'
+      })
+    }
     getIndustryList(){
         return this.request({
             url: 'VCard/industryList',})
@@ -47,7 +88,6 @@ export class programemodule extends HTTP {
         }else {
             data.industryId=id
         }
-
         // key 确定key
         var key = this._getKey(id, currentPage)
        return this._saveStorage(this.request({
@@ -154,7 +194,7 @@ export class programemodule extends HTTP {
 
         var program = wx.getStorageSync(key)
         var now = new Date().getTime()
-        if (!program || (now - program.tiem > 600000)) {
+        if (!program || (now - program.time > 600000)) {
             // console.log('ajax')
             return fn.then(res=>{
                 this._setStoragePage(current,res,id,name)
@@ -166,4 +206,16 @@ export class programemodule extends HTTP {
             })
         }
     }
+  //去重
+  _arrayDuplicateRemoval(array) {
+    var res = [];
+    var json = {};
+    for (var i = 0; i < array.length; i++) {
+      if (!json[array[i]]) {
+        res.push(array[i]);
+        json[array[i]] = 1;
+      }
+    }
+    return res;
+  }
 }

@@ -30,7 +30,7 @@
             <textarea bindinput="bindTextAreaBlur" name="textarea" class="weui-textarea" placeholder="请输入留言内容" style="height: 466rpx" maxlength="500" />
             <view class="weui-textarea-counter">{{length}}/500</view>
           </view>
-          <button bind:tap="bindFormSubmit" class = "fix"> 提交</button>
+          <button bind:tap="bindFormSubmit" class = "fix big-btn"> 提交</button>
         </view>
         <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
           <view class="weui-cell__bd">联系人</view>

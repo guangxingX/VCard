@@ -95,3 +95,9 @@ weui
   text-align: center;
   margin-left:27rpx ;
 }
+.big-btn{
+  background:rgba(48,115,227,1);
+  border:1rpx solid rgba(0,71,157,1);
+  border-radius:8rpx;
+  color : #fff;
+}

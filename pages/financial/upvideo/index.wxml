@@ -1,0 +1,20 @@
+<!--pages/financial/upvideo/index.wxml-->
+
+<view class="weui-cells weui-cells_after-title border-tb">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">视频标题</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="输入视频标题"/>
+        </view>
+    </view>
+</view>
+
+<view>
+    <view class="c-v">
+        <video wx:if="{{isup}}" src=""></video>
+        <image wx:else src="image/add.png"/>
+    </view>
+    <button class="big-btn my-btn">保存</button>
+</view>

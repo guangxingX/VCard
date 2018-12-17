@@ -1,0 +1,76 @@
+<!--component/select/index.wxml-->
+<view class="searchLetter touchClass">
+    <view wx:for="{{searchLetter}}" wx:key="index" data-letter="{{item.name}}" catchtouchstart="searchStart" catchtouchmove="searchMove" catchtouchend="searchEnd">{{item.name}}</view>
+</view>
+
+<slot name="before"></slot>
+<view class="headbar">
+    没有适合自己的标签？
+    <view  bindtap="onTapAdd" class="addB">
+        手动添加
+    </view>
+</view>
+
+<scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="" scroll-top="{{scrollTop}}">
+    <view class="hotCity">
+        <view class="item_letter">热门行业</view>
+        <view class="hotCityBox">
+            <block wx:for="{{hotList}}" wx:key="">
+                <!-- <view class="listBlock" data-hotindustry="{{item}}" bindtap="hotindustry"> -->
+                <view class="listBlock {{item.selected ?'selectStyle':'noselectStyle'}}"  data-industry="{{item}}" data-itemindex="{{index}}" bindtap='onBindIndustryHost'>
+                    {{item.name}}
+                </view>
+            </block>
+        </view>
+
+    </view>
+
+    <!-- 添加行业 -->
+
+    <view class="selection" wx:for="{{industryList}}" wx:key="{{item.initial}}">
+        <view  wx:if="{{item.length}}">
+            <view class="item_letter" wx:if="{{item.pinyin!='#'}}">{{item[0].pinyin}}</view>
+            <view class="selection-block">
+                <view  wx:for="{{item}}" wx:for-item="ct" wx:key="{{ct.id}}"  class="item_city {{ct.selected ?'selectStyle':'noselectStyle'}}"  data-industry="{{ct}}" data-itemindex="{{index}}" bindtap='onBindIndustry' >
+                    {{ct.name}}
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<!--pop-->
+    <!--添加pop-->
+    <view wx:if="{{showMask}}">
+        <view class="wxapp-modal"  style="{{modal_style}}">
+
+            <view class="mask" bindtap="closeModal">
+
+                <view class="content {{overflowHiden ? 'overflowHidenStyle' : ''}}">
+                    <view class="wxaa-title">输入行业，不超过5个字</view>
+                    <view class="inputWrap">
+                        <input class="wxaa-input" focus='true' value="" bindinput="industryInputChange" type="text" maxlength='5' />
+                    </view>
+                    <view class="btnWrap">
+                        <view bindtap="onCancleClick" class="clickBtn cancleBtn">取消</view>
+                        <view bindtap="saveClick" class="clickBtn saveBtn">确定</view>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+    </view>
+<!--中间字母-->
+<block wx:if="{{isShowLetter}}">
+    <view class="showSlectedLetter">
+        {{showLetter}}
+    </view>
+</block>
+<!-- 确定按钮 -->
+<view class="b-complete ">
+    <view class="b-checked">
+        <view  wx:for="{{selelcttempArr}}" wx:for-item="ct" wx:key="{{ct.id}}"  class="item_city {{ct.selected ?'selectStyle':'noselectStyle'}}"  data-industry="{{ct}}" data-itemindex="{{index}}" bindtap='onBindunIndustry' >
+            {{ct.name}}
+        </view>
+    </view>
+    <view class="b-sure" bindtap="completeBack">确定</view>
+</view>

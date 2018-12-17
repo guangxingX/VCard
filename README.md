@@ -29,3 +29,9 @@
     <text>编辑</text>
   </view> -->
 </w-edit-programme>
+
+
+<view class="page__bd_spacing d-btn">
+  <button class="weui-btn primary font32" bind:tap="onView">预览</button>
+  <button class="weui-btn primary font32" bind:tap="onSave">保存</button>
+</view>

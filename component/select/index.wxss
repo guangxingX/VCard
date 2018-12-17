@@ -1,0 +1,29 @@
+/* component/select/index.wxss */
+@import "/pages/commenPage/selectIndustry/selectIndustry.wxss";
+.headbar
+{
+    height: 105rpx;
+
+    padding: 0 40rpx;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    color:rgba(108,108,108,1);
+    font-size:28rpx;
+    border-bottom: 1rpx solid #eee;
+
+}
+.headbar .addB{
+    width: 160rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    background:#F2F6FD;
+    color:#3073E3;
+    border:1rpx solid #3073E3;
+    text-align: center;
+    border-radius: 4rpx;
+}
+
+.b-complete{
+
+}

@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 19,
+			"current": 21,
 			"list": [
 				{
 					"id": -1,
@@ -157,6 +157,18 @@
 					"id": 19,
 					"name": "projectinfo",
 					"pathName": "pages/financial/projectinfo/index",
+					"query": ""
+				},
+				{
+					"id": 21,
+					"name": "selecttag",
+					"pathName": "pages/financial/select-tag/index",
+					"query": "id=35"
+				},
+				{
+					"id": -1,
+					"name": "upvideo",
+					"pathName": "pages/financial/upvideo/index",
 					"query": ""
 				}
 			]
