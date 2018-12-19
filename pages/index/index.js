@@ -307,6 +307,7 @@ Page({
     // console.log(app.globalData.userId==-1);
     // console.log(app.globalData.userId=='-1');
     setTimeout(function(){
+      
       if(!app.globalData.userId||app.globalData.userId==-1){
         wx.navigateTo({
           url: "../logIn/phone/phone"
@@ -314,8 +315,9 @@ Page({
       }else{
         that.getdata();
       }
+      
     },2000)
-
+    
   },
 
   /**

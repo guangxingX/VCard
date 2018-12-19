@@ -1,5 +1,5 @@
 <!--pages/financial/index/index.wxml-->
-<view class="page">
+<view wx:if="{{!showseach}}" class="page">
   <view class="page__bd">
     <view class="weui-tab">
       <view class="weui-navbar">
@@ -14,29 +14,53 @@
       </view>
       <view class="weui-tab__panel">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-          <view>
-            <view>
-              <text>{{typename}}</text>
-              <image scr="image/donw.png"/>
-            </view>
-            <view>
+          <view class="option-bar">
 
+            <picker bindchange="onBindChange" value="{{index}}" range="{{array}}">
+              <view class="bar-item">
+                <text>{{typename}}</text>
+                <image src="image/donw.png"/>
+              </view>
+            </picker>
+            <view class="bar-item">
+              <text>全部领域</text>
+              <image src="image/donw.png"/>
             </view>
           </view>
-          <view hidden="{{hidlookType}}">
-            <view>{{year}}年{{month}}月{{day}}日</view>
-                <picker-view indicator-style="height: 50px;" style="width: 100%; height: 100px;" value="{{value}}" bindchange="bindChange">
-                  <picker-view-column>
-                    <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
-                  </picker-view-column>
-                  <!-- <picker-view-column>
-                    <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
-                  </picker-view-column>
-                  <picker-view-column>
-                    <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
-                  </picker-view-column> -->
-                </picker-view>
+          <!--<view hidden="{{hidlookType}}">-->
+                <!--<picker-view indicator-style="height: 50px;" style="width: 100%; height: 100px;" value="{{value}}" bindchange="onBindChange">-->
+                  <!--<picker-view-column>-->
+                    <!--<view>投资机构/投资人</view>-->
+                    <!--<view>投资机构</view>-->
+                    <!--<view>投资人</view>-->
+                  <!--</picker-view-column>-->
+                  <!--&lt;!&ndash; <picker-view-column>-->
+                    <!--<view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>-->
+                  <!--</picker-view-column>-->
+                  <!--<picker-view-column>-->
+                    <!--<view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>-->
+                  <!--</picker-view-column> &ndash;&gt;-->
+                <!--</picker-view>-->
+
+            <!--</view>-->
+          <scroll-view class="weui-tab__content" style="height:100vh" scroll-y bindscrolltolower="onAddListL" lower-threshold="100">
+            <block wx:for="{{lookforList}}" wx:key="">
+              <w-item-lookforsb class="l-item" lookforitem="{{item}}" />
+            </block>
+            <view class="noContent" wx:if="{{lookforList.length==0}}">
+              <view>
+                <image class="noImage" src="/assets/images/mine/no-resource.png"></image>
+              </view>
+              <view class="noTextWrap">
+                <text class="noText"> 暂无项目</text>
+              </view>
             </view>
+
+            <view wx:if="{{currentPageL==totalPageL}}" class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+            </view>
+          </scroll-view>
+
 
         </view>
 
@@ -73,3 +97,4 @@
     </view>
   </view>
 </view>
+<w-select/>

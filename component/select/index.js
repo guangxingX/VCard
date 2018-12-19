@@ -10,7 +10,11 @@ Component({
      */
 
     properties: {
-        id: Number
+        id: Number,
+        limitNum:{
+            type:Number,
+            value:5
+        }
     },
 
     options: {
@@ -38,6 +42,7 @@ Component({
         tHeight: 0, //后一个的高度
         industryNameStr: '',//选中的名字
         industryIdStr: '',//选中的id
+
         //pop
         showMask: false, //点击添加的弹窗
         overflowHiden: false, //输入行业弹窗
@@ -139,7 +144,7 @@ Component({
             // });
 
 
-            if (this.data.selelcttempArr.length >= 5) {
+            if (this.data.selelcttempArr.length >= this.properties.limitNum) {
                 this.setData({
                     limit: true
                 })
@@ -261,7 +266,7 @@ Component({
             // });
 
             //限制选中数量
-            if (this.data.selelcttempArr.length >= 5) {
+            if (this.data.selelcttempArr.length >= this.properties.limitNum) {
                 this.setData({
                     limit: true
                 })

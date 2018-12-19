@@ -96,7 +96,9 @@
         "projectinfo/index",
         "product-tag/index",
         "select-tag/index",
-        "upvideo/index"
+        "upvideo/index",
+        "single-selectiontag/index",
+        "card/index"
       ]
     }
   ],

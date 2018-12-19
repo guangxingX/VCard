@@ -23,7 +23,13 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
+  onTest(){
+    wx.navigateTo({
+      url: '/pages/financial/card/index?id=1&&type=2'
+    })
+  },
   onLoad: function(options) {
+    
       this._init()
       wx.setNavigationBarTitle({
           title: '自我介绍'

@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 21,
+			"current": 23,
 			"list": [
 				{
 					"id": -1,
@@ -170,6 +170,19 @@
 					"name": "upvideo",
 					"pathName": "pages/financial/upvideo/index",
 					"query": ""
+				},
+				{
+					"id": 22,
+					"name": "single-selectiontag",
+					"pathName": "pages/financial/single-selectiontag/index",
+					"query": ""
+				},
+				{
+					"id": 23,
+					"name": "card",
+					"pathName": "pages/financial/card/index",
+					"query": "id=1&&type=1",
+					"scene": "1011"
 				}
 			]
 		}

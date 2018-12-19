@@ -37,7 +37,7 @@ export class programemodule extends HTTP {
         }
         return obj
     }
-    
+
 
     getOldIndustryList(){
       return this.request({
@@ -190,7 +190,7 @@ export class programemodule extends HTTP {
      * @returns {*}
      * @private
      */
-    _saveStorage(fn,key,current,id,name){
+    _saveStorage(fn,key,current=1,id=-1,name=''){
 
         var program = wx.getStorageSync(key)
         var now = new Date().getTime()

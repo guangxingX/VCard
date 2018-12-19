@@ -10,7 +10,7 @@
     </view>
     <view class="icon" wx:if="{{edit}}">
       详情
-      <image src="image/arrow.png"></image>
+      <image src="/component/image/arrow.png"></image>
     </view>
   </view>
   <view class="under">

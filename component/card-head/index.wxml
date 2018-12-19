@@ -1,0 +1,20 @@
+<!--component/card-head/index.wxml-->
+<view>
+        <view class="car-header-top">
+            <view class="car-main">
+                <w-image defaultText="{{name}}" originalImage="{{logo}}" width="102rpx" height="102rpx" plugStyle="font-size: 28rpx;border-radius: 8rpx;"/>
+
+                    {{name}}
+
+            </view>
+            <view class="car-body">
+                <view class="mar-b-26"> 成立日期：{{time}}</view>
+                <view class="mar-b-26"> 地址：{{address}}</view>
+                <view> 官网:{{website}}</view>
+            </view>
+        </view>
+        <view class="car-footer" bind:tap="onGoProject">
+            收到项目:{{projectNum}}
+            <image src="/component/image/arrow.png"></image>
+        </view>
+    </view>

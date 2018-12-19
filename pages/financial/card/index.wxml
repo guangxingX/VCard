@@ -1,0 +1,125 @@
+<!--pages/financial/card/index.wxml-->
+<wxs src="../../../utils/filter.wxs" module="utils"/>
+<view class="card-container">
+    <view wx:if="{{type==1}}">
+        <w-card-headalone
+                cardinfo="{{myinfo.cardInfo}}"
+                projectNum="1"
+        />
+        <!--投资需求-->
+        <view class="car-sub-container">
+            <w-head-programe name="投资需求" />
+            <!-- ··投资领域  ··投资阶段 ···投资金额 ··投资模式 -->
+
+                <view class="container-2">
+                    <view class="text-head">
+                        ·投资领域
+                    </view>
+
+                    <view class="tag-bd">
+                        <block wx:for="{{utils.commaArray(myinfo.field,5)}}" wx:key="" wx:for-item="_i">
+                            <w-tag-programe name="{{_i}}" color="#09BB07" />
+                        </block>
+                    </view>
+                </view>
+            <view class="container-2">
+                <view class="text-head">
+                    ·投资阶段
+                </view>
+
+                <view class="tag-bd">
+                    <block wx:for="{{utils.commaArray(myinfo.stage,4)}}" wx:key="" wx:for-item="_i">
+                        <w-tag-programe name="{{_i}}" color="#E64340" />
+                    </block>
+                </view>
+            </view>
+            <view class="container-2">
+                <view class="text-head">
+                    ·投资金额
+                </view>
+
+                <view class="tag-bd">
+                    <block wx:for="{{myinfo.amount}}" wx:key="" wx:for-item="_i">
+                        <w-tag-programe name="{{_i}}" color="#E28F19" />
+                    </block>
+                </view>
+            </view>
+            <view class="container-2">
+                <view class="text-head">
+                    ·投资模式
+                </view>
+
+                <view class="tag-bd">
+                    <block wx:for="{{utils.commaArray(myinfo.model)}}" wx:key="" wx:for-item="_i">
+                        <w-tag-programe name="{{_i}}" color="#3073E3" />
+                    </block>
+                </view>
+            </view>
+
+
+        </view>
+        <!--客户案例-->
+        <view class="car-sub-container">
+            <w-head-programe name="客户案例" />
+            <bolck wx:for="{{myinfo.case}}" wx:for-item="_i" wx:key="">
+                <w-show-imageText imgData="{{_i}}" />
+            </bolck>
+        </view>
+    </view>
+    <view  wx:else>
+        <!--头部-->
+        <w-card-head name="{{cardinfo.name}}"
+                     logo="{{cardinfo.log}}"
+                     time="{{cardinfo.time}}"
+                     address="{{cardinfo.address}}"
+                     projectNum="{{cardinfo.projectNum}}"
+                     website="{{cardinfo.website}}"/>
+<!--投资方向-->
+        <view class="car-sub-container">
+            <w-head-programe name="投资方向" />
+            <view class="tag-bd">
+                <block wx:for="{{utils.commaArray(cardinfo.direction)}}" wx:key="" wx:for-item="_i">
+                    <w-tag-programe name="{{_i}}" color="#09BB07" />
+                </block>
+            </view>
+        </view>
+        <!--投资阶段-->
+        <view class="car-sub-container">
+            <w-head-programe name="投资阶段" />
+            <view class="tag-bd">
+                <block wx:for="{{utils.commaArray(cardinfo.stage)}}" wx:key="" wx:for-item="_i">
+                    <w-tag-programe name="{{_i}}" color="#E64340" />
+                </block>
+            </view>
+        </view>
+        <!-- 核心团队 -->
+        <view class="car-sub-container">
+            <w-head-programe name="核心团队（{{cardinfo.coreTeam.length}}人)" />
+            <view class="border" />
+            <bolck wx:for="{{cardinfo.coreTeam}}" wx:key="id">
+                <w-link-d name="{{item.name}}" src="{{item.logo}}" sub="{{item}}" />
+            </bolck>
+        </view>
+        <!--投资理念-->
+        <!--基金规模-->
+        <!--客户案例-->
+        <block wx:for="{{imgTextList}}" wx:for-item="item" wx:key="">
+            <view class="car-sub-container">
+                <w-head-programe name="{{item.name}}" />
+                <bolck wx:for="{{item.data}}" wx:for-item="_i" wx:key="">
+                    <w-show-imageText imgData="{{_i}}" />
+                </bolck>
+            </view>
+        </block>
+
+    </view>
+</view>
+
+<view class="bottom-btn">
+    <button class="btn-1" open-type="share">
+        <image src="../image/share.png" /> 分享
+    </button>
+    <view class="btn-2" bind:tap="onSendBook">
+        发送商业计划书
+    </view>
+</view>

@@ -25,5 +25,10 @@
 }
 
 .b-complete{
+    position: fixed;
+    z-index: 100;
+}
 
+.b-header{
+    
 }

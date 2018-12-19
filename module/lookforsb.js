@@ -20,4 +20,28 @@ export class lookforsbmodule extends programemodule {
       }
     }), key, currentPage, fieldId, name)
   }
+    //投资机构名片
+    getinstitutionsCard(cardId,currentPage=1,fieldId=-1){
+
+        const name = 'institutionsCard'
+        var key = this._getKey(fieldId, currentPage, name)
+        return this._saveStorage(
+            this.request({
+                url:'VCard/institutionsCard',
+                data:{cardId}
+            }), key, currentPage, fieldId, name)
+
+    }
+    //投资个人名片
+    getinvestorsCard(cardId,currentPage=1,fieldId=-1){
+
+        const name = 'investorsCard'
+        var key = this._getKey(fieldId, currentPage, name)
+        return this._saveStorage(
+            this.request({
+                url:'VCard/investorsCard',
+                data:{cardId}
+            }), key, currentPage, fieldId, name)
+
+    }
 }

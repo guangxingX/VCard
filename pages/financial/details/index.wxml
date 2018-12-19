@@ -152,7 +152,7 @@
     </view>
     <view class="bottom-btn weui-fff">
       <button class="btn-1" open-type="share">
-        <image src="image/share.png" /> 分享
+        <image src="../image/share.png" /> 分享
       </button>
       <view class="btn-2" bind:tap="onGoNextPage">
         联系项目方

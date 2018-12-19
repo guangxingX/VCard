@@ -67,6 +67,9 @@
 </block>
 <!-- 确定按钮 -->
 <view class="b-complete ">
+    <view class="b-header">
+        最多显示{{limitNum}}个行业
+    </view>
     <view class="b-checked">
         <view  wx:for="{{selelcttempArr}}" wx:for-item="ct" wx:key="{{ct.id}}"  class="item_city {{ct.selected ?'selectStyle':'noselectStyle'}}"  data-industry="{{ct}}" data-itemindex="{{index}}" bindtap='onBindunIndustry' >
             {{ct.name}}

@@ -88,3 +88,28 @@ page, .page, .page__bd {
 .weui-loadmore__tips_in-line {
   background: none!important;
 }
+.option-bar{
+  background-color: #fff;
+  display: flex;
+  padding: 0 100rpx;
+  height: 88rpx;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18rpx;
+}
+.option-bar .bar-item{
+
+}
+.option-bar .bar-item text{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(53,53,53,1);
+ }
+.option-bar .bar-item image{
+  width: 22rpx;
+  height: 22rpx;
+  margin-left:20rpx;
+}
+.l-item view{
+  margin-bottom:18rpx ;
+}
