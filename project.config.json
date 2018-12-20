@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 23,
+			"current": 25,
 			"list": [
 				{
 					"id": -1,
@@ -182,6 +182,20 @@
 					"name": "card",
 					"pathName": "pages/financial/card/index",
 					"query": "id=1&&type=1",
+					"scene": "1011"
+				},
+				{
+					"id": 24,
+					"name": "institutionintr",
+					"pathName": "pages/financial/institutionintr/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "stage",
+					"pathName": "pages/financial/saveInstitutions/stage/index",
+					"query": "id=1",
 					"scene": "1011"
 				}
 			]

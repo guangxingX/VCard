@@ -98,7 +98,10 @@
         "select-tag/index",
         "upvideo/index",
         "single-selectiontag/index",
-        "card/index"
+        "card/index",
+        "institutionintr/index",
+        "saveInstitutions/direction/index",
+        "saveInstitutions/stage/index"
       ]
     }
   ],

@@ -89,14 +89,20 @@ page, .page, .page__bd {
   background: none!important;
 }
 .option-bar{
+    position: fixed;
+    z-index: 9;
+    left:0;
+    right:0;
   background-color: #fff;
   display: flex;
   padding: 0 100rpx;
   height: 88rpx;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 18rpx;
+    border-bottom: 1rpx solid #eee;
+  /*margin-bottom: 18rpx;*/
 }
+
 .option-bar .bar-item{
 
 }
@@ -112,4 +118,7 @@ page, .page, .page__bd {
 }
 .l-item view{
   margin-bottom:18rpx ;
+}
+.l-item:first-child>view{
+    margin-top: 106rpx;
 }

@@ -10,11 +10,24 @@ Component({
      */
 
     properties: {
+        hidden:{
+            type:Boolean,
+            value:true
+        },
         id: Number,
         limitNum:{
             type:Number,
             value:5
-        }
+        },
+        haveAddbar:{
+            type:Boolean,
+            value:true
+        },
+        isSolo:{
+            type:Boolean,
+            value:false
+        },
+        // selectedIndustryArr:Array,//缓存已经选中的数组
     },
 
     options: {
@@ -48,7 +61,8 @@ Component({
         overflowHiden: false, //输入行业弹窗
         selelcttempArr: [],//选中的数组
         seleNumber: 0,//选中数组的长度
-        limit: false,//设置可以继续选长度
+        limit: false,//设置可以继续选
+        ismulSelect:true,//显示多选框
 
     },
 
@@ -63,7 +77,17 @@ Component({
                 overflowHiden: false
             })
         },
-        onBindIndustryHost(e, auto) {
+        //单击了热门
+        onBindIndustryHost(e, auto){
+            if(this._isSolo()){
+                // console.log(e)
+                this.triggerEvent('onTapSolo', e)
+            }else {
+                this.__onBindIndustryHost(e, auto)
+            }
+        },
+
+        __onBindIndustryHost(e, auto) {
             var item = '';
             var itemindex = '';
             if (auto == 'auto') {
@@ -155,7 +179,15 @@ Component({
             }
         },
         // 单击了一个行业
-        onBindIndustry: function (e, auto) {
+        onBindIndustry(e, auto){
+            if(this._isSolo()){
+                this.triggerEvent('onTapSolo', e)
+            }else {
+                this.__onBindIndustry(e, auto)
+            }
+        },
+        __onBindIndustry: function (e, auto) {
+
             var item = '';
             // 在改组中的位置
             var itemindex = '';
@@ -280,6 +312,7 @@ Component({
         },
         //点击底部栏的事件
         onBindunIndustry(e) {
+
             var item = '';
             // 在改组中的位置
             item = e.currentTarget.dataset.industry;
@@ -386,6 +419,19 @@ Component({
             }, 1000)
 
         },
+        _showFixBar(){
+            this.setData({
+                ismulSelect:false
+            })
+        },
+        _hideFixBar(){
+            this.setData({
+                ismulSelect:true
+            })
+        },
+        _isSolo(){
+            return this.properties.isSolo
+        },
         _nowLetter: function (pageY, that) { //当前选中的信息
             var letterData = this.data.searchLetter;
             var bHeight = 0;
@@ -436,9 +482,11 @@ Component({
                     })
                 }
             })
+
             this.data.industryArr.forEach(function (item, index, arr) {
                 this.onBindIndustry(item, 'auto')
             })
+
             programe.getOldIndustryList().then(res => {
                 let industryData = res.industryList
                 industryData = programe.resortbyalphabet(industryData, 'pinyin')
@@ -461,6 +509,9 @@ Component({
                     item = this._de_tin(item, res.hotList)
                     indstryNewData.push(item)
                 })
+                if(this.properties.isSolo){
+                    res.hotList.unshift({name: "全部领域", id: 0})
+                }
 
                 this.setData({
                     searchLetter: tempObj,
@@ -499,7 +550,7 @@ Component({
                 }
             }
             return newMyArrList
-        }
+        },
     },
     lifetimes: {
         attached: function () {

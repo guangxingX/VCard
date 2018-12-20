@@ -44,4 +44,11 @@ export class lookforsbmodule extends programemodule {
             }), key, currentPage, fieldId, name)
 
     }
+    //查询机构公司
+  getinstitutionsCompany(cardId){
+    return this.request({
+      url: 'VCard/institutionsCompany',
+      data: { cardId }
+    })
+  }
 }

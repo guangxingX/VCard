@@ -66,6 +66,8 @@ Page({
                 cardinfo: res,
                 imgTextList,
             })
+        }).catch(e=>{
+            console.log(e)
         })
     },
     _randerCData(id){
@@ -74,6 +76,12 @@ Page({
             this.setData({
                 myinfo:res,
             })
+        }).catch(e=>{
+            //重置为空
+            this.setData({
+                myinfo:{}
+            })
+            console.log(e)
         })
     },
     /**
@@ -81,19 +89,23 @@ Page({
      */
     onLoad: function (options) {
         console.log(options)
-        wx.setNavigationBarTitle({
-            title: '自我介绍'
-        })
+
         this.setData({
             type: options.type
         })
-        //1是人2是公司
-        if (options.type == 1) {
-            this._randerCData(options.id)
-        } else {
+        let title = ''
+        //2是人1是公司
+        if (options.type == 2) {
+            title = options.name
             this._randerBData(options.id)
-        }
 
+        } else {
+            title = options.name+'的投资名片'
+            this._randerCData(options.id)
+        }
+        wx.setNavigationBarTitle({
+            title:title
+        })
     },
 
     /**
@@ -114,7 +126,10 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
+        // 销毁数据
+        this.setData({
 
+        })
     },
 
     /**

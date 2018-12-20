@@ -35,12 +35,30 @@ Page({
         totalPageL:10,
         value:[0,1,2],
         array: ['投资机构/投资人', '投资机构', '投资人'],
-        type:0,
-        fieldId:0,
-        showseach:true
+        type:0,//post , 参数
+        fieldId:0,//post ,参数
+        showtapindustry:false,
+        fieldname:'全部领域',
+
 
     },
     /**找投资**/
+    onTapindustry(e){
+        // console.log(e.detail.currentTarget.dataset.industry)
+        let target= e.detail.currentTarget.dataset.industry
+        console.log(target);
+        this.setData({
+            showtapindustry:false,
+            fieldname:target.name,
+            fieldId:target.id,
+        })
+        this._randerlookforsbData(1,this.data.type,this.data.fieldId,true)
+    },
+    onShowtapindustry(e){
+        this.setData({
+            showtapindustry:true,
+        })
+    },
     onAddListL(){
         var currentPage = this.data.currentPageL
 
@@ -52,7 +70,7 @@ Page({
             currentPageL: currentPage + 1
         })
         // console.log(this.data.currentPage)
-        this._randerlookforsbData(this.data.currentPageL,this.data.type)
+        this._randerlookforsbData(this.data.currentPageL,this.data.type,this.data.filedID)
     },
     _randerlookforsbData(currentPage =1,type = 0,fieldId = 0,isNewArry) {
         lookforsb.getinvestmentCardList({

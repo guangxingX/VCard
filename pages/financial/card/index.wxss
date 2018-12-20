@@ -15,7 +15,7 @@ w-card-head view{
     flex-wrap: wrap;
     padding-top: 0rpx;
     padding-bottom:40rpx;
-    margin-left: 30rpx;
+    margin-left: 0rpx!important;
 }
 .card-container{
     margin-bottom: 200rpx;

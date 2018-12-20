@@ -1,7 +1,8 @@
 <!--component/lookforsb/item/index.wxml-->
+<!--/pages/financial/card/index-->
 <wxs src="../../../utils/filter.wxs" module="utils"/>
 <view class="weui-panel__bd bg-fff">
-    <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+    <navigator url="/pages/financial/card/index?name={{lookforitem.name}}&&id={{lookforitem.id}}&&type={{lookforitem.type}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bind:tap="onTapitem">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
             <w-image defaultText="{{lookforitem.name}}" originalImage="{{lookforitem.logo}}" width="100%"
                      height="100%" plugStyle="font-size: 28rpx;border-radius:10rpx;"/>

@@ -5,5 +5,6 @@
     "w-select":"/component/select/index"
   },
   "enablePullDownRefresh":true,
-  "onReachBottomDistance":200
+  "onReachBottomDistance":200,
+  "disableScroll":true
 }

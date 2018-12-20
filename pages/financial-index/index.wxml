@@ -1,5 +1,5 @@
 <!--pages/financial/index/index.wxml-->
-<view wx:if="{{!showseach}}" class="page">
+<view hidden="{{showtapindustry}}" class="page">
   <view class="page__bd">
     <view class="weui-tab">
       <view class="weui-navbar">
@@ -22,8 +22,8 @@
                 <image src="image/donw.png"/>
               </view>
             </picker>
-            <view class="bar-item">
-              <text>全部领域</text>
+            <view class="bar-item" bind:tap="onShowtapindustry">
+              <text>{{fieldname}}</text>
               <image src="image/donw.png"/>
             </view>
           </view>
@@ -43,7 +43,7 @@
                 <!--</picker-view>-->
 
             <!--</view>-->
-          <scroll-view class="weui-tab__content" style="height:100vh" scroll-y bindscrolltolower="onAddListL" lower-threshold="100">
+          <scroll-view class="weui-tab__content" style="height:100vh;" scroll-y bindscrolltolower="onAddListL" lower-threshold="100">
             <block wx:for="{{lookforList}}" wx:key="">
               <w-item-lookforsb class="l-item" lookforitem="{{item}}" />
             </block>
@@ -97,4 +97,7 @@
     </view>
   </view>
 </view>
-<w-select/>
+<w-select hidden="{{!showtapindustry}}"
+          bind:onTapSolo="onTapindustry"
+          haveAddbar="{{false}}"
+          isSolo="{{true}}"/>

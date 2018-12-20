@@ -44,10 +44,12 @@ class HTTP {
             //TODO 自我判断
             resolve(res.data.entity)
           } else {
+            reject(res.data.message)
             this._show_error(res.data.success, res.data.message)
           }
         },
         fail: (err) => {
+            reject(err)
           wx.hideLoading()
           this._show_error()
         }

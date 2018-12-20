@@ -19,6 +19,9 @@ Component({
         onTapUpProject(){
             // console.log(onTapUpProject);
         },
+        onTapitem(){
+            console.log(this.properties.lookforitem);
+        },
     },
     lifetimes: {
         attached() {

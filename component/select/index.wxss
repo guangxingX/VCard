@@ -26,9 +26,51 @@
 
 .b-complete{
     position: fixed;
+    bottom:0;
     z-index: 100;
+    box-shadow:-1px -9px 9px 1px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    width: 100%;
 }
 
-.b-header{
-    
+.b-complete .b-header{
+    height: 99rpx;
+    text-align: center;
+    line-height: 99rpx;
+    font-size:28rpx;
+    font-weight:500;
+    color:rgba(108,108,108,1);
+}
+.b-complete .b-checked{
+   margin: 0 30rpx;
+    display: flex;
+    flex-wrap:wrap;
+}
+.b-complete .b-checked .item_city{
+    position:relative;
+
+}
+.b-complete .b-checked image{
+    position: absolute;
+    top:-10rpx;
+    left:-10rpx;
+
+    width: 30rpx;
+    height: 30rpx;
+}
+.b-complete .b-sure{
+    margin: 0 auto;
+    margin-top: 38rpx;
+    margin-bottom: 25rpx;
+    width: 511rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background:rgba(48,115,227,1);
+    border-radius:4rpx;
+    font-size:34rpx;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    text-align: center;
+
+
 }

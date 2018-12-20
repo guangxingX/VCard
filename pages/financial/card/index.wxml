@@ -1,7 +1,7 @@
 <!--pages/financial/card/index.wxml-->
 <wxs src="../../../utils/filter.wxs" module="utils"/>
 <view class="card-container">
-    <view wx:if="{{type==1}}">
+    <view wx:if="{{type!=1}}">
         <w-card-headalone
                 cardinfo="{{myinfo.cardInfo}}"
                 projectNum="1"
@@ -62,7 +62,9 @@
         <view class="car-sub-container">
             <w-head-programe name="客户案例" />
             <bolck wx:for="{{myinfo.case}}" wx:for-item="_i" wx:key="">
-                <w-show-imageText imgData="{{_i}}" />
+                <!--//TODO 需要编写样式-->
+                {{_i.caseName}}
+                <w-show-imageText imgData="{{_i.imageText}}" />
             </bolck>
         </view>
     </view>
