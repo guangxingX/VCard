@@ -4,17 +4,20 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+      checkboxItems:{
+          type:Array,
+          value:[
+              {name: 'standard is dealt for u.', value: '0', checked: true},
+              {name: 'standard is dealicient for u.', value: '1'}
+          ]
+      }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-      checkboxItems: [
-          {name: 'standard is dealt for u.', value: '0', checked: true},
-          {name: 'standard is dealicient for u.', value: '1'}
-      ]
+      checkboxValue:[]
   },
 
   /**
@@ -38,9 +41,17 @@ Component({
               }
 
               this.setData({
-                  checkboxItems: checkboxItems
+                  checkboxItems: checkboxItems,
+                  checkboxValue:values
               });
           },
+          onTapSure(){
+            this.triggerEvent('onTapSave', {
+                checkboxItems: this.properties.checkboxItems,
+                checkboxValue:this.data.checkboxValue,
+            })
+          },
       }
+
 
 })

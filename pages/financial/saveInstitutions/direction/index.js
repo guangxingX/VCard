@@ -1,4 +1,6 @@
 // pages/financial/saveInstitutions/direction/index.js
+import { lookforsbmodule } from "../../../../module/lookforsb";
+var lookforsb = new lookforsbmodule
 Page({
 
   /**
@@ -11,8 +13,21 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  onTapindustry(e){
+      let  industryList = []
+      console.log(e.detail)
+      e.detail.forEach(item=>{
+          industryList.push(item.id)
+      })
+      industryList=industryList.join(',')
+      lookforsb.postsaveInstitutions('1','1',{industryList})
+  },
   onLoad: function (options) {
       console.log(options.id);
+      lookforsb.getinstitutionsDirection(options.id).then(res=>{
+          console.log(res);
+      })
+
   },
 
   /**

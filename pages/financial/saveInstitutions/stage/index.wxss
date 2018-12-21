@@ -1,1 +1,4 @@
 /* pages/financial/saveInstitutions/stage/index.wxss */
+page{
+  background: #eee;
+}

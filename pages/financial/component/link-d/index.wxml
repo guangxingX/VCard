@@ -8,8 +8,8 @@
       </view>
       <view class="tip">{{sub.position}}</view>
     </view>
-    <view class="icon" wx:if="{{edit}}">
-      详情
+    <view class="icon" wx:if="{{edit}}" bind:tap="onTapEdit">
+      编辑
       <image src="/component/image/arrow.png"></image>
     </view>
   </view>

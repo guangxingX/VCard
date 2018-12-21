@@ -1,3 +1,14 @@
 <!--pages/financial/selectmen/index.wxml-->
 <!-- <text>pages/financial/selectmen/index.wxml</text> -->
-<w-link-c item="{{mock}}"/>
+<block wx:for="{{employeeList}}" wx:key="">
+    <w-link-c item="{{item}}"/>
+</block>
+
+<view class="fix-bottom">
+    <view>
+        核心成员未创建V名片？
+    </view>
+    <view class="fix-btn" bind:tap="">
+        邀请成员创建
+    </view>
+</view>

@@ -1,35 +1,18 @@
-// pages/financial/saveInstitutions/stage/index.js
-import { lookforsbmodule } from "../../../../module/lookforsb";
-
-var lookforsb = new lookforsbmodule
+// pages/financial/saveInstitutions/fundSize/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      checkboxItems:[
-          {name: 'standard is dealt for u.', value: '0', checked: true},
-          {name: 'standard is dealicient for u.', value: '1'},
-          {name: 'standard is dealt for u.', value: '3', checked: true},
-          {name: 'standard is dealicient for u.', value: '2'},
-      ]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onTapSave(e){
-    console.log(e.detail);
-  },
-  onTapSure(){
-
-  },
   onLoad: function (options) {
-    // TODO 没有数据结构
-      lookforsb.getinstitutionsStage(options.id).then(res=>{
-        console.log(res)
-      })
+
   },
 
   /**

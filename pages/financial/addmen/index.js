@@ -1,4 +1,6 @@
 // pages/financial/addmen/index.js
+import { lookforsbmodule } from "../../../module/lookforsb";
+var lookforsb = new lookforsbmodule
 Page({
 
   /**
@@ -13,14 +15,32 @@ Page({
               '期VIP投资发展沙龙成功举功举功举功举...',
       }]
   },
-  onTapAdd(){
-
+  onTapAdd(e){
+      console.log(e.detail);
   },
+    onEdit(e){
+        console.log(e.detail)
+       let data= JSON.stringify(e.detail)
+        wx.navigateTo({
+          url: 'editmen/index'+'?' +'data='+ data ,
+        })
+    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.type)
+    switch (options.type) {
+        //机构
+        case '1':
+            lookforsb.getinstitutionsCoreTeam(options.id).then(res => {
+                console.log(res);
+                this.setData({
+                  coreTeam:res.coreTeam
+                })
+            })
+            break;
+    }
   },
 
   /**

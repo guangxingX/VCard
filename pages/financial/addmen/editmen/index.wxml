@@ -1,0 +1,62 @@
+<!--pages/financial/addmen/editmen/index.wxml-->
+<view wx:if="{{!istextimg}}">
+    <view class="container-edit ">
+        <view class="right">
+            <image class="avatar" src="{{files[0]}}" bindtap="chooseImage"></image>
+        </view>
+        <view class="left">
+            <view class="item b-t">
+                <view class="item-name">姓名</view>
+                <input class="item-input" placeholder="请输入姓名"/>
+            </view>
+            <view class="item">
+                <view class="item-name">
+                    性别
+                </view>
+                <radio-group class="select-box item-input" bindchange="radioChange">
+                    <label class="box-item " wx:for="{{radioItems}}" wx:key="value">
+                        <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                        <view class="weui-cell__bd">{{item.name}}</view>
+                        <!--<view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">-->
+                        <!--<icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>-->
+                        <!--</view>-->
+                        <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                            <icon class="weui-icon-checkbox_circle" type="circle" size="23"
+                                  wx:if="{{!item.checked}}"></icon>
+                            <icon class="weui-icon-checkbox_success" color="#3073E3" type="success" size="23"
+                                  wx:if="{{item.checked}}"></icon>
+                        </view>
+                    </label>
+                </radio-group>
+            </view>
+        </view>
+    </view>
+    <view class=" weui-cell weui-cell_input from-input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">职位</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入职位"/>
+        </view>
+    </view>
+    <view bind:tap="onTaptextimg" class="from-input weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">个人介绍</view>
+            <view class="weui-media-box__desc">请填写成员的个人简介？</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+
+    </view>
+    <view class="weui-btn-area">
+         <button class="weui-btn primary" type="" bindtap="onTapSaveAll">保存</button>
+    </view>
+</view>
+
+<w-image-text wx:if="{{istextimg}}" style="height: 100%" ImageTextItem="{{ImageTextItem}}" bind:onTapView="onTapView" bind:onTapSave="onTapSave"/>
+
+
+
+
+

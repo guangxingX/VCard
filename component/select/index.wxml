@@ -45,15 +45,15 @@
     <view wx:if="{{showMask}}">
         <view class="wxapp-modal"  style="{{modal_style}}">
 
-            <view class="mask" bindtap="closeModal">
+            <view class="mask" bindtap="">
 
                 <view class="content {{overflowHiden ? 'overflowHidenStyle' : ''}}">
                     <view class="wxaa-title">输入行业，不超过5个字</view>
                     <view class="inputWrap">
-                        <input class="wxaa-input" focus='true' value="" bindinput="industryInputChange" type="text" maxlength='5' />
+                        <input class="wxaa-input" focus='true' value="" bindinput="onInputindustryInputChange" type="text" maxlength='5' />
                     </view>
                     <view class="btnWrap">
-                        <view bindtap="onCancleClick" class="clickBtn cancleBtn">取消</view>
+                        <view bind:tap="onCancleClick" class="clickBtn cancleBtn">取消</view>
                         <view bindtap="saveClick" class="clickBtn saveBtn">确定</view>
                     </view>
                 </view>

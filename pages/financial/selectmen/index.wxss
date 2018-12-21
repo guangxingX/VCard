@@ -1,1 +1,27 @@
 /* pages/financial/selectmen/index.wxss */
+.fix-bottom{
+    display: flex;
+    height: 124rpx;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    box-shadow:-1px 3px 17px 7px rgba(0, 0, 0, 0.3);
+    font-weight:400;
+    color:rgba(108,108,108,1);
+    font-size:32rpx;
+}
+.fix-btn{
+    margin-left: 57rpx;
+    width:229rpx;
+    height:72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    background:rgba(48,115,227,1);
+    border:1px solid rgba(48,115,227,1);
+    border-radius:4px;
+    font-size:28rpx;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}

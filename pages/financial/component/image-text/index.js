@@ -67,7 +67,8 @@ Component({
       onSave() {
         //点击预览出发的事件
         //抛出记录的数据
-        this.triggerEvent('onTapSave', {
+        //   console.log(this.data._ImageTextItem);
+          this.triggerEvent('onTapSave', {
           ImageTextItem: this.data._ImageTextItem
         })
       },
@@ -81,7 +82,7 @@ Component({
             })
         },
         onDeleteRow(e) {
-            console.log(e.currentTarget.dataset.index);
+            // console.log(e.currentTarget.dataset.index);
             var index = e.currentTarget.dataset.index;
             this.data._ImageTextItem.splice(index, 1);
             this.setData({_ImageTextItem: this.data._ImageTextItem});
@@ -215,8 +216,16 @@ Component({
         },
 
         setImageTextItem(e) {
+            console.log(e.detail);
             this.setData({
-                _ImageTextItem: e.detail
+                _ImageTextItem:e.detail
+            })
+            var pages = getCurrentPages();
+            console.log(pages)
+            var prevPage = pages[pages.length-1];
+            console.log(prevPage)
+            prevPage.setData({
+                ImageTextItem:this.data._ImageTextItem
             })
         },
         //计算出屏幕快高

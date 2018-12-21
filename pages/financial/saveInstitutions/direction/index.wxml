@@ -1,2 +1,6 @@
 <!--pages/financial/saveInstitutions/direction/index.wxml-->
-<text>pages/financial/saveInstitutions/direction/index.wxml</text>
+<w-select
+          bind:onTapSolo="onTapindustry"
+          limitNum="{{5}}"
+          haveAddbar="{{false}}"
+          />

@@ -1,9 +1,9 @@
 <!--pages/financial/addmen/index.wxml-->
 <!-- <text>pages/financial/addmen/index.wxml</text> -->
 <bolck wx:for="{{coreTeam}}" wx:key="id">
-              <w-link-d name="{{item.name}}" src="{{item.logo}}" sub="{{item}}" edit="{{true}}"/>
+              <w-link-d name="{{item.name}}" src="{{item.logo}}" sub="{{item}}" edit="{{true}}" bind:onTapEdit="onEdit"/>
             </bolck>
 
-<button class='b-b' bind:tap="onTapAdd">
+<button class='b-b' bind:onTapEdit="onTapAdd">
   增添
 </button>

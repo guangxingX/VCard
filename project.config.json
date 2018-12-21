@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 25,
+			"current": 28,
 			"list": [
 				{
 					"id": -1,
@@ -142,16 +142,18 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 17,
 					"name": "addmen",
 					"pathName": "pages/financial/addmen/index",
-					"query": ""
+					"query": "id=1&&type=1",
+					"scene": "1011"
 				},
 				{
 					"id": 18,
 					"name": "selectmen",
 					"pathName": "pages/financial/selectmen/index",
-					"query": ""
+					"query": "id=1",
+					"scene": "1011"
 				},
 				{
 					"id": 19,
@@ -196,6 +198,27 @@
 					"name": "stage",
 					"pathName": "pages/financial/saveInstitutions/stage/index",
 					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "direction",
+					"pathName": "pages/financial/saveInstitutions/direction/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "coreTeam",
+					"pathName": "pages/financial/saveInstitutions/coreTeam/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 28,
+					"name": "editmen",
+					"pathName": "pages/financial/addmen/editmen/index",
+					"query": "",
 					"scene": "1011"
 				}
 			]

@@ -2,6 +2,14 @@
 超级名片
 作为备份
 
+import { lookforsbmodule } from "../../../../module/lookforsb";
+
+var lookforsb = new lookforsbmodule
+
+this.triggerEvent('onTapSave', {
+          ImageTextItem: this.data._ImageTextItem
+        })
+
 插件使用
  <w-image defaultText="{{text}}" originalImage="{{info.logo}}" width="100%" height="100%" plugStyle="font-size: 28rpx;
   border-radius: 10rpx;"/>

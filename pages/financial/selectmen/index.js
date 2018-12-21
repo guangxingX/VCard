@@ -1,4 +1,7 @@
 // pages/financial/selectmen/index.js
+import { lookforsbmodule } from "../../../module/lookforsb";
+
+var lookforsb = new lookforsbmodule
 Page({
 
   /**
@@ -12,15 +15,28 @@ Page({
         position:'(中国)首席执行官/总裁)',
         mobile:'15801076209',
         email:'wanglu@hopechina.cc'
-    }
+    },
+      employeeList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      lookforsb.getcompanyEmployee(options.id).then(res => {
 
-  },
+          this.setData({
+              employeeList:res.employeeList
+          })
+          let len = this.data.employeeList.length
+
+          wx.setNavigationBarTitle({
+              title: `选择成员（共${len}人）`
+          })
+      })
+
+  }
+  ,
 
   /**
    * 生命周期函数--监听页面初次渲染完成

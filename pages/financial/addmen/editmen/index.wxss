@@ -1,0 +1,62 @@
+/* pages/financial/addmen/editmen/index.wxss */
+@import "/style/weui.wxss";
+page{
+    background: #EFEFF4;
+}
+.select-box{
+    display: inline-flex;
+}
+.weui-cell{
+    border-top: 0!important;
+}
+.box-item{
+    display: flex;
+}
+
+.container-edit{
+    display: flex;
+    background: #fff;
+    border: 1rpx solid #e5e5e5;
+}
+.container-edit .right image{
+    width: 116rpx;
+    height: 116rpx;
+    border-radius: 50%;
+}
+.container-edit .right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 186rpx;
+    min-height: 173rpx;
+    border-right: 1rpx solid #E5E5E5;
+}
+.container-edit .item{
+    display: flex;
+    height: 87rpx;
+    align-items: center;
+    font-size:34rpx;
+    font-weight:400;
+    color:rgba(0,0,0,1);
+
+}
+
+.b-t{
+    border-bottom:1rpx solid #e5e5e5;
+}
+.container-edit .left{
+    flex: 1;
+}
+.container-edit .item-input{
+    margin-left: 72rpx;
+}
+.container-edit .item-name{
+    margin-left: 26rpx;
+}
+.from-input{
+    background: #fff;
+    margin: 20rpx 0;
+}
+.weui-btn-area{
+    margin-top: 72rpx!important;
+}

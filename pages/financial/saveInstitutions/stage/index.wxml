@@ -1,2 +1,3 @@
 <!--pages/financial/saveInstitutions/stage/index.wxml-->
-<w-check-multi/>
+<w-check-multi bind:onTapSave = "onTapSave"
+               checkboxItems="{{checkboxItems}}"/>

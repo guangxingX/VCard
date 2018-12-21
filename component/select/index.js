@@ -2,6 +2,7 @@
 import {
     programemodule
 } from '../../module/programe.js'
+const app = getApp()
 
 var programe = new programemodule
 Component({
@@ -12,7 +13,7 @@ Component({
     properties: {
         hidden:{
             type:Boolean,
-            value:true
+            value:false
         },
         id: Number,
         limitNum:{
@@ -70,6 +71,90 @@ Component({
      * 组件的方法列表
      */
     methods: {
+        completeBack(e){
+            this.triggerEvent('onTapSolo', this.data.selelcttempArr)
+        },
+        //点击新增行业
+        saveClick:function(){
+            var that=this;
+            console.log('点击了保存行业')
+            console.log(that.data.inputIndustry)
+            console.log(that.data.companyId)
+            console.log('点击了保存行业')
+            if(that.data.inputIndustry=='' || that.data.inputIndustry==null || that.data.inputIndustry.length<=0){
+                wx.showToast({
+                    title:'请输入行业名称',
+                    image:'../../../assets/images/icon/error-fff.png',
+                    duration:1000
+                })
+                return;
+            }
+
+            wx.request({
+                url:app.data.apiurl+'applets/addIndustry',
+                data:{
+                    name:that.data.inputIndustry,
+                    companyId:that.data.companyId
+                },
+                header: {
+                    'content-type': 'application/json' // 默认值
+                },
+                success: function(res) {
+                    console.log(res);
+                    if(res.statusCode==200){
+                        console.log(res.data)
+                        if(res.data.success==0){
+                            console.log('保存陈宫')
+                            console.log(res.data)
+                            console.log('保存陈宫')
+                            that.setData({
+                                overflowHiden:false
+                            })
+                            wx.showLoading({
+                                title:'新增成功',
+                                mask:true
+                            })
+                            setTimeout(function(){
+                                wx.navigateBack({
+                                    detail:1
+                                })
+                            },1000)
+
+                        }else{
+                            wx.showToast({
+                                title: res.data.message,
+                                image:'/assets/images/icon/error-fff.png',
+                                duration: 2000
+                            })
+                        }
+                    }else{
+                        wx.showToast({
+                            title: '加载失败',
+                            image:'/assets/images/icon/error-fff.png',
+                            duration: 2000
+                        })
+                    }
+                },
+                fail(){
+                    wx.showToast({
+                        title: '加载失败',
+                        image:'/assets/images/icon/error-fff.png',
+                        duration: 2000
+                    })
+                },
+                complete(){
+
+                }
+            })
+        },
+        //增加新行业时候获取输入的数据
+        onInputindustryInputChange(e){
+            console.log(e.detail.value)
+            var str = e.detail.value;
+            this.setData({
+                inputIndustry:str
+            })
+        },
         onCancleClick() {
             this.setData({
                 showMask: false,

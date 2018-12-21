@@ -101,7 +101,12 @@
         "card/index",
         "institutionintr/index",
         "saveInstitutions/direction/index",
-        "saveInstitutions/stage/index"
+        "saveInstitutions/stage/index",
+        "saveInstitutions/coreTeam/index",
+        "saveInstitutions/idea/index",
+        "saveInstitutions/fundSize/index",
+        "saveInstitutions/case/index",
+        "addmen/editmen/index"
       ]
     }
   ],

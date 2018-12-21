@@ -104,89 +104,89 @@
         </view>
     </view>
   <!-- 我的公司列表 -->
-  <!--<view class="myCompany">-->
-      <!--<view class="mytitle">-->
-        <!--<view class="fl">-->
-          <!--<image class="listViewIcon" src="../../../assets/images/icon/icon-myCompany.png"></image>-->
-          <!--<text >我的公司</text>-->
-        <!--</view>-->
-        <!--&lt;!&ndash; <navigator class="addnavigator fr addCompany" url="../mine/addCompany/addCompany">-->
-        <!--增添-->
-        <!--<image class="addRow" src="../../../assets/images/icon/icon-arrow-right-blue.png"></image>-->
-        <!--</navigator>&ndash;&gt;-->
-      <!--</view>-->
-      <!--&lt;!&ndash; <scroll-view scroll-x > &ndash;&gt;-->
-        <!--&lt;!&ndash; <block wx:for="{{companyCard[swiperCurrent]}}"> &ndash;&gt;-->
-          <!--<template is="myenterpriseListcard" wx:if="{{companyCardInfo.id}}" data="{{companyCardInfo,iconList,isshare,isedit}}"></template>-->
+  <view class="myCompany">
+      <view class="mytitle">
+        <view class="fl">
+          <image class="listViewIcon" src="../../../assets/images/icon/icon-myCompany.png"></image>
+          <text >我的公司</text>
+        </view>
+        <!-- <navigator class="addnavigator fr addCompany" url="../mine/addCompany/addCompany">
+        增添
+        <image class="addRow" src="../../../assets/images/icon/icon-arrow-right-blue.png"></image>
+        </navigator>-->
+      </view>
+      <!-- <scroll-view scroll-x > -->
+        <!-- <block wx:for="{{companyCard[swiperCurrent]}}"> -->
+          <template is="myenterpriseListcard" wx:if="{{companyCardInfo.id}}" data="{{companyCardInfo,iconList,isshare,isedit}}"></template>
 
-          <!--&lt;!&ndash; <view class="scroll-block" wx:if="{{companyCardInfo.id}}" >-->
-            <!--<image class="myCompanyBg" src="{{companyCardInfo.companyTemplate}}"></image>-->
-            <!--<view class="block-header">-->
-              <!--<view class="fl" wx:if="{{companyCardInfo.isAuthentication==1}}">-->
-                <!--<image  src="../../../assets/images/icon/icon-authentication-yellow.png"></image>-->
-                <!--<text >商会认证</text>-->
-              <!--</view>-->
-              <!--<view class="companyShareWrap">-->
-                <!--<text bindtap="shareCompanyCard" data-item="{{companyCardInfo}}">分享</text>-->
-                <!--<text data-id="{{companyCardInfo.id}}" bindtap="goEditCompany">编辑</text>-->
-              <!--</view>-->
-            <!--</view>-->
-              <!--<view  data-can="can">-->
-                <!--<view class="block-1" bindtap='goCompanyDes' data-id="{{companyCardInfo.id}}" data-isuthentication="{{companyCardInfo.isAuthentication}}">-->
-                  <!--<view class="companyLogo">-->
-                      <!--<image wx:if="{{companyCardInfo.logo}}" src="{{companyCardInfo.logo}}"></image>-->
-                      <!--<view wx:else class="company-logo-text">{{companyCardInfo.textlogo}}</view>-->
-                  <!--</view>-->
-                  <!--<view class="detail">-->
-                    <!--<view class="name {{companyCardInfo.fontsize}}">-->
-                        <!--<text>{{companyCardInfo.name}}</text>-->
-                    <!--</view>-->
-                    <!--<view class="companytags">-->
-                      <!--<block wx:for="{{companyCardInfo.coTag}}" wx:for-item="item2">-->
-                        <!--<view class="tag {{item2.coTagType==2?'tag-green':''}} {{item2.coTagType==1?'tag-yellow':''}}">-->
-                          <!--<text> {{item2.coTagName}}</text>-->
-                        <!--</view>-->
-                      <!--</block>-->
-                    <!--</view>-->
-                  <!--</view>-->
-                <!--</view>-->
-                <!--<view class="block-2">-->
-                  <!--<view class="span">-->
-                    <!--<view>-->
-                      <!--法人代表-->
-                    <!--</view>-->
-                    <!--<view class="text">-->
-                      <!--{{companyCardInfo.legalPerson}}-->
-                    <!--</view>-->
-                    <!--<view class="line-view"></view>-->
-                  <!--</view>-->
-                  <!--<view class="span">-->
-                    <!--<view>-->
-                      <!--成立日期-->
-                    <!--</view>-->
-                    <!--<view class="text">-->
-                      <!--{{companyCardInfo.setUpTime}}-->
-                    <!--</view>-->
-                    <!--<view class="line-view"></view>-->
-                  <!--</view>-->
-                  <!--<view class="span" bindtap="goAddressDes" data-address="{{companyCardInfo.address}}">-->
-                    <!--<view>-->
-                      <!--地址-->
-                    <!--</view>-->
-                    <!--<view class="text">-->
-                      <!--{{companyCardInfo.address}}-->
-                    <!--</view>-->
-                  <!--</view>-->
-                <!--</view>-->
-              <!--</view>-->
-          <!--</view> &ndash;&gt;-->
-          <!--<view wx:else class="no-company-ploceholder no-company-ploceholder-hasbtn">-->
-            <!--<image src="../../../assets/images/mine/affiliated-company-bg.png"></image>-->
-            <!--<navigator wx:if="{{businessCard.length>=1}}" url="../addCompany/addCompany?cardid={{businessCard[swiperCurrent].id}}&companyName={{businessCard[swiperCurrent].companyName}}" class="no-company-button">立即关联</navigator>-->
-          <!--</view>-->
-        <!--&lt;!&ndash; </block> &ndash;&gt;-->
-      <!--&lt;!&ndash; </scroll-view> &ndash;&gt;-->
-    <!--</view>-->
+          <!-- <view class="scroll-block" wx:if="{{companyCardInfo.id}}" >
+            <image class="myCompanyBg" src="{{companyCardInfo.companyTemplate}}"></image>
+            <view class="block-header">
+              <view class="fl" wx:if="{{companyCardInfo.isAuthentication==1}}">
+                <image  src="../../../assets/images/icon/icon-authentication-yellow.png"></image>
+                <text >商会认证</text>
+              </view>
+              <view class="companyShareWrap">
+                <text bindtap="shareCompanyCard" data-item="{{companyCardInfo}}">分享</text>
+                <text data-id="{{companyCardInfo.id}}" bindtap="goEditCompany">编辑</text>
+              </view>
+            </view>
+              <view  data-can="can">
+                <view class="block-1" bindtap='goCompanyDes' data-id="{{companyCardInfo.id}}" data-isuthentication="{{companyCardInfo.isAuthentication}}">
+                  <view class="companyLogo">
+                      <image wx:if="{{companyCardInfo.logo}}" src="{{companyCardInfo.logo}}"></image>
+                      <view wx:else class="company-logo-text">{{companyCardInfo.textlogo}}</view>
+                  </view>
+                  <view class="detail">
+                    <view class="name {{companyCardInfo.fontsize}}">
+                        <text>{{companyCardInfo.name}}</text>
+                    </view>
+                    <view class="companytags">
+                      <block wx:for="{{companyCardInfo.coTag}}" wx:for-item="item2">
+                        <view class="tag {{item2.coTagType==2?'tag-green':''}} {{item2.coTagType==1?'tag-yellow':''}}">
+                          <text> {{item2.coTagName}}</text>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+                <view class="block-2">
+                  <view class="span">
+                    <view>
+                      法人代表
+                    </view>
+                    <view class="text">
+                      {{companyCardInfo.legalPerson}}
+                    </view>
+                    <view class="line-view"></view>
+                  </view>
+                  <view class="span">
+                    <view>
+                      成立日期
+                    </view>
+                    <view class="text">
+                      {{companyCardInfo.setUpTime}}
+                    </view>
+                    <view class="line-view"></view>
+                  </view>
+                  <view class="span" bindtap="goAddressDes" data-address="{{companyCardInfo.address}}">
+                    <view>
+                      地址
+                    </view>
+                    <view class="text">
+                      {{companyCardInfo.address}}
+                    </view>
+                  </view>
+                </view>
+              </view>
+          </view> -->
+          <view wx:else class="no-company-ploceholder no-company-ploceholder-hasbtn">
+            <image src="../../../assets/images/mine/affiliated-company-bg.png"></image>
+            <navigator wx:if="{{businessCard.length>=1}}" url="../addCompany/addCompany?cardid={{businessCard[swiperCurrent].id}}&companyName={{businessCard[swiperCurrent].companyName}}" class="no-company-button">立即关联</navigator>
+          </view>
+        <!-- </block> -->
+      <!-- </scroll-view> -->
+    </view>
 
 
   <view class="mineList clear">

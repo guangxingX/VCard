@@ -70,7 +70,7 @@ Component({
   methods: {
     onTapText() {
       wx.navigateTo({
-        url: '/component/edit-text/index',
+        url: '/pages/financial/component/edit-text/index',
       })
     },
     onTapImage(e) {
@@ -96,6 +96,7 @@ Component({
               sDtSecCode: max + 1
             });
             that.triggerEvent('setImageTextItem', that.data.ImageTextItem)
+
           }, (error) => {
             wx.showToast({
               title: "上传图片失败",
@@ -139,7 +140,7 @@ Component({
             that.triggerEvent('setImageTextItem', that.data.ImageTextItem)
           }, (error) => {
             wx.showToast({
-              title: "上传图片失败",
+              title: "上传视频失败",
               image: that.data.errimg,
               duration: 2000
             })
