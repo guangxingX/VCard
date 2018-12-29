@@ -95,6 +95,8 @@ Page({
           {name:'收入模式'},
           {name:'成本构成'},
       ],//商业模式
+      isEdit:false,// 默认不显示
+      userId:-1,//缓存userid
   },
   onGoNextPage() {
     let info = {}
@@ -259,21 +261,46 @@ Page({
       })
     })
   },
+    onTapDelete(){
+      programe.postprojectOperation(this.data.userId,pid,'3').then(res=>{
+          wx.showToast({
+            title: '删除成功'
 
+          })
+          wx.navigateBack()
+      })
+    },
+    onTapOut(){
+        programe.postprojectOperation(this.data.userId,pid,'2').then(res=>{
+            wx.showToast({
+                title: '下架成功'
+
+            })
+            wx.navigateBack()
+        })
+    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     //设置 下划线
     this._setNav();
-    // console.log(options.id)
+    console.log(options)
+      //projectId
     const id = options.id
+    if (options.userId) {
+      this.setData({
+        isEdit:true,
+          userId:options.userId
+      })
+        console.log(this.data.userId)
+    }
     this.setData({pid:id});
     //渲染数据
     this._randerOneData(id)
     // this._randerTwoData() //
     //   this._randerTreData()
-      this._randerFouData()
+    //   this._randerFouData()
   },
 
   /**
@@ -294,7 +321,9 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    this.setData({
+      isEdit:false
+    })
   },
 
   /**

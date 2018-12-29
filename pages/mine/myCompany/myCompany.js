@@ -1,10 +1,14 @@
 // pages/mine/myCompany/myCompany.js
+import {programemodule} from "../../../module/programe";
+const programe = new programemodule
 var app=getApp();
 Page({
   data: {
       currentPage:1,
       pageSize:10,
       companyList:[],
+      isEdit:false,//是否是编辑模式
+      pid:`-1`,//缓存projectId
   },
   goXiangqing:function(){
     wx.navigateTo({
@@ -79,8 +83,41 @@ Page({
    */
   onLoad: function (options) {
       this.getdata();
+      //2018.12.29 修改
+      console.log(options)
+    if (options.type =='edit'){
+      this.setData({
+        isEdit:true,
+          pid:options.pid,
+      })
+    }
   },
+  onTapItem(e){
 
+    // console.log(e.currentTarget.dataset)
+    let item = e.currentTarget.dataset
+    //item.id公司id
+    if(this.data.isEdit){
+      //如果是从编辑界面进来的
+      //走新编辑接口保存并返回
+        console.log(this.data.pid);
+        programe.setprojectintroduction_introEditProgress_companyName(this.data.pid,item.id).then(res=>{
+          wx.navigateBack()
+            wx.showToast({
+                title: '保存成功',
+                duration:2000,
+                icon:'none'
+
+            })
+        })
+
+    }else{
+      wx.navigateTo({
+        url: `../myCompanyDes/myCompanyDes?id=${item.id}`,
+      })
+    }
+  },
+  //新增结束//
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -4,7 +4,7 @@
     <view wx:if="{{type!=1}}">
         <w-card-headalone
                 cardinfo="{{myinfo.cardInfo}}"
-                projectNum="1"
+                projectNum="{{myinfo.projectNum}}"
         />
         <!--投资需求-->
         <view class="car-sub-container">
@@ -62,9 +62,15 @@
         <view class="car-sub-container">
             <w-head-programe name="客户案例" />
             <bolck wx:for="{{myinfo.case}}" wx:for-item="_i" wx:key="">
-                <!--//TODO 需要编写样式-->
-                {{_i.caseName}}
-                <w-show-imageText imgData="{{_i.imageText}}" />
+
+
+                <view class="case-header">
+                    {{_i.caseName}}
+                </view>
+                <bolck wx:for="{{_i.imageText}}" wx:for-item="__i" wx:key="">
+                    <w-show-imageText imgData="{{__i}}" />
+                </bolck>
+
             </bolck>
         </view>
     </view>
@@ -75,11 +81,11 @@
                      time="{{cardinfo.time}}"
                      address="{{cardinfo.address}}"
                      projectNum="{{cardinfo.projectNum}}"
-                     website="{{cardinfo.website}}"/>
+                     website="{{cardinfo.websites}}"/>
 <!--投资方向-->
         <view class="car-sub-container">
             <w-head-programe name="投资方向" />
-            <view class="tag-bd">
+            <view class="tag-bd-2">
                 <block wx:for="{{utils.commaArray(cardinfo.direction)}}" wx:key="" wx:for-item="_i">
                     <w-tag-programe name="{{_i}}" color="#09BB07" />
                 </block>
@@ -88,7 +94,7 @@
         <!--投资阶段-->
         <view class="car-sub-container">
             <w-head-programe name="投资阶段" />
-            <view class="tag-bd">
+            <view class="tag-bd-2">
                 <block wx:for="{{utils.commaArray(cardinfo.stage)}}" wx:key="" wx:for-item="_i">
                     <w-tag-programe name="{{_i}}" color="#E64340" />
                 </block>
@@ -104,7 +110,6 @@
         </view>
         <!--投资理念-->
         <!--基金规模-->
-        <!--客户案例-->
         <block wx:for="{{imgTextList}}" wx:for-item="item" wx:key="">
             <view class="car-sub-container">
                 <w-head-programe name="{{item.name}}" />
@@ -113,7 +118,21 @@
                 </bolck>
             </view>
         </block>
+        <!--客户案例-->
+        <view class="car-sub-container">
+            <w-head-programe name="客户案例" />
 
+            <block wx:for="{{mencase}}" wx:for-item="item" wx:key="">
+
+                    <view class="case-header">
+                        {{item.caseName}}
+                    </view>
+                    <bolck wx:for="{{item.imageText}}" wx:for-item="_i" wx:key="">
+                        <w-show-imageText imgData="{{_i}}" />
+                    </bolck>
+
+            </block>
+        </view>
     </view>
 </view>
 

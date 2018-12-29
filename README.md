@@ -2,6 +2,19 @@
 超级名片
 作为备份
 
+取DOM上的data数据
+e.currentTarget.dataset
+wx.showToast({
+                    title: '保存成功',
+                    duration:2000,
+                    icon:'none'
+
+                })
+
+this.triggerEvent('onTapSave', {
+          ImageTextItem: this.data._ImageTextItem
+        })
+
 import { lookforsbmodule } from "../../../../module/lookforsb";
 
 var lookforsb = new lookforsbmodule
@@ -11,6 +24,9 @@ this.triggerEvent('onTapSave', {
         })
 
 插件使用
+
+<w-multiple-choice name="投资模式" radioItems="{{radioItems}}" bind:onChangeChoice="onChoice" />
+
  <w-image defaultText="{{text}}" originalImage="{{info.logo}}" width="100%" height="100%" plugStyle="font-size: 28rpx;
   border-radius: 10rpx;"/>
 

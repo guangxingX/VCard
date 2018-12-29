@@ -11,6 +11,23 @@ Component({
      */
 
     properties: {
+        havedData:{
+            type:Array,
+            observer(newVal, oldVal, changedPath) {
+                // console.log(newVal);
+                this.setData({
+                    industryArr: newVal
+                })
+                // this._randerData()
+                //勾选已已经选中的
+                if(newVal!=[]){
+                    this._randerData(true)
+                }
+
+                // 属性被改变时执行的函数（可选），也可以写成在methods段中定义的方法名字符串, 如：'_propertyChange'
+                // 通常 newVal 就是新设置的数据， oldVal 是旧数据
+            }
+        },
         hidden:{
             type:Boolean,
             value:false
@@ -71,6 +88,58 @@ Component({
      * 组件的方法列表
      */
     methods: {
+        //选中已有的
+        _haveArr(){
+           let hotList =this.data.hotList
+            let industryArr = this.data.industryArr
+            let industryList = this.data.industryList
+            let newArr = []
+            var arr = this.data.selelcttempArr;
+            // console.log(hotList);
+            //选中热门的
+            // console.log(industryArr);
+            industryArr.forEach((item,index)=>{
+                if(item){
+                    hotList.forEach((_i,_index)=>{
+                        // console.log(item.id);
+                        if(_i.id == item.id){
+                            // console.log(hotList[_index]);
+                            hotList[_index].selected = true
+                            arr.push(item)
+                            industryArr[index] = null
+                        }
+                    })
+                }
+
+            })
+
+            //选中字母表的
+            let me = this
+            // console.log(industryList)
+            industryArr.forEach(item =>{
+                if(item){
+                    // console.log(item)
+                    industryList.forEach((_i,index)=>{
+                        // console.log(_i)
+                        if(_i.length>0){
+                            _i.forEach((__i,_index)=>{
+                                if(__i.id == item.id){
+                                    industryList[index][_index].selected = true
+                                    arr.push(item)
+                                }
+                            })
+                        }
+
+                    })
+                }
+            })
+            this.setData({
+                selelcttempArr: arr,
+                hotList,
+                industryList
+            })
+
+        },
         completeBack(e){
             this.triggerEvent('onTapSolo', this.data.selelcttempArr)
         },
@@ -123,15 +192,17 @@ Component({
                         }else{
                             wx.showToast({
                                 title: res.data.message,
-                                image:'/assets/images/icon/error-fff.png',
-                                duration: 2000
+                                // image:'/assets/images/icon/error-fff.png',
+                                duration: 2000,
+                                icon:'none'
                             })
                         }
                     }else{
                         wx.showToast({
                             title: '加载失败',
                             image:'/assets/images/icon/error-fff.png',
-                            duration: 2000
+                            duration: 2000,
+                            icon:'none'
                         })
                     }
                 },
@@ -139,7 +210,8 @@ Component({
                     wx.showToast({
                         title: '加载失败',
                         image:'/assets/images/icon/error-fff.png',
-                        duration: 2000
+                        duration: 2000,
+                        icon:'none'
                     })
                 },
                 complete(){
@@ -198,8 +270,9 @@ Component({
             } else if (this.data.limit && !item.selected) {
                 wx.showToast({
                     title: '最多五个行业！',
-                    image: '/assets/images/icon/error-fff.png',
+                    // image: '/assets/images/icon/error-fff.png',
                     duration: 2000,
+                    icon:'none',
                     mask: true
                 })
             } else {
@@ -285,7 +358,7 @@ Component({
                 var name = e.name;
                 // 行业非空数组，就是每个数组里面都已几个行业
                 var noEmpetyArr = [];
-
+                console.log('auto')
                 for (var a = 0; a < this.data.industryList.length; a++) {
                     if (this.data.industryList[a].length) {
                         noEmpetyArr.push(this.data.industryList[a])
@@ -304,21 +377,25 @@ Component({
                 // 在改组中的位置
                 itemindex = e.currentTarget.dataset.itemindex;
             }
+            console.log(item)
+            console.log(itemindex)
             // 在allDataArr中的位置
             var allDataArrIndex = this._getinabcIndex(item.pinyin);
             var temp = !item.selected;
             // 选样式
             if (!this.data.limit && !item.selected) {
                 var willChangeItem = "industryList[" + allDataArrIndex + "][" + itemindex + "].selected";
+                console.log(willChangeItem)
                 this.setData({
                     [willChangeItem]: true,
                 })
             } else if (this.data.limit && !item.selected) {
                 wx.showToast({
                     title: '最多五个行业！',
-                    image: '/assets/images/icon/error-fff.png',
+                    // image: '/assets/images/icon/error-fff.png',
                     duration: 2000,
-                    mask: true
+                    mask: true,
+                    icon:'none'
                 })
             } else {
                 // 取消选中
@@ -557,20 +634,25 @@ Component({
             })
         },
         /***滚动结束**/
-        _randerData() {
+        _randerData(fn) {
             // 去除出来的行业数据，以在此页面选中
-            wx.getStorage({
-                key: 'selectedIndustryArr',
-                success: function (res) {
-                    that.setData({
-                        industryArr: res.data
-                    })
-                }
-            })
-
-            this.data.industryArr.forEach(function (item, index, arr) {
-                this.onBindIndustry(item, 'auto')
-            })
+            // wx.getStorage({
+            //     key: 'selectedIndustryArr',
+            //     success: function (res) {
+            //         that.setData({
+            //             industryArr: res.data
+            //         })
+            //     }
+            // })
+            // console.log(this.properties.havedData)
+            // this.setData({
+            //     industryArr: this.properties.havedData
+            // })
+            let that = this
+            // this.data.industryArr.forEach(function (item, index, arr) {
+            //     that.__onBindIndustry(item, 'auto')
+            //     that.__onBindIndustryHost(item,'auto')
+            // })
 
             programe.getOldIndustryList().then(res => {
                 let industryData = res.industryList
@@ -607,6 +689,9 @@ Component({
                     newTagListArr,
 
                 })
+                if(fn){
+                    this._haveArr()
+                }
             })
 
         },

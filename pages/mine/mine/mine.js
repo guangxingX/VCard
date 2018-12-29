@@ -14,7 +14,7 @@ Page({
     pageSize:10,
     minelist:[
         // {"name":"我的名片","iconUrl":"../../../assets/images/icon/icon-myCar.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myCard/myCard'},
-        // {"name":"我的公司","iconUrl":"../../../assets/images/icon/icon-myCompany.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myCompany/myCompany'},
+        {"name":"我的公司","iconUrl":"../../../assets/images/icon/icon-myCompany.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myCompany/myCompany'},
         {"name":"我的资源","iconUrl":"../../../assets/images/icon/icon-myResource.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myResource/myResource'},
         {"name":"我的需求","iconUrl":"../../../assets/images/icon/icon-mySupply.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myDemand/myDemand'},
         {"name":"我的活动","iconUrl":"../../../assets/images/icon/icon-myActive.png","arrow":"../../../assets/images/icon/icon-arrow-right.png","url":'../myActive/myActive'},
@@ -36,7 +36,8 @@ Page({
     isedit:true,
     pageFrom:'mine',
     clickIndex:0,
-    autoplay:false
+    autoplay:false,
+      userid:-1,
   },
     onGotUserInfo: function(e) {
         var that=this
@@ -402,7 +403,9 @@ getMycarddata(){
     console.log(app.globalData.userInfo)
     console.log(app.globalData.userId)
     console.log('我的0-0用户信息')
-
+    self.setData({
+        userid:app.globalData.userId
+    })
     wx.getStorage({
       key:'cachAvatarUrl',
       success:function (res) {

@@ -1,0 +1,34 @@
+<!--pages/financial/savemencard/index.wxml-->
+<view class="rate-total">
+    项目信息完成{{totalProgress}}
+    <!-- TODO 暂时无-->
+    <!--<view>-->
+        <!--项目预览-->
+    <!--</view>-->
+</view>
+<view>
+    <!--<view class="company-header">-->
+        <!--我的公司-->
+        <!--<view>-->
+            <!--更换-->
+        <!--</view>-->
+    <!--</view>-->
+<w-card-headalone
+                cardinfo="{{cardInfo}}"
+                projectNum="1"
+                isShowFooter="{{flase}}"
+        />
+    <!--<view class="company">-->
+        <!--<template is="enterpriseListcard" data="{{item,iconList}}" />-->
+    <!--</view>-->
+
+</view>
+<block wx:for="{{items}}" wx:key="">
+    <w-edit-programme name="{{item.name}}" rate="{{item.rate}}" info="{{item.tip}}" must="{{item.must}}" bind:tap="{{item.fn}}">
+        <view slot="after" class="edit">
+            <!-- <text bind:tap="{{item.fn}}" data-handle="s">预览</text> -->
+            <!-- <text>|</text> -->
+            <!-- <text bind:tap="{{item.fn}}" data-handle="e">编辑</text> -->
+        </view>
+    </w-edit-programme>
+</block>

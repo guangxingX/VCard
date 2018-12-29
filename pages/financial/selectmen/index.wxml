@@ -1,7 +1,7 @@
 <!--pages/financial/selectmen/index.wxml-->
 <!-- <text>pages/financial/selectmen/index.wxml</text> -->
 <block wx:for="{{employeeList}}" wx:key="">
-    <w-link-c item="{{item}}"/>
+    <w-link-c item="{{item}}" data-iteminfo="{{item}}" bind:tap="onSelect"/>
 </block>
 
 <view class="fix-bottom">

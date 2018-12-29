@@ -8,9 +8,20 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    projectinfo: Object
+    projectinfo: Object,
+      isTag:{
+      type:Boolean,
+          value:true
+      },
+      isIcon:{
+      type:Boolean,
+          value: true,
+      },
+      userId:String,
   },
-
+    options: {
+        multipleSlots: true // 在组件定义时的选项中启用多slot支持
+    },
   /**
    * 组件的初始数据
    */

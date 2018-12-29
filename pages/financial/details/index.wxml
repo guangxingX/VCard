@@ -150,12 +150,20 @@
         </view>
       </view>
     </view>
-    <view class="bottom-btn weui-fff">
+    <view class="bottom-btn weui-fff" wx:if="{{!isEdit}}">
       <button class="btn-1" open-type="share">
         <image src="../image/share.png" /> 分享
       </button>
       <view class="btn-2" bind:tap="onGoNextPage">
         联系项目方
+      </view>
+    </view>
+    <view class="bottom-btn bar-bottom" wx:if="{{isEdit}}">
+      <view class="bottom-delete btn" bind:tap="onTapDelete">
+      删除
+      </view>
+      <view class="bottom-out btn" bind:tap="onTapOut">
+      下架
       </view>
     </view>
   </view>

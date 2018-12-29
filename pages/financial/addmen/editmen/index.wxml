@@ -2,12 +2,15 @@
 <view wx:if="{{!istextimg}}">
     <view class="container-edit ">
         <view class="right">
-            <image class="avatar" src="{{files[0]}}" bindtap="chooseImage"></image>
+            <image class="avatar" src="{{maininfo.logo}}" bindtap="chooseImage"></image>
         </view>
         <view class="left">
             <view class="item b-t">
                 <view class="item-name">姓名</view>
-                <input class="item-input" placeholder="请输入姓名"/>
+                <view class="item-input">
+                    {{maininfo.name}}
+                </view>
+                <!--<input class="item-input" placeholder="请输入姓名"/>-->
             </view>
             <view class="item">
                 <view class="item-name">
@@ -37,7 +40,10 @@
             <view class="weui-label">职位</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入职位"/>
+            <view class="weui-input">
+                {{maininfo.position}}
+            </view>
+            <!--<input class="weui-input" placeholder="请输入职位"/>-->
         </view>
     </view>
     <view bind:tap="onTaptextimg" class="from-input weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">

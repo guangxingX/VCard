@@ -10,7 +10,7 @@
             <view class="car-body">
                 <view class="mar-b-26"> 成立日期：{{time}}</view>
                 <view class="mar-b-26"> 地址：{{address}}</view>
-                <view> 官网:{{website}}</view>
+                <view> 官网：{{website}}</view>
             </view>
         </view>
         <view class="car-footer" bind:tap="onGoProject">

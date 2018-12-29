@@ -1,0 +1,4 @@
+/* pages/financial/note/index.wxss */
+page{
+    background: #EFEFF4;
+}

@@ -1,4 +1,6 @@
 // pages/financial/itemIntr/index.js
+import {programemodule} from "../../../module/programe";
+const programe = new programemodule
 Page({
 
   /**
@@ -7,11 +9,10 @@ Page({
   data: {
       items: [
           {
-              name:'公司介绍',
-              tip:'请详细的介绍您的公司？',
+              name:'增加联系人',
+              tip:'至少增加一个联系人',
               rate:'0',
-              must:true,
-              fn:'onTapintr'
+              fn:'onTapintrmen'
           },
           {
               name: '核心团队',
@@ -37,11 +38,22 @@ Page({
               rate: '0',
               fn:'onTapCase'
           },
-      ]
+      ],
+      pid:`-1`,//缓存pid
+      logo:'',//logo
+      title:'',//公司名字
+      Intro:'',//公司介绍
   },
-    onTapintr(e){
-
+    //点击了公司名称
+    onTapLogo(){
+        wx.navigateTo({
+            url: '/pages/mine/myCompany/myCompany?type=edit&&'+`pid=${this.data.pid}`
+        })
+    },
+    //点击联系人
+    onTapintrmen(e){
       console.log( e.currentTarget.dataset.handle)
+        if()
     },
     onTapTeam(e){
 
@@ -63,11 +75,37 @@ Page({
 
         console.log( e.currentTarget.dataset.handle)
     },
+
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      console.log(options)
+        //保存pid跳转传参
+      this.setData({
+          pid:options.pid
+      })
+      programe.getprojectintroduction_introEditProgress(options.pid).then(res=>{
+          console.log(res);
+          let introEdit = res.introEdit
+          console.log(introEdit);
+          console.log(introEdit.Intro);
+          let items= this.data.items
+          items[0].rate = introEdit.companyIntro||'0'
+          items[1].rate = introEdit.coreTeam||'0'
+          items[2].rate = introEdit.applyClient||'0'
+          items[3].rate = introEdit.value||'0'
+          items[4].rate = introEdit.case||'0'
+          this.setData({
+              logo:introEdit.logo,
+              Intro:introEdit.Intro,
+              title:introEdit.title,
+            items,
+          })
 
+      })
   },
 
   /**

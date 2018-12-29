@@ -98,3 +98,14 @@ button::after {content:" ";width:200%;height:200%;position:absolute;top:0;left:0
 /*名片夹*/
 .cardPackage{width: 208rpx;height:84rpx; background:#4b8eff;color:#fff;border-bottom-left-radius: 10rpx;border-top-left-radius: 10rpx;display:flex;align-items: center;justify-content: center;font-size: 30rpx;}
 .cardpackageimg{width: 36rpx;height: 30rpx;margin-right: 20rpx;}
+/*新增 2018。12。25*/
+.en-item-icon{
+  margin-top: 50%;
+  transform: translateY(-50%);
+  width: 55rpx;
+  height: 56rpx;
+}
+.m-10{
+  border-top: 20rpx solid #eee;
+  border-bottom: 20rpx solid #eee;
+}

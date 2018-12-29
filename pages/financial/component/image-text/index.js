@@ -22,6 +22,7 @@ Component({
         ImageTextItem: {
             type: Array,
             observer: function (newVal, oldVal, changedPath) {
+
                 this.setData(
                     {
                         _ImageTextItem: newVal
@@ -250,7 +251,8 @@ Component({
 
         },
         attached: function () {
-          console.log(this.data.movableViewPosition.className)
+            console.log(this.properties.ImageTextItem);
+            console.log(this.data.movableViewPosition.className)
             // 在组件实例进入页面节点树时执行
             this.setscroll()
         },

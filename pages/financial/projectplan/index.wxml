@@ -1,0 +1,126 @@
+<!--pages/financial/projectplan/index.wxml-->
+<view  class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="onTabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <image class="search-icon" src="image/search@financial.png">
+        </image>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+
+          <scroll-view class="weui-tab__content" style="height:100vh" scroll-y bindscrolltolower="onAddList" lower-threshold="100">
+            <block wx:for="{{projectList_1}}" wx:key="item">
+              <w-item-programme class="pro-item" projectinfo="{{item}}" isTag="{{flase}}" isIcon="{{flase}}" userId="{{id}}">
+
+                <view slot="footer" class="item-slot item-footer">
+
+                    <view >
+
+                    </view>
+                    <view class="share-bar">
+                      <view class="item" catch:tap="onEdit" data-userId="{{item.type}}" data-data="{{item}}">
+                        <image src="/assets/images/financial/edit.png"/>
+                        编辑
+                      </view>
+                      <!--TODO 转发-->
+                      <button open-type="share" class="item none" catch:tap="onShare">
+                        <image src="/assets/images/financial/share.png"/>
+                        分享
+                      </button>
+                    </view>
+
+
+                </view>
+              </w-item-programme>
+            </block>
+            <view class="noContent" wx:if="{{projectList.length==0}}">
+              <view>
+                <image class="noImage" src="/assets/images/mine/no-resource.png"></image>
+              </view>
+              <view class="noTextWrap">
+                <text class="noText"> 暂无项目</text>
+              </view>
+            </view>
+            <!--漏出fix-->
+            <view style="height:150rpx">
+
+            </view>
+            <view wx:if="{{currentPage==totalPage}}" class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+            </view>
+          </scroll-view>
+
+
+        </view>
+
+
+        <view hidden="{{activeIndex != 1}}">
+
+          <scroll-view class="weui-tab__content" style="height:100vh" scroll-y bindscrolltolower="onAddList" lower-threshold="100">
+            <block wx:for="{{projectList_2}}" wx:key="item">
+              <w-item-programme class="pro-item" projectinfo="{{item}}" isTag="{{flase}}" isIcon="{{flase}}" userId="{{id}}">
+
+                <view slot="footer" class="item-slot item-footer">
+
+                  <view >
+
+                  </view>
+                  <view class="share-bar">
+                    <view class="item" catch:tap="onEdit" data-type="{{item.type}}" data-data="{{item}}">
+                      <image src="/assets/images/financial/edit.png"/>
+                      编辑
+                    </view>
+                    <!--TODO 转发-->
+                    <button open-type="share" class="item none" catch:tap="onShare">
+                      <image src="/assets/images/financial/share.png"/>
+                      分享
+                    </button>
+                  </view>
+
+
+                </view>
+              </w-item-programme>
+            </block>
+            <view class="noContent" wx:if="{{projectList.length==0}}">
+              <view>
+                <image class="noImage" src="/assets/images/mine/no-resource.png"></image>
+              </view>
+              <view class="noTextWrap">
+                <text class="noText"> 暂无项目</text>
+              </view>
+            </view>
+            <!--漏出fix-->
+            <view style="height:150rpx">
+
+            </view>
+            <view wx:if="{{currentPage==totalPage}}" class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+            </view>
+          </scroll-view>
+
+
+
+
+        </view>
+
+
+
+
+
+
+        <view class="fix-btn-bottom">
+          <view bind:tap="onAddnewPlan">
+            增添
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

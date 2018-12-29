@@ -82,17 +82,43 @@ Page({
       //接口渲染数据
       totalProgress:'30'
   },
+    onPreshow(){
+
+      wx.navigateTo({
+        url: 'pages/financial/card/index'+`?id=${this.data.id}&&type=1`
+      })
+    },
     onTapItem_0(){
 
       wx.navigateTo({
         url: '/pages/financial/saveInstitutions/direction/index?'+`id=${this.data.id}`
       })
     }, //投资方向完成度
-    onTapItem_1(){}, //投资阶段完成度
-    onTapItem_2(){}, //核心团队完成度
-    onTapItem_3(){}, //ideaProgress
-    onTapItem_4(){}, //基金规模完成度
-    onTapItem_5(){},
+    onTapItem_1(){
+        wx.navigateTo({
+            url: '/pages/financial/saveInstitutions/stage/index?'+`id=${this.data.id}`
+        })
+    }, //投资阶段完成度
+    onTapItem_2(){
+        wx.navigateTo({
+            url: '/pages/financial/addmen/index?'+`id=${this.data.id}&&type=1`
+        })
+    }, //核心团队完成度
+    onTapItem_3(){
+        wx.navigateTo({
+            url: '/pages/financial/saveInstitutions/idea/index?'+`id=${this.data.id}`
+        })
+    }, //ideaProgress
+    onTapItem_4(){
+        wx.navigateTo({
+            url: '/pages/financial/saveInstitutions/fundSize/index?'+`id=${this.data.id}`
+        })
+    }, //基金规模完成度
+    onTapItem_5(){
+        wx.navigateTo({
+            url: '/pages/financial/saveInstitutions/case/index?'+`id=${this.data.id}`
+        })
+    },//客户案例
     onTapItem_6(){},
     onTapItem_7(){},
 
@@ -113,10 +139,11 @@ Page({
               items[3].rate = res.ideaProgress //投资理念完成度
               items[4].rate = res.fundSizeProgress //基金规模完成度
               items[5].rate = res.caseProgress //客户案例完成度
-
+              let item = res.companyInfo
               this.setData({
                   totalProgress,
                   items,
+                  item,
               })
 
           })

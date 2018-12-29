@@ -1,18 +1,47 @@
-// pages/financial/saveInstitutions/fundSize/index.js
+// pages/financial/saveInstitutions/idea/index.js
+import { lookforsbmodule } from "../../../../module/lookforsb";
+var lookforsb = new lookforsbmodule
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      ImageTextItem:[],//图文的信息
+      id:'-1'
   },
+    onTapSave(e){
+        console.log(e.detail.ImageTextItem);
+        // console.log(this.data.ImageTextItem);
+        console.log(1)
+        this.setData({
+            ImageTextItem:e.detail.ImageTextItem,
+        })
+        lookforsb.setinstitutionsImageText_money(this.data.id,this.data.ImageTextItem).then(res=>{
 
+            wx.navigateBack({})
+            wx.showToast({
+              title: '保存成功'
+            })
+        })
+    },
+    onTapView(){
+        console.log(2)
+    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      console.log(options)
+      this.setData({
+          id:options.id
+      })
+      lookforsb.getinstitutionsImageText_money(options.id).then(res=>{
+          console.log(res);
+          this.setData({
+              ImageTextItem:res.imageText
+          })
+      })
   },
 
   /**

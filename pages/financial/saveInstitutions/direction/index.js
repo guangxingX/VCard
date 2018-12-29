@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+id:'-1',//缓存id
+      havedData:[],//已经选中的
   },
 
   /**
@@ -20,12 +21,20 @@ Page({
           industryList.push(item.id)
       })
       industryList=industryList.join(',')
-      lookforsb.postsaveInstitutions('1','1',{industryList})
+      lookforsb.postsaveInstitutions(this.data.id,'1',{industryList}).then(res=>{
+          wx.navigateBack()
+      })
   },
   onLoad: function (options) {
       console.log(options.id);
+      this.setData({
+          id:options.id,
+      })
       lookforsb.getinstitutionsDirection(options.id).then(res=>{
           console.log(res);
+          this.setData({
+              havedData:res.industryList,
+          })
       })
 
   },

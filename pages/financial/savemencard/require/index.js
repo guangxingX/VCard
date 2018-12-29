@@ -1,0 +1,200 @@
+// pages/financial/savemencard/require/index.js
+import {lookforsbmodule} from "../../../../module/lookforsb";
+
+const lookforsb = new lookforsbmodule
+Page({
+
+    /**
+     * 页面的初始数据
+     */
+    data: {
+        isShowfield:false,
+        fileName:'', //投资领域
+        stageName:'', //投资阶段
+        fundName:'', //投资金额
+        radioItems: [
+            {name: '债权', value: '债权', checked: true},
+            {name: '股权', value: '股权',}
+        ],
+        array: ['100w', '500w', '5000w', '5亿'],
+        fileData:[],//缓存投资领域
+        id:0,//缓存id
+        stageData:[],//缓存投资阶段
+        modelData:'债权'  ,//缓存投资模式
+        amountData:'',//缓存金额
+        havedData:[],//已经选择的数据
+    },
+    bindPickerChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        console.log(this.data.array[e.detail.value]);
+        this.setData({
+            fundName:this.data.array[e.detail.value]
+        })
+    },
+    onTapindustry(e){
+        console.log(e.detail);
+       let str =[]
+        e.detail.forEach(item=>{
+            str.push(item.name)
+        })
+        str= str.join(',')
+        this.setData({
+            isShowfield:false,
+            fileName:str,
+            fileData:e.detail,
+        })
+
+    },
+    onChoice(e){
+        console.log(e.detail);
+        this.setData({
+            modelData:e.detail
+        })
+
+    },
+    onTip1(){
+        console.log(1)
+        this.setData({
+            isShowfield:true
+        })
+    },
+    onTip2(){
+        wx.navigateTo({
+          url: 'stage/index?'+`id=${this.data.id}`
+        })
+    },
+    onSave(){
+        console.log(this.data.id);
+
+        console.log(this.data.fileData);
+        let fileid = lookforsb.arraycomma(this.data.fileData,'id')
+
+        console.log(fileid);
+
+        // console.log(this.data.stageName);
+      let stageid = this.data.stageData.checkboxValue
+
+
+        stageid = stageid.join(',')
+        console.log(stageid);
+
+        console.log(this.data.fundName);
+
+        console.log(this.data.modelData);
+
+
+
+
+
+        lookforsb.setinvestmentDemand(this.data.id,
+            fileid,
+            stageid,
+            this.data.fundName,
+            this.data.modelData
+            ).then(res=>{
+                setTimeout(()=>{
+                    wx.showToast({
+                        title: '保存成功'
+                    })
+                },200)
+            // wx.navigateBack();
+        })
+
+    },
+    /**
+     * 生命周期函数--监听页面加载
+     */
+
+    onLoad: function (options) {
+        console.log(options);
+        this.setData({
+            id:options.id,
+        })
+        lookforsb.getinvestmentDemand(options.id).then(res => {
+            console.log(res);
+            
+            let model =  this.data.radioItems
+            if(res.model == '股权'){
+                // console.log('股权')
+                model[0].checked=false
+                model[1].checked=true
+            }
+          let stageName = [] 
+          res.stage.selectStageList.forEach(i=>{
+            stageName.push(i.stage_name)
+          })
+          
+          stageName =stageName.join(',')
+          // TODO 为测验
+          let fileName = []
+          res.fieldList.forEach(i=>{
+            fileName.push(i.fieldName)
+          })
+          fileName = fileName.join(',')
+          let havedData =[]
+          res.fieldList.forEach(i=>{
+            havedData.push({
+              name:i.fileName,
+              id:i.id
+            })
+          })
+            // TODO 领域id需要展示 以及设计已选
+            this.setData({
+                fileName:res.field,
+                stageName,
+                fundName:res.amount,
+                radioItems:model,
+              havedData,
+            })
+        })
+    },
+
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload: function () {
+
+    },
+
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh: function () {
+
+    },
+
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom: function () {
+
+    },
+
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function () {
+
+    }
+})

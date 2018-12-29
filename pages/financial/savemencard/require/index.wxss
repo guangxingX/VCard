@@ -1,0 +1,8 @@
+/* pages/financial/savemencard/require/index.wxss */
+@import "/style/weui.wxss";
+.t-m{
+    margin-top: 172rpx;
+}
+.b-t{
+    border-top: 1rpx solid #e5e5e5;
+}

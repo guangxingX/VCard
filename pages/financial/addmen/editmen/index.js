@@ -14,12 +14,23 @@ Page({
       avatar:[],
       ImageTextItem:[],
       savePreson:[],
-      istextimg:false
+      istextimg:false,
+      maininfo:{}, //缓存id 与 类型
+      mold:'',//是否是展示还是编辑
+      info:{} //展示触发渲染已经禁用部分编辑功能
   },
     onTapSaveAll(){
+        lookforsb.setsaveCoreTeam(
+            this.data.maininfo.cardId,
+            this.data.maininfo.userId,
+            this.data.maininfo.id,
+            this.data.ImageTextItem
+        ).then(res=>{
 
+        })
     },
     onTaptextimg(){
+      this._randerImageTextItem()
         this.setData({
             istextimg:true
         })
@@ -38,6 +49,8 @@ Page({
         console.log(2)
     },
     radioChange: function (e) {
+      //不能修改
+      return
         console.log('radio发生change事件，携带value值为：', e.detail.value);
 
         var radioItems = this.data.radioItems;
@@ -50,6 +63,11 @@ Page({
         });
     },
     chooseImage: function (e) {
+        console.log(this.data.mold)
+        //如果不是编辑模式禁止操作
+        // 不能修改
+            return
+
         var that = this;
         wx.chooseImage({
             sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -63,13 +81,53 @@ Page({
             }
         })
     },
+    _isEdit(){
+
+    },
+  _randerImageTextItem(){
+    console.log(this.data.maininfo)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+      //1是机构2是项目
       console.log(options);
+      console.log(options.data);
+
+      let maininfo = JSON.parse(options.data)
+      let radioItems = this.data.radioItems
+
+      if(maininfo.gender == '女'){
+          radioItems[1].checked = true
+          radioItems[0].checked = false
+      }
+      let mold = options.mold
+      // let info = JSON.parse(options.info)
+      this.setData({
+          maininfo,
+          mold,
+          radioItems,
+      })
+        // TODO 需要区别是否是机构还是项目
       // let mydatas = JSON.parse(options.data)
       // console.log( mydatas);
+      switch (options.type) {
+          //机构
+          case '1':
+              lookforsb.getUserIntro(
+                  maininfo.cardId,
+                  maininfo.userId,
+                  maininfo.id,
+              ).then(res=>{
+                  this.setData({
+                      ImageTextItem:res.userIntro
+                  })
+              })
+              break;
+      }
+
   },
 
   /**

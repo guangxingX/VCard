@@ -106,7 +106,17 @@
         "saveInstitutions/idea/index",
         "saveInstitutions/fundSize/index",
         "saveInstitutions/case/index",
-        "addmen/editmen/index"
+        "addmen/editmen/index",
+        "saveInstitutions/case/addcase/index",
+        "savemencard/index",
+        "savemencard/require/index",
+        "savemencard/idea/index",
+        "savemencard/case/index",
+        "savemencard/require/stage/index",
+        "investmentplan/index",
+        "note/index",
+        "newinvest/index",
+        "projectplan/index"
       ]
     }
   ],

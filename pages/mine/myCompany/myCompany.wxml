@@ -2,7 +2,7 @@
   <!-- <button bindtap="goXiangqing">去公司详情</button> -->
   <view class="companyListWrap">
     <block wx:for="{{companyList}}">
-      <navigator url="../myCompanyDes/myCompanyDes?id={{item.id}}">
+      <view data-id="{{item.id}}" url="../myCompanyDes/myCompanyDes?id={{item.id}}" bind:tap="onTapItem">
         <view class="companyListItem">
           <view class="companyDesWrap clear">
             <view class="companyLogo-l">
@@ -33,11 +33,11 @@
             </view>
           </view>
         </view>
-      </navigator>
+      </view>
     </block>
   </view>
 </view>
 
- <view class="addCompany">
+ <view class="addCompany" wx:if="{{!isEdit}}">
   <button type="default" size="default" bindtap="goAddCompany" hover-class="custom-button-hover-class" formType="submit">添加公司</button>
 </view>

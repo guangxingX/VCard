@@ -1,0 +1,2 @@
+/* pages/financial/saveInstitutions/idea/index.wxss */
+@import "/pages/financial/addmen/editmen/index.wxss";

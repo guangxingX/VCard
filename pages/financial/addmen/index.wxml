@@ -4,6 +4,6 @@
               <w-link-d name="{{item.name}}" src="{{item.logo}}" sub="{{item}}" edit="{{true}}" bind:onTapEdit="onEdit"/>
             </bolck>
 
-<button class='b-b' bind:onTapEdit="onTapAdd">
+<button class='b-b' bind:tap="onTapAdd">
   增添
 </button>

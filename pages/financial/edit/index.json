@@ -3,6 +3,8 @@
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "项目编辑",
   "usingComponents": {
-    "w-edit-programme": "/pages/financial/component/programe/edit-m/index"
+    "w-edit-programme": "/pages/financial/component/programe/edit-m/index",
+      "w-select": "/component/select/index"
+
   }
 }

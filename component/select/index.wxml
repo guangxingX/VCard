@@ -39,6 +39,12 @@
                 </view>
             </view>
         </view>
+        <!--弹窗加高-->
+        <view
+
+                hidden="{{selelcttempArr.length==0}}" style="height: 400rpx">
+
+        </view>
     </scroll-view>
     <!--pop-->
     <!--添加pop-->
@@ -68,6 +74,7 @@
         </view>
     </block>
     <!-- 确定按钮 -->
+
 
     <view
 

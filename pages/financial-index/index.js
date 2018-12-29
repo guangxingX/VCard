@@ -54,6 +54,7 @@ Page({
         })
         this._randerlookforsbData(1,this.data.type,this.data.fieldId,true)
     },
+
     onShowtapindustry(e){
         this.setData({
             showtapindustry:true,
@@ -86,25 +87,32 @@ Page({
             }
 
             this.setData({
-                lookforList:list
+                lookforList:list,
+                totalPageL: res.totalPageSize //重置总page
+          
             })
         })
     },
-    onBindChange(e){
-        const val = e.detail.value
-        // console.log(val)
-        this.setData({
-            typename:this.data.array[val],
-            type:val
-
-        })
-        this._randerlookforsbData(this.data.currentPageL,this.data.type,this.data.fieldId,true)
-
-    },
+    
     onShowPicker(){
 
     },
     /***找项目****/
+  onBindChange(e) {
+    const val = e.detail.value
+    // console.log(val)
+    this.setData({
+      typename: this.data.array[val],
+      type: val
+
+    })
+    //重置为1
+    this.setData({
+      currentPageL:1,
+    })
+    this._randerlookforsbData(this.data.currentPageL, this.data.type, this.data.fieldId, true)
+
+  },
     onTapAddBtn() {
         wx.navigateTo({
             url: '/pages/financial/edit/index',
@@ -202,7 +210,8 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
-
+      //隐藏领域
+      this.setData({showtapindustry:false})
     },
 
     /**

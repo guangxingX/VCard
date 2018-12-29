@@ -13,23 +13,31 @@ Page({
           position:'核心投资经纪人',
           intro:'跨国企业寻合作，资方齐抛橄榄枝（投第317\n' +
               '期VIP投资发展沙龙成功举功举功举功举...',
-      }]
+      }],
+      options:{} //缓存options
   },
   onTapAdd(e){
-      console.log(e.detail);
+      let data = JSON.stringify(this.data.options)
+      wx.navigateTo({
+        url: '../selectmen/index?'+`data=${data}&&type=${this.options.type}`
+      })
+
   },
     onEdit(e){
         console.log(e.detail)
        let data= JSON.stringify(e.detail)
         wx.navigateTo({
-          url: 'editmen/index'+'?' +'data='+ data ,
+          url: 'editmen/index'+'?' +'data='+ data +`&&mold=edit&&type=${this.options.type}`,
         })
     },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.type)
+    console.log(options)
+    this.setData({
+        options:options
+    })
     switch (options.type) {
         //机构
         case '1':

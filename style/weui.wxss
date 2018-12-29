@@ -101,3 +101,11 @@ weui
   border-radius:8rpx;
   color : #fff;
 }
+.fix-bottom-btn{
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  line-height:111rpx ;
+  height: 111rpx;
+  text-align: center;
+}

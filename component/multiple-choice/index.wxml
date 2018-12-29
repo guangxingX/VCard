@@ -1,0 +1,16 @@
+<!--component/multiple-choice/index.wxml-->
+<view class="item">
+  <view class="item-name">
+    {{name}}
+  </view>
+  <radio-group class="select-box item-input" bindchange="radioChange">
+    <label class="box-item " wx:for="{{radioItems}}" wx:key="value">
+      <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+      <view class="weui-cell__hd weui-check__hd_in-checkbox">
+        <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+        <icon class="weui-icon-checkbox_success" color="#3073E3" type="success" size="23" wx:if="{{item.checked}}"></icon>
+      </view>
+      <view class="weui-cell__bd">{{item.name}}</view>
+    </label>
+  </radio-group>
+</view>

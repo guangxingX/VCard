@@ -16,24 +16,49 @@ Page({
         mobile:'15801076209',
         email:'wanglu@hopechina.cc'
     },
-      employeeList:[]
+      employeeList:[],
+      options: {} // 缓存对象
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-      lookforsb.getcompanyEmployee(options.id).then(res => {
-
-          this.setData({
-              employeeList:res.employeeList
-          })
-          let len = this.data.employeeList.length
-
-          wx.setNavigationBarTitle({
-              title: `选择成员（共${len}人）`
-          })
+  onSelect(e){
+      console.log(e.currentTarget.dataset.iteminfo);
+      let data = JSON.stringify(this.data.options)
+      let info = JSON.stringify(e.currentTarget.dataset.iteminfo)
+      wx.navigateTo({
+        url: '../addmen/editmen/index?'+`data=${data}&&mold='show'&&info=${info}`
       })
+
+  },
+  onLoad: function (options) {
+      console.log(options)
+      options = JSON.parse(options.data)
+      console.log(options)
+      this.setData({
+          options,
+      })
+      console.log(options.type)
+
+      switch (options.type) {
+          case '1':
+              lookforsb.getcompanyEmployee(options.id).then(res => {
+                  console.log(res)
+                  this.setData({
+                      employeeList:res.employeeList
+                  })
+                  let len = this.data.employeeList.length
+
+                  wx.setNavigationBarTitle({
+                      title: `选择成员（共${len}人）`,
+                      icon:'none'
+                  })
+              })
+              break;
+
+      }
+
 
   }
   ,

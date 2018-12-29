@@ -1,4 +1,6 @@
 // pages/financial/edit/index.js
+import {programemodule} from "../../../module/programe";
+const programe = new programemodule
 Page({
 
   /**
@@ -40,41 +42,142 @@ Page({
         rate: '0',
         fn:'onTapBusiness'
       },
-    ]
+    ],
+      totalRate:'0',
+      isNew:false,//判断是否新建并禁用功能
+      id:'-1',//缓存Userid
+      pid:'-1',//缓存projectId
+      title:'',//项目名称
+      Intro:[],//项目介绍
   },
+    //点击项目介绍
   onTapintr(){
+    if(this.data.isNew){
+      wx.showToast({
+        title: '请先创建项目名称',
+          icon:'none'
+      })
+      return
+    }
+    wx.navigateTo({
+      url: '/pages/financial/itemIntr/index?pid='+`${this.data.pid}`
+    })
     console.log('onTapintr')
   },
+    //点击融资计划
   onTapPlan(){
+      if(this.data.isNew){
+          wx.showToast({
+              title: '请先创建项目名称',
+              icon:'none'
+          })
+          return
+      }
     console.log('onTapPlan')
   },
+    // 点击上传视频
   onTapVideo(){
+      if(this.data.isNew){
+          wx.showToast({
+              title: '请先创建项目名称',
+              icon:'none'
+          })
+          return
+      }
     console.log('onTapVideo')
   },
+    //点击商业储备
   onTapReso(){
+      if(this.data.isNew){
+          wx.showToast({
+              title: '请先创建项目名称',
+              icon:'none'
+          })
+          return
+      }
     console.log('onTapReso')
   },
+    //点击商业模式
   onTapBusiness(){
+      if(this.data.isNew){
+          wx.showToast({
+              title: '请先创建项目名称',
+              icon:'none'
+          })
+          return
+      }
     console.log('onTapBusiness')
   },
   onTapPreShow(){
     console.log('onTapPreShow')
   },
+
+    //点击项目名称
+
   onTapLogo(){
-    wx.navigateTo({
-      url: '/pages/financial/projectinfo/index',
-    })
-    console.log('onTapLogo')
+    if(this.data.isNew){
+        wx.navigateTo({
+            url: '/pages/financial/projectinfo/index?'
+                +`id=${this.data.id}&&type=new`
+        })
+    }else {
+        let Intro =JSON.stringify(this.data.Intro)
+        wx.navigateTo({
+            url: '/pages/financial/projectinfo/index?'
+    //id是userid
+                +`id=${this.data.id}&&Intro=${Intro}&&title=${this.data.title}&&logo=${this.data.logo}&&pid=${this.data.pid}`,
+        })
+    }
+
+    // console.log('onTapLogo')
   },
   showTopTips(){
 
   },
+  _getinfoData(){
+    //需要传projectId
+      programe.getsearchProgress(this.data.pid,'1').then(res=>{
+        // console.log(res)
+          let projectEdit =   res.projectEdit
+          let items = this.data.items
+          items[0].rate = projectEdit.projectIntro
+          items[1].rate = projectEdit.financing
+          items[2].rate = projectEdit.video
+          items[3].rate = projectEdit.resource
+          items[4].rate = projectEdit.business
 
+          this.setData({
+              items,
+              totalRate:projectEdit.totalProgress,
+              logo:projectEdit.logo,
+              Intro:projectEdit.Intro,
+              title:projectEdit.title,
+
+          })
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      console.log(options);
+      //如果是新建则执行新建逻辑
+      if(options.type=='new'){
+        this.setData({
+            isNew:true
+        })
+      }else {
+        this.setData({
+            pid:options.pid
+        })
+        //需要载入百分比
+          this._getinfoData()
 
+      }
+      //缓存userId
+      this.setData({
+          id:options.id
+      })
   },
 
   /**
@@ -88,7 +191,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    //加载百分比
+      if(!this.data.isNew){
+        this._getinfoData()
+      }
+      console.log(this.data.pid);
   },
 
   /**

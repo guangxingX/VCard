@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 28,
+			"current": 14,
 			"list": [
 				{
 					"id": -1,
@@ -100,18 +100,6 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "test",
-					"pathName": "pages/test/test",
-					"query": ""
-				},
-				{
-					"id": 11,
-					"name": "component",
-					"pathName": "pages/financial/component/image-text/index",
-					"query": ""
-				},
-				{
 					"id": 12,
 					"name": "financialindex",
 					"pathName": "pages/financial-index/index",
@@ -130,16 +118,18 @@
 					"query": "info={\"companyname\":\"木艺有限公司\",\"projectname\":\"测试项目\",\"projectintro\":\"项目基本介绍\",\"logo\":\"https://oe75tqwfd.qnssl.com/QQ%E5%9B%BE%E7%89%8720171201205223.png\",\"legalPerson\":\"陈华量\",\"amount\":\"100W-200W·A伦·上海\"}"
 				},
 				{
-					"id": 15,
+					"id": 13,
 					"name": "edit",
 					"pathName": "pages/financial/edit/index",
-					"query": ""
+					"query": "id=90&&pid=35",
+					"scene": "1011"
 				},
 				{
-					"id": -1,
+					"id": 14,
 					"name": "itemIntr",
 					"pathName": "pages/financial/itemIntr/index",
-					"query": ""
+					"query": "pid=35",
+					"scene": "1011"
 				},
 				{
 					"id": 17,
@@ -152,14 +142,15 @@
 					"id": 18,
 					"name": "selectmen",
 					"pathName": "pages/financial/selectmen/index",
-					"query": "id=1",
+					"query": "data={\"id\":\"1\",\"type\":\"1\"}",
 					"scene": "1011"
 				},
 				{
-					"id": 19,
+					"id": 17,
 					"name": "projectinfo",
 					"pathName": "pages/financial/projectinfo/index",
-					"query": ""
+					"query": "id=90",
+					"scene": "1011"
 				},
 				{
 					"id": 21,
@@ -181,16 +172,16 @@
 				},
 				{
 					"id": 23,
-					"name": "card",
+					"name": "showcard",
 					"pathName": "pages/financial/card/index",
-					"query": "id=1&&type=1",
+					"query": "id=164&&type=2",
 					"scene": "1011"
 				},
 				{
 					"id": 24,
-					"name": "institutionintr",
+					"name": "editinstitutionintr",
 					"pathName": "pages/financial/institutionintr/index",
-					"query": "id=1",
+					"query": "id=174",
 					"scene": "1011"
 				},
 				{
@@ -201,9 +192,9 @@
 					"scene": "1011"
 				},
 				{
-					"id": -1,
+					"id": 26,
 					"name": "direction",
-					"pathName": "pages/financial/saveInstitutions/direction/index",
+					"pathName": "pages/financial/saveInstitutions/idea/index",
 					"query": "id=1",
 					"scene": "1011"
 				},
@@ -219,6 +210,83 @@
 					"name": "editmen",
 					"pathName": "pages/financial/addmen/editmen/index",
 					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "idea",
+					"pathName": "pages/financial/saveInstitutions/idea/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "fundSize",
+					"pathName": "pages/financial/saveInstitutions/fundSize/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 31,
+					"name": "case",
+					"pathName": "pages/financial/saveInstitutions/case/index",
+					"query": "id=164",
+					"scene": "1011"
+				},
+				{
+					"id": 32,
+					"name": "addcase",
+					"pathName": "pages/financial/saveInstitutions/case/addcase/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 33,
+					"name": "savemencard",
+					"pathName": "pages/financial/savemencard/index",
+					"query": "id=164",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "require",
+					"pathName": "pages/financial/savemencard/require/index",
+					"query": "id=164",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "menstage",
+					"pathName": "pages/financial/savemencard/require/stage/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 36,
+					"name": "investmentplan",
+					"pathName": "pages/financial/investmentplan/index",
+					"query": "id=3",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "note",
+					"pathName": "pages/financial/note/index",
+					"query": "id=164",
+					"scene": "1011"
+				},
+				{
+					"id": 38,
+					"name": "newinvest",
+					"pathName": "pages/financial/newinvest/index",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 37,
+					"name": "projectplan",
+					"pathName": "pages/financial/projectplan/index",
+					"query": "id=90",
 					"scene": "1011"
 				}
 			]

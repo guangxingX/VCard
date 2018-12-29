@@ -12,7 +12,7 @@
                 <view class="weui-media-box__title">
                     {{utils.defaultStyle(lookforitem.name)}}
                 </view>
-                <view wx:if="{{lookforitem.type==2}}">
+                <view class="position" wx:if="{{lookforitem.type==2}}">
                     {{utils.defaultStyle(lookforitem.position)}}
                 </view>
             </view>
@@ -42,7 +42,7 @@
             </view>
         </view>
     </view>
-    <view class="footerbar">
+    <view class="footerbar" wx:if="{{isShowFooter}}">
         <view>
             收到{{utils.defaultStyle(lookforitem.projectNum)}}项目
         </view>
@@ -51,4 +51,5 @@
             提交项目
         </view>
     </view>
+    <slot name="footer"></slot>
 </view>

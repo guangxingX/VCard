@@ -32,3 +32,6 @@ padding-bottom: 28rpx;
 .p-10{
   padding-bottom: 40rpx;
 }
+.selection-block{
+  background: #fff;
+}

@@ -3,4 +3,5 @@
           bind:onTapSolo="onTapindustry"
           limitNum="{{5}}"
           haveAddbar="{{false}}"
+          havedData="{{havedData}}"
           />

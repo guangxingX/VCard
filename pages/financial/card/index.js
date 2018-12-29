@@ -8,6 +8,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        id:'-1',//缓存id
         item: {},
         iconList: {
             photoWhite: "/assets/images/icon/icon-phone.png",
@@ -42,17 +43,18 @@ Page({
             {
                 name: '基金规模'
             },
-            {
-                name: '客户案例'
-            }
+
         ],
+        mencase:{},
+
         myinfo:{},//个人简介
 
     },
     onSendBook() {
 
     },
-    _randerBData(id) {
+    _randerCompanyData(id) {
+        //投资机构名片
         lookforsb.getinstitutionsCard(
             id
         ).then(res => {
@@ -60,21 +62,27 @@ Page({
             let imgTextList = this.data.imgTextList
             imgTextList[0].data = res.idea
             imgTextList[1].data = res.fundSize
-            imgTextList[2].data = res.case
+            let mencase = res.case
 
             this.setData({
                 cardinfo: res,
                 imgTextList,
+                mencase,
             })
         }).catch(e=>{
             console.log(e)
         })
     },
-    _randerCData(id){
+
+    _randermenData(id){
+        // 投资个人名片
         lookforsb.getinvestorsCard(id).then(res=>{
             console.log(res);
             this.setData({
                 myinfo:res,
+            })
+            wx.setNavigationBarTitle({
+                title:res.name+'的投资名片'
             })
         }).catch(e=>{
             //重置为空
@@ -91,21 +99,25 @@ Page({
         console.log(options)
 
         this.setData({
-            type: options.type
+            type: options.type,
+            id:options.id
         })
         let title = ''
         //2是人1是公司
         if (options.type == 2) {
-            title = options.name
-            this._randerBData(options.id)
+          console.log('人')
+
+            this._randermenData(options.id)
 
         } else {
-            title = options.name+'的投资名片'
-            this._randerCData(options.id)
+            console.log('机构');
+
+            this._randerCompanyData(options.id)
         }
-        wx.setNavigationBarTitle({
-            title:title
-        })
+
+        // wx.setNavigationBarTitle({
+        //     title:title
+        // })
     },
 
     /**

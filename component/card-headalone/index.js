@@ -6,6 +6,11 @@ Component({
   properties: {
         cardinfo:Object,
       projectNum:String,
+      isShowFooter:{
+            type:Boolean,
+          value:true
+      }
+
   },
 
   /**

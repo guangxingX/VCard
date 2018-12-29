@@ -1,0 +1,3 @@
+<!--pages/financial/savemencard/require/stage/index.wxml-->
+<w-check-multi bind:onTapSave = "onTapSave"
+               checkboxItems="{{checkboxItems}}"/>

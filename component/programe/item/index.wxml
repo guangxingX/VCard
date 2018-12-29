@@ -2,7 +2,7 @@
 <view class="bottom">
   <view class="weui-panel weui-panel_access">
     <view class="weui-panel__bd">
-      <navigator url="/pages/financial/details/index?id={{projectinfo.projectId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator url="/pages/financial/details/index?id={{projectinfo.projectId}}&&userId={{userId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
         <w-image defaultText="{{text}}" originalImage="{{info.logo}}" width="100%" height="100%"/>
           <!-- <image class="weui-media-box__thumb" src="{{info.logo}}" /> -->
@@ -14,7 +14,7 @@
            {{info.name}}
           </view>
 
-            <view class="status title font24" bindtap="onAddList">
+            <view class="status title font24" bindtap="onAddList" wx:if="{{isIcon}}">
               {{status}}
             </view>
           </view>
@@ -22,7 +22,7 @@
           <view class="subtitle">
             {{info.amount}}{{info.phase?'·':''}}{{info.phase}}{{info.city?'·':''}}{{info.city}}
           </view>
-          <view class="tag-bar">
+          <view class="tag-bar" wx:if="{{isTag}}">
             <view class="tag" wx:for="{{tag}}" wx:key="this_tag">
               {{item}}
             </view>
@@ -31,4 +31,5 @@
       </navigator>
     </view>
   </view>
+  <slot name="footer"></slot>
 </view>

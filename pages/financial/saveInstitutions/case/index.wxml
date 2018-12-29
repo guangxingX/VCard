@@ -1,2 +1,19 @@
-<!--pages/financial/saveInstitutions/case/index.wxml-->
-<text>pages/financial/saveInstitutions/case/index.wxml</text>
+<!--pages/financial/saveInstitutions/idea/index.wxml-->
+
+<wxs module="kit">
+
+</wxs>
+<view>
+    <view class="weui-cells weui-cells_show">
+        <block wx:for="{{mycase}}" wx:for-item="i" wx:key="*this">
+            <view bind:tap = "onEdit" data-index="{{index}}" data-item="{{i}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">{{i.caseName?i.caseName:'暂无标题'}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+        </block>
+    </view>
+
+        <view class="addNew" bind:tap="onAddNew">
+            增添
+        </view>
+</view>

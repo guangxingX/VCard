@@ -1,1 +1,16 @@
-/* pages/financial/saveInstitutions/case/index.wxss */
+/* pages/financial/saveInstitutions/idea/index.wxss */
+@import "/style/weui.wxss";
+.addNew{
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    height:88rpx;
+    background:rgba(48,115,227,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:32rpx;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+
+}

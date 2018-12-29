@@ -1,0 +1,24 @@
+/* component/multiple-choice/index.wxss */
+@import "/style/weui.wxss";
+.item{
+    height:88rpx ;
+    border-bottom: 1rpx solid #e5e5e5;
+    display: flex;
+    padding-left:30rpx;
+    padding-right: 33rpx;
+   align-items: center;
+    justify-content: space-between;
+
+}
+.item-input{
+    display: flex;
+}
+.box-item{
+    display: flex;
+    font-size:34rpx;
+    font-weight:400;
+    color:rgba(108,108,108,1);
+}
+.box-item:nth-child(1){
+    margin-right: 47rpx;
+}
