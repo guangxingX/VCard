@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 14,
+			"current": 15,
 			"list": [
 				{
 					"id": -1,
@@ -132,10 +132,10 @@
 					"scene": "1011"
 				},
 				{
-					"id": 17,
-					"name": "addmen",
+					"id": 15,
+					"name": "addmen2",
 					"pathName": "pages/financial/addmen/index",
-					"query": "id=1&&type=1",
+					"query": "pid=1&&type=2",
 					"scene": "1011"
 				},
 				{
@@ -287,6 +287,13 @@
 					"name": "projectplan",
 					"pathName": "pages/financial/projectplan/index",
 					"query": "id=90",
+					"scene": "1011"
+				},
+				{
+					"id": 38,
+					"name": "selectmen2",
+					"pathName": "pages/financial/selectmen/index",
+					"query": "pid=34&&type=2",
 					"scene": "1011"
 				}
 			]

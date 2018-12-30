@@ -116,7 +116,8 @@
         "investmentplan/index",
         "note/index",
         "newinvest/index",
-        "projectplan/index"
+        "projectplan/index",
+        "mixture/ImageText/index"
       ]
     }
   ],

@@ -52,12 +52,16 @@ Page({
     },
     //点击联系人
     onTapintrmen(e){
-      console.log( e.currentTarget.dataset.handle)
-        if()
+      // console.log( e.currentTarget.dataset.handle)
+        wx.navigateTo({
+          url: '/pages/financial/addmen/index?type=2&&'+`pid=${this.data.pid}`
+        })
     },
     onTapTeam(e){
+        wx.navigateTo({
+            url: '/pages/financial/addmen/index?type=3&&'+`pid=${this.data.pid}`
+        })
 
-        console.log( e.currentTarget.dataset.handle)
     },
     onTapCustom(e){
 
@@ -91,7 +95,11 @@ Page({
           console.log(res);
           let introEdit = res.introEdit
           console.log(introEdit);
-          console.log(introEdit.Intro);
+          console.log(introEdit.companyLabel);
+          let Intro
+          if(introEdit.companyLabel){
+               Intro = introEdit.companyLabel.join(',')
+          }
           let items= this.data.items
           items[0].rate = introEdit.companyIntro||'0'
           items[1].rate = introEdit.coreTeam||'0'
@@ -100,11 +108,10 @@ Page({
           items[4].rate = introEdit.case||'0'
           this.setData({
               logo:introEdit.logo,
-              Intro:introEdit.Intro,
+              Intro:Intro||'',
               title:introEdit.title,
-            items,
+                items,
           })
-
       })
   },
 

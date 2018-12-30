@@ -4,11 +4,13 @@
     <w-link-c item="{{item}}" data-iteminfo="{{item}}" bind:tap="onSelect"/>
 </block>
 
-<view class="fix-bottom">
-    <view>
-        核心成员未创建V名片？
-    </view>
-    <view class="fix-btn" bind:tap="">
-        邀请成员创建
-    </view>
-</view>
+
+<!--TODO 未有接口-->
+<!--<view class="fix-bottom">-->
+    <!--<view>-->
+        <!--核心成员未创建V名片？-->
+    <!--</view>-->
+    <!--<view class="fix-btn" bind:tap="">-->
+        <!--邀请成员创建-->
+    <!--</view>-->
+<!--</view>-->

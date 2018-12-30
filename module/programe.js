@@ -2,6 +2,9 @@ import {
     HTTP
 } from '../utils/http.js'
 
+
+//为了保证我们程序的最小化，发布模式下我们需要删除mock.js,并更改DEBUG为false，或者彻底删除api.js中的else部分
+
 export class programemodule extends HTTP {
     //根据对象属性中字母 来分类
     /**
@@ -363,12 +366,133 @@ export class programemodule extends HTTP {
                 myData.companyId = data
                 return this.posteditProject(projectId,'3',myData)
             }
-            //保存联系人
+            //获取联系人-展示页面-1
+            getPersionmen(projectId){
+                return this.request(
+                    {
+                        url:'VCard/getPersion',
+                       data:{
+                           projectId,
+                           type:'1'
+                       }
+                    }
+                )
+            }
+            //获取所有机构人员列表 联系人 选择界面-2
+            getCompanyTeam(projectId){
+                return this.request({
+                    url:'VCard/getCompanyTeam',
+                    data:{
+                        cardId:projectId,
+                        type:'2'
+                    }
+                })
+            }
+
+            //项目介绍-保存联系人
             setprojectintroduction_introEditProgress_callmen(projectId,data){
                 let myData = {}
                 myData.cardId = data
                 return this.posteditProject(projectId,'7',myData)
             }
+
+            ///////核心成员/////////
+    //**TODO 需要调整 **//
+            //获取核心团队-展示页面-1  编号2-2-2
+            getUserIntroTeam(projectId){
+                return this.request(
+                    {
+                        url:'VCard/getPersion',
+                        data:{
+                            projectId,
+                            type:'2'
+                        }
+                    }
+                )
+            }
+            //项目介绍-核心团队保存-图文
+
+    setproject_saveCoreTeam(projectId,userId,id,userImage,userName,gender,position,userIntro){
+        var myData = {
+            cardId:projectId,
+            type:'2',
+            userId,
+            id,
+        }
+        if(userImage){
+            myData.userImage = userImage
+        }
+        if(userName){
+            myData.userName = userName
+        }
+        if(gender){
+            myData.gender = gender
+        }
+        if(position){
+            myData.position = position
+        }
+        if(userIntro){
+            myData.userIntro = userIntro
+        }
+
+        return this.request({
+            url:'Vard/saveCoreTeam',
+            data:myData,
+        })
+        //获取核心成员图文接口
+    }
+    getproject_getUserIntro(projectId,userId,id){
+        return this.request({
+            url:'VCard/getUserIntro',
+            data:{
+                cardId:projectId,
+                type:'2',
+                userId,
+                id,
+            }
+
+        })
+    }
+            ////////******项目介绍结束*****//////
+    /////—**项目编辑结束**-//////
+
+
+//2-2-1  获取图文接口
+    /**
+     *
+     * @param projectId
+     * @param type
+    *    type=1产品定位
+         type=2空间趋势
+         type=3产品趋势
+         type=4目标客户
+         type=5价值主张
+         type=6渠道通路
+         type=7竞争优势
+         type=8收入模式
+         type=9成本构成
+         type=10产品研发
+         type=11知识产权
+         type=12渠道布局
+         type=13运营资质
+         type=14战略合作
+         type=15适用客户
+         type=16价值产品价值
+         type=17客户案例
+     */
+    getImageTextDatta(projectId,type){
+        return this.request({
+            url:'VCard/getImageTextDatta',
+            data:{
+                projectId,
+                type,
+            }
+        })
+    }
+    //2-2-3  保存图文接口
+    postsaveImageTextDatta(){
+
+    }
 
 
 }

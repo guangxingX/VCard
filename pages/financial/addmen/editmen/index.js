@@ -1,6 +1,8 @@
 // pages/financial/addmen/editmen/index.js
 import { lookforsbmodule } from "../../../../module/lookforsb";
 var lookforsb = new lookforsbmodule
+import {programemodule} from "../../../../module/programe";
+const programe = new programemodule
 Page({
 
   /**
@@ -17,7 +19,8 @@ Page({
       istextimg:false,
       maininfo:{}, //缓存id 与 类型
       mold:'',//是否是展示还是编辑
-      info:{} //展示触发渲染已经禁用部分编辑功能
+      info:{} ,//展示触发渲染已经禁用部分编辑功能
+      options:{},//缓存options
   },
     onTapSaveAll(){
         lookforsb.setsaveCoreTeam(
@@ -92,7 +95,7 @@ Page({
    */
   onLoad: function (options) {
 
-      //1是机构2是项目
+      //1是投资机构3是项目
       console.log(options);
       console.log(options.data);
 
@@ -125,6 +128,15 @@ Page({
                       ImageTextItem:res.userIntro
                   })
               })
+              break;
+              //项目 核心团队编辑
+          case '3':
+              console.log(maininfo);
+              programe.getproject_getUserIntro(maininfo.cardId,
+                maininfo.userId,
+                maininfo.id,).then(res=>{
+                console.log(res);
+            })
               break;
       }
 

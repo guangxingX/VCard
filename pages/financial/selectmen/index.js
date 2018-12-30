@@ -1,7 +1,9 @@
 // pages/financial/selectmen/index.js
 import { lookforsbmodule } from "../../../module/lookforsb";
+import {programemodule} from "../../../module/programe";
 
-var lookforsb = new lookforsbmodule
+const lookforsb = new lookforsbmodule
+const programe = new programemodule
 Page({
 
   /**
@@ -24,32 +26,76 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onSelect(e){
-      console.log(e.currentTarget.dataset.iteminfo);
-      let data = JSON.stringify(this.data.options)
-      let info = JSON.stringify(e.currentTarget.dataset.iteminfo)
-      wx.navigateTo({
-        url: '../addmen/editmen/index?'+`data=${data}&&mold='show'&&info=${info}`
-      })
+      console.log(e.currentTarget.dataset.iteminfo.cardId);
+      let cardId = e.currentTarget.dataset.iteminfo.cardId
+      switch (this.data.options.type) {
+          case '1':
+              //投机构
+              console.log(e.currentTarget.dataset.iteminfo);
+              let data = JSON.stringify(this.data.options)
+              let info = JSON.stringify(e.currentTarget.dataset.iteminfo)
+              wx.navigateTo({
+                  url: '../addmen/editmen/index?'+`data=${info}&&type=1`
+              })
+              break;
+          case '2':
+              //联系人
+              programe.setprojectintroduction_introEditProgress_callmen(this.data.options.pid,cardId).then(res=>{
+                //返回上一页，并显示成功
+                  programe.saveSucceed()
+              })
+              break;
+          case '3':
+              console.log(e.currentTarget.dataset.iteminfo);
+              console.log(this.data.options.pid);
+                //缺少userId
+
+              break;
+      }
+
 
   },
   onLoad: function (options) {
       console.log(options)
-      options = JSON.parse(options.data)
-      console.log(options)
       this.setData({
           options,
       })
+
+
       console.log(options.type)
 
+      //type 1 投资
+      //type 2 项目介绍 联系人
+      //type 3 项目介绍 核心团队
       switch (options.type) {
           case '1':
+              console.log(options)
+              options = JSON.parse(options.data)
+              console.log(options)
+              this.setData({
+                  options,
+              })
               lookforsb.getcompanyEmployee(options.id).then(res => {
                   console.log(res)
                   this.setData({
-                      employeeList:res.employeeList
+                      employeeList:res.teamList||[]
                   })
                   let len = this.data.employeeList.length
-
+                  wx.setNavigationBarTitle({
+                      title: `选择成员（共${len}人）`,
+                      icon:'none'
+                  })
+              })
+              break;
+          case '2':
+          case '3':
+              console.log(2)
+              programe.getCompanyTeam(options.pid).then(res=>{
+                  console.log(res)
+                  this.setData({
+                      employeeList:res.teamList||[]
+                  })
+                  let len = this.data.employeeList.length
                   wx.setNavigationBarTitle({
                       title: `选择成员（共${len}人）`,
                       icon:'none'

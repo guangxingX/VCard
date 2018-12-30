@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class="bg-f re" bind:tap="onTapLogo">
-    <view class="must-tag ab-tag">
+    <view  class="must-tag ab-tag">
       必填
     </view>
     <view class=" p-20">

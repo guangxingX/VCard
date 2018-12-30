@@ -1,6 +1,8 @@
 // pages/financial/addmen/index.js
 import { lookforsbmodule } from "../../../module/lookforsb";
-var lookforsb = new lookforsbmodule
+const lookforsb = new lookforsbmodule
+import {programemodule} from "../../../module/programe";
+const programe = new programemodule
 Page({
 
   /**
@@ -8,27 +10,57 @@ Page({
    */
   data: {
       coreTeam:[{
-        name:'王清文',
-          gender:'nv',
-          position:'核心投资经纪人',
-          intro:'跨国企业寻合作，资方齐抛橄榄枝（投第317\n' +
-              '期VIP投资发展沙龙成功举功举功举功举...',
+        name:'---',
+          gender:'--',
+          position:'-----',
+          intro:'-----'
+
       }],
-      options:{} //缓存options
+      options:{} ,//缓存options
+      isCanEdit:true, //是否可以去编辑
   },
   onTapAdd(e){
-      let data = JSON.stringify(this.data.options)
-      wx.navigateTo({
-        url: '../selectmen/index?'+`data=${data}&&type=${this.options.type}`
-      })
+      switch (this.data.options.type) {
+          //机构
+          case '1':
+              let data = JSON.stringify(this.data.options)
+              wx.navigateTo({
+                  url: '../selectmen/index?'+`data=${data}&&type=${this.options.type}`
+              })
+              break;
+          case '2':
+              wx.navigateTo({
+                  url: '../selectmen/index?'+`pid=${this.options.pid}&&type=${this.options.type}`
+              })
+              break;
+          case '3':
+              wx.navigateTo({
+                  url: '../selectmen/index?'+`pid=${this.options.pid}&&type=${this.options.type}`
+              })
+              break;
+      }
+
 
   },
     onEdit(e){
-        console.log(e.detail)
-       let data= JSON.stringify(e.detail)
-        wx.navigateTo({
-          url: 'editmen/index'+'?' +'data='+ data +`&&mold=edit&&type=${this.options.type}`,
-        })
+        switch (this.data.options.type) {
+            //机构
+            case '1':
+                console.log(e.detail)
+                var data= JSON.stringify(e.detail)
+                wx.navigateTo({
+                    url: 'editmen/index'+'?' +'data='+ data +`&&mold=edit&&type=${this.options.type}`,
+                })
+                break;
+            case '3':
+                console.log(e.detail)
+                var data= JSON.stringify(e.detail)
+                wx.navigateTo({
+                    url: 'editmen/index'+'?' +'data='+ data +`&&mold=edit&&type=${this.options.type}`,
+                })
+                break;
+        }
+
     },
   /**
    * 生命周期函数--监听页面加载
@@ -38,6 +70,12 @@ Page({
     this.setData({
         options:options
     })
+
+      //type 1 投资机构
+
+      //type 2 项目介绍 联系人
+
+      //type 3 项目介绍 核心团队
     switch (options.type) {
         //机构
         case '1':
@@ -48,6 +86,31 @@ Page({
                 })
             })
             break;
+        case '2':
+            //项目
+            console.log(2);
+            this.setData({
+                isCanEdit:false,
+            })
+            programe.getPersionmen(options.pid).then(res=>{
+                console.log(res)
+                this.setData({
+                    coreTeam:res.teamList
+                })
+            })
+            break;
+        case '3':
+            console.log(3);
+            this.setData({
+                isCanEdit:true,
+            })
+            programe.getUserIntroTeam(options.pid).then(res=>{
+                console.log(res)
+                this.setData({
+                    coreTeam:res.teamList
+                })
+            })
+
     }
   },
 

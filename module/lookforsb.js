@@ -106,7 +106,7 @@ export class lookforsbmodule extends programemodule {
         return this.postsaveInstitutions(cardId, '2', mydata)
     }
 
-
+    //**TODO 需要调整 **//
     //查询机构核心团队
     getinstitutionsCoreTeam(cardId) {
         return this.request({
@@ -176,7 +176,7 @@ export class lookforsbmodule extends programemodule {
             url: 'VCard/getCompanyTeam',
             data: {
                 cardId,
-                Type:'1'
+                type:'1',
             }
         })
 

@@ -5,7 +5,7 @@
 
 </view>
 <view class="bg-f re " bind:tap="onTapLogo">
-    <view class="must-tag ab-tag">
+    <view wx:if="{{!title}}" class="must-tag ab-tag">
         必填
     </view>
     <view class=" p-20">
@@ -22,11 +22,13 @@
     </view>
 </view>
 <block wx:for="{{items}}" wx:key="">
-    <w-edit-programme name="{{item.name}}" rate="{{item.rate}}" info="{{item.tip}}" must="{{item.must}}">
-        <view slot="after" class="edit">
-      <text bind:tap="{{item.fn}}" data-handle="s">预览</text>
-      <text>|</text>
-      <text bind:tap="{{item.fn}}" data-handle="e">编辑</text>
-    </view>
+    <w-edit-programme
+            bind:tap="{{item.fn}}"
+            name="{{item.name}}" rate="{{item.rate}}" info="{{item.tip}}" must="{{item.must}}">
+        <!--<view slot="after" class="edit">-->
+      <!--<text bind:tap="{{item.fn}}" data-handle="s">预览</text>-->
+      <!--<text>|</text>-->
+      <!--<text bind:tap="{{item.fn}}" data-handle="e">编辑</text>-->
+    <!--</view>-->
     </w-edit-programme>
 </block>
