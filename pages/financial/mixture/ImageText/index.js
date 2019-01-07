@@ -1,14 +1,18 @@
-// pages/financial/saveInstitutions/idea/index.js
-import { lookforsbmodule } from "../../../../module/lookforsb";
-var lookforsb = new lookforsbmodule
+// import { lookforsbmodule } from "../../../../module/lookforsb";
+// var lookforsb = new lookforsbmodule
+import {programemodule } from "../../../../module/programe";
+const programe = new programemodule
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      ImageTextItem:[],//图文的信息
-      id:'-1'
+      ImageTextItem:[],//图文的信息 必须有
+      pid:'-1', //缓存projectId
+      options:{},//缓存options参数
+      type:`-1`,//缓存type值
+
   },
     onTapSave(e){
         console.log(e.detail.ImageTextItem);
@@ -17,12 +21,8 @@ Page({
         this.setData({
             ImageTextItem:e.detail.ImageTextItem,
         })
-        lookforsb.setinstitutionsImageText_money(this.data.id,this.data.ImageTextItem).then(res=>{
-
-            wx.navigateBack({})
-            wx.showToast({
-              title: '保存成功'
-            })
+        programe.postsaveImageTextDatta(this.data.pid,this.data.type,this.data.ImageTextItem).then(res=>{
+            programe.saveSucceed()
         })
     },
     onTapView(){
@@ -33,15 +33,29 @@ Page({
    */
   onLoad: function (options) {
       console.log(options)
-      this.setData({
-          id:options.id
-      })
-      lookforsb.getinstitutionsImageText_money(options.id).then(res=>{
-          console.log(res);
-          this.setData({
-              ImageTextItem:res.imageText
+      //设置标题
+      if(options.name){
+          wx.setNavigationBarTitle({
+              title: `${options.name}`,
+              icon:'none'
           })
+      }
+
+      this.setData({
+          options,
+          pid:options.pid,
+          type:options.type,
       })
+
+      programe.getImageTextDatta(this.data.pid,this.data.type).then(res=>{
+          console.log(res);
+            this.setData({
+                ImageTextItem:res.imageText
+            })
+      })
+
+
+
   },
 
   /**

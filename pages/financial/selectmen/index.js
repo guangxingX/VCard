@@ -26,8 +26,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onSelect(e){
-      console.log(e.currentTarget.dataset.iteminfo.cardId);
-      let cardId = e.currentTarget.dataset.iteminfo.cardId
+      console.log(e.currentTarget.dataset.iteminfo);
+      let cardId = e.currentTarget.dataset.iteminfo.cardId||e.currentTarget.dataset.iteminfo.id
+      console.log(cardId);
       switch (this.data.options.type) {
           case '1':
               //投机构
@@ -40,9 +41,10 @@ Page({
               break;
           case '2':
               //联系人
+              console.log(2);
               programe.setprojectintroduction_introEditProgress_callmen(this.data.options.pid,cardId).then(res=>{
                 //返回上一页，并显示成功
-                  programe.saveSucceed()
+                //   programe.saveSucceed()
               })
               break;
           case '3':

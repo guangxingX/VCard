@@ -1,5 +1,8 @@
 {
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "路演视频"
+  "navigationBarTitleText": "客户案例",
+  "usingComponents": {
+
+  }
 }

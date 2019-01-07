@@ -9,7 +9,8 @@ App({
         domain: '',
         code: '',
         // apiurl:'http://develop.hopechina.cc/'
-        apiurl:'http://182.92.239.187:8028/'
+      // apiurl:'http://127.0.0.1:7654/' //mock
+        apiurl: 'http://182.92.239.187:8028/' //测试
         // apiurl: 'https://cloud.hopechina.cc/'
     },
     globalData: {

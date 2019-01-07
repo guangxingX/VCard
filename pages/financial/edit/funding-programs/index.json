@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "融资计划",
+  "usingComponents": {
+    "w-multiple-choice": "/component/multiple-choice/index",
+    "w-his-programe": "/pages/financial/component/programe/history/index"
+  }
+}

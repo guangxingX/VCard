@@ -58,8 +58,8 @@
   </view> -->
     </w-edit-programme>
   </block>
-
-  <view class="weui-btn-area save" bindtap="showTopTips">
+ <!-- 不需要保存 -->
+  <!-- <view class="weui-btn-area save" bindtap="showTopTips">
     <button class="weui-btn n-b" >保存</button>
-  </view>
+  </view> -->
 </view>

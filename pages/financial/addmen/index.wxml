@@ -1,12 +1,20 @@
 <!--pages/financial/addmen/index.wxml-->
 <!-- <text>pages/financial/addmen/index.wxml</text> -->
-<bolck wx:for="{{coreTeam}}" wx:key="id">
+<bolck wx:if="{{options.type!='2'}}" wx:for="{{coreTeam}}" wx:key="id">
               <w-link-d name="{{item.name}}"
                         src="{{item.logo}}"
                         sub="{{item}}"
                         edit="{{isCanEdit}}" bind:onTapEdit="onEdit"/>
-            </bolck>
+</bolck>
 
+<bolck wx:if="{{options.type=='2'}}" wx:for="{{coreTeam}}" wx:key="">
+    <w-link-d name="{{item.name}}"
+              src="{{item.logo}}"
+              sub="{{item}}"
+              edit="{{isCanEdit}}"
+              isPeople="{{true}}"
+              bind:onTapEdit="onEdit"/>
+</bolck>
 <button class='b-b' bind:tap="onTapAdd">
   增添
 </button>

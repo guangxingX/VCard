@@ -12,7 +12,12 @@ Component({
     edit:{
       type:Boolean,
       value:false
-    }
+    },
+      isPeople:{
+      type: Boolean,
+        value: false
+      }
+
   },
 
   /**

@@ -9,19 +9,19 @@ Page({
   data: {
       items: [
           {
-              name:'增加联系人',
-              tip:'至少增加一个联系人',
+              name:'产品研发',
+              tip:'请描述产品研发到了什么阶段？',
               rate:'0',
               fn:'onTapintrmen'
           },
           {
-              name: '核心团队',
-              tip: '请介绍您的团队成员',
+              name: '知识产权',
+              tip: '请描述已完成的知识产权储备？ ',
               rate: '0',
               fn:'onTapTeam'
           },
           {
-              name: '适用客户',
+              name: '渠道布局',
               tip: '请描述产品或服务适合的客户',
               rate: '0',
               fn:'onTapCustom'
@@ -103,27 +103,27 @@ Page({
       this.setData({
           pid:options.pid
       })
-      programe.getprojectintroduction_introEditProgress(options.pid).then(res=>{
+      programe.getresourcesProgress(options.pid).then(res=>{
           console.log(res);
-          let introEdit = res.introEdit
-          console.log(introEdit);
-          console.log(introEdit.companyLabel);
-          let Intro
-          if(introEdit.companyLabel){
-               Intro = introEdit.companyLabel.join(',')
-          }
-          let items= this.data.items
-          items[0].rate = introEdit.companyIntro||'0'
-          items[1].rate = introEdit.coreTeam||'0'
-          items[2].rate = introEdit.applyClient||'0'
-          items[3].rate = introEdit.value||'0'
-          items[4].rate = introEdit.case||'0'
-          this.setData({
-              logo:introEdit.logo,
-              Intro:Intro||'',
-              title:introEdit.title,
-                items,
-          })
+          // let introEdit = res.introEdit
+          // console.log(introEdit);
+          // console.log(introEdit.companyLabel);
+          // let Intro
+          // if(introEdit.companyLabel){
+          //      Intro = introEdit.companyLabel.join(',')
+          // }
+          // let items= this.data.items
+          // items[0].rate = introEdit.companyIntro||'0'
+          // items[1].rate = introEdit.coreTeam||'0'
+          // items[2].rate = introEdit.applyClient||'0'
+          // items[3].rate = introEdit.value||'0'
+          // items[4].rate = introEdit.case||'0'
+          // this.setData({
+          //     logo:introEdit.logo,
+          //     Intro:Intro||'',
+          //     title:introEdit.title,
+          //       items,
+          // })
       })
   },
 

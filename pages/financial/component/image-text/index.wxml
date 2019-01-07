@@ -1,68 +1,92 @@
-<!--component/image-text/imageTextComponet.wxml-->
-<view style="margin-bottom : 18rpx">
-  <view class="resourceList" wx:if="{{_ImageTextItem&&_ImageTextItem.length>0}}">
-    <view style="position: relative; z-index: 199;">
-      <view class="touchView" style="height:{{scrollPosition.scrollViewHeight}}px;" catchtouchstart="onDraggleTouch" catchtouchmove="onDraggleTouch" catchtouchend="onDraggleTouch">
-      </view>
-      <!--给出拖动动态效果-->
-      <movable-area class="moveable_row {{movableViewPosition.className}}" style="height: {{scrollPosition.scrollViewHeight}}px;">
-        <movable-view style="height: {{scrollPosition.everyOptionCell}}px; width: 100%; background-color: #fff;" direction="vertical" x="{{movableViewPosition.x}}" y="{{movableViewPosition.y}}" inertia="false" damping="9999" friction="9999">
-          <view class="resourceBlock resourceBlock-image" wx:if="{{movableViewPosition.data.image}}">
-            <image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
-            <image class="icon-move" src="/assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
-            <image class="addiamge" src="{{movableViewPosition.data.image}}"></image>
-          </view>
-          <view class="resourceBlock resourceBlock-text" wx:if="{{movableViewPosition.data.text}}">
-            <image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
-            <image class="icon-move" src="/assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
-            <text>{{movableViewPosition.data.text}}</text>
-          </view>
-          <view class="resourceBlock resourceBlock-image" wx:if="{{movableViewPosition.data.video}}">
-            <image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
-            <image class="icon-move" src="/assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
-            <video class="addiamge" src="{{movableViewPosition.data.video}}"></video>
-          </view>
-        </movable-view>
-      </movable-area>
-      <scroll-view class="edit_row_holder" scroll-y="{{scrollPosition.scrollY}}" style="height: {{scrollPosition.scrollViewHeight}}px;" bindscroll="onBindscroll">
 
-        <block wx:for="{{_ImageTextItem}}" wx:key="sDtSecCode">
-          <view class="edit_row  {{item.selectClass}}">
-            <view class="resourceBlock resourceBlock-image" wx:if="{{item.image}}">
-              <image class="icon-del" bindtap="onDeleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
-              <image class="icon-move" src="/assets/images/icon/icon-movie.png"></image>
-              <view class="imgWrap">
-                <image class="addiamge" mode="aspectFill" src="{{item.image}}"></image>
+<view hidden="{{!nopreView}}">
+  <!--component/image-text/imageTextComponet.wxml-->
+  <view style="margin-bottom : 18rpx">
+    <view class="resourceList" wx:if="{{_ImageTextItem&&_ImageTextItem.length>0}}">
+      <view style="position: relative; z-index: 199;">
+        <view class="touchView" style="height:{{scrollPosition.scrollViewHeight}}px;" catchtouchstart="onDraggleTouch" catchtouchmove="onDraggleTouch" catchtouchend="onDraggleTouch">
+        </view>
+        <!--给出拖动动态效果-->
+        <movable-area class="moveable_row {{movableViewPosition.className}}" style="height: {{scrollPosition.scrollViewHeight}}px;">
+          <movable-view style="height: {{scrollPosition.everyOptionCell}}px; width: 100%; background-color: #fff;" direction="vertical" x="{{movableViewPosition.x}}" y="{{movableViewPosition.y}}" inertia="false" damping="9999" friction="9999">
+            <view class="resourceBlock resourceBlock-image" wx:if="{{movableViewPosition.data.image}}">
+              <image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
+              <image class="icon-move" src="/assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
+              <image class="addiamge" src="{{movableViewPosition.data.image}}"></image>
+            </view>
+            <view class="resourceBlock resourceBlock-text" wx:if="{{movableViewPosition.data.text}}">
+              <image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
+              <image class="icon-move" src="/assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
+              <text>{{movableViewPosition.data.text}}</text>
+            </view>
+            <view class="resourceBlock resourceBlock-image" wx:if="{{movableViewPosition.data.video}}">
+              <image class="icon-del" bindtap="deleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
+              <image class="icon-move" src="/assets/images/icon/icon-movie.png" bindtouchmove="move"></image>
+              <video class="addiamge" src="{{movableViewPosition.data.video}}"></video>
+            </view>
+          </movable-view>
+        </movable-area>
+        <scroll-view class="edit_row_holder" scroll-y="{{scrollPosition.scrollY}}" style="height: {{scrollPosition.scrollViewHeight}}px;" bindscroll="onBindscroll">
+
+          <block wx:for="{{_ImageTextItem}}" wx:key="sDtSecCode">
+            <view class="edit_row  {{item.selectClass}}">
+              <view class="resourceBlock resourceBlock-image" wx:if="{{item.image}}">
+                <image class="icon-del" bindtap="onDeleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
+                <image class="icon-move" src="/assets/images/icon/icon-movie.png"></image>
+                <view class="imgWrap">
+                  <image class="addiamge" mode="aspectFill" src="{{item.image}}"></image>
+                </view>
+              </view>
+              <view class="resourceBlock resourceBlock-text" wx:if="{{item.text}}">
+                <image class="icon-del" bindtap="onDeleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
+                <image class="icon-move" src="/assets/images/icon/icon-movie.png"></image>
+                <text>{{item.text}}</text>
+              </view>
+              <view class="resourceBlock resourceBlock-image" wx:if="{{item.video}}">
+                <image class="icon-del" bindtap="onDeleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
+                <image class="icon-move" src="/assets/images/icon/icon-movie.png"></image>
+                <view class="imgWrap">
+                  <video class="addiamge" mode="aspectFill" src="{{item.video}}"></video>
+                </view>
               </view>
             </view>
-            <view class="resourceBlock resourceBlock-text" wx:if="{{item.text}}">
-              <image class="icon-del" bindtap="onDeleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
-              <image class="icon-move" src="/assets/images/icon/icon-movie.png"></image>
-              <text>{{item.text}}</text>
-            </view>
-            <view class="resourceBlock resourceBlock-image" wx:if="{{item.video}}">
-              <image class="icon-del" bindtap="onDeleteRow" data-index="{{index}}" src="/assets/images/icon/icon-delete-gray.png"></image>
-              <image class="icon-move" src="/assets/images/icon/icon-movie.png"></image>
-              <view class="imgWrap">
-                <video class="addiamge" mode="aspectFill" src="{{item.video}}"></video>
-              </view>
-            </view>
-          </view>
-        </block>
-      </scroll-view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="noDescription" style="height:{{scrollPosition.scrollViewHeight}}px;" wx:if="{{!_ImageTextItem||_ImageTextItem.length==0}}">
+      <image src="/assets/images/mine/imageText-placeholder.png"></image>
+      <!-- <image src="../../../assets/images/mine/bg-noDescription.png"></image>
+    <view class="textTitle">暂无资源描述</view> -->
+      <!-- <view class="text">点击创建，即可拥有自己的活动</view>
+    <view class="createBtn" bindtap="tapShow">立即创建</view> -->
     </view>
   </view>
-  <view class="noDescription" style="height:{{scrollPosition.scrollViewHeight}}px;" wx:if="{{!_ImageTextItem||_ImageTextItem.length==0}}">
-    <image src="/assets/images/mine/imageText-placeholder.png"></image>
-    <!-- <image src="../../../assets/images/mine/bg-noDescription.png"></image>
-  <view class="textTitle">暂无资源描述</view> -->
-    <!-- <view class="text">点击创建，即可拥有自己的活动</view>
-  <view class="createBtn" bindtap="tapShow">立即创建</view> -->
+
+  <w-insert-bar ImageTextItem="{{_ImageTextItem}}" bind:setImageTextItem="setImageTextItem" />
+  <view class="page__bd_spacing d-btn">
+    <button class="weui-btn primary font32" bind:tap="onView">预览</button>
+    <button class="weui-btn primary font32" bind:tap="onSave">保存</button>
   </view>
 </view>
+<view hidden="{{nopreView}}" bind:tap="onTapPreView">
+  <!--TODO 没有接口-->
+  <view>
+    <block wx:for="{{_ImageTextItem}}" wx:key="">
+      <view class="center" wx:if="{{item.image}}">
 
-<w-insert-bar ImageTextItem="{{_ImageTextItem}}" bind:setImageTextItem="setImageTextItem" />
-<view class="page__bd_spacing d-btn">
-  <button class="weui-btn primary font32" bind:tap="onView">预览</button>
-  <button class="weui-btn primary font32" bind:tap="onSave">保存</button>
+          <image  mode="aspectFill" src="{{item.image}}"></image>
+
+      </view>
+      <view class="center" wx:if="{{item.text}}">
+        <text>{{item.text}}</text>
+      </view>
+      <view class="center" wx:if="{{item.video}}">
+
+          <video class="addiamge" mode="aspectFill" src="{{item.video}}"></video>
+
+      </view>
+    </block>
+  </view>
+
 </view>

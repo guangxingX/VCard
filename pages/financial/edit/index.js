@@ -84,6 +84,9 @@ Page({
           })
           return
       }
+      wx.navigateTo({
+        url: '/pages/financial/upvideo/index?'+`pid=${this.data.pid}`
+      })
     console.log('onTapVideo')
   },
     //点击商业储备
@@ -95,6 +98,9 @@ Page({
           })
           return
       }
+      wx.navigateTo({
+          url: '/pages/financial/resourcesReserves/index?'+`pid=${this.data.pid}`
+      })
     console.log('onTapReso')
   },
     //点击商业模式

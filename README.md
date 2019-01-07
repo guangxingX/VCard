@@ -1,7 +1,11 @@
 # VCard
 超级名片
 作为备份
-
+设置标题
+wx.setNavigationBarTitle({
+                      title: `选择成员（共${len}人）`,
+                      icon:'none'
+                  })
 取DOM上的data数据
 e.currentTarget.dataset
 wx.showToast({

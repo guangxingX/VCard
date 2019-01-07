@@ -90,3 +90,10 @@ page{height:100%;}
 .stay_bottom .all_select  .ico_checker{background-position: 0 -17px;}
 
 .imgWrap{width: 252rpx;height: 140rpx;overflow:hidden;}
+
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

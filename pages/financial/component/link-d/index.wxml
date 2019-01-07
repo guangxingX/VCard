@@ -6,14 +6,14 @@
       <view class="bd-link">{{name}}
         <text>{{sub.gender}}</text>
       </view>
-      <view class="tip">{{sub.position}}</view>
+      <view class="tip">{{isPeople?sub.mobile:sub.position}}</view>
     </view>
     <view class="icon" wx:if="{{edit}}" bind:tap="onTapEdit">
       编辑
       <image src="/component/image/arrow.png"></image>
     </view>
   </view>
-  <view class="under">
+  <view class="under" wx:if="{{!isPeople}}" >
     {{sub.intro}}
   </view>
 </view>

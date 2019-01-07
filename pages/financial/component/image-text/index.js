@@ -52,27 +52,39 @@ Component({
             className: "hidden",
             data: {}
         },//设置拖动区的设置
+
+        // 设置预览
+        nopreView:true,
     },
 
     /**
      * Component methods
      */
     methods: {
-      onView(){
-            //点击预览出发的事件
-            //抛出记录的数据
-            this.triggerEvent('onTapView',{
-              ImageTextItem:this.data._ImageTextItem
+        onTapPreView(){
+            this.setData({
+                nopreView:true
             })
         },
-      onSave() {
-        //点击预览出发的事件
-        //抛出记录的数据
-        //   console.log(this.data._ImageTextItem);
-          this.triggerEvent('onTapSave', {
-          ImageTextItem: this.data._ImageTextItem
-        })
-      },
+
+        onView() {
+            this.setData({
+                nopreView:false
+            })
+            //点击预览出发的事件
+            //抛出记录的数据
+            // this.triggerEvent('onTapView', {
+            //     ImageTextItem: this.data._ImageTextItem
+            // })
+        },
+        onSave() {
+            //点击预览出发的事件
+            //抛出记录的数据
+            //   console.log(this.data._ImageTextItem);
+            this.triggerEvent('onTapSave', {
+                ImageTextItem: this.data._ImageTextItem
+            })
+        },
 
         onBindscroll: function (event) {
             console.log(event);
@@ -219,14 +231,14 @@ Component({
         setImageTextItem(e) {
             console.log(e.detail);
             this.setData({
-                _ImageTextItem:e.detail
+                _ImageTextItem: e.detail
             })
             var pages = getCurrentPages();
             console.log(pages)
-            var prevPage = pages[pages.length-1];
+            var prevPage = pages[pages.length - 1];
             console.log(prevPage)
             prevPage.setData({
-                ImageTextItem:this.data._ImageTextItem
+                ImageTextItem: this.data._ImageTextItem
             })
         },
         //计算出屏幕快高
@@ -234,7 +246,7 @@ Component({
             var systemInfo = wx.getSystemInfoSync();
             // console.log(systemInfo.windowHeight);
             //小程序得到除去导航栏的高度
-            var scrollViewHeight = systemInfo.windowHeight * ( 461 / 603);
+            var scrollViewHeight = systemInfo.windowHeight * (461 / 603);
             var scrollViewWidth = systemInfo.windowWidth;
             this.setData({
                 'scrollPosition.scrollViewWidth': scrollViewWidth,

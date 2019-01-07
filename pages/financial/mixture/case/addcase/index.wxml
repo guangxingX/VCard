@@ -1,0 +1,24 @@
+<!--pages/financial/saveInstitutions/idea/index.wxml-->
+<view wx:if="{{!istextimg}}">
+    <view class=" weui-cell weui-cell_input from-input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">客户名称</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入客户名称" value="{{caseName}}" bindinput="onInput" />
+        </view>
+    </view>
+    <view bind:tap="onTaptextimg" class="from-input weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">描述</view>
+            <view class="weui-media-box__desc">请详细介绍该客户</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+
+    </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn primary" type="" bindtap="onTapSaveAll">保存</button>
+    </view>
+</view>
+<w-image-text wx:if="{{istextimg}}" style="height: 100%" ImageTextItem="{{ImageTextItem}}" bind:onTapView="onTapView" bind:onTapSave="onTapSave"/>

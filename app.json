@@ -117,7 +117,13 @@
         "note/index",
         "newinvest/index",
         "projectplan/index",
-        "mixture/ImageText/index"
+        "mixture/ImageText/index",
+        "mixture/case/index",
+        "mixture/case/addcase/index",
+        "edit/funding-programs/index",
+        "edit/funding-programs/his/index",
+        "businessModel/index",
+        "resourcesReserves/index"
       ]
     }
   ],

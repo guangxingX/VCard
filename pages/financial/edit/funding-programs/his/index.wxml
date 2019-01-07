@@ -1,0 +1,41 @@
+<!--pages/financial/edit/funding-programs/his/index.wxml-->
+<view class="weui-cells weui-cells_after-title">
+
+    <view bind:tap="onTabStage" url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">融资阶段</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" style="color:#000">{{phase}}</view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">时间</view>
+        </view>
+
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="输入融资的时间"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">估值</view>
+        </view>
+
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="输入融资的估值"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">投资人</view>
+        </view>
+
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="输入融资的投资机构或投资人"/>
+        </view>
+    </view>
+</view>
+<view style="margin: 72rpx 30rpx 0">
+    <button class="big-btn my-btn">保存</button>
+</view>

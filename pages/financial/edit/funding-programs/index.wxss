@@ -1,0 +1,8 @@
+/* pages/financial/edit/funding-programs/index.wxss */
+@import "/style/weui.wxss";
+w-his-programe view{
+    margin-bottom: 0!important;
+}
+.d-btn{
+    margin-top: 72rpx;
+}

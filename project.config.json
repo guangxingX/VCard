@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 15,
+			"current": 42,
 			"list": [
 				{
 					"id": -1,
@@ -294,6 +294,34 @@
 					"name": "selectmen2",
 					"pathName": "pages/financial/selectmen/index",
 					"query": "pid=34&&type=2",
+					"scene": "1011"
+				},
+				{
+					"id": 39,
+					"name": "ImageText",
+					"pathName": "pages/financial/mixture/ImageText/index",
+					"query": "pid=35&&type=1",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "funding-programs",
+					"pathName": "pages/financial/edit/funding-programs/index",
+					"query": "pid=35",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "resourcesReserves",
+					"pathName": "pages/financial/resourcesReserves/index",
+					"query": "pid=35",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "businessModel",
+					"pathName": "pages/financial/businessModel/index",
+					"query": "pid=35",
 					"scene": "1011"
 				}
 			]
