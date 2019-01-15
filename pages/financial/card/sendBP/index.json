@@ -1,0 +1,11 @@
+{
+
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "发送项目计划书",
+  "usingComponents": {
+
+    "w-item-lookforsb": "/component/lookforsb/item/index"
+
+  }
+}

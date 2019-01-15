@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "投资方向",
+  "usingComponents": {
+    "w-select":"/component/select/index"
+  }
+}

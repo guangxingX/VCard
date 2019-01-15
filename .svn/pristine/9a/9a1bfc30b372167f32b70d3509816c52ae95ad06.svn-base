@@ -1,0 +1,69 @@
+<import src="../../../templates/messageListTemplate/messageListTemplate.wxml" />
+<view class="container">
+	<view class="message-page">
+		<view class="message-header">
+			<view bindtap="changetab" data-tab="0" class="{{currenttab=='0'?'active':''}}"><text>别人给我留言</text></view>
+			<view bindtap="changetab" data-tab="1" class="{{currenttab=='1'?'active':''}}"><text>我给别人留言</text></view>
+		</view>
+		<view wx:if="{{currenttab=='0'}}">
+		<!-- 留言 -->
+			<block wx:for="{{youToMeMessageList}}">
+				<template is="messageListTemplate" data="{{item,fromCurrenttab}}"></template>
+				<!--上占位-->
+				<view style="height: 15px;background: #fff">
+				</view>
+				<view class="card-infos">
+					<view class="card-info {{item.type==1?'bg-info-2':'bg-info-1'}}">
+						<image src="https://oe75tqwfd.qnssl.com/tmp_39a9b0843640a870c8faf1074af7df7f.png"/>
+						<view class="card-body">
+							<view class="name">
+								陈明亮
+							</view>
+							<view class="subname">
+								中和黄埔教育科技有限公司北京...中和黄埔教育科技有限公司北京...
+								中和黄埔教育科技有限公司北京...中和黄埔教育科技有限公司北京...
+								中和黄埔教育科技有限公司北京...中和黄埔教育科技有限公司北京...
+								中和黄埔教育科技有限公司北京...中和黄埔教育科技有限公司北京...
+							</view>
+						</view>
+						<view>
+							<view  class="mark  mark-head {{item.type==1?'bg-2':'bg-1'}} left-m-c" >
+								{{item.type==1?'投资机构':'投资人'}}
+							</view>
+						</view>
+					</view>
+				</view>
+
+			</block>
+		</view>
+		<view wx:if="{{currenttab=='1'}}">
+		<!-- 项目 57 -->
+			<block wx:for="{{meToYouMessageList}}">
+
+				<template is="messageListTemplate" data="{{item,fromCurrenttab}}">
+
+				</template>
+
+
+			</block>
+
+		</view>
+	</view>
+	<view class="noContent" wx:if="{{!youToMeMessageList.length && currenttab=='0'}}">
+		<view>
+			<image class="noImage" src="../../../assets/images/mine/no-supply.png" ></image>
+		</view>
+		<view class="noTextWrap">
+			<text class="noText"> 暂无消息</text>
+		</view>
+	</view>
+
+	<view class="noContent" wx:if="{{!meToYouMessageList.length && currenttab=='1'}}">
+		<view>
+			<image class="noImage" src="../../../assets/images/mine/no-supply.png" ></image>
+		</view>
+		<view class="noTextWrap">
+			<text class="noText"> 暂无消息</text>
+		</view>
+	</view>
+</view>

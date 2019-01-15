@@ -1,0 +1,55 @@
+<!--component/lookforsb/item/index.wxml-->
+<!--/pages/financial/card/index-->
+<wxs src="../../../utils/filter.wxs" module="utils"/>
+<view class="weui-panel__bd bg-fff">
+    <navigator url="/pages/financial/card/index?name={{lookforitem.name}}&&id={{lookforitem.id}}&&type={{lookforitem.type}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bind:tap="onTapitem">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <w-image defaultText="{{lookforitem.name}}" originalImage="{{lookforitem.logo}}" width="100%"
+                     height="100%" plugStyle="font-size: 28rpx;border-radius:10rpx;"/>
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="name-bar">
+                <view class="weui-media-box__title">
+                    {{utils.defaultStyle(lookforitem.name)}}
+                </view>
+                <view class="position" wx:if="{{lookforitem.type==2}}">
+                    {{utils.defaultStyle(lookforitem.position)}}
+                </view>
+            </view>
+            <view wx:if="{{lookforitem.type==2}}" class="weui-media-box__desc">
+                {{utils.defaultStyle(lookforitem.company)}}
+            </view>
+        </view>
+        <view class="tag-type {{lookforitem.type==1?'bg-1':'bg-2'}}">
+            {{lookforitem.type==1?"投资机构":"投资人"}}
+        </view>
+    </navigator>
+    <view class="labelbar">
+        <view class = "label-i">
+            <view class="c-blue">
+                主投领域
+            </view>
+            <view>
+                {{utils.defaultStyle(utils.commaComma(lookforitem.label))}}
+            </view>
+        </view>
+        <view class = "label-i">
+            <view class="c-green">
+                投资轮次
+            </view>
+            <view>
+                {{utils.defaultStyle(utils.commaComma(lookforitem.stage))}}
+            </view>
+        </view>
+    </view>
+    <view class="footerbar" wx:if="{{isShowFooter}}">
+        <view>
+            收到{{utils.defaultStyle(lookforitem.projectNum)}}项目
+        </view>
+        <view bind:tap="onTapUpProject">
+            <image src="image/fly.png"/>
+            提交项目
+        </view>
+    </view>
+    <slot name="footer"></slot>
+</view>

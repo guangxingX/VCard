@@ -1,0 +1,26 @@
+<!--pages/financial/component/link-c/index.wxml-->
+<!--link-c-->
+<view class="content">
+<view class="infoitem">
+    <view class="headerIco" bindtap="" data-mycardid="{{item.id}}" data-from="{{from}}">
+        <image src="{{item.avatar ? item.avatar : '/assets/images/icon/photobg.png'}}"></image>
+    </view>
+    <view class="info">
+        <view class="info-t" bindtap="" data-mycardid="{{item.id}}" data-from="{{from}}">
+            <text class="name font34"> {{item.name}}</text>
+            <!-- <image class="icon20 dunpaiIcon" src="../../../assets/images/icon/duipa.png" ></image> -->
+            <text class="subtitle font26"> {{item.position}}</text>
+        </view>
+        <view class="info-b font26 clear">
+            <view class="phoneWrap">
+                <image class="icon20 phoneIcon" src="/assets/images/icon/icon-phone-blue.png"></image>
+                <text class="phone font26" data-phone="{{item.mobile}}" bindtap='callMobile'> {{item.mobile}}</text>
+            </view>
+            <view class="emailWrap">
+                <image class="icon20 phoneIcon" src="/assets/images/icon/icon-email-durk.png"></image>
+                <text class="emailText">{{item.email}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+</view>

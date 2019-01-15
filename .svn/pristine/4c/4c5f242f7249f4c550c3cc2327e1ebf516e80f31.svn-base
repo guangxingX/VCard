@@ -1,0 +1,52 @@
+/* pages/financial/institutionintr/index.wxss */
+/* pages/financial/details/index.wxss */
+@import "/style/weui.wxss";
+
+/* 引入模版wxsss enterpriseListcard */
+@import "/templates/enterpriseListcard/enterpriseListcard.wxss";
+page{
+  background: #eee;
+}
+.company>view{
+  background: #fff;
+}
+.rate-total{
+  background: #F8F8F8;
+  height: 110rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 22rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(108,108,108,1);
+}
+.rate-total view{
+  width:160rpx;
+  height:48rpx;
+  background:rgba(48,115,227,1);
+  border-radius:4rpx;
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:48rpx;
+  text-align: center;
+}
+.company-header{
+  height: 89rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 32rpx;
+  padding-right: 39rpx;
+  font-size:34rpx;
+  font-weight:500;
+  color:#333333;
+}
+.company-header view{
+  border-radius:4rpx;
+  font-size:24rpx;
+  font-weight:500;
+  color:#3073E3;
+}

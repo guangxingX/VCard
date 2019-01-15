@@ -1,0 +1,43 @@
+<view class="wrap">
+  <!-- <button bindtap="goXiangqing">去公司详情</button> -->
+  <view class="companyListWrap">
+    <block wx:for="{{companyList}}">
+      <view data-id="{{item.id}}" url="../myCompanyDes/myCompanyDes?id={{item.id}}" bind:tap="onTapItem">
+        <view class="companyListItem">
+          <view class="companyDesWrap clear">
+            <view class="companyLogo-l">
+              <image class="companyLogoImg" src="{{item.logo}}"></image>
+            </view>
+            <view class="companyDes-r">
+              <view class="">
+                <view class="inline-block name-wrap">
+                  <text class="compamyName"> {{ item.name }} </text>
+                </view>
+                <view wx:if="{{item.isAuthentication}}" class="inline-block shanghuiWrap">
+                  <image class="shanghuiIco" src="../../../assets/images/icon/icon-authentication-yellow.png"></image>
+                  <text class="shagnhuitext">商会认证</text>
+                </view>
+              </view>
+              <view class="paddT">
+                <block wx:for="{{item.coTag}}" wx:for-item="typeItem">
+                  <text class="type-tag {{typeItem.coTagType ? 'type-tag-red' : ''}}"> {{ typeItem.coTagName }} </text>
+                </block>
+              </view>
+            </view>
+          </view>
+          <view class="companyOwerWrap">
+            <view><text class="name">法定代表人：{{ item.legalPerson }} </text></view>
+            <view class="clear">
+              <view class="date"><text class="date">成立日期：{{ item.setUpTime }} </text></view>
+              <view class="city"><image class="icon-square" src="../../../assets/images/icon/icon-map-durk.png" ></image> {{item.address}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+ <view class="addCompany" wx:if="{{!isEdit}}">
+  <button type="default" size="default" bindtap="goAddCompany" hover-class="custom-button-hover-class" formType="submit">添加公司</button>
+</view>

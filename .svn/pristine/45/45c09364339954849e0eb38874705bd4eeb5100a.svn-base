@@ -1,0 +1,76 @@
+/* component/select/index.wxss */
+@import "/pages/commenPage/selectIndustry/selectIndustry.wxss";
+.headbar
+{
+    height: 105rpx;
+
+    padding: 0 40rpx;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    color:rgba(108,108,108,1);
+    font-size:28rpx;
+    border-bottom: 1rpx solid #eee;
+
+}
+.headbar .addB{
+    width: 160rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    background:#F2F6FD;
+    color:#3073E3;
+    border:1rpx solid #3073E3;
+    text-align: center;
+    border-radius: 4rpx;
+}
+
+.b-complete{
+    position: fixed;
+    bottom:0;
+    z-index: 100;
+    box-shadow:-1px -9px 9px 1px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    width: 100%;
+}
+
+.b-complete .b-header{
+    height: 99rpx;
+    text-align: center;
+    line-height: 99rpx;
+    font-size:28rpx;
+    font-weight:500;
+    color:rgba(108,108,108,1);
+}
+.b-complete .b-checked{
+   margin: 0 30rpx;
+    display: flex;
+    flex-wrap:wrap;
+}
+.b-complete .b-checked .item_city{
+    position:relative;
+
+}
+.b-complete .b-checked image{
+    position: absolute;
+    top:-10rpx;
+    left:-10rpx;
+
+    width: 30rpx;
+    height: 30rpx;
+}
+.b-complete .b-sure{
+    margin: 0 auto;
+    margin-top: 38rpx;
+    margin-bottom: 25rpx;
+    width: 511rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background:rgba(48,115,227,1);
+    border-radius:4rpx;
+    font-size:34rpx;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    text-align: center;
+
+
+}

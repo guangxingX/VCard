@@ -1,0 +1,22 @@
+<!--pages/financial/newinvest/index.wxml-->
+<view>
+    <view class="under">
+        <view class="btn one" >
+            <image  src="image/compeny.png" bind:tap="onNewCompany"/>
+            <view>
+                投资机构
+            </view>
+        </view>
+        <view class="btn">
+            <image  src="image/men.png" bind:tap="onNewMen"/>
+            <view>
+                投资人
+            </view>
+        </view>
+    </view>
+
+
+    <view class="fix-bottom-btn" bind:tap="onCancel">
+        取消
+    </view>
+</view>

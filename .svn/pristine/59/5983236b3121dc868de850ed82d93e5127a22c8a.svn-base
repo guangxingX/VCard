@@ -1,0 +1,11 @@
+<!--pages/financial/note/index.wxml-->
+<block wx:for="{{items}}" wx:key="">
+    <w-note-item
+            bind:tap="{{item.fn}}"
+            name="{{item.name}}"
+            tip="{{item.tip}}"
+            num="{{item.num}}"
+            src="{{item.src}}"/>
+</block>
+
+

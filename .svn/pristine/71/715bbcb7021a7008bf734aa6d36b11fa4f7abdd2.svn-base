@@ -1,0 +1,5 @@
+/* pages/financial/edit/funding-programs/stage/index.wxss */
+@import "/style/weui.wxss";
+page{
+    background: #EFEFF4;
+}

@@ -1,0 +1,46 @@
+// component/programe/history/index.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    his:{
+      type:Object,
+        observer: function (newVal, oldVal, changedPath) {
+            if(!newVal.investors){
+              return
+            }
+            console.log(newVal)
+            let investors = newVal.investors.split(',')
+            console.log(investors)
+            newVal.investors = investors
+
+            this.setData(
+                {
+                    _his: newVal
+                }
+            )
+        }
+    },
+      isArrow:{
+      type:Boolean,
+          value:false
+      }
+
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+      _his:{}
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+
+  }
+
+})

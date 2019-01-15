@@ -2,189 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87668e57-3b6a-4521-a167-6b396eb25e6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/images/financial" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/assets/images/financial/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/financial/share.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/mine/investment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/mine/startmen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/behaviors" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/component/behaviors/load_more.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/card-headalone" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/component/image" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/component/image/arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/note" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/component/note/item" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/pages/financial-index/image/donw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/businessModel" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/businessModel/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/businessModel/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/businessModel/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/businessModel/index.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/ImageText" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/ImageText/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/ImageText/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/ImageText/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/ImageText/index.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/case" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/case/addcase" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/case/addcase/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/case/addcase/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/case/addcase/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/case/addcase/index.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/case/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/case/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/case/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/mixture/case/index.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/resourcesReserves" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/resourcesReserves/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/resourcesReserves/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/resourcesReserves/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/financial/resourcesReserves/index.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/my.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/financial/mymessageList" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/pages/financial/mymessageList/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/financial/mymessageList/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/financial/mymessageList/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/financial/mymessageList/index.wxss" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/about.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/about.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/aboutLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/aboutLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/clear.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/clear.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/error-fff.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/error-fff.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/error.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/error.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/ico-alreadySaveMessage.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/ico-alreadySaveMessage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/ico-cardpackage.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/ico-cardpackage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-add-blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-add-blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-add.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-add.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-address-gray.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-address-gray.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-address.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-address.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-arrow-down-gray.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-arrow-down-gray.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-arrow-right-blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-arrow-right-blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-arrow-right.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-arrow-right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-authentication-yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-authentication-yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-authentication.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-authentication.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-checkbox-current.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-checkbox-current.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-delete-gray.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-delete-gray.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-delete-red.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-delete-red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-email-durk.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-email-durk.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-email-gray.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-email-gray.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-email.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-email.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-enterprise.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-enterprise.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-insert-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-insert-image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-insert-text.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-insert-text.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-link-blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-link-blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-mailList.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-mailList.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-map-mark.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-map-mark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-map.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-message-gray.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-message-gray.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-myActive.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-myActive.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-myResource.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-myResource.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-new-address.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-new-address.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-new-clock.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-new-clock.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-otherbtn1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-otherbtn1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-otherbtn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-otherbtn2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-otherbtn3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-otherbtn3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-otherbtn4.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-otherbtn4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-phone-blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-phone-blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-phone-blueline.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-phone-blueline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-phone-gray.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-phone-gray.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-phone-grayline.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-phone-grayline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-phone.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-phone.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-photo-blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-photo-blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-qcc-noselect.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-qcc-noselect.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-qcc-selected.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-qcc-selected.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-radio.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-radio.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-search.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-search.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-share.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-share.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-supply-message-tip.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-supply-message-tip.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tabbar1-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tabbar1-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tabbar1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tabbar1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tabbar2-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tabbar2-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tabbar2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tabbar2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tabbar3-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tabbar3-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tabbar3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tabbar3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tabbar4-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tabbar4-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tabbar4.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tabbar4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tabbar5-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tabbar5-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tabbar5.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tabbar5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-tag.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-tag.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-triangle-down-gray.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-triangle-down-gray.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/icon-warning.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/icon-warning.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/map-small.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/map-small.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/mycard-avatar-default.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/mycard-avatar-default.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/mycard-tagbg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/mycard-tagbg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/ok-fff.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/ok-fff.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon/photobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon/photobg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/index" beforeDir="true" afterPath="$PROJECT_DIR$/assets/images/index" afterDir="true" />
-      <change beforePath="$PROJECT_DIR$/assets/images/index/add_card.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/index/add_card.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/index/cardbg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/index/cardbg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/index/companyLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/index/companyLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/index/login-img.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/index/login-img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/index/manualbg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/index/manualbg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/index/no-card.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/index/no-card.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/index/scaningbg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/index/scaningbg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/maillist" beforeDir="true" afterPath="$PROJECT_DIR$/assets/images/maillist" afterDir="true" />
-      <change beforePath="$PROJECT_DIR$/assets/images/maillist/commerce-headerbg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/maillist/commerce-headerbg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/maillist/companylogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/maillist/companylogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/maillist/joincoc-header.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/maillist/joincoc-header.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/mine" beforeDir="true" afterPath="$PROJECT_DIR$/assets/images/mine" afterDir="true" />
-      <change beforePath="$PROJECT_DIR$/assets/images/mine/affiliated-company-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/mine/affiliated-company-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/mine/bg-noDescription.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/mine/bg-noDescription.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/mine/companyBg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/mine/companyBg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/mine/companyInfo-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/mine/companyInfo-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/mine/companyLogo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/mine/companyLogo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/mine/imageText-placeholder-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/mine/imageText-placeholder-image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/mine/imageText-placeholder.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/mine/imageText-placeholder.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/mine/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/mine/logo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/mine/no-message.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/mine/no-message.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/image-loader/image.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/component/image-loader/image.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/programe/item/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/programe/item/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/programe/item/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/component/programe/item/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/programe.js" beforeDir="false" afterPath="$PROJECT_DIR$/module/programe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/commenPage/selectIndustry/selectIndustry.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/commenPage/selectIndustry/selectIndustry.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial" beforeDir="true" afterPath="$PROJECT_DIR$/pages/financial" afterDir="true" />
-      <change beforePath="$PROJECT_DIR$/pages/financial-index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial-index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial-index/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial-index/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial-index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial-index/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial-index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial-index/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/addmen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/addmen/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/addmen/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/addmen/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/component/image-text/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/component/image-text/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/component/image-text/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/component/image-text/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/component/image-text/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/component/image-text/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/component/insert-bar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/component/insert-bar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/component/link-c/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/component/link-c/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/component/link-d/image" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/component/link-d/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/component/link-d/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/component/link-d/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/component/link-d/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/component/programe/edit-m/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/component/programe/edit-m/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/component/programe/edit-m/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/component/programe/edit-m/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/contactme/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/contactme/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/contactme/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/contactme/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/details/image/share.png" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/image/share.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/details/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/details/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/details/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/details/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/details/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/details/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/edit/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/edit/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/edit/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/edit/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/edit/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/edit/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/edit/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/edit/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/note/item/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/note/item/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/note/item/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/component/note/item/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/financial/card/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/card/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/financial/card/sendBP/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/card/sendBP/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/financial/itemIntr/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/itemIntr/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/itemIntr/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/itemIntr/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/itemIntr/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/itemIntr/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/selectmen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/selectmen/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/selectmen/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/selectmen/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/financial/selectmen/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/selectmen/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mine/mine/mine.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine/mine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mine/mine/mine.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine/mine.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mine/mine/mine.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine/mine.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mine/myCompany/myCompany.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/myCompany/myCompany.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mine/myCompany/myCompany.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/myCompany/myCompany.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/test/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/test/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/test/test.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/financial/note/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/note/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/financial/note/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/financial/note/index.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/weui.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/style/weui.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/http.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/messageListTemplate/messageListTemplate.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/messageListTemplate/messageListTemplate.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/api/_mock.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/api/_mock.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -195,124 +31,121 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/templates/messageListTemplate/messageListTemplate.wxml">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="322">
+                    <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1912814826">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="3" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="js" value="566" />
-          <entry key="json" value="113" />
-          <entry key="md" value="14" />
-          <entry key="png" value="55" />
+          <entry key="js" value="757" />
+          <entry key="json" value="136" />
+          <entry key="md" value="18" />
+          <entry key="png" value="63" />
           <entry key="py" value="2" />
-          <entry key="wxml" value="295" />
+          <entry key="wxml" value="361" />
           <entry key="wxs" value="4" />
-          <entry key="wxss" value="145" />
+          <entry key="wxss" value="162" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="145" />
-          <entry key="HTML" value="293" />
-          <entry key="Image" value="55" />
-          <entry key="JSON" value="113" />
-          <entry key="JavaScript" value="570" />
-          <entry key="PLAIN_TEXT" value="19" />
+          <entry key="CSS" value="162" />
+          <entry key="HTML" value="359" />
+          <entry key="Image" value="63" />
+          <entry key="JSON" value="136" />
+          <entry key="JavaScript" value="761" />
+          <entry key="PLAIN_TEXT" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="26703" />
-          <entry key="json" value="183" />
+          <entry key="js" value="35991" />
+          <entry key="json" value="208" />
           <entry key="md" value="26" />
-          <entry key="wxml" value="7268" />
+          <entry key="wxml" value="8841" />
           <entry key="wxs" value="225" />
-          <entry key="wxss" value="4767" />
+          <entry key="wxss" value="5391" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="4767" />
-          <entry key="HTML" value="7268" />
-          <entry key="JSON" value="183" />
-          <entry key="JavaScript" value="26928" />
+          <entry key="CSS" value="5391" />
+          <entry key="HTML" value="8841" />
+          <entry key="JSON" value="208" />
+          <entry key="JavaScript" value="36216" />
           <entry key="PLAIN_TEXT" value="26" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4377224">
+    <splitter split-orientation="horizontal" split-proportion="0.8050669">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/financial/edit/index.wxml">
+            <entry file="file://$PROJECT_DIR$/pages/financial/mymessageList/index.wxml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="273">
-                  <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/financial/upvideo/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-10">
-                  <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/module/programe.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="642">
-                  <caret line="563" column="24" selection-start-line="563" selection-start-column="4" selection-end-line="563" selection-end-column="24" />
+                <state relative-caret-position="204">
+                  <caret line="15" column="54" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="54" />
                   <folding>
-                    <element signature="e#0#43#0" expanded="true" />
-                    <element signature="n#!!block;n#resortbyalphabet#0;n#programemodule#0" />
-                    <element signature="n#!!block;n#getIndustryList#0;n#programemodule#0" />
+                    <element signature="n#style#0;n#view#0;n#block#0;n#view#1;n#view#0;n#view#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/financial/resourcesReserves/index.wxml">
+            <entry file="file://$PROJECT_DIR$/module/my.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="42" selection-start-column="42" selection-end-column="42" />
+                <state relative-caret-position="368">
+                  <caret line="16" column="37" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="37" />
+                  <folding>
+                    <element signature="e#0#43#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/financial/resourcesReserves/index.json">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/utils/api/_mock.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="69">
-                  <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/financial/upvideo/index.wxml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="46" />
+                <state relative-caret-position="530">
+                  <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#30#966#0" />
+                    <element signature="e#993#2221#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -321,61 +154,51 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/financial/edit/index.js">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pages/financial/mymessageList/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="598">
-                  <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+                <state relative-caret-position="416">
+                  <caret line="87" column="30" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/financial/upvideo/index.json">
+            <entry file="file://$PROJECT_DIR$/utils/api/_mock.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1174">
+                  <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#30#966#0" />
+                    <element signature="e#993#2221#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pages/financial/mymessageList/index.wxss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="710">
+                  <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pages/financial/mymessageList/index.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="69">
-                  <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+                  <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/financial/businessModel/index.js">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/pages/financial/resourcesReserves/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/financial/edit/index.json">
+            <entry file="file://$PROJECT_DIR$/pages/financial/investmentplan/index.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="23">
-                  <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="3" selection-end-column="35" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/financial/upvideo/index.wxml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="46" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/lookforsb.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="895">
-                  <caret line="108" column="4" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="22" />
+                  <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="3" selection-end-column="35" />
                 </state>
               </provider>
             </entry>
@@ -393,36 +216,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onCancleClick</find>
-      <find>industryArr</find>
-      <find>closeModal</find>
-      <find>completeBack</find>
-      <find>setImageTextItem</find>
-      <find>_randerlookforsbData</find>
-      <find>getinvestmentCardList</find>
-      <find>onTapindustry</find>
-      <find>onBindChange</find>
+      <find>businessplanning</find>
+      <find>editProject</find>
+      <find>getUserIntroTeam</find>
+      <find>contactUs</find>
+      <find>bindFormSubmit</find>
+      <find>onGoNextPage</find>
+      <find>goCompanyDes</find>
+      <find>amount</find>
+      <find>jumpTo</find>
+      <find>供需</find>
+      <find>getinstitutionsCard</find>
+      <find>onSendBook</find>
+      <find>btnview</find>
+      <find>activeIndex</find>
+      <find>isshare</find>
+      <find>isedit</find>
+      <find>companyCardInfo</find>
+      <find>shareCompanyCard</find>
+      <find>companyInfo</find>
+      <find>myenterpriseListcard</find>
       <find>getinvestorsCard</find>
-      <find>setNavigationBarTitl</find>
-      <find>getinvestmentDemand</find>
-      <find>getmenidea</find>
-      <find>institutionsDirection</find>
-      <find>setmenidea</find>
-      <find>onTapSave</find>
-      <find>_randerData</find>
-      <find>_haveArr</find>
-      <find>onTabClick</find>
-      <find>onTapDelete</find>
-      <find>wx.showT</find>
-      <find>onSelectlabel</find>
-      <find>getcompanyEmployee</find>
-      <find>getinstitutionsCoreTeam</find>
-      <find>institutionsCoreTeam</find>
-      <find>getPersion</find>
-      <find>onTapView</find>
-      <find>onView</find>
-      <find>VCard/projectDetail</find>
-      <find>getsearchProgress</find>
+      <find>enterpriseListcard</find>
+      <find>id</find>
+      <find>cardId</find>
+      <find>onTapItem</find>
+      <find>info</find>
+      <find>userId</find>
+      <find>meToYouMessageList</find>
+      <find>todetails</find>
+      <find>type</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -437,57 +260,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/component/programe/item/index.js" />
-        <option value="$PROJECT_DIR$/component/programe/item/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/projectplan/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/details/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/details/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/projectplan/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/select-tag/index.json" />
-        <option value="$PROJECT_DIR$/pages/financial/projectinfo/index.json" />
-        <option value="$PROJECT_DIR$/pages/financial/projectinfo/index.wxss" />
-        <option value="$PROJECT_DIR$/component/select/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/projectinfo/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/projectinfo/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/edit/index.wxss" />
-        <option value="$PROJECT_DIR$/pages/financial/itemIntr/index.wxss" />
-        <option value="$PROJECT_DIR$/pages/mine/myCompany/myCompany.js" />
-        <option value="$PROJECT_DIR$/pages/financial/edit/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/itemIntr/index.wxml" />
-        <option value="$PROJECT_DIR$/utils/http.js" />
-        <option value="$PROJECT_DIR$/pages/financial/addmen/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/addmen/editmen/index.js" />
-        <option value="$PROJECT_DIR$/module/lookforsb.js" />
-        <option value="$PROJECT_DIR$/utils/api/_mock.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/pages/financial/mixture/ImageText/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/component/image-text/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/component/image-text/index.wxss" />
-        <option value="$PROJECT_DIR$/pages/financial/component/image-text/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/selectmen/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/selectmen/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/component/link-d/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/addmen/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/component/link-d/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/itemIntr/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/mixture/case/addcase/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/mixture/case/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/edit/index.json" />
-        <option value="$PROJECT_DIR$/pages/financial/edit/funding-programs/index.json" />
-        <option value="$PROJECT_DIR$/pages/financial/edit/funding-programs/index.wxss" />
+        <option value="$PROJECT_DIR$/pages/financial/edit/funding-programs/his/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/financial/component/programe/history/index.wxss" />
         <option value="$PROJECT_DIR$/pages/financial/edit/funding-programs/his/index.js" />
         <option value="$PROJECT_DIR$/pages/financial/edit/funding-programs/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/financial/edit/funding-programs/index.wxss" />
+        <option value="$PROJECT_DIR$/pages/financial/component/programe/history/index.js" />
         <option value="$PROJECT_DIR$/pages/financial/edit/funding-programs/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/edit/funding-programs/his/index.json" />
-        <option value="$PROJECT_DIR$/pages/financial/edit/funding-programs/his/index.wxss" />
-        <option value="$PROJECT_DIR$/pages/financial/edit/funding-programs/his/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/upvideo/index.json" />
         <option value="$PROJECT_DIR$/module/programe.js" />
-        <option value="$PROJECT_DIR$/pages/financial/resourcesReserves/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/financial/resourcesReserves/index.json" />
-        <option value="$PROJECT_DIR$/pages/financial/edit/index.js" />
-        <option value="$PROJECT_DIR$/pages/financial/resourcesReserves/index.js" />
+        <option value="$PROJECT_DIR$/pages/financial/carlist/index.json" />
+        <option value="$PROJECT_DIR$/pages/financial/carlist/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/financial/contactme/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/financial/contactme/index.wxss" />
+        <option value="$PROJECT_DIR$/pages/financial/card/sendBP/index.json" />
+        <option value="$PROJECT_DIR$/component/lookforsb/item/index.js" />
+        <option value="$PROJECT_DIR$/module/lookforsb.js" />
+        <option value="$PROJECT_DIR$/pages/index/index.wxss" />
+        <option value="$PROJECT_DIR$/pages/financial-index/index.js" />
+        <option value="$PROJECT_DIR$/pages/index/index.js" />
+        <option value="$PROJECT_DIR$/app.json" />
+        <option value="$PROJECT_DIR$/pages/mine/mine/mine.wxss" />
+        <option value="$PROJECT_DIR$/pages/mine/mine/mine.json" />
+        <option value="$PROJECT_DIR$/pages/mine/cardDetails/cardDetails.wxss" />
+        <option value="$PROJECT_DIR$/pages/mine/cardDetails/cardDetails.js" />
+        <option value="$PROJECT_DIR$/pages/mine/cardDetails/cardDetails.wxml" />
+        <option value="$PROJECT_DIR$/pages/mine/mine/mine.wxml" />
+        <option value="$PROJECT_DIR$/pages/mine/mine/mine.js" />
+        <option value="$PROJECT_DIR$/component/card-head/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/financial/card/index.wxml" />
+        <option value="$PROJECT_DIR$/component/lookforsb/item/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/financial/details/index.js" />
+        <option value="$PROJECT_DIR$/component/programe/item/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/financial/carlist/index.js" />
+        <option value="$PROJECT_DIR$/pages/financial/card/sendBP/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/financial/contactme/index.js" />
+        <option value="$PROJECT_DIR$/component/programe/item/index.js" />
+        <option value="$PROJECT_DIR$/pages/financial/projectplan/index.js" />
+        <option value="$PROJECT_DIR$/pages/financial/projectplan/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/financial/card/index.js" />
+        <option value="$PROJECT_DIR$/pages/financial/card/sendBP/index.js" />
+        <option value="$PROJECT_DIR$/component/note/item/index.js" />
+        <option value="$PROJECT_DIR$/pages/financial/note/index.wxml" />
+        <option value="$PROJECT_DIR$/component/note/item/index.wxml" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/pages/financial/note/index.js" />
+        <option value="$PROJECT_DIR$/module/my.js" />
+        <option value="$PROJECT_DIR$/pages/financial/mymessageList/index.json" />
+        <option value="$PROJECT_DIR$/pages/financial/mymessageList/index.wxss" />
+        <option value="$PROJECT_DIR$/pages/financial/mymessageList/index.js" />
+        <option value="$PROJECT_DIR$/pages/financial/mymessageList/index.wxml" />
+        <option value="$PROJECT_DIR$/templates/messageListTemplate/messageListTemplate.wxml" />
+        <option value="$PROJECT_DIR$/utils/api/_mock.js" />
       </list>
     </option>
   </component>
@@ -508,9 +331,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="427" />
+    <option name="y" value="119" />
     <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="height" value="966" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -545,6 +370,11 @@
             <path>
               <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
               <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
               <item name="module" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -563,21 +393,49 @@
               <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="financial" type="462c0819:PsiDirectoryNode" />
-              <item name="edit" type="462c0819:PsiDirectoryNode" />
+              <item name="investmentplan" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
               <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="financial" type="462c0819:PsiDirectoryNode" />
-              <item name="resourcesReserves" type="462c0819:PsiDirectoryNode" />
+              <item name="mymessageList" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
               <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="financial" type="462c0819:PsiDirectoryNode" />
-              <item name="saveInstitutions" type="462c0819:PsiDirectoryNode" />
+              <item name="supply" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="supply" type="462c0819:PsiDirectoryNode" />
+              <item name="messageList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="messageListTemplate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InvestmentVCard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InvestmentVCard" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -595,15 +453,16 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pages/financial/resourcesReserves" />
-      <recent name="$PROJECT_DIR$/pages/financial/businessModel" />
-      <recent name="$PROJECT_DIR$/pages/financial" />
-      <recent name="$PROJECT_DIR$/pages/financial/mixture/case" />
-      <recent name="$PROJECT_DIR$/pages/financial/mixture/ImageText" />
+      <recent name="$PROJECT_DIR$/pages/financial/mymessageList" />
+      <recent name="$PROJECT_DIR$/pages/mine/mine/image" />
+      <recent name="$PROJECT_DIR$/pages/financial/card/sendBP" />
+      <recent name="$PROJECT_DIR$/pages/financial/carlist" />
+      <recent name="$PROJECT_DIR$/pages/financial/edit/funding-programs/image" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -669,12 +528,14 @@
       <workItem from="1545117301756" duration="88865000" />
       <workItem from="1545720802913" duration="82088000" />
       <workItem from="1546136016484" duration="324000" />
-      <workItem from="1546136503107" duration="18900000" />
+      <workItem from="1546136503107" duration="33495000" />
+      <workItem from="1546858353736" duration="83150000" />
+      <workItem from="1547189385990" duration="9818000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340881000" />
+    <option name="totallyTimeSpent" value="448444000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,11 +547,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15310428" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14345992" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="0" weight="0.32959184" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -698,7 +559,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.3295325" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32857144" />
       <window_info anchor="bottom" id="Run" order="7" weight="0.32959184" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
@@ -709,7 +570,7 @@
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15310428" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20192887" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="0" weight="0.32959184" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -753,359 +614,359 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/pages/financial/edit/index.js</url>
-          <line>60</line>
+          <line>62</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utils/api/_mock.js">
+    <entry file="file://$PROJECT_DIR$/pages/supply/supplyIndex/supply.wxml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="28" selection-start-column="11" selection-end-column="28" />
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state relative-caret-position="609">
+          <caret line="167" column="40" selection-start-line="167" selection-start-column="40" selection-end-line="167" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/http.js">
+    <entry file="file://$PROJECT_DIR$/pages/financial/addmen/index.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1840">
-          <caret line="80" column="10" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/component/image-text/index.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/mixture/ImageText/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/mixture/ImageText/index.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/component/image-text/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="57" column="6" lean-forward="true" selection-start-line="57" selection-start-column="6" selection-end-line="65" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/mixture/ImageText/index.wxml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/selectmen/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1426">
-          <caret line="62" column="17" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="17" />
-          <folding>
-            <element signature="e#38#98#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/selectmen/index.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="92">
+          <caret line="4" column="38" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="4" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/financial/addmen/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1713">
-          <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/addmen/editmen/index.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/addmen/index.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/itemIntr/index.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#view#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/addmen/index.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/component/link-d/index.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/component/link-d/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/mixture/case/index.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/mixture/case/addcase/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-671">
-          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/mixture/case/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/mixture/case/index.wxml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/itemIntr/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
-          <caret line="78" column="102" selection-start-line="78" selection-start-column="102" selection-end-line="78" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/mixture/case/addcase/index.wxml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/component/multiple-choice/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/details/index.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/details/index.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-622">
-          <caret line="109" column="13" lean-forward="true" selection-start-line="109" selection-start-column="13" selection-end-line="111" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/component/image-text/index.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="66" column="2" selection-start-line="66" selection-start-column="2" selection-end-line="69" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/component/multiple-choice/index.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/component/multiple-choice/index.wxml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/funding-programs/index.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/funding-programs/his/index.js">
+    <entry file="file://$PROJECT_DIR$/pages/mine/mine/mine.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/funding-programs/his/index.wxss">
+    <entry file="file://$PROJECT_DIR$/pages/mine/mine/mine.wxss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        <state relative-caret-position="458">
+          <caret line="52" selection-start-line="52" selection-end-line="52" selection-end-column="76" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/funding-programs/index.wxml">
+    <entry file="file://$PROJECT_DIR$/templates/myenterpriseListcard/myenterpriseListcard.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/mine/cardDetails/cardDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="11" selection-end-column="11" />
+        <state relative-caret-position="659">
+          <caret line="82" column="6" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/mine/mine/mine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/myenterpriseListcard/myenterpriseListcard.wxss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/mine/cardDetails/cardDetails.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/mine/mine/mine.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="106" column="48" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/mine/cardDetails/cardDetails.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1334">
+          <caret line="58" column="14" lean-forward="true" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/card-head/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/card/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/card/index.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/lookforsb/item/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/lookforsb/item/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/edit/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/projectplan/index.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/carlist/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="76" column="32" lean-forward="true" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/carlist/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/myenterpriseListcard/myenterpriseListcard.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/myenterpriseListcard/myenterpriseListcard.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/programe/item/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/programe/item/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/projectplan/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="93" column="77" selection-start-line="93" selection-start-column="77" selection-end-line="93" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/projectplan/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="61" column="80" selection-start-line="61" selection-start-column="80" selection-end-line="61" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/details/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="233" column="38" selection-start-line="233" selection-start-column="38" selection-end-line="233" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/contactme/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="104" column="23" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/card/sendBP/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/card/sendBP/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="797">
+          <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
           <folding>
-            <element signature="n#style#0;n#view#1;n#navigator#0;n#view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#view#1;n#view#0;n#view#0;n#!!top" expanded="true" />
+            <element signature="e#21#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/upvideo/index.wxss">
+    <entry file="file://$PROJECT_DIR$/pages/financial/card/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" selection-start-line="25" selection-end-line="27" selection-end-column="1" />
+        <state relative-caret-position="425">
+          <caret line="134" column="14" lean-forward="true" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/funding-programs/his/index.wxml">
+    <entry file="file://$PROJECT_DIR$/module/programe.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        <state relative-caret-position="161">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/data.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/note/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/note/item/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="104" selection-start-line="4" selection-start-column="104" selection-end-line="4" selection-end-column="104" />
           <folding>
+            <element signature="n#style#0;n#view#0;n#view#0;n#view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#view#1;n#view#1;n#view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#view#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/funding-programs/his/index.json">
+    <entry file="file://$PROJECT_DIR$/component/note/item/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        <state relative-caret-position="230">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/funding-programs/index.json">
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/note/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="873">
+          <caret line="102" column="56" selection-start-line="102" selection-start-column="56" selection-end-line="102" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/lookforsb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="887">
+          <caret line="325" column="49" selection-start-line="325" selection-start-column="40" selection-end-line="325" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/messageListTemplate/messageListTemplate.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/investmentplan/index.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="3" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/funding-programs/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/upvideo/index.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/upvideo/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/index.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/upvideo/index.json">
+    <entry file="file://$PROJECT_DIR$/pages/financial/mymessageList/index.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/businessModel/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/lookforsb.js">
+    <entry file="file://$PROJECT_DIR$/pages/financial/mymessageList/index.wxss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="108" column="4" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="22" />
+        <state relative-caret-position="710">
+          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/index.wxml">
+    <entry file="file://$PROJECT_DIR$/pages/financial/mymessageList/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        <state relative-caret-position="416">
+          <caret line="87" column="30" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/resourcesReserves/index.wxml">
+    <entry file="file://$PROJECT_DIR$/module/my.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="42" selection-start-column="42" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/resourcesReserves/index.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/edit/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/programe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="563" column="24" selection-start-line="563" selection-start-column="4" selection-end-line="563" selection-end-column="24" />
+        <state relative-caret-position="368">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="37" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <element signature="n#!!block;n#resortbyalphabet#0;n#programemodule#0" />
-            <element signature="n#!!block;n#getIndustryList#0;n#programemodule#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/financial/resourcesReserves/index.js">
+    <entry file="file://$PROJECT_DIR$/templates/messageListTemplate/messageListTemplate.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="322">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/financial/mymessageList/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#view#0;n#block#0;n#view#1;n#view#0;n#view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/api/_mock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+          <folding>
+            <element signature="e#30#966#0" />
+            <element signature="e#993#2221#0" />
+          </folding>
         </state>
       </provider>
     </entry>

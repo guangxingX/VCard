@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "投资计划",
+  "usingComponents": {
+    "w-item-programme": "/component/programe/item/index",
+    "w-item-lookforsb": "/component/lookforsb/item/index",
+    "w-select": "/component/select/index"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 200,
+  "disableScroll": true
+}

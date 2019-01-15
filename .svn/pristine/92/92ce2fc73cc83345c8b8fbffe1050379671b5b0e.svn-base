@@ -1,0 +1,111 @@
+/**index.wxss**/
+@import "/style/weui.wxss";
+swiper{height:455rpx;background:#fff;}
+.about-page{flex: 1;width:100%;color:#353535;}
+.myCompany{background:#fff;padding:0 30rpx;padding-bottom:16rpx;}
+.mytitle{font-size:32rpx;padding:25rpx 0rpx 25rpx 0rpx;overflow:hidden;}
+.myCompany .mytitle{padding-top:10rpx;}
+.myBusinessCard .mytitle{padding:25rpx 30rpx 25rpx 30rpx;}
+.mytitle text{padding-left:30rpx;}
+.addnavigator{display:inline-block;}
+.tag-tag{width: 690rpx;height: 397rpx;margin: 0 auto;background-color: #21242b;background-size:100% 100%;
+  border-radius: 10rpx;box-shadow: 0px 2px 3px #ccc;position: relative;padding-left:20rpx;box-sizing:border-box;}
+.noCardWrap{width:690rpx;height:397rpx;margin:0 auto;border-radius:10rpx;box-shadow:0px 2px 3px #ccc;position:relative;box-sizing:border-box;}
+.noCard{width: 100%;height: 100%;}
+
+/*.tag-tag .cardbg{position:absolute;top:0;left:0;width:100%;height:100%;border-radius: 10rpx;}
+.tag-tag .section-1{display: flex;height: 136rpx;line-height: 136rpx;flex-direction: row;padding: 20rpx;
+  position:relative;z-index:10;}
+.section-2{position:relative;z-index:10;}
+.tag-tag .section-1 .avatar{width:136rpx;height: 136rpx;float: left;}
+.avatar image{width: 127rpx;height: 127rpx;border-radius: 50%;}
+.flex1{height: 54rpx;line-height: 54rpx;}
+.flex2{height: 40rpx;line-height: 40rpx;}
+.flex1 image{width:20rpx;height: 20rpx;}
+.flex1 image.icon {position:relative;top:16rpx;}
+.tag-tag .section-1 .detail{flex: 3;float: right;display:flex;flex-direction:column;
+  padding-top:16rpx;margin-left:10rpx;max-width:400rpx;}
+.tag-tag .section-1 .tag-blue{width:97rpx;height:53rpx;position:absolute;right:-10rpx;top:26rpx;}
+.tag-tag .section-1 .tag-blue image{width:97rpx;height:53rpx;position:absolute;right:0rpx;top:0rpx;}
+.tag-tag .section-1 .tag-blue text{position:absolute;right:20rpx;top:-48rpx;color:#fff;font-size:26rpx;}
+.tag-tag .section-1 .tag-blue.addtag{top:90rpx;}
+.tag-tag .section-1 .tag-blue .addCard{height:45rpx;position:absolute;top:0rpx;width:80rpx;line-height:45rpx;text-align: right;}
+.detail .name{color:#fff;white-space:nowrap; overflow:hidden;
+  text-overflow:ellipsis;max-width: 100%;}
+.detail .name image{width:24rpx;height:28rpx;margin-left:20rpx;}
+.detail .comp{font-size: 26rpx;color:#fff;}
+.section-2-detail .comp{font-size: 26rpx;color:#fff;height:45rpx;display:flex;}
+  .section-2-detail .comp text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height: 45rpx;
+height: 45rpx;}
+.section-2-detail .comp .flex3{padding-left: 10rpx;}
+.section-2-detail .comp.companyName{font-size:32rpx;margin-top:10rpx;margin-bottom:10rpx;}
+.section-2-detail .comp.companyName .text{display: inline-block;white-space:nowrap; overflow:hidden;
+  text-overflow:ellipsis;max-width: 520rpx;}
+.section-2-detail .comp.companyName .authentication{display:inline-block;font-size:17rpx;color:#f19942;
+  margin-left:20rpx;position:relative;top:4rpx;}
+.section-2-detail .comp.companyName .authentication image{width:20rpx;height:16rpx;}
+.section-2-detail .comp.companyName .authentication text{position:relative;top:-2rpx;left:6rpx;}
+.section-2-detail .comp.companyAddress text{max-width:80%;}
+.section-2-detail .comp .mapSmall{width:54rpx;height:54rpx;margin-left:30rpx;vertical-align: middle;}
+.tag-tag .section-2{height: 204rpx;}
+.section-2-detail{padding-left: 20rpx;color:#aaa;}*/
+@import "../../../templates/myBusinessCardTemp/myBusinessCardTemp.wxss";
+@import "../../../templates/myenterpriseListcard/myenterpriseListcard.wxss";
+.home-card-share{top:-2rpx !important;border:none !important;}
+.companyShareWrap{position: relative;}
+.home-company-share{width: 80rpx;height: 30rpx;position: absolute;left:0;top:0;border:none !important;}
+.addCompany{color:#3073e3;}
+.addrow{width:16rpx;height:25rpx;position:relative;top:1rpx;margin-left:2rpx;}
+.cardBlock{height: auto !important;border-radius: 10rpx;}
+.card-section-2{height: auto !important;}
+.shagnhuitext{color:#f19942;}
+.card-block-2{height:77rpx;line-height: 77rpx;}
+.shanghuiIco{vertical-align: middle;}
+.cardShare{float: right;display:inline;margin-left:auto;margin-right:30rpx;padding-left:50rpx;padding-right:0;box-sizing:border-box;font-size:18px;text-align:center;text-decoration:none;line-height:none;border-radius:5px;-webkit-tap-highlight-color:none !important;overflow:hidden;color:#000000;background-color:none !important;}
+button{background-color:#fff !important;}
+.companyEditBtn{float:right;}
+button::after {content:" ";width:200%;height:200%;position:absolute;top:0;left:0;border:none;-webkit-transform:none;transform:none;-webkit-transform-origin:0 0;transform-origin:0 0;box-sizing:border-box;border-radius:none;}
+.sharbtn{color:#888888 !important;font-size:23rpx;line-height:40rpx;}
+/*.sharbtn-edit{
+  right:80rpx !important;
+}*/
+/*.bodyWrap{
+  padding-bottom: 170rpx;
+  position: relative;
+}*/
+.fenxiang{position:none;display:inline;margin-left:auto;margin-right:auto;padding-left:0;padding-right:0;box-sizing:border-box;font-size:23rpx;text-align:center;text-decoration:none;line-height:none;border-radius:none;-webkit-tap-highlight-color:transparent;overflow:hidden;color:#000000;background-color:none;}
+
+.header{height: 148rpx;width: 100%;background-color: #3073e3;display:flex;align-items: center;justify-content: space-between;}
+
+.header .user-icon {width: 90rpx;height: 90rpx;border-radius: 50%;border:1rpx solid #fff;margin-left: 0rpx;margin-right: 25rpx;}
+.header .user-name{font-size: 35rpx;color:#fff; line-height: 90rpx;display:flex;align-items: center;}
+.heaerIcoWrap{display:flex;align-items: center;}
+.mineList{}
+.listView{height:100rpx;line-height: 100rpx;display:flex;align-items: center;}
+.listRowViwe{border-bottom: 1rpx solid #efeef3;padding-left: 30rpx;}
+.listView text{padding-left: 30rpx;}
+.listViewIcon{width: 35rpx;height: 35rpx;vertical-align: middle;}
+.listViewArrow{width: 16rpx;height: 25rpx;margin-left:auto;padding-right:30rpx;}
+
+.asdf {background: rgba(255, 255, 255, 0) !important; justify-content: space-between;display:flex;}
+
+.section-2-detail  .companyName{display:flex;align-items: center;}
+.addnavigator {color:#3073e3;}
+.flex1 .emailIco{width: 22rpx;height:18rpx !important;}
+.mobile,.email{align-items: center;}
+
+
+/*名片夹*/
+.cardPackage{width: 208rpx;height:84rpx; background:#4b8eff;color:#fff;border-bottom-left-radius: 10rpx;border-top-left-radius: 10rpx;display:flex;align-items: center;justify-content: center;font-size: 30rpx;}
+.cardpackageimg{width: 36rpx;height: 30rpx;margin-right: 20rpx;}
+/*新增 2018。12。25*/
+.en-item-icon{
+  margin-top: 50%;
+  transform: translateY(-50%);
+  width: 55rpx;
+  height: 56rpx;
+}
+.m-10{
+  border-top: 20rpx solid #eee;
+  border-bottom: 20rpx solid #eee;
+}

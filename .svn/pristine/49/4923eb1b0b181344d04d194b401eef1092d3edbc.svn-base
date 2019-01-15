@@ -1,0 +1,25 @@
+<!--component/programe/edit-m/index.wxml-->
+<view class="item">
+    <view class="inner" bind:tap="ontest">
+        <view class="top">
+
+            <view class="name">{{name}}</view>
+            <view class="tag" wx:if="{{must}}">必填</view>
+            <view style="flex :1"></view>
+            <view class="rate">
+                完成度{{_rate}}%
+            </view>
+            <progress percent="{{_rate}}" stroke-width="4rpx" border-radius="2rpx" activeColor="#3073E3" active="true"/>
+
+        </view>
+        <view class="under">
+            <view class="info">
+                {{info}}
+            </view>
+            <slot name="after"></slot>
+        </view>
+    </view>
+
+
+</view>
+

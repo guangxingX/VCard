@@ -1,0 +1,15 @@
+/* pages/financial/projectplan/index.wxss */
+@import "/pages/financial-index/index.wxss";
+@import "/pages/financial/investmentplan/index.wxss";
+.item-slot{
+    margin: 0!important;
+}
+.item-slot .share-bar .item{
+    transform: translateY(0)!important;
+}
+.item-footer{
+    background: #fff;
+}
+.none{
+    margin-right: 30rpx;
+}

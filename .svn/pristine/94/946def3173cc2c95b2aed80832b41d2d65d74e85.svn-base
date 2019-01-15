@@ -1,0 +1,6 @@
+/* component/note/item/index.wxss */
+@import "/style/weui.wxss";
+.fff{
+    background: #fff;
+    margin:18rpx 0 ;
+}

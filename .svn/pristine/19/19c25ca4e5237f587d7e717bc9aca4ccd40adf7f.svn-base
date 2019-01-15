@@ -1,0 +1,34 @@
+/* pages/financial/newinvest/index.wxss */
+@import "/style/weui.wxss";
+.fix-bottom-btn{
+    background: #EEEEEE;
+    color: #F54B24;
+    font-size:36rpx;
+}
+.btn{
+    text-align: center;
+    font-size:36rpx;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+}
+.btn image{
+    width: 196rpx;
+    height: 196rpx;
+}
+.top{
+    position: absolute;
+    top:339rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.under{
+    position: absolute;
+    bottom:430rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.one{
+    margin-bottom:108rpx ;
+}

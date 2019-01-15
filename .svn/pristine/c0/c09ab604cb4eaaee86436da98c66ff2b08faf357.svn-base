@@ -1,0 +1,79 @@
+.message-header{height:100rpx;line-height:100rpx;font-size:28rpx;display:flex;justify-content: center;
+  border-bottom:2rpx solid #e5e5e5;background: #fff;/*margin-bottom: 20rpx;*/}
+.message-header>view{flex:1;text-align:center;}
+.message-header>view.active{background: #eaf1fc;color:#3073e3;}
+.message-header>view:nth-child(1){border-right:2rpx solid #e5e5e5;}
+@import "../../../templates/messageListTemplate/messageListTemplate.wxss";
+
+.mark{
+  height:18px;
+  opacity:0.7;
+  border-radius:9px;
+  font-size:11px;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height: 18px;
+  text-align: center;
+}
+.bg-1{
+  width:44px;
+  background:rgba(93,204,135,1);
+}
+.bg-2{
+  width:55px;
+  background:rgba(48,116,227,1);
+}
+.mark-head{
+  float: right;
+}
+.card-infos{
+  background: #fff;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.card-info{
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  border-radius:4px;
+  margin: 0 15px 15px;
+
+}
+.card-info image{
+  width:42px;
+  height:42px;
+  border-radius:4px;
+  margin-left: 12px;
+  margin-right: 14px;
+}
+.card-body{
+  flex: 1;
+}
+.card-body .name{
+  padding-top: 13px;
+
+  font-size:14px;
+  font-weight:500;
+  color:rgba(53,53,53,1);
+  line-height:14px;
+}
+.card-body .subname{
+
+  font-size:13px;
+  font-weight:500;
+  color:rgba(136,136,136,1);
+  line-height:13px;
+  margin-top: 12px;
+  padding-bottom: 13px;
+
+
+}
+.bg-info-1{
+  background:rgba(106,207,145,.1);
+}
+.bg-info-2{
+  background:rgba(66,128,229,.1);
+}
+.left-m-c{
+  margin-right: 12px;
+  margin-left: 12px;
+}

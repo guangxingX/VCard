@@ -1,0 +1,344 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wxd3981676414fcf99",
+	"projectname": "ChamberCommerce",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 44,
+			"list": [
+				{
+					"id": -1,
+					"name": "进入企业详情",
+					"pathName": "pages/mine/myCompanyDes/myCompanyDes",
+					"query": "scene=1",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "进入供需详情",
+					"pathName": "pages/supply/supplyDetails/supplyDetails",
+					"query": "scene=1136",
+					"scene": "1011"
+				},
+				{
+					"id": 2,
+					"name": "进入活动详情",
+					"pathName": "pages/activity/activityDetails/activityDetails",
+					"query": "scene=1157",
+					"scene": "1011"
+				},
+				{
+					"id": 3,
+					"name": "添加需求",
+					"pathName": "pages/mine/addResource/addResource",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "登录快捷",
+					"pathName": "pages/logIn/phone/phone",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "登录手机号",
+					"pathName": "pages/logIn/code/code",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/logIn/code/code",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的模块",
+					"pathName": "pages/mine/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录界面",
+					"pathName": "pages/logIn/phone/phone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-我的资源",
+					"pathName": "pages/mine/myResource/myResource",
+					"query": ""
+				},
+				{
+					"id": 12,
+					"name": "financialindex",
+					"pathName": "pages/financial-index/index",
+					"query": ""
+				},
+				{
+					"id": 13,
+					"name": "details",
+					"pathName": "pages/financial/details/index",
+					"query": "id=35"
+				},
+				{
+					"id": 14,
+					"name": "contactme",
+					"pathName": "pages/financial/contactme/index",
+					"query": "info={\"companyname\":\"木艺有限公司\",\"projectname\":\"测试项目\",\"projectintro\":\"项目基本介绍\",\"logo\":\"https://oe75tqwfd.qnssl.com/QQ%E5%9B%BE%E7%89%8720171201205223.png\",\"legalPerson\":\"陈华量\",\"amount\":\"100W-200W·A伦·上海\"}"
+				},
+				{
+					"id": 13,
+					"name": "edit",
+					"pathName": "pages/financial/edit/index",
+					"query": "id=90&&pid=35",
+					"scene": "1011"
+				},
+				{
+					"id": 14,
+					"name": "itemIntr",
+					"pathName": "pages/financial/itemIntr/index",
+					"query": "pid=35",
+					"scene": "1011"
+				},
+				{
+					"id": 15,
+					"name": "addmen2",
+					"pathName": "pages/financial/addmen/index",
+					"query": "pid=1&&type=2",
+					"scene": "1011"
+				},
+				{
+					"id": 18,
+					"name": "selectmen",
+					"pathName": "pages/financial/selectmen/index",
+					"query": "data={\"id\":\"1\",\"type\":\"1\"}",
+					"scene": "1011"
+				},
+				{
+					"id": 17,
+					"name": "projectinfo",
+					"pathName": "pages/financial/projectinfo/index",
+					"query": "id=90",
+					"scene": "1011"
+				},
+				{
+					"id": 21,
+					"name": "selecttag",
+					"pathName": "pages/financial/select-tag/index",
+					"query": "id=35"
+				},
+				{
+					"id": -1,
+					"name": "upvideo",
+					"pathName": "pages/financial/upvideo/index",
+					"query": ""
+				},
+				{
+					"id": 22,
+					"name": "single-selectiontag",
+					"pathName": "pages/financial/single-selectiontag/index",
+					"query": ""
+				},
+				{
+					"id": 23,
+					"name": "showcard",
+					"pathName": "pages/financial/card/index",
+					"query": "id=164&&type=2",
+					"scene": "1011"
+				},
+				{
+					"id": 24,
+					"name": "editinstitutionintr",
+					"pathName": "pages/financial/institutionintr/index",
+					"query": "id=174",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "stage",
+					"pathName": "pages/financial/saveInstitutions/stage/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 26,
+					"name": "direction",
+					"pathName": "pages/financial/saveInstitutions/idea/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "coreTeam",
+					"pathName": "pages/financial/saveInstitutions/coreTeam/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 28,
+					"name": "editmen",
+					"pathName": "pages/financial/addmen/editmen/index",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "idea",
+					"pathName": "pages/financial/saveInstitutions/idea/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "fundSize",
+					"pathName": "pages/financial/saveInstitutions/fundSize/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 31,
+					"name": "case",
+					"pathName": "pages/financial/saveInstitutions/case/index",
+					"query": "id=164",
+					"scene": "1011"
+				},
+				{
+					"id": 32,
+					"name": "addcase",
+					"pathName": "pages/financial/saveInstitutions/case/addcase/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 33,
+					"name": "savemencard",
+					"pathName": "pages/financial/savemencard/index",
+					"query": "id=164",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "require",
+					"pathName": "pages/financial/savemencard/require/index",
+					"query": "id=164",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "menstage",
+					"pathName": "pages/financial/savemencard/require/stage/index",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 36,
+					"name": "investmentplan",
+					"pathName": "pages/financial/investmentplan/index",
+					"query": "id=3",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "note",
+					"pathName": "pages/financial/note/index",
+					"query": "id=164",
+					"scene": "1011"
+				},
+				{
+					"id": 38,
+					"name": "newinvest",
+					"pathName": "pages/financial/newinvest/index",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 37,
+					"name": "projectplan",
+					"pathName": "pages/financial/projectplan/index",
+					"query": "id=90",
+					"scene": "1011"
+				},
+				{
+					"id": 38,
+					"name": "selectmen2",
+					"pathName": "pages/financial/selectmen/index",
+					"query": "pid=34&&type=2",
+					"scene": "1011"
+				},
+				{
+					"id": 39,
+					"name": "ImageText",
+					"pathName": "pages/financial/mixture/ImageText/index",
+					"query": "pid=35&&type=1",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "funding-programs",
+					"pathName": "pages/financial/edit/funding-programs/index",
+					"query": "pid=35",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "resourcesReserves",
+					"pathName": "pages/financial/resourcesReserves/index",
+					"query": "pid=35",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "businessModel",
+					"pathName": "pages/financial/businessModel/index",
+					"query": "pid=35",
+					"scene": "1011"
+				},
+				{
+					"id": 43,
+					"name": "upvideo带参",
+					"pathName": "pages/financial/upvideo/index",
+					"query": "pid=35&&url=https://oe75tqwfd.qnssl.com/tmp/wxd3981676414fcf99..edgZcAq4qpBV2a34126b49787f60ed9a1d7bd070eebe.mp4&&name=企鹅",
+					"scene": "1011"
+				},
+				{
+					"id": 44,
+					"name": "stage写死",
+					"pathName": "pages/financial/edit/funding-programs/stage/index",
+					"query": "",
+					"scene": "1011"
+				}
+			]
+		}
+	}
+}

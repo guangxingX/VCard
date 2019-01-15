@@ -1,0 +1,20 @@
+/* component/image-loader/image.wxss */
+
+.before-load {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.image-class {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #3073e3;
+  color: #fff;
+  font-weight: bold;
+
+}
+
+

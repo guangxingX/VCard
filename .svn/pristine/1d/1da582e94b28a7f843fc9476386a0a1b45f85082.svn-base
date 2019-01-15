@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "基金规模",
+  "usingComponents": {
+    "w-image-text":"/pages/financial/component/image-text/index"
+  }
+}

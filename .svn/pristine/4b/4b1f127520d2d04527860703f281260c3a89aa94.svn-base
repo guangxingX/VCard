@@ -1,0 +1,27 @@
+function commaComma(text){
+    if(!text){
+        return
+    }
+    var reg = getRegExp(',','g')
+    return text.replace(reg, '、')
+}
+function defaultStyle(string){
+    return string?string:'----'
+}
+function commaArray(text,length){
+    if(!text){
+        return
+    }
+    if(!length){
+        return text.split(',')
+    }    else {
+        var arr  = text.split(',').slice(0, length)
+        return arr
+    }
+
+}
+module.exports = {
+    commaComma:commaComma,
+    defaultStyle:defaultStyle,
+    commaArray:commaArray,
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "投资人名片编辑",
+  "usingComponents": {
+    "w-link-d": "/pages/financial/component/link-d/index",
+    "w-edit-programme": "/pages/financial/component/programe/edit-m/index",
+    "w-card-headalone": "/component/card-headalone/index"
+  }
+}

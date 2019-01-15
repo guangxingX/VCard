@@ -1,0 +1,15 @@
+{"navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "项目详情",
+  "usingComponents": {
+    "w-head-programe": "/pages/financial/component/programe/detailbar/head/head",
+    "w-tag-programe": "/pages/financial/component/programe/tag/index",
+    "w-his-programe": "/pages/financial/component/programe/history/index",
+    "w-image": "/pages/financial/component/image-loader/image",
+    "w-link-1": "/pages/financial/component/link-1/index",
+    "w-link-d": "/pages/financial/component/link-d/index",
+    "w-show-imageText": "/pages/financial/component/show-imageText/index",
+    "w-card-head": "/component/card-head/index",
+    "w-card-headalone": "/component/card-headalone/index"
+  }
+}

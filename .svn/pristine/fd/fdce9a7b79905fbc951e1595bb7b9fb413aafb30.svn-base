@@ -1,0 +1,110 @@
+<!--pages/financial/index/index.wxml-->
+<view hidden="{{showtapindustry}}" class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="onTabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <image class="search-icon" src="image/search@financial.png">
+        </image>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class="option-bar">
+
+            <picker bindchange="onBindChange" value="{{index}}" range="{{array}}">
+              <view class="bar-item">
+                <text>{{typename}}</text>
+                <image src="image/donw.png"/>
+              </view>
+            </picker>
+            <view class="bar-item" bind:tap="onShowtapindustry">
+              <text>{{fieldname}}</text>
+              <image src="image/donw.png"/>
+            </view>
+          </view>
+          <!--<view hidden="{{hidlookType}}">-->
+                <!--<picker-view indicator-style="height: 50px;" style="width: 100%; height: 100px;" value="{{value}}" bindchange="onBindChange">-->
+                  <!--<picker-view-column>-->
+                    <!--<view>投资机构/投资人</view>-->
+                    <!--<view>投资机构</view>-->
+                    <!--<view>投资人</view>-->
+                  <!--</picker-view-column>-->
+                  <!--&lt;!&ndash; <picker-view-column>-->
+                    <!--<view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>-->
+                  <!--</picker-view-column>-->
+                  <!--<picker-view-column>-->
+                    <!--<view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>-->
+                  <!--</picker-view-column> &ndash;&gt;-->
+                <!--</picker-view>-->
+
+            <!--</view>-->
+          <scroll-view class="weui-tab__content" style="height:100vh;" scroll-y bindscrolltolower="onAddListL" lower-threshold="100">
+            <block wx:for="{{lookforList}}" wx:key="">
+              <w-item-lookforsb class="l-item" lookforitem="{{item}}" />
+            </block>
+            <view class="noContent" wx:if="{{lookforList.length==0}}">
+              <view>
+                <image class="noImage" src="/assets/images/mine/no-resource.png"></image>
+              </view>
+              <view class="noTextWrap">
+                <text class="noText"> 暂无项目</text>
+              </view>
+            </view>
+
+            <view wx:if="{{currentPageL==totalPageL}}" class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+            </view>
+          </scroll-view>
+
+
+        </view>
+
+        <!-- <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <w-item-programme projectinfo="{{projectList}}"/>
+          </view>
+             -->
+        <!--TODO 缺少热门 与热门搜索接口-->
+        <view hidden="{{activeIndex != 1}}">
+          <scroll-view scroll-x style="height:88rpx"></scroll-view>
+          <scroll-view class="weui-tab__content" style="height:100vh" scroll-y bindscrolltolower="onAddList" lower-threshold="100">
+            <block wx:for="{{projectList}}" wx:key="item">
+              <w-item-programme class="pro-item" projectinfo="{{item}}" />
+            </block>
+            <view class="noContent" wx:if="{{projectList.length==0}}">
+              <view>
+                <image class="noImage" src="/assets/images/mine/no-resource.png"></image>
+              </view>
+              <view class="noTextWrap">
+                <text class="noText"> 暂无项目</text>
+              </view>
+            </view>
+
+            <view wx:if="{{currentPage==totalPage}}" class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+            </view>
+          </scroll-view>
+          <view bind:tap="onTapAddBtn" class="add-btn">
+            <image src="image/plus@index.png" />
+          </view>
+        </view>
+
+
+
+
+
+
+
+
+      </view>
+    </view>
+  </view>
+</view>
+<w-select hidden="{{!showtapindustry}}"
+          bind:onTapSolo="onTapindustry"
+          haveAddbar="{{false}}"
+          isSolo="{{true}}"/>
