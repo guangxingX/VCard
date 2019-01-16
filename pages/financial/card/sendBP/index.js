@@ -130,8 +130,8 @@ Page({
                 lookforitem.name = this.data.options.name
                 // lookforitem.position = this.data.options.position
                 // lookforitem.company = this.data.options.company
-                lookforitem.label = this.data.options.label
-                lookforitem.stage = this.data.options.stage
+                lookforitem.label = this.data.options.label||''
+                lookforitem.stage = this.data.options.stage||''
                 lookforitem.logo = this.data.options.logo
                 lookforitem.type = this.data.options.type
                 var cardId = this.data.options.cardId
@@ -149,8 +149,8 @@ Page({
                 lookforitem.name = this.data.options.name
                 lookforitem.position = this.data.options.position
                 lookforitem.company = this.data.options.company
-                lookforitem.label = this.data.options.label
-                lookforitem.stage = this.data.options.stage
+                lookforitem.label = this.data.options.label||''
+                lookforitem.stage = this.data.options.stage||''
                 lookforitem.logo = this.data.options.logo
                 lookforitem.type = this.data.options.type
                 var cardId = this.data.options.cardId
@@ -175,7 +175,6 @@ Page({
                 info: info,
                 wissoCardId: mycard.id||'',
                 companyId
-
             })
         })
         console.log(this.data.companyId=='');

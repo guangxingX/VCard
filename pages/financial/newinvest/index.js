@@ -1,18 +1,51 @@
 // pages/financial/newinvest/index.js
+import {lookforsbmodule} from "../../../module/lookforsb";
+const lookforsb = new lookforsbmodule
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userId:'-1',
+      isNewCompany:false,
+      isNewMen:false,
+      wissoCardIdCompany:'',
+      wissoCardIdMen:'',
   },
     onNewCompany(){
-      wx.navigateTo({
-        url: '/pages/financial/institutionintr/index'
-      })
+      if(this.data.isNewCompany&&this.data.wissoCardIdCompany!=''){
+          lookforsb.postcreateInvestment(this.data.wissoCardIdCompany,'1').then(res=>{
+              console.log(res);
+              wx.navigateTo({
+               url: '/pages/financial/institutionintr/index?id='+res.cardId
+           })
+          })
+
+      }else {
+        wx.showToast({
+          title: '您的名片里还未有绑定公司，请先绑定公司',
+            icon:'none'
+        })
+      }
+
     },
     onNewMen(){
+        if(this.data.isNewMen&&this.data.wissoCardIdMen!=''){
+            lookforsb.postcreateInvestment(this.data.wissoCardIdMen,'2').then(res=> {
+                console.log(res);
+                wx.navigateTo({
+                    url: '/pages/financial/savemencard/index?id=' + res.cardId,
+                })
+            })
+        }else {
+            wx.showToast({
+                title: '您还未创建名片，请先创建名片',
+                icon:'none'
+
+            })
+        }
 
     },
     onCancel(){
@@ -22,8 +55,44 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      console.log(options);
+     const userId = app.globalData.userId
+      this.setData({
+          userId,
+      })
       wx.hideTabBar({
           // animation:true //是否需要过渡动画
+      })
+
+      lookforsb.getcardandcompany(this.data.userId).then(res=>{
+          console.log(res);
+
+          let cardInfo = res.cardInfo
+
+          var j = 0
+
+          while (!this.data.isNewMen) {
+              if(cardInfo[j].id){
+                  this.setData({
+                      isNewMen:true,
+                      wissoCardIdMen:cardInfo[j].id
+                  })
+              }
+              j++;
+          }
+
+          for(var i = 0,l=res.cardInfo.length;i<l;i++){
+            if(cardInfo[i].companyId){
+              this.setData({
+                  isNewCompany:true,
+                  wissoCardIdCompany:cardInfo[i].id
+              })
+              return
+            }
+          }
+
+
+
       })
   },
 

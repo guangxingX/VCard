@@ -37,7 +37,7 @@
 
                         </view>
                         <view class="share-bar">
-                            <view class="item" catch:tap="onEdit" data-type="{{item.type}}">
+                            <view class="item" catch:tap="onEdit" data-item="{{item}}" data-type="{{item.type}}">
                                 <image src="/assets/images/financial/edit.png"/>
                                 编辑
                             </view>

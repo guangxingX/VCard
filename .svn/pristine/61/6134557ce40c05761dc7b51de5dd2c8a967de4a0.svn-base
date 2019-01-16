@@ -51,10 +51,11 @@ export class lookforsbmodule extends programemodule {
 
         const name = 'institutionsCard'
         var key = this._getKey(fieldId, currentPage, name)
-        return this.request({
+        return this._saveStorage(
+            this.request({
                 url: 'VCard/institutionsCard',
                 data: {cardId}
-            })
+            }), key, currentPage, fieldId, name)
 
     }
 
@@ -63,10 +64,11 @@ export class lookforsbmodule extends programemodule {
 
         const name = 'investorsCard'
         var key = this._getKey(fieldId, currentPage, name)
-        return this.request({
+        return this._saveStorage(
+            this.request({
                 url: 'VCard/investorsCard',
                 data: {cardId}
-            })
+            }), key, currentPage, fieldId, name)
 
     }
 
@@ -344,29 +346,5 @@ export class lookforsbmodule extends programemodule {
                 type,
             }
         })
-    }
-
-    //老接口 查询applets/main
-    getcardandcompany(userId){
-        return this.request({
-            url:'applets/main',
-            data:{
-                userId,
-            }
-        })
-    }
-
-    //搜索
-    //2-5、搜索接口
-    getSearchResult(content,type,currentPage){
-            return this.request({
-                url:'VCard/search',
-                data:{
-                    content,
-                    type,
-                    currentPage,
-                    pageSize:999999999,
-                }
-            })
     }
 }

@@ -11,7 +11,7 @@ Page({
     text:'',
     tag:'请选择项目标签',
       title:'',
-      id:'-1',//缓存userid
+    id: '-1',//缓存wissoCardId
       isShowTag:false,//显示行业
       tagId:'',//缓存标签id
       pid:'-1',//缓存 projectId

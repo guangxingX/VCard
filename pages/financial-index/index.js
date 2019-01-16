@@ -43,7 +43,26 @@ Page({
 
 
     },
+  onSearch(){
+    console.log(this.data.activeIndex)
+    let url = '/pages/commenPage/searchPage/searchPage'
+    if(this.data.activeIndex==0){
+      url = url +`?storageKey=investmentSearch`
+    }else if(this.data.activeIndex==1){
+      url = url + `?storageKey=projectSearch`
+    }
+    wx.navigateTo({
+      url,
+    })
+  },
     /**找投资**/
+  onTapUpProject(e){
+    console.log(e.detail.lookforitem)
+    let lookforitem = e.detail.lookforitem
+    wx.navigateTo({
+      url: '/pages/financial/card/sendBP/index?' + `type=${lookforitem.type}&&name=${lookforitem.name}&&logo=${lookforitem.logo}&&company=${lookforitem.company}&&label=${lookforitem.label}&&stage=${lookforitem.stage}&&position=${lookforitem.position}&&cardId=${lookforitem.id}`,
+    })
+  },
     onTapindustry(e){
         // console.log(e.detail.currentTarget.dataset.industry)
         let target= e.detail.currentTarget.dataset.industry
@@ -116,7 +135,7 @@ Page({
   },
     onTapAddBtn() {
         wx.navigateTo({
-            url: '/pages/financial/edit/index',
+          url: '/pages/financial/edit/index?type=new',
         })
     },
     onAdd() {

@@ -268,8 +268,8 @@ Page({
         })
     },
     swiperChange(e) {
-        console.log("swiperChange");
-        console.log(e);
+        // console.log("swiperChange");
+        // console.log(e);
         var that = this;
         if (e.detail.current) {
             that.setData({swiperCurrent: e.detail.current});

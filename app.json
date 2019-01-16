@@ -128,7 +128,8 @@
         "edit/funding-programs/stage/index",
         "carlist/index",
         "card/sendBP/index",
-        "mymessageList/index"
+        "mymessageList/index",
+        "mixture/searchResult/index"
       ]
     }
   ],

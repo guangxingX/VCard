@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 52,
+			"current": 54,
 			"list": [
 				{
 					"id": -1,
@@ -392,6 +392,20 @@
 					"name": "mymessageList",
 					"pathName": "pages/financial/mymessageList/index",
 					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 53,
+					"name": "新建institutionintr",
+					"pathName": "pages/financial/institutionintr/index",
+					"query": "isNew=1",
+					"scene": "1011"
+				},
+				{
+					"id": 54,
+					"name": "searchResult",
+					"pathName": "pages/financial/mixture/searchResult/index",
+					"query": "storageKey=investmentSearch&&searchname=李富强03",
 					"scene": "1011"
 				}
 			]

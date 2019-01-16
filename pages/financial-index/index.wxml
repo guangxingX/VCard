@@ -8,7 +8,7 @@
             <view class="weui-navbar__title">{{item}}</view>
           </view>
         </block>
-        <image class="search-icon" src="image/search@financial.png">
+        <image bind:tap="onSearch" class="search-icon" src="image/search@financial.png">
         </image>
         <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
       </view>
@@ -45,7 +45,7 @@
             <!--</view>-->
           <scroll-view class="weui-tab__content" style="height:100vh;" scroll-y bindscrolltolower="onAddListL" lower-threshold="100">
             <block wx:for="{{lookforList}}" wx:key="">
-              <w-item-lookforsb class="l-item" lookforitem="{{item}}" />
+              <w-item-lookforsb class="l-item" lookforitem="{{item}}" bind:onTapUpProject="onTapUpProject"/>
             </block>
             <view class="noContent" wx:if="{{lookforList.length==0}}">
               <view>
@@ -70,7 +70,7 @@
              -->
         <!--TODO 缺少热门 与热门搜索接口-->
         <view hidden="{{activeIndex != 1}}">
-          <scroll-view scroll-x style="height:88rpx"></scroll-view>
+          <!-- <scroll-view scroll-x style="height:88rpx"></scroll-view> -->
           <scroll-view class="weui-tab__content" style="height:100vh" scroll-y bindscrolltolower="onAddList" lower-threshold="100">
             <block wx:for="{{projectList}}" wx:key="item">
               <w-item-programme class="pro-item" projectinfo="{{item}}" />

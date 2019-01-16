@@ -3,16 +3,16 @@
 <view class="rate-total">
   项目信息完成{{totalProgress}}
     <!-- TODO 暂时无-->
-    <view>
+    <view bind:tap="onPreshow">
         项目预览
     </view>
 </view>
 <view>
   <view class="company-header">
       我的公司
-    <view>
+    <!-- <view>
       更换
-    </view>
+    </view> -->
   </view>
   <view class="company">
    <template is="enterpriseListcard" data="{{item,iconList}}" />

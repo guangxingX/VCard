@@ -114,16 +114,15 @@ Page({
         console.log('onAddnewPlan')
     },
     onEdit(e){
-        console.log(e.currentTarget.dataset);
+        // console.log(e.currentTarget.dataset.type);
         let type = e.currentTarget.dataset.type
-      let wissoCardId = e.currentTarget.dataset.item.id
         if(type == '1'){
             wx.navigateTo({
-              url: '/pages/financial/institutionintr/index?' + `id=${wissoCardId}`
+              url: '/pages/financial/institutionintr/index?'+`id=${this.data.id}`
             })
         }else {
             wx.navigateTo({
-              url: '/pages/financial/savemencard/index?' + `id=${wissoCardId}`
+                url: '/pages/financial/savemencard/index?'+`id=${this.data.id}`
             })
         }
         // console.log('onEdit')

@@ -28,6 +28,9 @@ Component({
     methods: {
         onTapUpProject(){
             // console.log(onTapUpProject);
+          this.triggerEvent('onTapUpProject', {
+            lookforitem: this.properties.lookforitem
+          })
         },
         onTapitem(){
             console.log(this.properties.lookforitem);

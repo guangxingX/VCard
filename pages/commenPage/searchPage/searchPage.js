@@ -19,6 +19,7 @@ Page({
       this.setData({
         searchkey: this.data.historyDataList[e.currentTarget.dataset.index]
       });
+      console.log(this.data.searchkey)
       this.beginSerch();
     }
   },
@@ -106,7 +107,21 @@ Page({
         wx.navigateTo({
           url: "../../activity/activitySearchResult/activitySearchResult?searchname=" + e.detail.value
         })
+      } else if (this.data.storageKey == "investmentSearch"){
+        console.log(e.detail.value)
+
+        wx.navigateTo({
+          url: "/pages/financial/mixture/searchResult/index?searchname=" + e.detail.value +`&&storageKey=investmentSearch`
+        })
+
+      } else if (this.data.storageKey == "projectSearch"){
+        console.log(e.detail.value)
+        wx.navigateTo({
+          url: "/pages/financial/mixture/searchResult/index?searchname=" + e.detail.value + `&&storageKey=projectSearch`
+        })
+
       }
+
       this.data.historyDataList.forEach(function(item, index, arr) {
         if (e.detail.value == item) {
           arr.splice(index, 1);
@@ -123,6 +138,7 @@ Page({
         });
       }, 300);
     } else {
+      console.log(that.data.searchkey)
       if (that.data.storageKey == "hightcocsearch") {
         wx.navigateTo({
           url: "../../maillist/cocsearchResult/cocsearchResult?searchname=" + that.data.searchkey + "&type=2&isHighQuality=1",
@@ -196,6 +212,26 @@ Page({
           url: "../../activity/activitySearchResult/activitySearchResult?searchname=" + that.data.searchkey,
           success: res => {},
           fail: res => {},
+          complete: res => {
+            that.setData({
+              historyclick: true
+            });
+          }
+        })
+      } else if (this.data.storageKey == "investmentSearch") {
+        console.log(that.data.searchkey)
+        wx.navigateTo({
+          url: "/pages/financial/mixture/searchResult/index?searchname=" + that.data.searchkey + `&&storageKey=investmentSearch`,
+          complete: res => {
+            that.setData({
+              historyclick: true
+            });
+          }
+        })
+      } else if (this.data.storageKey == "projectSearch") {
+        console.log(that.data.searchkey)
+        wx.navigateTo({
+          url: "/pages/financial/mixture/searchResult/index?searchname=" + that.data.searchkey + `&&storageKey=projectSearch`,
           complete: res => {
             that.setData({
               historyclick: true
@@ -377,6 +413,14 @@ Page({
     } else if (options.storageKey == "activitySearch") {
       wx.setNavigationBarTitle({
         title: '活动搜索'
+      })
+    } else if (options.storageKey == "investmentSearch"){
+      wx.setNavigationBarTitle({
+        title: '投融资搜索'
+      })
+    } else if (options.storageKey == "projectSearch"){
+      wx.setNavigationBarTitle({
+        title: '找项目搜索'
       })
     }
     // if(this.data.currenttab == 2){

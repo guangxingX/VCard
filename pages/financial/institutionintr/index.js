@@ -75,18 +75,27 @@ Page({
       id: 0,
       companyTemplate: "--------",
       bgId: 0,
-      setUpTime: "0000-00-00"
+      setUpTime: "0000-00-00",
+      isNew: true,
     },
       //缓存数据
       id:-1, //缓存机构id
       //接口渲染数据
-      totalProgress:'30'
+      totalProgress:'0%'
   },
+  
     onPreshow(){
-
-      wx.navigateTo({
-        url: 'pages/financial/card/index'+`?id=${this.data.id}&&type=1`
-      })
+      if (this.data.totalProgress=='100%'){
+        wx.navigateTo({
+          url: 'pages/financial/card/index' + `?id=${this.data.id}&&type=1`
+        })
+      }else{
+        wx.showToast({
+          title: '请先完成度达到100%',
+          icon:'none'
+        })
+      }
+      
     },
     onTapItem_0(){
 
@@ -121,36 +130,46 @@ Page({
     },//客户案例
     onTapItem_6(){},
     onTapItem_7(){},
+    _rander(){
+      try {
+        lookforsb.getinstitutionsCompany(this.data.id).then(res => {
+          console.log(res)
+          let totalProgress = res.totalProgress
+          let items = this.data.items
+          items[0].rate = res.directionProgress //投资方向完成度
+          items[1].rate = res.stageProgress //投资阶段完成度
+          items[2].rate = res.directionProgress //核心团队完成度
+          items[3].rate = res.ideaProgress //投资理念完成度
+          items[4].rate = res.fundSizeProgress //基金规模完成度
+          items[5].rate = res.caseProgress //客户案例完成度
+          let item = res.companyInfo
+          this.setData({
+            totalProgress,
+            items,
+            item,
+          })
 
+        })
+      } catch (e) {
+        console.log(e)
+      }
+
+    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
       // options.id
-      this.setData({id:options.id})
-      try{
-          lookforsb.getinstitutionsCompany(options.id).then(res=>{
-              console.log(res)
-              let totalProgress = res.totalProgress
-              let items = this.data.items
-              items[0].rate = res.directionProgress //投资方向完成度
-              items[1].rate = res.stageProgress //投资阶段完成度
-              items[2].rate = res.directionProgress //核心团队完成度
-              items[3].rate = res.ideaProgress //投资理念完成度
-              items[4].rate = res.fundSizeProgress //基金规模完成度
-              items[5].rate = res.caseProgress //客户案例完成度
-              let item = res.companyInfo
-              this.setData({
-                  totalProgress,
-                  items,
-                  item,
-              })
-
-          })
-      }catch(e){
-          console.log(e)
-      }
-
+      console.log(options)
+    if (options.isNew==1){
+      this.setData({
+        isNew:true
+      })
+    }else{
+      this.setData({ id: options.id })
+      this._rander()
+    }
+     
   },
 
   /**
@@ -164,7 +183,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this._rander()
   },
 
   /**

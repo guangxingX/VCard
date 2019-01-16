@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "搜索结果",
+  "usingComponents": {
+    "w-item-programme": "/component/programe/item/index",
+    "w-item-lookforsb": "/component/lookforsb/item/index"
+  }
+}

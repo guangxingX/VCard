@@ -20,20 +20,7 @@ Page({
             mapSmall: '/assets/images/icon/map-small.png'
         },
         type: 1,
-        mockData: {
-            tag: ['1', '2'],
-            coreTeam: [{}, {}],
-            imgTextList: [{
-                name: '投资理念'
-            },
-                {
-                    name: '基金规模'
-                },
-                {
-                    name: '客户案例'
-                }
-            ],
-        },
+       
         /**机构**/
         cardinfo: {},//公司介绍
         imgTextList: [
@@ -126,13 +113,16 @@ Page({
             let mencase = res.case
             let data = res
             let stage=[]
-            res.stage.selectStageList.forEach(item=>{
-                res.stage.allStageList.forEach(_i=>{
-                    if(item == _i.id){
-                        stage.push(_i.stage_name)
-                    }
-                })
+          if (res.stage){
+            res.stage.selectStageList.forEach(item => {
+              res.stage.allStageList.forEach(_i => {
+                if (item == _i.id) {
+                  stage.push(_i.stage_name)
+                }
+              })
             })
+          }
+            
 
 
             let direction = []
@@ -189,10 +179,22 @@ Page({
             //重置为空
             this.setData({
                 myinfo:{},
-
             })
             console.log(e)
         })
+    },
+    _rander(){
+      //2是人1是公司
+      if (this.data.type == 2) {
+        console.log('人')
+
+        this._randermenData(this.data.id)
+
+      } else {
+        console.log('机构');
+
+        this._randerCompanyData(this.data.id)
+      }
     },
     /**
      * 生命周期函数--监听页面加载
@@ -205,17 +207,7 @@ Page({
             id:options.id
         })
         let title = ''
-        //2是人1是公司
-        if (options.type == 2) {
-          console.log('人')
-
-            this._randermenData(options.id)
-
-        } else {
-            console.log('机构');
-
-            this._randerCompanyData(options.id)
-        }
+        
 
         // wx.setNavigationBarTitle({
         //     title:title
@@ -233,7 +225,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this._rander()
     },
 
     /**
@@ -241,8 +233,18 @@ Page({
      */
     onHide: function () {
         // 销毁数据
+        console.log('hide')
         this.setData({
+          cardinfo: {},//公司介绍
+        
+          mencase: {},
 
+          myinfo: {},//个人简介
+
+          field: [],//缓存领域
+          stage: [],//缓存轮次
+
+          direction: [],//type = 1 机构领域
         })
     },
 
