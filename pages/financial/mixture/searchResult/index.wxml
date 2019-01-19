@@ -4,9 +4,9 @@
 
 
         <scroll-view class="weui-tab__content" style="height:100vh;" scroll-y bindscrolltolower="onAddListL" lower-threshold="100">
-            <view>
+            <!-- <view>
                 投资
-            </view>
+            </view> -->
             <block wx:for="{{lookforList}}" wx:key="">
                 <w-item-lookforsb class="l-item" lookforitem="{{item}}" bind:onTapUpProject="onTapUpProject"/>
             </block>

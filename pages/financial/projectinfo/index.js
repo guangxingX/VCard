@@ -18,7 +18,7 @@ Page({
       isNew:false,//识别是否新建否则走创建接口
   },
     onTapindustry(e){
-      console.log(e.detail)
+      // console.log(e.detail)
         let tagData = e.detail
         let tag = []
         let tagId = []
