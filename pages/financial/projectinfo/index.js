@@ -16,7 +16,9 @@ Page({
       tagId:'',//缓存标签id
       pid:'-1',//缓存 projectId
       isNew:false,//识别是否新建否则走创建接口
+  isView:false,//用于隐藏预览
   },
+
     onTapindustry(e){
       // console.log(e.detail)
         let tagData = e.detail
@@ -74,6 +76,16 @@ Page({
           isShowTag:true,
       })
     },
+  onView(){
+      this.setData({
+        isView:true
+      })
+  },
+  onBack(){
+    this.setData({
+      isView:false
+    })
+  },
     onSave(){
         console.log(this.data.title)
         console.log(this.data.files)

@@ -1,5 +1,5 @@
 <!--pages/financial/projectinfo/index.wxml-->
-<view hidden="{{isShowTag}}">
+<view hidden="{{isShowTag||isView}}">
   <view style='height:20rpx'></view>
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
@@ -24,7 +24,7 @@
         <view class="weui-label">项目名称</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" placeholder="输入项目名称" value="{{title}}" bindinput="onInput"/>
+        <input class="weui-input" placeholder="输入项目名称" value="{{title}}" bindinput="onInput" />
       </view>
       <!-- <view class="weui-cell__ft">
         <view class="weui-vcode-btn">获取验证码</view>
@@ -35,12 +35,12 @@
         <view class="weui-label p-10">项目简介</view>
       </view>
       <view class="weui-cell__bd w-100">
-        <textarea class="weui-textarea" placeholder="输入项目简介" style="height: 270rpx" maxlength="40" bindinput="onInputText" value="{{text}}"/>
+        <textarea class="weui-textarea" placeholder="输入项目简介" style="height: 270rpx" maxlength="40" bindinput="onInputText" value="{{text}}" />
         <view class="weui-textarea-counter">{{text.length}}/40字符</view>
       </view>
     </view>
 
-    <view  class="weui-cell weui-cell_access" hover-class="weui-cell_active" bind:tap="onSelectlabel">
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bind:tap="onSelectlabel">
       <view class="weui-cell__bd">选择项目标签</view>
       <view class="weui-cell__ft weui-cell__ft_in-access">{{tag}}</view>
     </view>
@@ -49,13 +49,40 @@
     <button class="weui-btn primary font32" bind:tap="onView">预览</button>
     <button class="weui-btn primary font32" bind:tap="onSave">保存</button>
 
-</view>
+  </view>
 </view>
 
-<w-select wx:if="{{isShowTag}}"
-          bind:onTapSolo="onTapindustry"
-          limitNum="{{5}}"
-          haveAddbar="{{false}}"
-          havedData="{{}}"
-
-/>
+<w-select wx:if="{{isShowTag}}" bind:onTapSolo="onTapindustry" limitNum="{{5}}" haveAddbar="{{false}}" havedData="{{}}" />
+<view wx:if="{{isView}}">
+  <view>
+    项目logo
+  </view>
+  <view>
+    <block wx:for="{{files}}" wx:key="*this">
+      <view class="" bindtap="previewImage" id="{{item}}">
+        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+      </view>
+    </block>
+  </view>
+  <view>
+    项目名称
+  </view>
+  <view>
+  {{title}}
+  </view>
+  <view>
+    项目简介
+  </view>
+  <view>
+  {{text}}
+  </view>
+  <view>
+    项目简介
+  </view>
+  <view>
+  {{tag}}
+  </view>
+  <view style="margin: 72rpx 30rpx 0">
+        <button class="big-btn my-btn" bind:tap="onBack">返回</button>
+    </view>
+</view>
