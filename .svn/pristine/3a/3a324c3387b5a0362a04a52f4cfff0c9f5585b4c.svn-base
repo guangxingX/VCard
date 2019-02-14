@@ -1,0 +1,2 @@
+<!--pages/financial/mixture/selectIndustry/index.wxml-->
+<w-select  bind:onTapSolo="onTapindustry" limitNum="{{5}}" haveAddbar="{{false}}" havedData="{{}}" />

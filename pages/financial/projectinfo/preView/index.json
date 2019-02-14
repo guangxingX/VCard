@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "项目信息的预览",
+  "usingComponents": {
+    "w-select": "/component/select/index"
+  }
+}

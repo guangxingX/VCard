@@ -1,0 +1,57 @@
+<!--pages/financial/mixture/searchResult/index.wxml-->
+<view class="weui-tab__panel">
+    <view class="weui-tab__content" wx:if="{{activeIndex == 0}}">
+
+
+        <scroll-view class="weui-tab__content" style="height:100vh;" scroll-y bindscrolltolower="onAddListL" lower-threshold="100">
+            <!-- <view>
+                投资
+            </view> -->
+            <block wx:for="{{lookforList}}" wx:key="">
+                <w-item-lookforsb class="l-item" lookforitem="{{item}}" bind:onTapUpProject="onTapUpProject"/>
+            </block>
+            <view class="noContent" wx:if="{{lookforList.length==0}}">
+                <view>
+                    <image class="noImage" src="/assets/images/mine/no-resource.png"></image>
+                </view>
+                <view class="noTextWrap">
+                    <text class="noText"> 暂无项目</text>
+                </view>
+            </view>
+
+            <view wx:if="{{currentPageL==totalPageL}}" class="weui-loadmore weui-loadmore_line">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+            </view>
+        </scroll-view>
+
+
+    </view>
+
+
+
+    <view wx:if="{{activeIndex == 1}}">
+        <!-- <scroll-view scroll-x style="height:88rpx"></scroll-view> -->
+        <scroll-view class="weui-tab__content" style="height:100vh" scroll-y bindscrolltolower="onAddList" lower-threshold="100">
+
+            <block wx:for="{{projectList}}" wx:key="item">
+                <w-item-programme class="pro-item" projectinfo="{{item}}" />
+            </block>
+            <view class="noContent" wx:if="{{projectList.length==0}}">
+                <view>
+                    <image class="noImage" src="/assets/images/mine/no-resource.png"></image>
+                </view>
+                <view class="noTextWrap">
+                    <text class="noText"> 暂无项目</text>
+                </view>
+            </view>
+
+            <view wx:if="{{currentPage==totalPage}}" class="weui-loadmore weui-loadmore_line">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+            </view>
+        </scroll-view>
+
+    </view>
+
+
+
+</view>

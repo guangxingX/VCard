@@ -1,0 +1,25 @@
+<!--pages/financial/preViewTextImage/index.wxml-->
+<view>
+
+    <view>
+        <block wx:for="{{_ImageTextItem}}" wx:key="">
+            <view class="center" wx:if="{{item.image}}">
+
+                <image  mode="aspectFill" src="{{item.image}}"></image>
+
+            </view>
+            <view class="center" wx:if="{{item.text}}">
+                <text>{{item.text}}</text>
+            </view>
+            <view class="center" wx:if="{{item.video}}">
+
+                <video class="addiamge" mode="aspectFill" src="{{item.video}}"></video>
+
+            </view>
+        </block>
+    </view>
+    <view style="margin: 72rpx 30rpx 0">
+        <button class="big-btn my-btn" bind:tap="onTapPreView">返回</button>
+    </view>
+
+</view>

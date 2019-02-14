@@ -1,0 +1,10 @@
+/* pages/financial/edit/funding-programs/stage/index.wxss */
+@import "/style/weui.wxss";
+
+page{
+    background: #EFEFF4;
+}
+.my-btn{
+  margin: 30rpx;
+  margin-top:72rpx;
+}

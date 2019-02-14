@@ -1,0 +1,37 @@
+/* pages/financial/projectinfo/index.wxss */
+@import "/style/weui.wxss";
+page{
+  background: #EEEEEE;
+}
+.c-box{
+  width: 116rpx;
+  height: 116rpx;
+}
+.weui-uploader__input-box,.weui-uploader__file{
+  margin-top: 9px;
+}
+.container{
+  background: #fff;
+}
+.t__title{
+  background:rgba(255,255,255,1);
+  font-size:34rpx;
+color:rgba(0,0,0,1);
+line-height: 34rpx;
+padding-top: 28rpx;
+padding-left: 38rpx;
+padding-bottom: 28rpx;
+}
+.c-f{
+  flex-direction: column;
+  align-items: flex-start!important;
+  }
+.w-100{
+  width: 100%;
+}
+.p-10{
+  padding-bottom: 40rpx;
+}
+.selection-block{
+  background: #fff;
+}

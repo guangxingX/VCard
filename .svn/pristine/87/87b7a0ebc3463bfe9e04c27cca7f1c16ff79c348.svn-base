@@ -1,0 +1,41 @@
+<!--pages/financial/institutionintr/index.wxml-->
+<import src="../../../templates/enterpriseListcard/enterpriseListcard.wxml" />
+<view class="rate-total">
+  项目信息完成{{totalProgress}}
+
+    <view bind:tap="onPreshow">
+        项目预览
+    </view>
+</view>
+<view>
+  <view class="company-header">
+      我的公司
+    <!-- <view>
+      更换
+    </view> -->
+  </view>
+  <view class="company">
+   <template is="enterpriseListcard" data="{{item,iconList}}" />
+  </view>
+
+</view>
+<block wx:for="{{items}}" wx:key="">
+    <w-edit-programme name="{{item.name}}" rate="{{item.rate}}" info="{{item.tip}}" must="{{item.must}}" bind:tap="{{item.fn}}">
+        <view slot="after" class="edit">
+      <!-- <text bind:tap="{{item.fn}}" data-handle="s">预览</text> -->
+      <!-- <text>|</text> -->
+      <!-- <text bind:tap="{{item.fn}}" data-handle="e">编辑</text> -->
+    </view>
+    </w-edit-programme>
+</block>
+
+<!-- <view style="margin: 72rpx 30rpx 0">
+        <button class="big-btn my-btn" bind:tap="onBack">保存</button>
+    </view> -->
+<view class="page__bd_spacing d-btn b30">
+    <button class="weui-btn primary font32" bind:tap="onSaveToGoBack">保存</button>
+    <button class="weui-btn  {{isCanissue?'primary':'unuse'}} font32" bind:tap="onBack">发布</button>
+  </view>
+<view style="height: 200rpx">
+
+</view>

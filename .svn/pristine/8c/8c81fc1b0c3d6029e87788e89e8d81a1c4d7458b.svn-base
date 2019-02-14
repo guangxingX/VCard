@@ -1,0 +1,72 @@
+<!--pages/financial/edit/index.wxml-->
+<!-- <text>pages/financial/edit/index.wxml</text> -->
+
+<view>
+  <view class="head-info">
+    <view class="head-inner">
+      <view class="all-rate">项目信息完成{{totalRate}}</view>
+
+      <!--<view class="pre-show" bind:tap="onTapPreShow">项目预览</view>-->
+    </view>
+  </view>
+  <view class="bg-f re" bind:tap="onTapLogo">
+    <view wx:if="{{!title}}" class="must-tag ab-tag">
+      必填
+    </view>
+    <view class=" p-20">
+      <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+        <image src="{{logo?logo:'image/logo.png'}}" style="width: 50px; height: 50px; display: block" />
+        <!-- <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">8</view> -->
+      </view>
+      <view class="weui-cell__bd ">
+        <view>{{title?title:'项目名称'}}</view>
+
+        <view style="font-size: 13px;color: #888888;">{{Intro?Intro:'一句话形容您的项目特色'}}</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
+  <!--干掉联系人-->
+  <!--<view>-->
+    <!--<view class='sub-t'> 至少添加一个联系人</view>-->
+    <!--<block>-->
+      <!--<view class="bg-f re">-->
+        <!--<view class="must-tag ab-tag">-->
+          <!--必填-->
+        <!--</view>-->
+        <!--<view class="weui-cell p-20">-->
+          <!--<view class="weui-cell__hd" style="position: relative;margin-right: 10px;">-->
+            <!--<image src="{{avatar?avatar:'image/avatar.png'}}" class="br-50" style="width: 50px; height: 50px; display: block;" />-->
+            <!--&lt;!&ndash; <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">8</view> &ndash;&gt;-->
+          <!--</view>-->
+          <!--<view class="weui-cell__bd ">-->
+            <!--<view>联系人2</view>-->
+
+            <!--<view style="font-size: 13px;color: #888888;">联系人电话</view>-->
+          <!--</view>-->
+          <!--<view class="weui-cell__ft weui-cell__ft_in-access"></view>-->
+        <!--</view>-->
+      <!--</view>-->
+    <!--</block>-->
+  <!--</view>-->
+  <block wx:for="{{items}}" wx:key="">
+    <w-edit-programme name="{{item.name}}" rate="{{item.rate}}" info="{{item.tip}}" must="{{item.must}}" bind:tap="{{item.fn}}">
+      <!-- <view slot="after" class="edit">
+    <text>预览</text>
+    <text>|</text>
+    <text>编辑</text>
+  </view> -->
+    </w-edit-programme>
+  </block>
+ <!-- 不需要保存 -->
+  <!-- <view class="weui-btn-area save" bindtap="showTopTips">
+    <button class="weui-btn n-b" >保存</button>
+  </view> -->
+  <view class="page__bd_spacing d-btn b30">
+    <button class="weui-btn primary font32" bind:tap="onSaveToGoBack">保存</button>
+    <button class="weui-btn  {{isCanissue?'primary':'unuse'}} font32" bind:tap="showTopTips">发布</button>
+  </view>
+
+</view>
+
+

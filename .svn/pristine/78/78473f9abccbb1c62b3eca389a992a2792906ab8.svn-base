@@ -1,0 +1,9 @@
+/* pages/financial/mixture/searchResult/index.wxss */
+@import "/style/weui.wxss";
+@import "/pages/financial-index/index.wxss";
+.weui-tab__panel{
+    padding-top: 0!important;
+}
+.l-item:first-child>view{
+  margin-top: 0!important;
+}

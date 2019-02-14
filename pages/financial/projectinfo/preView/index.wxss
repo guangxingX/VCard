@@ -1,0 +1,5 @@
+/* pages/financial/projectinfo/preView/index.wxss */
+@import "../index.wxss";
+.m20{
+  margin: 20rpx;
+}
